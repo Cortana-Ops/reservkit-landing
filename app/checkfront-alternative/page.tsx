@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const APP_URL = "https://app.reservkit.com";
 
 const comparison = [
-  { feature: "Starting price", checkfront: "$125+/mo (Soho plan)", reservkit: "$0 — free to start" },
-  { feature: "Platform fee", checkfront: "None, but high subscription", reservkit: "2% (Starter) — no subscription" },
+  { feature: "Starting price", checkfront: "$125+/mo (Soho plan)", reservkit: "$0 — Free plan + 14-day trial" },
+  { feature: "Platform fee", checkfront: "None, but high subscription", reservkit: "4% (Free) or 2% on Starter ($79/mo)" },
   { feature: "Contract", checkfront: "Annual plans required for best rates", reservkit: "No contract, month-to-month" },
   { feature: "Digital waivers", checkfront: "Add-on", reservkit: "Built in (Growth+)" },
   { feature: "Stripe Connect", checkfront: "Stripe or Braintree", reservkit: "Stripe Connect — direct payouts" },
@@ -99,10 +99,9 @@ export default function CheckfrontAlternative() {
                 online booking, that&apos;s a significant overhead cost with no guarantee of ROI.
               </p>
               <p>
-                ReservKit starts at $0. You only pay a 2% fee on completed bookings. If you have
+                ReservKit starts at $0 — the Free plan charges a 4% fee with 50 bookings/month. If you have
                 a slow month, you pay nothing. There&apos;s no contract, no setup fee, and no
-                minimum spend. Upgrade to a paid plan when you&apos;re ready for lower fees and
-                additional features.
+                minimum spend. Upgrade to Starter ($79/mo) for 2% fees and more features.
               </p>
               <p>
                 ReservKit is also built mobile-first — designed for operators who manage their

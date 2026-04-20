@@ -6,7 +6,7 @@ import { PageShell } from "../components/PageShell";
 export const metadata: Metadata = {
   title: "Best FareHarbor Alternative in 2026 — ReservKit",
   description:
-    "Switch from FareHarbor to ReservKit — lower platform fees (2% vs 6%+), modern UX, digital waivers, and no contract. Free to start.",
+    "Switch from FareHarbor to ReservKit — lower platform fees (2% vs 6%+), modern UX, digital waivers, and no contract. Free to start with a 14-day trial.",
   keywords: ["FareHarbor alternative", "FareHarbor competitor", "FareHarbor replacement", "cheaper than FareHarbor"],
   alternates: { canonical: "https://reservkit.com/fareharbor-alternative" },
 };
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const APP_URL = "https://app.reservkit.com";
 
 const comparison = [
-  { feature: "Platform fee", fareharbor: "6%+ per booking", reservkit: "2% (Starter)" },
-  { feature: "Monthly subscription", fareharbor: "Required (varies)", reservkit: "Free to start" },
+  { feature: "Platform fee", fareharbor: "6%+ per booking", reservkit: "4% Free / 2% Starter ($79/mo)" },
+  { feature: "Monthly subscription", fareharbor: "Required (varies)", reservkit: "$0 — Free plan (50 bookings/mo)" },
   { feature: "Contract required", fareharbor: "Yes — annual contract", reservkit: "No contract" },
   { feature: "Setup fee", fareharbor: "Yes", reservkit: "None" },
   { feature: "Digital waivers", fareharbor: "Add-on cost", reservkit: "Included (Growth+)" },
@@ -29,11 +29,11 @@ const comparison = [
 const reasons = [
   {
     title: "Keep 4–5% more revenue on every booking",
-    body: "FareHarbor charges 6% or more per booking — some operators report up to 9% depending on their plan. ReservKit charges 2% on the free Starter plan. On $10,000/month in bookings, that's $400–$700 per month back in your pocket.",
+    body: "FareHarbor charges 6% or more per booking — some operators report up to 9% depending on their plan. ReservKit's Free plan charges 4%, and the Starter plan ($79/mo) drops it to 2%. On $10,000/month in bookings, that's $400–$700 per month back in your pocket.",
   },
   {
     title: "No contracts, no setup fees",
-    body: "FareHarbor requires signing an annual contract and often charges setup fees. ReservKit is month-to-month on paid plans and completely free to start. Try it today and upgrade only if it works for you.",
+    body: "FareHarbor requires signing an annual contract and often charges setup fees. ReservKit is month-to-month on paid plans and free to start with a 14-day Growth trial. Try it today and upgrade only if it works for you.",
   },
   {
     title: "Your money — your bank account",

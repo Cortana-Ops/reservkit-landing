@@ -41,8 +41,15 @@ export default function Terms() {
             <h2 className="text-xl font-semibold text-navy mb-3">Payments and fees</h2>
             <p>
               ReservKit uses Stripe for payment processing. Platform fees are charged as a
-              percentage of each completed booking transaction (2% on Starter, 1% on Growth, 0.5%
-              on Pro). Subscription fees for paid plans are billed monthly or annually.
+              percentage of each completed booking transaction:
+              <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
+                <li>Free plan: 4% platform fee on completed bookings</li>
+                <li>Starter ($79/month): 2% platform fee</li>
+                <li>Growth ($149/month): 1% platform fee</li>
+                <li>Pro ($249/month): 0.5% platform fee</li>
+                <li>Enterprise ($499/month): 0% platform fee</li>
+              </ul>
+              Subscription fees for paid plans are billed monthly.
             </p>
             <p className="mt-3">
               You are responsible for any taxes applicable to your bookings. ReservKit is not

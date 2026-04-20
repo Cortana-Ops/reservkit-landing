@@ -99,7 +99,7 @@ export default function BoatRentalSoftware() {
                 revenue, and compliance status in one dashboard.
               </p>
               <p>
-                ReservKit charges 2% on Starter — a fraction of what FareHarbor, Peek Pro, and
+                ReservKit is free to start — 4% fee, or from $79/month for 2% on Starter. A fraction of what FareHarbor, Peek Pro, and
                 similar platforms charge. For a high-revenue charter operation, that difference
                 compounds quickly.
               </p>

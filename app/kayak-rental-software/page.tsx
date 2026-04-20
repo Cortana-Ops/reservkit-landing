@@ -95,8 +95,8 @@ export default function KayakRentalSoftware() {
                 full dashboard showing upcoming rentals, staff assignments, and revenue reports.
               </p>
               <p>
-                Compared to legacy platforms like FareHarbor, ReservKit charges 2% on the Starter
-                plan — significantly lower than the 6%+ that most competitors take. More of each
+                Compared to legacy platforms like FareHarbor, ReservKit is free to start — 4% fee, or from $79/month
+                for 2% on the Starter plan. Significantly lower than the 6%+ that most competitors take. More of each
                 booking stays in your business.
               </p>
             </div>

@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const APP_URL = "https://app.reservkit.com";
 
 const comparison = [
-  { feature: "Monthly cost", rezdy: "From $49/mo (Starter)", reservkit: "$0 — free to start" },
-  { feature: "Per-booking commission", rezdy: "0% own channel, 3–6% via agents", reservkit: "2% flat (own channel)" },
+  { feature: "Monthly cost", rezdy: "From $49/mo (Starter)", reservkit: "$0 — Free plan + 14-day trial" },
+  { feature: "Per-booking commission", rezdy: "0% own channel, 3–6% via agents", reservkit: "4% Free / 2% Starter ($79/mo)" },
   { feature: "Setup complexity", rezdy: "Complex — steep learning curve", reservkit: "5-minute self-serve setup" },
   { feature: "Digital waivers", rezdy: "Add-on / third-party", reservkit: "Built in (Growth+)" },
   { feature: "Stripe Connect", rezdy: "Stripe or Braintree", reservkit: "Stripe Connect direct" },
@@ -95,13 +95,13 @@ export default function RezdyAlternative() {
             <div className="prose prose-slate max-w-none space-y-4 text-slate-700">
               <p>
                 Rezdy is a capable platform but comes with a learning curve, mandatory monthly
-                subscription starting at $49, and additional costs for features like waivers. For
+                subscription starting at $79, and additional costs for features like waivers. For
                 smaller rental and tour businesses, that overhead adds up before you&apos;ve taken a
                 single booking.
               </p>
               <p>
-                ReservKit starts at $0 — you only pay a 2% fee on completed bookings. There&apos;s
-                no subscription until you choose to upgrade. Setup takes about 5 minutes, not days.
+                ReservKit&apos;s Free plan is $0 with a 4% fee. Upgrade to Starter ($79/mo) for 2%.
+                There&apos;s no subscription until you choose to upgrade. Setup takes about 5 minutes, not days.
                 And every feature — from waivers to staff scheduling to customer portals — is built
                 into the platform, not sold as an add-on.
               </p>

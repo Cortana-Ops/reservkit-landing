@@ -34,7 +34,7 @@ const sections = [
   {
     icon: CreditCard,
     title: "Payments",
-    description: "Configure Stripe Connect, set pricing, deposits, and understand the platform fee structure.",
+    description: "Configure Stripe Connect, set pricing, deposits, and understand the platform fee structure. Free plan: 4% fee. Starter ($79/mo): 2%.",
     topics: ["Connecting Stripe", "Setting prices and deposits", "Issuing refunds", "Understanding platform fees", "Coupon codes"],
   },
   {

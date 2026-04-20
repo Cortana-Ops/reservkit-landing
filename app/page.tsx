@@ -24,7 +24,7 @@ const APP_URL = "https://app.reservkit.com";
 const faqItems = [
   {
     q: "Is ReservKit free to start?",
-    a: "Yes — ReservKit is free to start with no credit card required. You only pay a 2% platform fee on completed bookings on the Starter plan.",
+    a: "Yes — sign up and get a 14-day free trial of our Growth plan, no credit card required. After your trial, you stay on the Free plan: 50 bookings/month with a 4% platform fee. Upgrade any time to unlock waivers, staff tools, and lower fees.",
   },
   {
     q: "How does payment work for my customers?",
@@ -44,7 +44,7 @@ const faqItems = [
   },
   {
     q: "What is the platform fee and how does it compare?",
-    a: "ReservKit charges 2% on the Starter plan, 1% on Growth, and 0.5% on Pro. FareHarbor charges 6% or more. You keep significantly more revenue with ReservKit.",
+    a: "Free plan: 4% per booking. Starter ($79/mo): 2%. Growth ($149/mo): 1%. Pro ($249/mo): 0.5%. Enterprise: 0%. FareHarbor charges 6% or more — you keep significantly more revenue with ReservKit.",
   },
   {
     q: "Can I manage multiple business locations?",
@@ -69,8 +69,8 @@ const faqSchema = {
 // ── Stats ─────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "Free", label: "to start — no credit card" },
-  { value: "2%", label: "platform fee vs 6%+ elsewhere" },
+  { value: "Free", label: "14-day trial, then free forever" },
+  { value: "4%", label: "free tier fee — or $79/mo for 2%" },
   { value: "5 min", label: "to go live with online booking" },
   { value: "Mobile-first", label: "designed for the field" },
 ];
@@ -377,49 +377,68 @@ const personas = [
 
 const tiers = [
   {
-    name: "Starter",
+    name: "Free",
     price: "$0",
     period: "/mo",
-    description: "Get started for free. Pay only when you get paid.",
+    description: "Start free. 14-day Growth trial on signup — no credit card.",
+    platformFee: "4% platform fee",
+    features: [
+      "50 bookings/month",
+      "Public booking widget",
+      "Customer management",
+      "Email confirmations",
+      "Stripe payment processing",
+    ],
+    cta: "Start free trial",
+    highlight: false,
+  },
+  {
+    name: "Starter",
+    price: "$79",
+    period: "/mo",
+    description: "Single-unit operators under $100K/yr.",
     platformFee: "2% platform fee",
     features: [
-      "Unlimited bookings",
-      "Online payments via Stripe",
-      "Customer confirmation emails",
-      "Basic reporting",
-      "Up to 2 team members",
+      "200 bookings/month",
+      "Everything in Free",
+      "Reports & analytics",
+      "Digital waivers",
+      "Staff scheduling",
+      "SMS reminders",
     ],
-    cta: "Get started free",
+    cta: "Start free trial",
     highlight: false,
   },
   {
     name: "Growth",
-    price: "$49",
+    price: "$149",
     period: "/mo",
-    description: "For businesses scaling up. Lower fees, more power.",
+    description: "3–10 units, $100K–$500K/yr. Most popular.",
     platformFee: "1% platform fee",
     features: [
+      "Unlimited bookings",
       "Everything in Starter",
-      "Digital waivers",
-      "Staff scheduling",
-      "SMS reminders",
-      "Up to 10 team members",
+      "Priced add-ons & upsells",
+      "Broadcast SMS (Twilio)",
+      "Coupon codes & promotions",
+      "Damage deposit management",
     ],
     cta: "Start free trial",
     highlight: true,
   },
   {
     name: "Pro",
-    price: "$149",
+    price: "$249",
     period: "/mo",
-    description: "For high-volume operators who need the lowest fees.",
+    description: "10+ units, $500K+/yr. Multi-location operators.",
     platformFee: "0.5% platform fee",
     features: [
+      "Unlimited bookings",
       "Everything in Growth",
-      "Custom email domain",
-      "Dynamic pricing rules",
-      "Priority support",
-      "Unlimited team members",
+      "Multi-location support",
+      "Custom booking domain",
+      "Advanced analytics",
+      "Priority support (4h response)",
     ],
     cta: "Start free trial",
     highlight: false,
@@ -683,10 +702,10 @@ export default function Home() {
                 Simple, transparent pricing
               </h2>
               <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-                Start free. Upgrade as you grow. No surprise fees. Save 20% with annual billing.
+                Start free. Upgrade as you grow. No surprise fees.
               </p>
             </div>
-            <div className="grid sm:grid-cols-3 gap-6 items-start mt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start mt-12">
               {tiers.map((tier) => (
                 <div
                   key={tier.name}

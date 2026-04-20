@@ -89,7 +89,7 @@ export default function TourOperatorSoftware() {
               <p>
                 Online travel agencies like Viator and TripAdvisor Experiences take 20–30% of each
                 booking. Platforms like FareHarbor take 6%+. ReservKit gives you a direct booking
-                platform with a 2% fee on Starter — keeping dramatically more revenue in your
+                platform — free to start with a 4% fee, or from $79/month for 2% on Starter — keeping dramatically more revenue in your
                 business.
               </p>
               <p>
