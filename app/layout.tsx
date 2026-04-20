@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     google: "h40_sJX1Bf3VAdnC_XZ1ReQJpJjvavm59de2vbwLFFI",
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.png?v=2",
+    shortcut: "/logo.png?v=2",
+    apple: "/logo.png?v=2",
   },
 };
 
