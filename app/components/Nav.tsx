@@ -57,7 +57,7 @@ export default function Nav() {
             Log in
           </Link>
           <Link
-            href={`${APP_URL}/signup`}
+            href={`${APP_URL}/login?signup=true`}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-5 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors shadow-sm"
           >
             Start free <ArrowRight className="h-3.5 w-3.5" />
@@ -97,7 +97,7 @@ export default function Nav() {
               Log in
             </Link>
             <Link
-              href={`${APP_URL}/signup`}
+              href={`${APP_URL}/login?signup=true`}
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
             >

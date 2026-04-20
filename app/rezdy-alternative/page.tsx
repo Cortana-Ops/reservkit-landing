@@ -45,7 +45,7 @@ export default function RezdyAlternative() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href={`${APP_URL}/signup`}
+                href={`${APP_URL}/login?signup=true`}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg"
               >
                 Start free — no credit card <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -122,7 +122,7 @@ export default function RezdyAlternative() {
             </h2>
             <p className="text-slate-400 mb-8">No subscription required. 5-minute setup.</p>
             <Link
-              href={`${APP_URL}/signup`}
+              href={`${APP_URL}/login?signup=true`}
               className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors"
             >
               Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />

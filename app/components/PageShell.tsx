@@ -25,7 +25,7 @@ export function PageShell({ children }: PageShellProps) {
             />
           </Link>
           <Link
-            href={`${APP_URL}/signup`}
+            href={`${APP_URL}/login?signup=true`}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >
             Start free <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

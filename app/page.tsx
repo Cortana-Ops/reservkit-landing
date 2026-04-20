@@ -18,6 +18,7 @@ import {
 import Nav from "./components/Nav";
 
 const APP_URL = "https://app.reservkit.com";
+const SIGNUP_URL = `${APP_URL}/login?signup=true`;
 
 // ── FAQ schema for rich results ───────────────────────────────────────────────
 
@@ -492,7 +493,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
-                  href={`${APP_URL}/signup`}
+                  href={SIGNUP_URL}
                   className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg shadow-amber/30"
                 >
                   Start Free Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -648,7 +649,7 @@ export default function Home() {
             </div>
             <div className="mt-12 text-center">
               <Link
-                href={`${APP_URL}/signup`}
+                href={SIGNUP_URL}
                 className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-navy-light transition-colors shadow-lg"
               >
                 Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -765,7 +766,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <Link
-                    href={`${APP_URL}/signup`}
+                    href={SIGNUP_URL}
                     className={`mt-8 flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
                       tier.highlight
                         ? "bg-amber text-navy hover:bg-amber-dark"
@@ -861,7 +862,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href={`${APP_URL}/signup`}
+                href={SIGNUP_URL}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg shadow-amber/20"
               >
                 Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -967,7 +968,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href={`${APP_URL}/signup`}
+                    href={SIGNUP_URL}
                     className="hover:text-white transition-colors"
                   >
                     Start free
