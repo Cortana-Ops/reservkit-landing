@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: hsl(222 47% 11%);
+  --color-navy-light: hsl(222 47% 18%);
+  --color-amber: hsl(36 100% 50%);
+  --color-amber-light: hsl(36 100% 95%);
+  --color-amber-dark: hsl(36 100% 40%);
+  --color-surface: hsl(220 20% 97%);
+  --color-border: hsl(220 13% 91%);
+  --radius: 0.625rem;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #0f172a;

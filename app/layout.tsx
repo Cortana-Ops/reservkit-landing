@@ -13,15 +13,107 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ReservKit — Booking Software for Rental & Experience Businesses",
+  metadataBase: new URL("https://reservkit.com"),
+  title: {
+    default: "ReservKit — Booking Software for Rental & Experience Businesses",
+    template: "%s — ReservKit",
+  },
   description:
-    "Online booking, payments, waivers, staff scheduling, and reports — built for rental operators, tour guides, and experience businesses.",
+    "Online booking, payments, waivers, staff scheduling, and reports — built for rental operators, tour guides, and experience businesses. Free to start.",
+  keywords: [
+    "booking software",
+    "rental booking software",
+    "activity booking software",
+    "tour operator software",
+    "experience business booking",
+    "online reservation system",
+    "waiver management software",
+    "boat rental software",
+    "kayak rental software",
+    "outdoor activity booking",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  alternates: { canonical: "https://reservkit.com" },
   openGraph: {
-    title: "ReservKit",
-    description: "Booking platform built for rental operators and experience businesses.",
+    title: "ReservKit — Booking Software for Rental & Experience Businesses",
+    description:
+      "Online booking, payments, waivers, and staff tools built for rental operators and experience businesses. Free to start.",
     url: "https://reservkit.com",
     siteName: "ReservKit",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ReservKit — Booking Software for Rental & Experience Businesses",
+    description:
+      "Online booking, payments, waivers, and staff tools for rental operators. Free to start.",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  verification: {
+    google: "REPLACE_WITH_GSC_CODE",
+  },
+};
+
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "ReservKit",
+  description:
+    "Online booking, payments, waivers, staff scheduling, and reports for rental operators and experience businesses.",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web Browser",
+  featureList: [
+    "Online Booking",
+    "Stripe Payments",
+    "Digital Waivers",
+    "Staff Scheduling",
+    "Reports & Analytics",
+    "Customer Portal",
+    "SMS Reminders",
+    "Check-In Management",
+    "Dynamic Pricing",
+    "Coupon Codes",
+  ],
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  url: "https://reservkit.com",
+  screenshot: "https://reservkit.com/logo.png",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ReservKit",
+  url: "https://reservkit.com",
+  logo: "https://reservkit.com/logo.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@reservkit.com",
+    contactType: "customer support",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://twitter.com/reservkit",
+    "https://linkedin.com/company/reservkit",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ReservKit",
+  url: "https://reservkit.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://reservkit.com/docs?q={search_term_string}",
+    "query-input": "required name=search_term_string",
   },
 };
 
@@ -32,6 +124,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(softwareApplicationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>

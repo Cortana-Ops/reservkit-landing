@@ -1,30 +1,123 @@
-import Link from "next/link";
-import { CalendarDays } from "lucide-react";
+import type { Metadata } from "next";
+import { PageShell } from "../components/PageShell";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms and conditions for using the ReservKit booking platform.",
+  alternates: { canonical: "https://reservkit.com/terms" },
+};
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-white">
-      <header className="border-b border-slate-200 px-6 py-4">
-        <Link href="/" className="flex items-center gap-2 w-fit">
-          <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center">
-            <CalendarDays className="h-3.5 w-3.5 text-white" />
-          </div>
-          <span className="text-sm font-semibold text-slate-700">ReservKit</span>
-        </Link>
-      </header>
-      <main className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-3xl font-bold text-slate-900 mb-6">Terms of Service</h1>
-        <p className="text-slate-600 mb-4">Last updated: April 2026</p>
-        <p className="text-slate-600 leading-relaxed mb-4">
-          By using ReservKit, you agree to use the platform in accordance with applicable laws and these terms. You are responsible for the content you publish and the bookings you manage through the platform.
-        </p>
-        <p className="text-slate-600 leading-relaxed mb-4">
-          ReservKit provides software as a service and is not responsible for the activities, services, or obligations of operators using the platform.
-        </p>
-        <p className="text-slate-600 leading-relaxed">
-          For questions, contact us at <a href="mailto:hello@reservkit.com" className="text-slate-900 underline">hello@reservkit.com</a>.
-        </p>
+    <PageShell>
+      <main className="mx-auto max-w-3xl px-6 py-16">
+        <h1 className="text-3xl font-bold text-navy mb-2">Terms of Service</h1>
+        <p className="text-sm text-slate-500 mb-10">Last updated: April 2026</p>
+
+        <div className="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed">
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Acceptance of terms</h2>
+            <p>
+              By accessing or using ReservKit, you agree to be bound by these Terms of Service and
+              our Privacy Policy. If you do not agree to these terms, do not use the platform.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Use of the platform</h2>
+            <p>
+              ReservKit provides booking management software as a service. You are responsible for:
+            </p>
+            <ul className="list-disc list-inside space-y-1.5 text-sm mt-2">
+              <li>All content you publish, including activity descriptions and pricing</li>
+              <li>The accuracy of your business information</li>
+              <li>Compliance with applicable laws in your jurisdiction</li>
+              <li>Honoring bookings made through the platform</li>
+              <li>Your own liability waiver content and compliance requirements</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Payments and fees</h2>
+            <p>
+              ReservKit uses Stripe for payment processing. Platform fees are charged as a
+              percentage of each completed booking transaction (2% on Starter, 1% on Growth, 0.5%
+              on Pro). Subscription fees for paid plans are billed monthly or annually.
+            </p>
+            <p className="mt-3">
+              You are responsible for any taxes applicable to your bookings. ReservKit is not
+              responsible for chargebacks, refund disputes, or payment failures between operators
+              and their customers.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">
+              Platform responsibility
+            </h2>
+            <p>
+              ReservKit provides software as a service and is not a party to the transactions
+              between operators and their customers. We are not responsible for the quality,
+              safety, legality, or fulfillment of activities offered through the platform.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Prohibited use</h2>
+            <p>You may not use ReservKit to:</p>
+            <ul className="list-disc list-inside space-y-1.5 text-sm mt-2">
+              <li>Engage in fraudulent, deceptive, or illegal activity</li>
+              <li>Violate any applicable law or regulation</li>
+              <li>Harm, harass, or deceive customers or other users</li>
+              <li>Reverse-engineer, copy, or create derivative works from the platform</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Termination</h2>
+            <p>
+              We reserve the right to suspend or terminate accounts that violate these terms,
+              engage in fraudulent activity, or cause harm to customers or the platform. You may
+              cancel your account at any time.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">
+              Limitation of liability
+            </h2>
+            <p>
+              To the maximum extent permitted by law, ReservKit is not liable for indirect,
+              incidental, or consequential damages arising from your use of the platform. Our
+              total liability in any matter is limited to the fees you paid in the three months
+              preceding the claim.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Changes to these terms</h2>
+            <p>
+              We may update these terms from time to time. Continued use of the platform after
+              changes constitutes acceptance of the revised terms. We will notify active users of
+              material changes by email.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Contact</h2>
+            <p>
+              For questions about these terms, contact us at{" "}
+              <a
+                href="mailto:hello@reservkit.com"
+                className="text-amber font-medium hover:text-amber-dark transition-colors"
+              >
+                hello@reservkit.com
+              </a>
+              .
+            </p>
+          </section>
+        </div>
       </main>
-    </div>
+    </PageShell>
   );
 }
