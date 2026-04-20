@@ -976,10 +976,10 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://feedback.reservkit.com"
+                    href="/roadmap"
                     className="hover:text-white transition-colors"
                   >
-                    Roadmap &amp; Feedback
+                    Roadmap
                   </a>
                 </li>
               </ul>

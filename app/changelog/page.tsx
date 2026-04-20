@@ -142,12 +142,12 @@ export default function Changelog() {
           <p className="text-sm text-slate-600 mb-4">
             Vote on upcoming features or submit your own ideas.
           </p>
-          <a
-            href="https://feedback.reservkit.com"
+          <Link
+            href="/roadmap"
             className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
           >
-            View Roadmap & Feedback
-          </a>
+            View Roadmap
+          </Link>
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500">

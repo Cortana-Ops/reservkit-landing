@@ -22,36 +22,42 @@ const sections = [
   {
     icon: BookOpen,
     title: "Getting Started",
+    href: "/docs/getting-started",
     description: "Set up your ReservKit account, create your first activity, and take your first booking.",
     topics: ["Create an account", "Set up your organization", "Add your first activity", "Connect Stripe payments", "Share your booking link"],
   },
   {
     icon: CalendarDays,
     title: "Bookings & Availability",
+    href: "/docs/bookings-availability",
     description: "Manage your availability calendar, handle booking requests, and process cancellations.",
     topics: ["Setting availability windows", "Managing time slots", "Handling cancellations", "Booking status overview", "Check-in process"],
   },
   {
     icon: CreditCard,
     title: "Payments",
+    href: "/docs/payments",
     description: "Configure Stripe Connect, set pricing, deposits, and understand the platform fee structure. Free plan: 4% fee. Starter ($79/mo): 2%.",
     topics: ["Connecting Stripe", "Setting prices and deposits", "Issuing refunds", "Understanding platform fees", "Coupon codes"],
   },
   {
     icon: FileSignature,
     title: "Waivers",
+    href: "/docs/waivers",
     description: "Create liability waiver templates and configure per-guest signing requirements.",
     topics: ["Creating waiver templates", "Configuring required fields", "Guest signing flow", "Tracking waiver compliance", "Downloading signed waivers"],
   },
   {
     icon: Users,
     title: "Staff",
+    href: "/docs/staff",
     description: "Invite team members, assign roles, and manage scheduling from the staff portal.",
     topics: ["Inviting team members", "Staff roles and permissions", "Assigning staff to bookings", "Staff schedule view", "Staff task management"],
   },
   {
     icon: BarChart3,
     title: "Reports & Analytics",
+    href: "/docs/reports",
     description: "Track revenue, booking volume, and guest counts across your activities.",
     topics: ["Revenue reports", "Booking volume trends", "Guest count tracking", "Filtering by date range", "Exporting data"],
   },
@@ -75,14 +81,15 @@ export default function Docs() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {sections.map((section) => (
-            <div
+            <Link
               key={section.title}
-              className="rounded-2xl border border-[var(--color-border)] bg-white p-6 hover:border-amber/40 hover:shadow-sm transition-all"
+              href={section.href}
+              className="group rounded-2xl border border-[var(--color-border)] bg-white p-6 hover:border-amber/40 hover:shadow-sm transition-all block"
             >
               <div className="h-10 w-10 rounded-xl bg-[var(--color-surface)] flex items-center justify-center mb-4">
                 <section.icon className="h-5 w-5 text-navy" aria-hidden="true" />
               </div>
-              <h2 className="text-base font-bold text-navy mb-2">{section.title}</h2>
+              <h2 className="text-base font-bold text-navy mb-2 group-hover:text-amber transition-colors">{section.title}</h2>
               <p className="text-sm text-slate-600 leading-relaxed mb-4">{section.description}</p>
               <ul className="space-y-1.5">
                 {section.topics.map((topic) => (
@@ -92,7 +99,7 @@ export default function Docs() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
 
