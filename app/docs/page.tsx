@@ -4,7 +4,7 @@ import { PageShell } from "../components/PageShell";
 import { ArrowRight, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Documentation",
+  title: "Documentation & Guides",
   description: "Get started with ReservKit — guides for rental operators and experience businesses.",
   alternates: { canonical: "https://reservkit.com/docs" },
 };

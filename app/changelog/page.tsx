@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 
 export const metadata: Metadata = {
-  title: "Changelog",
+  title: "Changelog & Release Notes",
   description: "What's new in ReservKit — feature releases, improvements, and fixes.",
   alternates: { canonical: "https://reservkit.com/changelog" },
 };
@@ -142,12 +142,26 @@ export default function Changelog() {
           <p className="text-sm text-slate-600 mb-4">
             Vote on upcoming features or submit your own ideas.
           </p>
-          <Link
-            href="/roadmap"
-            className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
-          >
-            View Roadmap
-          </Link>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link
+              href="/roadmap"
+              className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-navy-light transition-colors"
+            >
+              View Roadmap
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-2.5 text-sm font-semibold text-navy hover:bg-slate-50 transition-colors"
+            >
+              Read the Blog
+            </Link>
+            <Link
+              href="/docs"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-2.5 text-sm font-semibold text-navy hover:bg-slate-50 transition-colors"
+            >
+              Documentation
+            </Link>
+          </div>
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500">

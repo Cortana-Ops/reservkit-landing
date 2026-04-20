@@ -17,16 +17,51 @@ const comparison = [
   { feature: "Monthly cost", rezdy: "From $49/mo (Starter)", reservkit: "$0 — Free plan + 14-day trial" },
   { feature: "Per-booking commission", rezdy: "0% own channel, 3–6% via agents", reservkit: "4% Free / 2% Starter ($79/mo)" },
   { feature: "Setup complexity", rezdy: "Complex — steep learning curve", reservkit: "5-minute self-serve setup" },
-  { feature: "Digital waivers", rezdy: "Add-on / third-party", reservkit: "Built in (Growth+)" },
+  { feature: "Digital waivers", rezdy: "Add-on / third-party", reservkit: "Built in (all plans)" },
   { feature: "Stripe Connect", rezdy: "Stripe or Braintree", reservkit: "Stripe Connect direct" },
   { feature: "Staff scheduling", rezdy: "Basic", reservkit: "Full staff portal + scheduling" },
   { feature: "Mobile experience", rezdy: "Functional but dated", reservkit: "Mobile-first design" },
   { feature: "Customer portal", rezdy: "Limited", reservkit: "Full customer portal" },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is ReservKit free to start — unlike Rezdy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. ReservKit has a Free plan with no monthly fee — just a 4% platform fee per booking. Rezdy requires a paid subscription starting at $49/month. Every new ReservKit account also gets a free 14-day Growth plan trial.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does ReservKit include digital waivers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — digital liability waivers are built into all ReservKit plans, including the Free plan. Guests sign per-person after booking via a unique link. Rezdy requires a third-party add-on for waivers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does ReservKit pricing compare to Rezdy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Rezdy starts at $49/month for its Starter plan. ReservKit starts at $0 with a 4% fee per booking, or $79/month (Starter) to reduce the fee to 2%. For lower-volume operators, ReservKit's Free plan typically costs less overall.",
+      },
+    },
+  ],
+};
+
 export default function RezdyAlternative() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -95,7 +130,7 @@ export default function RezdyAlternative() {
             <div className="prose prose-slate max-w-none space-y-4 text-slate-700">
               <p>
                 Rezdy is a capable platform but comes with a learning curve, mandatory monthly
-                subscription starting at $79, and additional costs for features like waivers. For
+                subscription starting at $49/mo, and additional costs for features like waivers. For
                 smaller rental and tour businesses, that overhead adds up before you&apos;ve taken a
                 single booking.
               </p>

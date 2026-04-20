@@ -4,9 +4,18 @@ import { PageShell } from "../components/PageShell";
 import { ArrowRight, Rss, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — Rental Operator Guides & Tips",
   description: "Guides, tips, and stories for rental operators and experience businesses using ReservKit.",
   alternates: { canonical: "https://reservkit.com/blog" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ReservKit", item: "https://reservkit.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://reservkit.com/blog" },
+  ],
 };
 
 const articles = [
@@ -77,6 +86,10 @@ const articles = [
 export default function Blog() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <main className="mx-auto max-w-3xl px-6 py-16">
         <div className="flex items-center gap-3 mb-12">
           <div className="h-10 w-10 rounded-xl bg-[var(--color-surface)] flex items-center justify-center">
@@ -124,7 +137,16 @@ export default function Blog() {
           ))}
         </div>
 
-        <div className="mt-20 rounded-2xl bg-navy p-8 text-center">
+        <div className="mt-8 flex items-center justify-center gap-6 text-sm text-slate-500">
+          <Link href="/changelog" className="hover:text-navy transition-colors">
+            Changelog →
+          </Link>
+          <Link href="/roadmap" className="hover:text-navy transition-colors">
+            Roadmap →
+          </Link>
+        </div>
+
+        <div className="mt-8 rounded-2xl bg-navy p-8 text-center">
           <h2 className="text-xl font-bold text-white mb-2">Ready to try ReservKit?</h2>
           <p className="text-slate-400 text-sm mb-5">
             Free plan — 50 bookings/month, 4% fee. 14-day Growth trial included.

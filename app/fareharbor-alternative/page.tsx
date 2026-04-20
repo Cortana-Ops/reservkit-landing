@@ -6,7 +6,7 @@ import { PageShell } from "../components/PageShell";
 export const metadata: Metadata = {
   title: "Best FareHarbor Alternative in 2026 — ReservKit",
   description:
-    "Switch from FareHarbor to ReservKit — lower platform fees (2% vs 6%+), modern UX, digital waivers, and no contract. Free to start with a 14-day trial.",
+    "Switch from FareHarbor to ReservKit — lower platform fees (from 4% free vs 6%+), modern UX, digital waivers, and no contract. Free to start with a 14-day trial.",
   keywords: ["FareHarbor alternative", "FareHarbor competitor", "FareHarbor replacement", "cheaper than FareHarbor"],
   alternates: { canonical: "https://reservkit.com/fareharbor-alternative" },
 };
@@ -18,7 +18,7 @@ const comparison = [
   { feature: "Monthly subscription", fareharbor: "Required (varies)", reservkit: "$0 — Free plan (50 bookings/mo)" },
   { feature: "Contract required", fareharbor: "Yes — annual contract", reservkit: "No contract" },
   { feature: "Setup fee", fareharbor: "Yes", reservkit: "None" },
-  { feature: "Digital waivers", fareharbor: "Add-on cost", reservkit: "Included (Growth+)" },
+  { feature: "Digital waivers", fareharbor: "Add-on cost", reservkit: "Included (all plans)" },
   { feature: "Staff scheduling", fareharbor: "Limited", reservkit: "Full scheduling + portal" },
   { feature: "Mobile app experience", fareharbor: "Dated UI", reservkit: "Mobile-first design" },
   { feature: "Stripe Connect", fareharbor: "No — FareHarbor holds funds", reservkit: "Yes — direct to your bank" },
@@ -45,9 +45,44 @@ const reasons = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do ReservKit and FareHarbor platform fees compare?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "FareHarbor charges 6% or more per booking — some operators report up to 9%. ReservKit's Free plan charges 4% per booking with no monthly fee. The Starter plan ($79/month) drops the fee to 2%. On $10,000/month in bookings, that's $400–$700 more in your pocket every month.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does ReservKit require a contract like FareHarbor?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. ReservKit is month-to-month on all paid plans and free to start. FareHarbor typically requires an annual contract and often charges setup fees. You can cancel ReservKit at any time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I switch from FareHarbor to ReservKit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Create a free ReservKit account, set up your activities (takes about 5 minutes), and connect Stripe to receive direct payouts. You can run both platforms in parallel during the transition so you never miss a booking.",
+      },
+    },
+  ],
+};
+
 export default function FareHarborAlternative() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">

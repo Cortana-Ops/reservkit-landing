@@ -26,9 +26,44 @@ const features = [
   "Revenue reports by tour and date range",
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does ReservKit include for tour operators?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit includes branded booking pages per activity, Stripe payments, per-guest digital waivers, availability calendar, staff and guide scheduling, add-on upsells, automatic confirmation and reminder emails, customer portal, and revenue reports.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does ReservKit cost for a tour operator?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit has a Free plan with no monthly fee and a 4% fee per booking. The Starter plan ($79/month) reduces the fee to 2%. Every new account gets a free 14-day Growth trial. No contract or setup fee.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can tour operators collect deposits and digital waivers with ReservKit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Set any deposit amount to collect at booking, with the balance due at check-in. Digital liability waivers are included on all plans — each guest signs per-person after booking via an automated link.",
+      },
+    },
+  ],
+};
+
 export default function TourOperatorSoftware() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">

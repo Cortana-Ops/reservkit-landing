@@ -26,9 +26,44 @@ const features = [
   "Revenue and booking reports",
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What features does ReservKit include for boat rental businesses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit includes online booking, Stripe Connect payments, deposit collection, per-guest digital liability waivers, vessel capacity controls, duration-based pricing, captain and staff scheduling, SMS reminders, and revenue reports.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does ReservKit cost for a boat rental or charter business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit has a Free plan with no monthly fee and a 4% per-booking fee. The Starter plan is $79/month with a 2% fee. Every new account gets a free 14-day Growth trial with no credit card required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does ReservKit support deposits and digital waivers for boat rentals?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You can require a deposit at booking and collect the balance at check-in. Digital liability waivers are included on all plans — each guest signs a unique waiver link sent automatically after booking.",
+      },
+    },
+  ],
+};
+
 export default function BoatRentalSoftware() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">

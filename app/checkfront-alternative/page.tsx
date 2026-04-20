@@ -17,16 +17,51 @@ const comparison = [
   { feature: "Starting price", checkfront: "$125+/mo (Soho plan)", reservkit: "$0 — Free plan + 14-day trial" },
   { feature: "Platform fee", checkfront: "None, but high subscription", reservkit: "4% (Free) or 2% on Starter ($79/mo)" },
   { feature: "Contract", checkfront: "Annual plans required for best rates", reservkit: "No contract, month-to-month" },
-  { feature: "Digital waivers", checkfront: "Add-on", reservkit: "Built in (Growth+)" },
+  { feature: "Digital waivers", checkfront: "Add-on", reservkit: "Built in (all plans)" },
   { feature: "Stripe Connect", checkfront: "Stripe or Braintree", reservkit: "Stripe Connect — direct payouts" },
   { feature: "Mobile experience", checkfront: "Desktop-first", reservkit: "Mobile-first design" },
   { feature: "Setup time", checkfront: "Days with onboarding", reservkit: "5-minute self-serve" },
-  { feature: "Staff scheduling", checkfront: "Add-on (Checkfront+)", reservkit: "Included (Growth+)" },
+  { feature: "Staff scheduling", checkfront: "Add-on (Checkfront+)", reservkit: "Included (all plans)" },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Does ReservKit have a free plan — unlike Checkfront?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. ReservKit offers a Free plan with no monthly fee (4% per booking). Checkfront starts at $125+/month. Every new ReservKit account also gets a free 14-day Growth plan trial with no credit card required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does ReservKit support Stripe Connect like Checkfront?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — ReservKit uses Stripe Connect so booking payments go directly to your bank account, typically within 2 business days. Both ReservKit and Checkfront support Stripe, but ReservKit's setup takes minutes vs days of onboarding.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are waivers and staff scheduling included in ReservKit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — digital waivers and full staff scheduling are included in all ReservKit plans, including the Free plan. Checkfront requires paid add-ons for both features.",
+      },
+    },
+  ],
+};
 
 export default function CheckfrontAlternative() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">

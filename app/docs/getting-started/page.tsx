@@ -4,7 +4,7 @@ import { PageShell } from "../../components/PageShell";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Getting Started",
+  title: "Getting Started Guide",
   description: "Set up your ReservKit account, create your first activity, connect Stripe, and take your first booking in under 30 minutes.",
   alternates: { canonical: "https://reservkit.com/docs/getting-started" },
 };

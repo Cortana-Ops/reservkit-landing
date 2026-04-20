@@ -52,13 +52,12 @@ export const metadata: Metadata = {
     title: "ReservKit — Booking Software for Rental & Experience Businesses",
     description:
       "Online booking, payments, waivers, and staff tools for rental operators. Free to start.",
+    images: ["https://reservkit.com/opengraph-image.png"],
   },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
-  },
-  verification: {
-    google: "REPLACE_WITH_GSC_CODE",
+    apple: "/apple-icon",
   },
 };
 
@@ -84,7 +83,6 @@ const softwareApplicationSchema = {
   ],
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   url: "https://reservkit.com",
-  screenshot: "https://reservkit.com/logo.png",
 };
 
 const organizationSchema = {
@@ -110,11 +108,6 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "ReservKit",
   url: "https://reservkit.com",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://reservkit.com/docs?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
 };
 
 export default function RootLayout({

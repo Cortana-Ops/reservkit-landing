@@ -24,9 +24,44 @@ const features = [
   "Check-in and guest management from your phone",
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What features does ReservKit include for kayak rental businesses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit includes online booking, Stripe payments, per-guest digital liability waivers, real-time availability calendar, duration-based pricing, staff scheduling, SMS reminders, and check-in management — all in one platform.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does ReservKit cost for a kayak rental business?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ReservKit has a Free plan with no monthly fee — just a 4% platform fee per booking. The Starter plan is $79/month with a 2% fee. Every new account gets a free 14-day Growth trial. No contract required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I collect deposits and require waivers for kayak rentals?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You can collect full payment or a deposit at booking, with the balance due at check-in. Digital liability waivers are included on all plans — guests sign per-person via a unique link after booking.",
+      },
+    },
+  ],
+};
+
 export default function KayakRentalSoftware() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main>
         {/* Hero */}
         <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">

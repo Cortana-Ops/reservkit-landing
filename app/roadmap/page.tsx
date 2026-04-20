@@ -4,7 +4,7 @@ import { PageShell } from "../components/PageShell";
 import { CheckCircle2, Zap, Clock, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Roadmap",
+  title: "Product Roadmap",
   description: "See what we've shipped, what's in progress, and what's coming next for ReservKit — the booking platform for rental operators and experience businesses.",
   alternates: { canonical: "https://reservkit.com/roadmap" },
 };
@@ -19,26 +19,22 @@ const breadcrumbSchema = {
 };
 
 const shipped = [
-  { label: "v1.0 — Core platform", items: ["Online booking page with Stripe payments", "Activity management with time slots", "Customer booking confirmation emails", "Booking management dashboard"] },
-  { label: "v1.1 — Staff & waivers", items: ["Digital liability waivers (per-guest signing)", "Staff portal with role-based access", "Staff task management", "Calendar view for all bookings"] },
-  { label: "v1.2 — Payments & billing", items: ["Stripe Connect for direct payouts", "Deposits at booking, balance on arrival", "Coupon / discount codes", "Platform subscription billing (Starter, Growth, Pro)"] },
-  { label: "v1.3 — Customer experience", items: ["Customer portal for viewing past bookings", "Tipping at checkout", "Dynamic pricing tiers per group size", "Add-on products (equipment, upgrades)"] },
-  { label: "v1.4 — Free tier + mobile", items: ["Free plan (4% fee, 50 bookings/month)", "14-day Growth trial for all new accounts", "Full mobile responsive overhaul", "Stripe Connect OAuth flow fix"] },
+  { label: "Phase 1 — Core platform", items: ["Online booking page with Stripe payments", "Activity management with time slots", "Customer booking confirmation emails", "Booking management dashboard"] },
+  { label: "Phase 2 — Staff & waivers", items: ["Digital liability waivers (per-guest signing)", "Staff portal with role-based access", "Staff task management", "Calendar view for all bookings"] },
+  { label: "Phase 3 — Payments & billing", items: ["Stripe Connect for direct payouts", "Deposits at booking, balance on arrival", "Coupon / discount codes", "Platform subscription billing (Starter, Growth, Pro)"] },
+  { label: "Phase 4 — Customer experience", items: ["Customer portal for viewing past bookings", "Tipping at checkout", "Dynamic pricing tiers per group size", "Add-on products (equipment, upgrades)"] },
+  { label: "Phase 5 — Free tier, mobile & tools", items: ["Free plan (4% fee, 50 bookings/month)", "14-day Growth trial for all new accounts", "Full mobile responsive overhaul", "SMS reminders (24hr pre-trip, Growth plan+)", "Booking widget embed — iframe for your existing site", "Stripe billing portal — manage subscription in-app", "Automated review request emails post-trip"] },
 ];
 
 const inProgress = [
-  { title: "SMS reminders", description: "24-hour pre-trip text message reminder with waiver link. Powered by Twilio — configurable per organization." },
-  { title: "Booking widget embed", description: "Drop the ReservKit booking experience as an iframe on your existing website in under 2 minutes." },
-  { title: "Multi-location support", description: "Run multiple locations or brands under one login with org-level switching and consolidated reporting." },
-  { title: "Stripe billing portal self-service", description: "Let customers manage their own subscription from a branded Stripe portal — no support tickets needed." },
+  { title: "Multi-location consolidated reporting", description: "Operators with multiple locations or brands can already switch between organizations. Full cross-org analytics dashboard and consolidated revenue reporting is next." },
 ];
 
 const comingNext = [
-  { title: "Analytics & revenue forecasting", description: "Deeper reports — month-over-month trends, peak hour analysis, revenue per activity, and booking lead-time insights." },
-  { title: "Automated follow-up emails", description: "Post-trip review requests, re-booking nudges, and seasonal promotions sent automatically based on booking history." },
-  { title: "Group booking & capacity management", description: "Block-book multiple slots for large groups, corporate events, and tour packages with dynamic capacity rules." },
-  { title: "Public API", description: "REST API for connecting ReservKit to your own website, POS, or CRM. Full documentation included." },
-  { title: "Instagram DM booking", description: "Capture booking intent from Instagram DMs with automated keyword detection and smart response routing." },
+  { title: "Google Calendar & iCal sync", description: "Two-way sync with Google Calendar, Apple Calendar, and any iCal-compatible app — availability always in one place." },
+  { title: "FareHarbor / Rezdy import tool", description: "Migrate your existing activities, bookings, and customer history in one click. Switch without starting from scratch." },
+  { title: "Group booking & capacity blocks", description: "Block-book multiple slots for corporate events, tour packages, and large groups with dynamic capacity and pricing rules." },
+  { title: "Public REST API", description: "Connect ReservKit to your own website, POS, or CRM. Full developer documentation included." },
   { title: "Affiliate & referral tracking", description: "Give guides, influencers, and partners unique referral links with commission tracking built in." },
 ];
 
@@ -141,10 +137,18 @@ export default function Roadmap() {
           </Link>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 text-center space-y-3">
           <Link href="/changelog" className="text-sm text-slate-500 hover:text-navy transition-colors">
             View full changelog →
           </Link>
+          <div className="flex items-center justify-center gap-6 mt-3">
+            <Link href="/docs" className="text-sm text-slate-400 hover:text-navy transition-colors">
+              Explore the docs →
+            </Link>
+            <Link href="/blog" className="text-sm text-slate-400 hover:text-navy transition-colors">
+              Read the blog →
+            </Link>
+          </div>
         </div>
       </main>
     </PageShell>
