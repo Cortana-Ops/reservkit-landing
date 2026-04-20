@@ -54,9 +54,10 @@ export const metadata: Metadata = {
       "Online booking, payments, waivers, and staff tools for rental operators. Free to start.",
     images: ["https://reservkit.com/opengraph-image.png"],
   },
+  verification: {
+    google: "h40_sJX1Bf3VAdnC_XZ1ReQJpJjvavm59de2vbwLFFI",
+  },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
     apple: "/apple-icon",
   },
 };
