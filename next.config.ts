@@ -10,6 +10,5 @@ export default withSentryConfig(nextConfig, {
   project: "reservkit-landing",
   silent: !process.env.CI,
   widenClientFileUpload: true,
-  hideSourceMaps: true,
-  disableLogger: true,
+  sourcemaps: { disable: true },
 });
