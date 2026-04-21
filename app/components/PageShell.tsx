@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { TrackedLink } from "./TrackedLink";
 
 const APP_URL = "https://app.reservkit.com";
 
@@ -24,12 +27,14 @@ export function PageShell({ children }: PageShellProps) {
               className="h-7 w-auto object-contain"
             />
           </Link>
-          <Link
+          <TrackedLink
             href={`${APP_URL}/login?signup=true`}
+            event="signup_cta_clicked"
+            properties={{ location: 'page_shell' }}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >
             Start free <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </Link>
+          </TrackedLink>
         </div>
       </header>
       {children}

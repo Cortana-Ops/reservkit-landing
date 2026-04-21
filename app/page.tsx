@@ -16,6 +16,7 @@ import {
   Clock,
 } from "lucide-react";
 import Nav from "./components/Nav";
+import { TrackedLink } from "./components/TrackedLink";
 
 const APP_URL = "https://app.reservkit.com";
 const SIGNUP_URL = `${APP_URL}/login?signup=true`;
@@ -492,12 +493,14 @@ export default function Home() {
                 manage your staff — all from your phone.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <Link
+                <TrackedLink
                   href={SIGNUP_URL}
+                  event="signup_cta_clicked"
+                  properties={{ location: 'hero' }}
                   className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg shadow-amber/30"
                 >
                   Start Free Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                </TrackedLink>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center gap-2 text-base font-medium text-slate-600 hover:text-navy transition-colors"
@@ -648,12 +651,14 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <Link
+              <TrackedLink
                 href={SIGNUP_URL}
+                event="signup_cta_clicked"
+                properties={{ location: 'how_it_works' }}
                 className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-navy-light transition-colors shadow-lg"
               >
                 Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>
@@ -765,8 +770,10 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link
+                  <TrackedLink
                     href={SIGNUP_URL}
+                    event="signup_cta_clicked"
+                    properties={{ location: 'pricing', plan: tier.name.toLowerCase() }}
                     className={`mt-8 flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
                       tier.highlight
                         ? "bg-amber text-navy hover:bg-amber-dark"
@@ -774,7 +781,7 @@ export default function Home() {
                     }`}
                   >
                     {tier.cta} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                  </Link>
+                  </TrackedLink>
                 </div>
               ))}
             </div>
@@ -861,12 +868,14 @@ export default function Home() {
               payment, and waiver workflows with ReservKit.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
+              <TrackedLink
                 href={SIGNUP_URL}
+                event="signup_cta_clicked"
+                properties={{ location: 'cta_band' }}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg shadow-amber/20"
               >
                 Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </TrackedLink>
               <Link
                 href="/docs"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-4 text-base font-medium text-white hover:bg-white/10 transition-colors"
