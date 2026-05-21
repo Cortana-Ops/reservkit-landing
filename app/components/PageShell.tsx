@@ -31,7 +31,7 @@ export function PageShell({ children }: PageShellProps) {
               height={28}
               priority
               className="h-7 w-auto object-contain"
-              style={{ width: "auto" }}
+              style={{ width: "auto", height: "auto" }}
             />
           </Link>
           <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">

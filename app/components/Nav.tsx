@@ -29,7 +29,7 @@ export default function Nav() {
             height={32}
             priority
             className="h-8 w-auto object-contain"
-            style={{ width: "auto" }}
+            style={{ width: "auto", height: "auto" }}
           />
         </Link>
 
