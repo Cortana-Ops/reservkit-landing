@@ -12,7 +12,7 @@ export default function Terms() {
     <PageShell>
       <main className="mx-auto max-w-3xl px-6 py-16">
         <h1 className="text-3xl font-bold text-navy mb-2">Terms of Service</h1>
-        <p className="text-sm text-slate-500 mb-10">Last updated: April 2026</p>
+        <p className="text-sm text-slate-500 mb-10">Last updated: May 2026</p>
 
         <div className="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed">
           <section>
@@ -41,16 +41,17 @@ export default function Terms() {
             <h2 className="text-xl font-semibold text-navy mb-3">Payments and fees</h2>
             <p>
               ReservKit uses Stripe for payment processing. Platform fees are charged as a
-              percentage of each completed booking transaction:
+              percentage of each completed booking transaction according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
-              <li>Free plan: 4% platform fee on completed bookings</li>
-              <li>Starter ($79/month): 2% platform fee</li>
-              <li>Growth ($149/month): 1% platform fee</li>
-              <li>Pro ($249/month): 0.5% platform fee</li>
-              <li>Enterprise (custom pricing): 0% platform fee</li>
+              <li>Beta: invite-only temporary 0% platform fee during the beta period</li>
+              <li>Free ($0/month): 4% platform fee, 10 bookings per month</li>
+              <li>Starter ($79/month): 2.5% platform fee, 100 bookings per month</li>
+              <li>Growth ($149/month): 2% platform fee, unlimited bookings</li>
+              <li>Pro ($299/month): 1.5% platform fee, unlimited bookings</li>
+              <li>Enterprise: custom monthly pricing, custom volume, and annual minimum</li>
             </ul>
-            <p>Subscription fees for paid plans are billed monthly.</p>
+            <p>Subscription fees for paid plans are billed monthly unless otherwise agreed in writing.</p>
             <p className="mt-3">
               You are responsible for any taxes applicable to your bookings. ReservKit is not
               responsible for chargebacks, refund disputes, or payment failures between operators

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s — ReservKit",
   },
   description:
-    "Online booking, payments, waivers, staff scheduling, and reports — built for rental operators, tour guides, and experience businesses. Free to start.",
+    "Invite-only beta access for rental operators, tour guides, and experience businesses that need online booking, payments, waivers, staff scheduling, and reports.",
   keywords: [
     "booking software",
     "rental booking software",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ReservKit — Booking Software for Rental & Experience Businesses",
     description:
-      "Online booking, payments, waivers, and staff tools built for rental operators and experience businesses. Free to start.",
+      "Invite-only beta access for online booking, payments, waivers, and staff tools built for rental operators and experience businesses.",
     url: "https://reservkit.com",
     siteName: "ReservKit",
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ReservKit — Booking Software for Rental & Experience Businesses",
     description:
-      "Online booking, payments, waivers, and staff tools for rental operators. Free to start.",
+      "Invite-only beta access for online booking, payments, waivers, and staff tools for rental operators.",
     images: ["https://reservkit.com/opengraph-image.png"],
   },
   verification: {
@@ -83,7 +83,13 @@ const softwareApplicationSchema = {
     "Dynamic Pricing",
     "Coupon Codes",
   ],
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/LimitedAvailability",
+    description: "Invite-only beta access with temporary 0% platform fee for approved operators.",
+  },
   url: "https://reservkit.com",
 };
 
@@ -99,10 +105,6 @@ const organizationSchema = {
     contactType: "customer support",
     availableLanguage: "English",
   },
-  sameAs: [
-    "https://twitter.com/reservkit",
-    "https://linkedin.com/company/reservkit",
-  ],
 };
 
 const websiteSchema = {

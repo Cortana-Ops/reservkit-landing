@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { CheckCircle2, Zap, Clock, Lightbulb } from "lucide-react";
+import { TrackedLink } from "../components/TrackedLink";
+import { BETA_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Product Roadmap",
@@ -23,7 +25,7 @@ const shipped = [
   { label: "Phase 2 — Staff & waivers", items: ["Digital liability waivers (per-guest signing)", "Staff portal with role-based access", "Staff task management", "Calendar view for all bookings"] },
   { label: "Phase 3 — Payments & billing", items: ["Stripe Connect for direct payouts", "Deposits at booking, balance on arrival", "Coupon / discount codes", "Platform subscription billing (Starter, Growth, Pro)"] },
   { label: "Phase 4 — Customer experience", items: ["Customer portal for viewing past bookings", "Tipping at checkout", "Dynamic pricing tiers per group size", "Add-on products (equipment, upgrades)"] },
-  { label: "Phase 5 — Free tier, mobile & tools", items: ["Free plan (4% fee, 50 bookings/month)", "14-day Growth trial for all new accounts", "Full mobile responsive overhaul", "SMS reminders (24hr pre-trip, Growth plan+)", "Booking widget embed — iframe for your existing site", "Stripe billing portal — manage subscription in-app", "Automated review request emails post-trip"] },
+  { label: "Phase 5 — Beta, mobile & tools", items: ["Controlled beta access with temporary 0% platform fee", "Current public pricing tiers", "Full mobile responsive overhaul", "SMS reminders", "Booking widget embed for existing sites", "Stripe billing portal", "Automated review request emails post-trip", "Migration Center V1 for structured imports"] },
 ];
 
 const inProgress = [
@@ -32,7 +34,7 @@ const inProgress = [
 
 const comingNext = [
   { title: "Google Calendar & iCal sync", description: "Two-way sync with Google Calendar, Apple Calendar, and any iCal-compatible app — availability always in one place." },
-  { title: "FareHarbor / Rezdy import tool", description: "Migrate your existing activities, bookings, and customer history in one click. Switch without starting from scratch." },
+  { title: "Migration Center expansion", description: "Build on the shipped Migration Center V1 with deeper imports, review tools, and source-specific mapping." },
   { title: "Group booking & capacity blocks", description: "Block-book multiple slots for corporate events, tour packages, and large groups with dynamic capacity and pricing rules." },
   { title: "Public REST API", description: "Connect ReservKit to your own website, POS, or CRM. Full developer documentation included." },
   { title: "Affiliate & referral tracking", description: "Give guides, influencers, and partners unique referral links with commission tracking built in." },
@@ -124,17 +126,18 @@ export default function Roadmap() {
 
         {/* CTA */}
         <div className="rounded-2xl bg-navy p-8 text-center">
-          <h2 className="text-xl font-bold text-white mb-2">Start free while we build</h2>
+          <h2 className="text-xl font-bold text-white mb-2">Join the controlled beta</h2>
           <p className="text-slate-400 text-sm mb-5 max-w-md mx-auto">
-            Every new account gets a 14-day Growth trial. No credit card required.
-            You can be taking online bookings today.
+            ReservKit is reviewing beta requests from operators whose workflows match the current product.
           </p>
-          <Link
-            href="https://app.reservkit.com/login?signup=true"
+          <TrackedLink
+            href={BETA_URL}
+            event="beta_access_cta_clicked"
+            properties={{ location: "roadmap_footer" }}
             className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >
-            Get started free
-          </Link>
+            {PRIMARY_CTA_LABEL}
+          </TrackedLink>
         </div>
 
         <div className="mt-10 text-center space-y-3">

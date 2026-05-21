@@ -20,9 +20,10 @@ const breadcrumbSchema = {
 };
 
 const roles = [
-  { role: "Owner", description: "Full access to everything — billing, settings, all data. Only one owner per organization." },
-  { role: "Admin", description: "Full operational access: create and edit activities, manage bookings, add/remove staff. Cannot change billing." },
-  { role: "Member", description: "Can view and manage bookings, check in guests, and access the staff portal. Cannot edit activities or settings." },
+  { role: "Owner", description: "Full account ownership, including billing, settings, staff, and organization data." },
+  { role: "Admin", description: "Full operational access for activities, bookings, staff management, and settings." },
+  { role: "Manager", description: "Can manage day-to-day booking operations, staff assignments, and customer workflows." },
+  { role: "Staff", description: "Can view assigned work, help with check-in, and use staff-facing operational views." },
 ];
 
 export default function Staff() {
@@ -81,7 +82,8 @@ export default function Staff() {
               <h2 className="text-xl font-bold text-navy">Staff roles and permissions</h2>
             </div>
             <p className="text-slate-600 leading-relaxed mb-5">
-              ReservKit has three roles. Choose the role that matches what each team member needs access to:
+              ReservKit uses operator-facing roles that match the app. Choose the role that
+              matches what each team member needs access to:
             </p>
             <div className="space-y-3">
               {roles.map((r) => (

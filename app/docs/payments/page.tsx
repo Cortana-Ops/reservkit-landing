@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CreditCard, RefreshCcw, DollarSign, Tag } from "lucide-react";
+import { pricingTiers } from "../../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Payments",
-  description: "Connect Stripe, set pricing and deposits, issue refunds, and understand ReservKit's platform fee structure — free 4%, paid plans from 2%.",
+  description:
+    "Connect Stripe, set pricing and deposits, issue refunds, and understand ReservKit's current platform fee structure.",
   alternates: { canonical: "https://reservkit.com/docs/payments" },
 };
 
@@ -19,12 +21,12 @@ const breadcrumbSchema = {
   ],
 };
 
-const feeTable = [
-  { plan: "Free", price: "$0/mo", fee: "4%", bookings: "50/month" },
-  { plan: "Starter", price: "$79/mo", fee: "2%", bookings: "200/month" },
-  { plan: "Growth", price: "$149/mo", fee: "1%", bookings: "Unlimited" },
-  { plan: "Pro", price: "$249/mo", fee: "0.5%", bookings: "Unlimited" },
-];
+const feeTable = pricingTiers.map((tier) => ({
+  plan: tier.name,
+  price: `${tier.price}${tier.period}`,
+  fee: tier.fee,
+  bookings: tier.volume,
+}));
 
 export default function Payments() {
   return (
@@ -59,7 +61,7 @@ export default function Payments() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Settings → Payments and click &quot;Connect Stripe.&quot; You&apos;ll be redirected to Stripe&apos;s onboarding
+                Go to Billing and click &quot;Connect Stripe.&quot; You&apos;ll be redirected to Stripe&apos;s onboarding
                 flow where you can create a new Stripe account or connect an existing one.
               </p>
               <p>
@@ -69,7 +71,7 @@ export default function Payments() {
               </p>
               <p>
                 Once connected, your Stripe dashboard will show a &quot;Connected account&quot; from ReservKit. You can
-                disconnect and reconnect Stripe at any time from Settings → Payments. Existing bookings and their
+                disconnect and reconnect Stripe from Billing. Existing bookings and their
                 associated charges are not affected.
               </p>
               <p>
@@ -111,7 +113,8 @@ export default function Payments() {
             <h2 className="text-xl font-bold text-navy mb-4">Platform fee breakdown</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
               The platform fee is a percentage of each booking&apos;s total charged amount. It&apos;s automatically
-              deducted at checkout — nothing you need to configure. The higher your plan, the lower the fee.
+              deducted at checkout — nothing you need to configure. Approved beta operators receive
+              temporary 0% platform fee access during beta.
             </p>
             <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden">
               <table className="w-full text-sm">
@@ -120,7 +123,7 @@ export default function Payments() {
                     <th className="text-left px-4 py-3 font-semibold text-navy">Plan</th>
                     <th className="text-left px-4 py-3 font-semibold text-navy">Monthly cost</th>
                     <th className="text-left px-4 py-3 font-semibold text-navy">Platform fee</th>
-                    <th className="text-left px-4 py-3 font-semibold text-navy">Bookings/month</th>
+                    <th className="text-left px-4 py-3 font-semibold text-navy">Booking volume</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -5,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
-
-const APP_URL = "https://app.reservkit.com";
+import { BETA_URL, LOGIN_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 const navLinks = [
   { href: "/#features", label: "Features" },
@@ -52,7 +51,7 @@ export default function Nav() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <TrackedLink
-            href={`${APP_URL}/login`}
+            href={LOGIN_URL}
             event="login_clicked"
             properties={{ location: 'nav' }}
             className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
@@ -60,12 +59,12 @@ export default function Nav() {
             Log in
           </TrackedLink>
           <TrackedLink
-            href={`${APP_URL}/login?signup=true`}
-            event="signup_cta_clicked"
+            href={BETA_URL}
+            event="beta_access_cta_clicked"
             properties={{ location: 'nav' }}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-5 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors shadow-sm"
           >
-            Start free <ArrowRight className="h-3.5 w-3.5" />
+            {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
           </TrackedLink>
         </div>
 
@@ -95,7 +94,7 @@ export default function Nav() {
           ))}
           <div className="pt-3 pb-1 flex flex-col gap-2 border-t border-[var(--color-border)] mt-3">
             <TrackedLink
-              href={`${APP_URL}/login`}
+              href={LOGIN_URL}
               event="login_clicked"
               properties={{ location: 'nav_mobile' }}
               onClick={() => setOpen(false)}
@@ -104,13 +103,13 @@ export default function Nav() {
               Log in
             </TrackedLink>
             <TrackedLink
-              href={`${APP_URL}/login?signup=true`}
-              event="signup_cta_clicked"
+              href={BETA_URL}
+              event="beta_access_cta_clicked"
               properties={{ location: 'nav_mobile' }}
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
             >
-              Start free <ArrowRight className="h-3.5 w-3.5" />
+              {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
             </TrackedLink>
           </div>
         </div>

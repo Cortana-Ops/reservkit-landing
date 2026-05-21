@@ -84,8 +84,8 @@ export default function BookingsAvailability() {
                 in a single view, color-coded by activity.
               </p>
               <p>
-                Each slot has a capacity limit. Set the maximum number of guests allowed per slot on the activity's Pricing tab.
-                When a slot is fully booked, it's automatically removed from the public booking page — no overbooking is possible.
+                Each slot has a capacity limit. Set the maximum number of guests allowed per slot on the activity&apos;s Pricing tab.
+                When a slot is fully booked, it&apos;s automatically removed from the public booking page — no overbooking is possible.
               </p>
               <p>
                 Staff can create bookings manually on behalf of customers through the Bookings page. Manual bookings bypass

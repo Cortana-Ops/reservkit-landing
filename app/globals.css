@@ -21,3 +21,22 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+.form-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(220 13% 84%);
+  background: hsl(220 20% 98%);
+  padding: 0.75rem 0.875rem;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.form-input:focus {
+  border-color: var(--color-amber);
+  box-shadow: 0 0 0 3px hsl(36 100% 50% / 0.18);
+}

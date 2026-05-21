@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { pricingSummary } from "../../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Getting Started Guide",
@@ -22,11 +23,11 @@ const breadcrumbSchema = {
 const steps = [
   {
     number: "01",
-    title: "Create your account",
+    title: "Request beta access",
     content: [
-      "Go to app.reservkit.com and click \"Sign up.\" Enter your email and a password — no credit card required.",
-      "Once you confirm your email, you'll be taken directly into the onboarding flow. Your account starts on a free 14-day Growth trial so you can explore every feature before deciding on a plan.",
-      "The free tier (after the trial) allows up to 50 bookings per month with a 4% platform fee per booking. You can upgrade at any time from the Billing page.",
+      "ReservKit is currently controlled beta access by request. Submit your business name, booking volume, current booking tool, and website or social link from the beta request page.",
+      "If your business is a fit for the current beta, we will invite you into onboarding and help confirm the first production-ready setup steps.",
+      pricingSummary,
     ],
   },
   {
@@ -52,9 +53,9 @@ const steps = [
     number: "04",
     title: "Connect Stripe",
     content: [
-      "Go to Settings → Payments and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
+      "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
       "Once connected, your Stripe account status will show \"Connected\" and your public booking page will be live and ready to accept payments.",
-      "The platform fee (4% on the free plan, 2% on Starter, 1% on Growth) is automatically deducted from each transaction at checkout — there's nothing you need to configure.",
+      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive temporary 0% platform fee access during the beta period.",
     ],
   },
   {
@@ -91,10 +92,10 @@ export default function GettingStarted() {
           </p>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>No credit card required to start</span>
+            <span>Controlled beta by request</span>
             <span className="mx-2">·</span>
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>14-day Growth trial included</span>
+            <span>Temporary 0% platform fee for approved beta operators</span>
           </div>
         </div>
 

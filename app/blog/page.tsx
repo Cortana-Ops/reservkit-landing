@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, Clock, Rss } from "lucide-react";
 import { PageShell } from "../components/PageShell";
-import { ArrowRight, Rss, Clock } from "lucide-react";
+import { TrackedLink } from "../components/TrackedLink";
+import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Blog — Rental Operator Guides & Tips",
-  description: "Guides, tips, and stories for rental operators and experience businesses using ReservKit.",
+  title: "Blog — Rental Operator Guides & Beta Notes",
+  description:
+    "Practical notes for rental operators and experience businesses evaluating ReservKit during controlled beta.",
   alternates: { canonical: "https://reservkit.com/blog" },
 };
 
@@ -22,63 +25,57 @@ const articles = [
   {
     id: "first-online-booking",
     tag: "Getting Started",
-    date: "April 15, 2026",
-    readTime: "5 min read",
-    title: "How to take your first online booking with ReservKit",
-    intro: "Setting up online bookings for your rental or experience business doesn't have to take a week. Here's how to go from zero to live in under an hour.",
+    date: "May 2026",
+    readTime: "4 min read",
+    title: "What a first ReservKit beta setup looks like",
+    intro:
+      "A controlled beta setup starts with the basics: Stripe, one bookable activity, a real booking link, and clear waiver/payment rules.",
     content: [
-      "Most rental operators we talk to spent years taking bookings the hard way — phone calls, DMs, a Google calendar, Venmo requests, and a spreadsheet to try to hold it all together. When something got double-booked or a waiver went unsigned, it caused real problems. ReservKit was built to replace all of that with one system.",
-      "The first step is connecting your Stripe account. This is what unlocks online payments — every booking goes straight to your Stripe payout, minus a small platform fee. On the free plan that fee is 4%. If you're processing more volume, the Starter plan ($79/month) drops it to 2%. Go to Settings → Payments and follow the Stripe Connect flow. It takes about 5 minutes.",
-      "Next, create your first activity. An activity is a bookable product — \"2-Hour Kayak Rental,\" \"Sunset Paddleboard Tour,\" whatever you offer. Give it a name, description, duration, and price. Under the Availability tab, set the days and times you're open. ReservKit will auto-generate available slots based on your schedule and the activity duration.",
-      "Once your activity is live, your booking page is already live at app.reservkit.com/book/[your-org-slug]. Share that URL anywhere — your website, Instagram bio, Google Business profile, in your email signature. Customers pick a time, add guests, pay, and get an automatic confirmation email.",
-      "One thing operators tell us often: the first time you see a booking come in while you're out on the water, it changes how you think about your business. You stop being a scheduling service and start focusing on delivering a great experience. That's the whole point.",
-      "If you haven't started yet, create your free account and you'll have a 14-day Growth trial — all features unlocked. No credit card required.",
+      "ReservKit is currently accepting beta operators by request so onboarding can stay hands-on. The goal is not to push every business into self-serve signup at once; it is to help a focused group get a clean booking flow live and tell us where the product still needs sharper edges.",
+      "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",
+      "During beta, approved operators receive temporary invite-only access at 0% platform fee. Public plan pricing after beta is documented plainly: " + pricingSummary,
+      "If you are evaluating ReservKit, the best next step is to request beta access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to tell whether this beta is a good fit right now.",
     ],
     relatedLinks: [
-      { href: "/docs/getting-started", label: "Full getting started guide" },
+      { href: "/docs/getting-started", label: "Getting started guide" },
       { href: "/docs/payments", label: "Payments & Stripe setup" },
     ],
   },
   {
-    id: "fareharbor-vs-reservkit",
-    tag: "Comparison",
-    date: "April 10, 2026",
-    readTime: "7 min read",
-    title: "FareHarbor vs ReservKit: an honest comparison",
-    intro: "FareHarbor is the dominant player in tour and rental booking software — but it comes with tradeoffs that hurt small operators. Here's how the two platforms compare.",
+    id: "direct-booking-fees",
+    tag: "Business",
+    date: "May 2026",
+    readTime: "5 min read",
+    title: "How to evaluate booking software fees without surprises",
+    intro:
+      "Platform fees, subscriptions, payment processing, refunds, and add-ons all affect what an operator actually keeps.",
     content: [
-      "FareHarbor has been around since 2013 and has a massive market share in the tours and activities space. They've built a comprehensive platform and have deep integrations with Google Things to Do and other distribution channels. If you're a large operator processing millions in annual revenue with a dedicated ops team, FareHarbor has tools you'll use.",
-      "For everyone else, the experience is different. FareHarbor's pricing is opaque — they don't publish their fees publicly, and rates are negotiated. Most operators report fees in the 6%+ range. The platform was designed for enterprise, so the setup process is long and the interface shows its age. Getting access to your own data requires support tickets. The contract terms have historically been a pain point.",
-      "ReservKit was designed for a different customer: the independent rental operator or experience business that wants professional-grade software without the enterprise complexity or pricing. The full fee structure is published openly: 4% on the free plan, 2% on Starter ($79/mo), 1% on Growth ($149/mo), 0.5% on Pro ($249/mo).",
-      "The core difference in philosophy: FareHarbor makes money by taking a cut of your distribution. ReservKit makes money through subscriptions. That means ReservKit has no incentive to push bookings toward channels that take an extra cut — your direct booking link is always the default.",
-      "Where FareHarbor still wins: distribution network. If you want your tours listed on Viator, GetYourGuide, and Google Things to Do automatically, FareHarbor's OTA integrations are more mature. ReservKit is building toward this but it's not there yet.",
-      "Where ReservKit wins: price transparency, mobile experience, setup speed, and the booking widget embed. Most operators are live and taking payments within an hour of signup. No sales call required.",
-      "If you're currently on FareHarbor and unhappy with fees or the interface, it's worth running a trial of ReservKit side-by-side. Your free trial unlocks every feature — you don't need to make a decision before you've seen the full picture.",
+      "The cleanest way to compare booking tools is to write down the monthly subscription, the per-booking platform fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
+      "ReservKit's public pricing is intentionally direct. Free is $0/mo + 4% with 10 bookings/month. Starter is $79/mo + 2.5% with 100 bookings/month. Growth is $149/mo + 2% with unlimited bookings. Pro is $299/mo + 1.5% with unlimited bookings. Enterprise is custom.",
+      "Stripe processing is separate from ReservKit's platform fee. Tips are treated as operator revenue and are not marked up by ReservKit. Deposits are charged on the amount collected at checkout, not the full future balance.",
+      "During beta, the most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
     ],
     relatedLinks: [
-      { href: "/fareharbor-alternative", label: "Full FareHarbor comparison page" },
+      { href: "/docs/payments", label: "Payments & fee documentation" },
       { href: "/#pricing", label: "ReservKit pricing" },
     ],
   },
   {
-    id: "platform-fee-money",
-    tag: "Business",
-    date: "April 3, 2026",
+    id: "switching-tools",
+    tag: "Migration",
+    date: "May 2026",
     readTime: "4 min read",
-    title: "5 ways rental operators lose money on platform fees",
-    intro: "Platform fees are usually presented as a small percentage — but the actual dollar impact on your business over a season is significant. Here's how to think about it.",
+    title: "Questions to ask before switching booking systems",
+    intro:
+      "A better booking system should reduce operational risk, not create a migration scramble right before your busy season.",
     content: [
-      "Let's say you run kayak rentals and gross $120,000 in a season. On a 6% platform fee, that's $7,200 out of your revenue — before accounting for Stripe's own processing fee on top. That's a real number. Enough to cover a part-time employee for a month, a new kayak, or marketing budget for the following season.",
-      "The first way operators lose money is by not knowing their actual fee rate. Many platforms — including some major ones in the tours space — don't publish their rates publicly. They negotiate per-operator. If you signed up a few years ago, you may be on a higher rate than newer customers. It's worth asking.",
-      "The second way: paying a per-transaction platform fee on deposits. If you collect a $50 deposit on a $200 trip, some platforms charge the full booking fee on $200 at the time of the deposit. You haven't collected $200 yet, but you're paying fees on it. Look at how your platform calculates the fee basis.",
-      "The third way: paying platform fees on tips. Tips are gratuity — they shouldn't carry a platform markup. Some systems route tips through the same transaction fee calculation. ReservKit applies no platform fee on tips.",
-      "The fourth way: not upgrading when you should. If you're on a per-transaction fee model and your volume justifies a flat monthly plan, the math usually favors upgrading sooner than operators expect. At $5,000/month gross revenue and a 4% fee, you're paying $200/month in fees. The ReservKit Starter plan ($79/month with a 2% fee) would cost $79 + $100 = $179. Even at that volume, upgrading saves money.",
-      "The fifth way: transaction fees on refunds. Most platforms keep their fee when you issue a refund to a customer. A no-show or last-minute cancellation costs you the customer's spend AND your platform fee. Build refund costs into your cancellation policy math — not just the face value of the booking.",
-      "None of this is meant to scare you — it's meant to help you make informed decisions. If you're processing enough volume, the right platform choice can realistically save you thousands per season.",
+      "Before switching tools, confirm the practical details: how activities map over, how availability is rebuilt, where customer records live, what happens to historical bookings, and how payment disputes or refunds are handled in the old system.",
+      "ReservKit includes a Migration Center V1 for structured imports. It is designed to make the first migration pass easier, while still leaving room for hands-on review before operators go live.",
+      "If you currently use another booking platform, include that in your beta request. We will prioritize beta fits where the product can solve a real workflow problem without asking the operator to gamble with active bookings.",
     ],
     relatedLinks: [
-      { href: "/docs/payments", label: "Payments & fee documentation" },
-      { href: "/#pricing", label: "ReservKit pricing tiers" },
+      { href: "/fareharbor-alternative", label: "FareHarbor comparison" },
+      { href: "/checkfront-alternative", label: "Checkfront comparison" },
     ],
   },
 ];
@@ -91,21 +88,27 @@ export default function Blog() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="mx-auto max-w-3xl px-6 py-16">
-        <div className="flex items-center gap-3 mb-12">
-          <div className="h-10 w-10 rounded-xl bg-[var(--color-surface)] flex items-center justify-center">
+        <div className="mb-12 flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-surface)]">
             <Rss className="h-5 w-5 text-navy" aria-hidden="true" />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-navy">ReservKit Blog</h1>
-            <p className="text-sm text-slate-500 mt-0.5">Guides and insights for rental operators</p>
+            <p className="mt-0.5 text-sm text-slate-500">Beta notes and operator guides</p>
           </div>
         </div>
 
         <div className="space-y-16">
           {articles.map((article, index) => (
-            <article key={article.id} id={article.id} className={index > 0 ? "border-t border-[var(--color-border)] pt-16" : ""}>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="rounded-full bg-amber/10 px-3 py-1 text-xs font-semibold text-amber">{article.tag}</span>
+            <article
+              key={article.id}
+              id={article.id}
+              className={index > 0 ? "border-t border-[var(--color-border)] pt-16" : ""}
+            >
+              <div className="mb-4 flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-amber/10 px-3 py-1 text-xs font-semibold text-amber">
+                  {article.tag}
+                </span>
                 <div className="flex items-center gap-1.5 text-xs text-slate-400">
                   <Clock className="h-3 w-3" aria-hidden="true" />
                   {article.readTime}
@@ -113,16 +116,20 @@ export default function Blog() {
                 <span className="text-xs text-slate-400">{article.date}</span>
               </div>
 
-              <h2 className="text-2xl font-bold text-navy mb-3">{article.title}</h2>
-              <p className="text-base text-slate-700 leading-relaxed font-medium mb-6">{article.intro}</p>
+              <h2 className="mb-3 text-2xl font-bold text-navy">{article.title}</h2>
+              <p className="mb-6 text-base font-medium leading-relaxed text-slate-700">
+                {article.intro}
+              </p>
 
               <div className="space-y-4">
-                {article.content.map((para, i) => (
-                  <p key={i} className="text-slate-600 leading-relaxed">{para}</p>
+                {article.content.map((para) => (
+                  <p key={para} className="leading-relaxed text-slate-600">
+                    {para}
+                  </p>
                 ))}
               </div>
 
-              <div className="mt-6 pt-5 border-t border-[var(--color-border)] flex flex-wrap gap-4">
+              <div className="mt-6 flex flex-wrap gap-4 border-t border-[var(--color-border)] pt-5">
                 {article.relatedLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -138,25 +145,27 @@ export default function Blog() {
         </div>
 
         <div className="mt-8 flex items-center justify-center gap-6 text-sm text-slate-500">
-          <Link href="/changelog" className="hover:text-navy transition-colors">
+          <Link href="/changelog" className="transition-colors hover:text-navy">
             Changelog →
           </Link>
-          <Link href="/roadmap" className="hover:text-navy transition-colors">
+          <Link href="/roadmap" className="transition-colors hover:text-navy">
             Roadmap →
           </Link>
         </div>
 
         <div className="mt-8 rounded-2xl bg-navy p-8 text-center">
-          <h2 className="text-xl font-bold text-white mb-2">Ready to try ReservKit?</h2>
-          <p className="text-slate-400 text-sm mb-5">
-            Free plan — 50 bookings/month, 4% fee. 14-day Growth trial included.
+          <h2 className="mb-2 text-xl font-bold text-white">Evaluating ReservKit for beta?</h2>
+          <p className="mb-5 text-sm text-slate-400">
+            Tell us what you run, how bookings work today, and what you need before going live.
           </p>
-          <Link
-            href="https://app.reservkit.com/login?signup=true"
-            className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
+          <TrackedLink
+            href={BETA_URL}
+            event="beta_access_cta_clicked"
+            properties={{ location: "blog_footer" }}
+            className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-amber-dark"
           >
-            Start for free <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </Link>
+            {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </TrackedLink>
         </div>
       </main>
     </PageShell>

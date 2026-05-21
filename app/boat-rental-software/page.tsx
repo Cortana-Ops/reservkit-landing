@@ -2,26 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
+import { TrackedLink } from "../components/TrackedLink";
+import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Boat Rental Booking Software — Payments & Waivers Included",
+  title: "Boat Rental Booking Software - Payments & Waivers Included",
   description:
-    "Manage boat rental bookings, payments, and digital waivers with ReservKit. Stripe-powered. Free to start.",
-  keywords: ["boat rental booking software", "boat rental reservation system", "charter booking software", "pontoon rental software"],
+    "ReservKit helps boat rental and charter operators take online bookings, collect Stripe payments, and manage digital waivers during controlled beta.",
+  keywords: [
+    "boat rental booking software",
+    "boat rental reservation system",
+    "charter booking software",
+    "pontoon rental software",
+  ],
   alternates: { canonical: "https://reservkit.com/boat-rental-software" },
 };
 
-const APP_URL = "https://app.reservkit.com";
-
 const features = [
-  "Online booking page — customers book 24/7",
-  "Stripe Connect — payments go directly to your account",
-  "Deposit collection at booking, balance at check-in",
+  "Online booking page for rentals and charters",
+  "Stripe Connect payments to the operator account",
+  "Deposit collection at booking",
   "Per-guest digital liability waivers",
-  "Capacity controls per vessel",
-  "Duration-based pricing (half day / full day / hourly)",
+  "Capacity controls for vessels and time slots",
+  "Duration-based pricing for hourly, half-day, or full-day rentals",
   "Staff and captain scheduling",
-  "SMS reminders to customers before departure",
   "Check-in management and guest tracking",
   "Revenue and booking reports",
 ];
@@ -32,18 +36,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What features does ReservKit include for boat rental businesses?",
+      name: "Is ReservKit available for boat rental businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit includes online booking, Stripe Connect payments, deposit collection, per-guest digital liability waivers, vessel capacity controls, duration-based pricing, captain and staff scheduling, SMS reminders, and revenue reports.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does ReservKit cost for a boat rental or charter business?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "ReservKit has a Free plan with no monthly fee and a 4% per-booking fee. The Starter plan is $79/month with a 2% fee. Every new account gets a free 14-day Growth trial with no credit card required.",
+        text: "ReservKit is accepting controlled beta requests from boat rental and charter operators. Approved beta operators receive guided setup and temporary 0% platform fee access.",
       },
     },
     {
@@ -51,7 +47,7 @@ const faqSchema = {
       name: "Does ReservKit support deposits and digital waivers for boat rentals?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. You can require a deposit at booking and collect the balance at check-in. Digital liability waivers are included on all plans — each guest signs a unique waiver link sent automatically after booking.",
+        text: "Yes. Operators can collect a deposit at booking and attach digital waiver requirements so guests sign before arrival.",
       },
     },
   ],
@@ -65,31 +61,31 @@ export default function BoatRentalSoftware() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main>
-        {/* Hero */}
-        <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">
+        <section className="bg-gradient-to-b from-slate-50 to-white px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-block mb-4 rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
+            <span className="mb-4 inline-block rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
               Boat Rental Software
             </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl leading-tight">
-              Boat Rental Booking Software with{" "}
-              <span className="text-amber">Stripe Payments &amp; Waivers</span>
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
+              Boat rental booking software with{" "}
+              <span className="text-amber">Stripe payments and waivers</span>
             </h1>
-            <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              ReservKit gives boat rental and charter operators a complete booking management
-              system. Take online reservations, collect deposits, require digital waivers, and
-              manage your captains and crew — all from one platform.
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+              ReservKit gives boat rental and charter operators one place to manage online
+              reservations, deposits, guest waivers, staff assignments, and check-in.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href={`${APP_URL}/login?signup=true`}
-                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg"
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <TrackedLink
+                href={BETA_URL}
+                event="beta_access_cta_clicked"
+                properties={{ location: "boat_rental_hero" }}
+                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
               >
-                Start free — no credit card <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+                {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </TrackedLink>
               <Link
                 href="/#pricing"
-                className="text-sm font-medium text-slate-600 hover:text-navy transition-colors"
+                className="text-sm font-medium text-slate-600 transition-colors hover:text-navy"
               >
                 View pricing ↓
               </Link>
@@ -97,76 +93,61 @@ export default function BoatRentalSoftware() {
           </div>
         </section>
 
-        {/* Features */}
-        <section className="px-6 py-16 bg-white" aria-label="Features for boat rentals">
+        <section className="bg-white px-6 py-16" aria-label="Features for boat rentals">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-navy mb-8 text-center">
-              Built for boat rental and charter operators
+            <h2 className="mb-8 text-center text-2xl font-bold text-navy">
+              Built for boat rental and charter workflows
             </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((f) => (
-                <div key={f} className="flex items-start gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
-                  <CheckCircle2 className="h-4 w-4 mt-0.5 text-green-500 shrink-0" aria-hidden="true" />
-                  <span className="text-sm text-slate-700">{f}</span>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {features.map((feature) => (
+                <div
+                  key={feature}
+                  className="flex items-start gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
+                  <span className="text-sm text-slate-700">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why ReservKit */}
-        <section className="px-6 py-16 bg-[var(--color-surface)]" aria-label="Why choose ReservKit">
+        <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-navy mb-6">
-              Why boat rental operators choose ReservKit
+            <h2 className="mb-6 text-2xl font-bold text-navy">
+              A careful beta for operators with real schedules
             </h2>
-            <div className="prose prose-slate max-w-none space-y-4 text-slate-700">
+            <div className="space-y-4 text-slate-700">
               <p>
-                Running a boat rental or charter operation means juggling availability across
-                multiple vessels, collecting deposits, getting waivers signed, and coordinating
-                captains. Most operators manage this over email and text — which doesn&apos;t scale
-                and leaves money on the table.
+                Boat rental operations depend on accurate capacity, clear deposits, signed waivers,
+                and staff who know what is leaving the dock next. ReservKit is being beta-tested
+                with those operational details in mind.
               </p>
               <p>
-                ReservKit gives you a public booking page where customers can select a vessel,
-                choose their rental duration, pay online, and receive a waiver link before they
-                arrive. Your crew sees their schedule in the staff portal. You see all bookings,
-                revenue, and compliance status in one dashboard.
-              </p>
-              <p>
-                ReservKit is free to start — 4% fee, or from $79/month for 2% on Starter. A fraction of what FareHarbor, Peek Pro, and
-                similar platforms charge. For a high-revenue charter operation, that difference
-                compounds quickly.
+                Approved beta operators get invite-only temporary 0% platform fee access while we
+                validate onboarding and production workflows. Public pricing remains transparent:
+                {` ${pricingSummary}`}
               </p>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="px-6 py-16 bg-navy">
+        <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Ready to take boat rentals online?
+            <h2 className="mb-4 text-2xl font-bold text-white">
+              Want ReservKit for boat rentals?
             </h2>
-            <p className="text-slate-400 mb-8">
-              Add your vessels, set your pricing, and share your booking link today.
+            <p className="mb-8 text-slate-400">
+              Share your current booking workflow and we will review fit for beta access.
             </p>
-            <Link
-              href={`${APP_URL}/login?signup=true`}
-              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors"
+            <TrackedLink
+              href={BETA_URL}
+              event="beta_access_cta_clicked"
+              properties={{ location: "boat_rental_footer" }}
+              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
             >
-              Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <p className="mt-4 text-sm text-slate-500">
-              Also see:{" "}
-              <Link href="/kayak-rental-software" className="text-slate-400 underline hover:text-white">
-                Kayak rental software
-              </Link>{" "}
-              ·{" "}
-              <Link href="/tour-operator-software" className="text-slate-400 underline hover:text-white">
-                Tour operator software
-              </Link>
-            </p>
+              {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </TrackedLink>
           </div>
         </section>
       </main>

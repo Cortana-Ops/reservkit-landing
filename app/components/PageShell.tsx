@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
-
-const APP_URL = "https://app.reservkit.com";
+import { BETA_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 interface PageShellProps {
   children: React.ReactNode;
@@ -28,12 +27,12 @@ export function PageShell({ children }: PageShellProps) {
             />
           </Link>
           <TrackedLink
-            href={`${APP_URL}/login?signup=true`}
-            event="signup_cta_clicked"
+            href={BETA_URL}
+            event="beta_access_cta_clicked"
             properties={{ location: 'page_shell' }}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >
-            Start free <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </TrackedLink>
         </div>
       </header>
