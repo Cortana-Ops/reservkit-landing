@@ -358,7 +358,7 @@ export default function Home() {
       <footer className="bg-navy-light px-6 py-10 text-slate-300">
         <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-[1fr_auto_auto]">
           <div>
-            <Image src="/logo.png" alt="ReservKit" width={100} height={28} className="h-7 w-auto object-contain" style={{ width: "auto" }} />
+            <Image src="/logo.png" alt="ReservKit" width={100} height={28} className="h-7 w-auto object-contain" style={{ width: "auto", height: "auto" }} />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
               {POSITIONING_LINE}
             </p>
