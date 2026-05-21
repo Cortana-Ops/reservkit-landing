@@ -30,13 +30,16 @@ const shipped = [
 
 const inProgress = [
   { title: "Multi-location consolidated reporting", description: "Operators with multiple locations or brands can already switch between organizations. Full cross-org analytics dashboard and consolidated revenue reporting is next." },
+  { title: "Google Calendar and iCal two-way sync", description: "Calendar sync is in design so operators can reduce duplicate availability work across tools." },
+  { title: "SMS reminders", description: "Reminder flows are in build for booking updates and day-before customer communication." },
 ];
 
 const comingNext = [
-  { title: "Google Calendar & iCal sync", description: "Two-way sync with Google Calendar, Apple Calendar, and any iCal-compatible app — availability always in one place." },
+  { title: "Channel blocking", description: "Hold availability across platforms while operators move more bookings to their direct channel." },
   { title: "Migration Center expansion", description: "Build on the shipped Migration Center V1 with deeper imports, review tools, and source-specific mapping." },
   { title: "Group booking & capacity blocks", description: "Block-book multiple slots for corporate events, tour packages, and large groups with dynamic capacity and pricing rules." },
-  { title: "Public REST API", description: "Connect ReservKit to your own website, POS, or CRM. Full developer documentation included." },
+  { title: "Public REST API with full developer docs", description: "Connect ReservKit to your own website, POS, or CRM with documented API access." },
+  { title: "Booking widget embed", description: "Embed ReservKit booking paths into existing websites without sending guests to a separate page first." },
   { title: "Affiliate & referral tracking", description: "Give guides, influencers, and partners unique referral links with commission tracking built in." },
 ];
 
@@ -49,10 +52,9 @@ export default function Roadmap() {
       />
       <main className="mx-auto max-w-4xl px-6 py-16">
         <div className="mb-12 max-w-2xl">
-          <h1 className="text-3xl font-bold text-navy mb-3">ReservKit Roadmap</h1>
+          <h1 className="text-3xl font-bold text-navy mb-3">What&apos;s shipped, what&apos;s next.</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            What we&apos;ve shipped, what we&apos;re building right now, and where we&apos;re headed next.
-            We build in public — this page is updated as features land.
+            We build in public. This page is updated as features land.
           </p>
           <p className="mt-4 text-sm text-slate-500">
             Have a feature request? Email us at{" "}

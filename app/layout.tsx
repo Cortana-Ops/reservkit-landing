@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://reservkit.com"),
   title: {
-    default: "ReservKit — Booking Software for Rental & Experience Businesses",
+    default: "ReservKit — Direct booking software for rental and experience operators",
     template: "%s — ReservKit",
   },
   description: METADATA_DESCRIPTION,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "https://reservkit.com" },
   openGraph: {
-    title: "ReservKit — Booking Software for Rental & Experience Businesses",
+    title: "ReservKit — Direct booking software for rental and experience operators",
     description: METADATA_DESCRIPTION,
     url: "https://reservkit.com",
     siteName: "ReservKit",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ReservKit — Booking Software for Rental & Experience Businesses",
+    title: "ReservKit — Direct booking software for rental and experience operators",
     description: METADATA_DESCRIPTION,
     images: ["https://reservkit.com/opengraph-image.png"],
   },
