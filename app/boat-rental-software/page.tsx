@@ -39,7 +39,7 @@ const faqSchema = {
       name: "Is ReservKit available for boat rental businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected boat rental and charter operators through guided beta onboarding. Approved operators receive setup help and temporary 0% ReservKit platform fees during onboarding.",
+        text: "ReservKit is available to selected boat rental and charter operators through guided beta onboarding. Approved operators receive setup help and 0% ReservKit platform fees for 30-60 days.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function BoatRentalSoftware() {
                 one configured activity and a test booking before you widen usage.
               </p>
               <p>
-                Approved beta operators get temporary 0% ReservKit platform fees during onboarding.
+                Approved beta operators get 0% ReservKit platform fees for 30-60 days.
                 Public pricing remains transparent:
                 {` ${pricingSummary}`}
               </p>

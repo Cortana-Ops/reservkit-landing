@@ -55,7 +55,7 @@ const steps = [
     content: [
       "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
       "Once connected, your Stripe account status will show \"Connected\" and your public booking page will be live and ready to accept payments.",
-      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive temporary 0% ReservKit platform fees during onboarding.",
+      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive 0% ReservKit platform fees for 30-60 days.",
     ],
   },
   {
@@ -95,7 +95,7 @@ export default function GettingStarted() {
             <span>Guided beta access</span>
             <span className="mx-2">·</span>
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Temporary 0% platform fee for approved beta operators</span>
+            <span>0% platform fee for 30-60 days for approved beta operators</span>
           </div>
         </div>
 

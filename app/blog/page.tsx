@@ -33,7 +33,7 @@ const articles = [
     content: [
       POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",
-      "Approved beta operators receive temporary 0% ReservKit platform fees during onboarding. Public plan pricing is documented plainly: " + pricingSummary,
+      "Approved beta operators receive 0% ReservKit platform fees for 30-60 days. Public plan pricing is documented plainly: " + pricingSummary,
       "If you are evaluating ReservKit, the best next step is to request beta access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
     ],
     relatedLinks: [
@@ -74,8 +74,8 @@ const articles = [
       "If you currently use another booking platform, include that in your beta request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
     ],
     relatedLinks: [
-      { href: "/fareharbor-alternative", label: "FareHarbor comparison" },
-      { href: "/checkfront-alternative", label: "Checkfront comparison" },
+      { href: "/docs/getting-started", label: "Getting started guide" },
+      { href: "/docs/payments", label: "Payments & fee documentation" },
     ],
   },
 ];
