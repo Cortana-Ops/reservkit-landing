@@ -25,7 +25,7 @@ const shipped = [
   { label: "Phase 2 — Staff & waivers", items: ["Digital liability waivers (per-guest signing)", "Staff portal with role-based access", "Staff task management", "Calendar view for all bookings"] },
   { label: "Phase 3 — Payments & billing", items: ["Stripe Connect for direct payouts", "Deposits at booking, balance on arrival", "Coupon / discount codes", "Platform subscription billing (Starter, Growth, Pro)"] },
   { label: "Phase 4 — Customer experience", items: ["Customer portal for viewing past bookings", "Tipping at checkout", "Dynamic pricing tiers per group size", "Add-on products (equipment, upgrades)"] },
-  { label: "Phase 5 — Mobile & go-live tools", items: ["Guided beta access with 0% platform fee for 30-60 days", "Current public pricing tiers", "Full mobile responsive overhaul", "SMS reminders", "Booking widget embed for existing sites", "Stripe billing portal", "Automated review request emails post-trip", "Migration Center V1 for structured imports"] },
+  { label: "Phase 5 — Mobile & go-live tools", items: ["Guided beta access with 0% platform fee for 30 days", "Current public pricing tiers", "Full mobile responsive overhaul", "SMS reminders", "Booking widget embed for existing sites", "Stripe billing portal", "Automated review request emails post-trip", "Migration Center V1 for structured imports"] },
 ];
 
 const inProgress = [

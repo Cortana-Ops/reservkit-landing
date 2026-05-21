@@ -114,7 +114,7 @@ export default function Payments() {
             <p className="text-slate-600 leading-relaxed mb-5">
               The platform fee is a percentage of each booking&apos;s total charged amount. It&apos;s automatically
               deducted at checkout — nothing you need to configure. Approved beta operators receive
-              0% ReservKit platform fees for 30-60 days.
+              0% ReservKit platform fees for 30 days.
             </p>
             <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden">
               <table className="w-full text-sm">

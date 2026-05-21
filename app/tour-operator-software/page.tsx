@@ -124,7 +124,7 @@ export default function TourOperatorSoftware() {
                 mobile check-in in one operator workspace.
               </p>
               <p>
-                Approved beta operators receive 0% ReservKit platform fees for 30-60 days.
+                Approved beta operators receive 0% ReservKit platform fees for 30 days.
                 Public plan pricing is transparent for planning ahead: {pricingSummary}
               </p>
             </div>

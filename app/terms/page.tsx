@@ -44,7 +44,7 @@ export default function Terms() {
               percentage of each completed booking transaction according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
-              <li>Beta: invite-only 0% platform fee for 30-60 days for approved operators</li>
+              <li>Beta: invite-only 0% platform fee for 30 days for approved operators</li>
               <li>Free ($0/month): 4% platform fee, 10 bookings per month</li>
               <li>Starter ($79/month): 2.5% platform fee, 100 bookings per month</li>
               <li>Growth ($149/month): 2% platform fee, unlimited bookings</li>

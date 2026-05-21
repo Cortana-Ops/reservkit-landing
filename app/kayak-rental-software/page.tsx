@@ -122,7 +122,7 @@ export default function KayakRentalSoftware() {
                 with a focused setup path for the first activity you want customers to book online.
               </p>
               <p>
-                Approved beta operators receive 0% ReservKit platform fees for 30-60 days.
+                Approved beta operators receive 0% ReservKit platform fees for 30 days.
                 Public pricing is documented here: {pricingSummary}
               </p>
             </div>

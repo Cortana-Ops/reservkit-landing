@@ -25,7 +25,7 @@ import {
 const faqItems = [
   {
     q: "Is ReservKit available now?",
-    a: "ReservKit is available through limited beta onboarding for selected rental, tour, and experience operators. Approved operators get guided setup and 0% ReservKit platform fees for 30-60 days.",
+    a: "ReservKit is available through limited beta onboarding for selected rental, tour, and experience operators. Approved operators get guided setup and 0% ReservKit platform fees for 30 days.",
   },
   {
     q: "How do customer payments work?",
@@ -149,7 +149,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="mt-6 grid gap-2 text-sm text-slate-600 sm:grid-cols-3">
-                {["Guided setup", "0% platform fee for 30-60 days", "Operator-owned Stripe payments"].map((item) => (
+                {["Guided setup", "0% platform fee for 30 days", "Operator-owned Stripe payments"].map((item) => (
                   <span key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500" aria-hidden="true" />
                     {item}
@@ -282,7 +282,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Transparent pricing from day one</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Approved beta operators get 0% ReservKit platform fees for 30-60 days. Public pricing stays visible so there are no surprises later.
+                Approved beta operators get 0% ReservKit platform fees for 30 days. Public pricing stays visible so there are no surprises later.
               </p>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
