@@ -29,7 +29,7 @@ const articles = [
     readTime: "4 min read",
     title: "Your first ReservKit setup, start to finish",
     intro:
-      "Most operators are live with their first real booking link in a single session. Here is exactly what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
+      "The first setup session focuses on one working booking link. Here is what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
       POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",

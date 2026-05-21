@@ -3,8 +3,8 @@ import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 
 export const metadata: Metadata = {
-  title: "Changelog & Release Notes",
-  description: "What's new in ReservKit — feature releases, improvements, and fixes.",
+  title: "Product Updates",
+  description: "Recent ReservKit product updates for booking, payments, waivers, and operator workflows.",
   alternates: { canonical: "https://reservkit.com/changelog" },
 };
 
@@ -27,59 +27,33 @@ interface Release {
 
 const releases: Release[] = [
   {
-    version: "v1.4",
-    date: "April 2026",
+    version: "Production readiness",
+    date: "May 2026",
     items: [
-      { tag: "Added", text: "Per-guest digital waiver signing with real-time compliance dashboard" },
-      { tag: "Added", text: "SMS reminders sent 24 hours before booking (Growth plan+)" },
-      { tag: "Added", text: "Dynamic pricing rules — set surge pricing by date or day of week" },
-      { tag: "Added", text: "Staff portal with mobile-optimized schedule view" },
-      { tag: "Changed", text: "Booking modal redesigned to step-based flow — faster for guests" },
-      { tag: "Fixed", text: "Calendar revenue totals now include tips and fees correctly" },
+      { tag: "Changed", text: "Updated public pricing to Starter, Growth, Pro, Enterprise, Free, and the 30-day beta fee waiver." },
+      { tag: "Changed", text: "Repositioned the public site around direct bookings, operator-owned Stripe payments, waivers, and day-of operations." },
+      { tag: "Fixed", text: "Removed competitor comparison pages and redirected those URLs to the homepage." },
+      { tag: "Fixed", text: "Added content checks that block stale pricing, open-signup CTAs, and removed comparison-page copy." },
     ],
   },
   {
-    version: "v1.3",
-    date: "March 2026",
+    version: "Booking trust polish",
+    date: "May 2026",
     items: [
-      { tag: "Added", text: "Stripe Connect for all new organizations — money goes directly to your account" },
-      { tag: "Added", text: "Customer portal — guests can view and manage their bookings" },
-      { tag: "Added", text: "Coupon code support with percentage and flat discounts" },
-      { tag: "Added", text: "Partial refund support from the bookings dashboard" },
-      { tag: "Changed", text: "Reports page overhauled with date-range filtering and export" },
-      { tag: "Fixed", text: "Check-in page now shows correct guest count on mobile" },
+      { tag: "Changed", text: "Kept price summary visible in the guest-details step and removed the extra Stripe review page." },
+      { tag: "Changed", text: "Improved selected-time and guest-count sticky bar behavior on mobile." },
+      { tag: "Changed", text: "Added clearer call-to-book cutoff copy for activities that cannot be booked online." },
+      { tag: "Fixed", text: "Improved step navigation so guests return to the top of the next booking step." },
     ],
   },
   {
-    version: "v1.2",
-    date: "February 2026",
+    version: "Waiver and operator polish",
+    date: "May 2026",
     items: [
-      { tag: "Added", text: "Staff scheduling — assign team members to bookings" },
-      { tag: "Added", text: "Activity add-ons — sell gear, insurance, or extras at booking" },
-      { tag: "Added", text: "Deposit rules — collect a percentage upfront, rest at check-in" },
-      { tag: "Changed", text: "Availability calendar improved with drag-to-block date ranges" },
-      { tag: "Fixed", text: "Settings tabs now scroll correctly on mobile" },
-      { tag: "Security", text: "JWT validation hardened on all API routes" },
-    ],
-  },
-  {
-    version: "v1.1",
-    date: "January 2026",
-    items: [
-      { tag: "Added", text: "Public booking page — shareable link for each activity" },
-      { tag: "Added", text: "Stripe payment collection at booking" },
-      { tag: "Added", text: "Booking confirmation and reminder emails" },
-      { tag: "Added", text: "Team member invites by email" },
-      { tag: "Changed", text: "Activity form redesigned with tabbed interface" },
-    ],
-  },
-  {
-    version: "v1.0",
-    date: "December 2025",
-    items: [
-      { tag: "Added", text: "Initial release — ReservKit public beta" },
-      { tag: "Added", text: "Activity management, availability calendar, and basic booking flow" },
-      { tag: "Added", text: "Operator dashboard with booking list and status management" },
+      { tag: "Changed", text: "Made drawn signature fields optional when configured and required only when enabled." },
+      { tag: "Changed", text: "Added drawn-signature evidence display for signed waiver records." },
+      { tag: "Fixed", text: "Closed mobile navigation after route changes." },
+      { tag: "Fixed", text: "Clarified Availability and Activity Details wording for operators." },
     ],
   },
 ];
@@ -100,9 +74,9 @@ export default function Changelog() {
       />
       <main className="mx-auto max-w-3xl px-6 py-16">
         <div className="mb-12">
-          <h1 className="text-3xl font-bold text-navy mb-2">Changelog</h1>
+          <h1 className="text-3xl font-bold text-navy mb-2">Product updates</h1>
           <p className="text-lg text-slate-600">
-            What&apos;s new in ReservKit — features, improvements, and fixes.
+            Recent product and website changes that affect operators evaluating ReservKit.
           </p>
         </div>
 
@@ -138,9 +112,9 @@ export default function Changelog() {
         </div>
 
         <div className="mt-16 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] p-8 text-center">
-          <h2 className="text-lg font-bold text-navy mb-2">Have a feature request?</h2>
+          <h2 className="text-lg font-bold text-navy mb-2">Have a workflow request?</h2>
           <p className="text-sm text-slate-600 mb-4">
-            Vote on upcoming features or submit your own ideas.
+            Send the workflow you need to support during setup.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link

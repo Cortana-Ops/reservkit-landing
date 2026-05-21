@@ -260,7 +260,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">See ReservKit in action</h2>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-                Product screens are shown large enough to inspect, with the booking path and customer lookup flow presented as real working surfaces.
+                The current public captures show the guest booking path and lookup flow. Operator dashboard and waiver captures will be added once clean configured examples are ready.
               </p>
             </div>
             <div className="mt-12 space-y-12">

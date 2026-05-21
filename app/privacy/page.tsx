@@ -65,9 +65,6 @@ export default function Privacy() {
               <li>
                 <strong>Resend</strong> — for transactional email delivery
               </li>
-              <li>
-                <strong>Twilio</strong> — for SMS reminders (if enabled by operator)
-              </li>
             </ul>
           </section>
 

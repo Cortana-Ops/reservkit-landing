@@ -75,10 +75,7 @@ const softwareApplicationSchema = {
     "Digital Waivers",
     "Staff Scheduling",
     "Reports & Analytics",
-    "Customer Portal",
-    "SMS Reminders",
     "Check-In Management",
-    "Dynamic Pricing",
     "Coupon Codes",
   ],
   offers: {

@@ -6,7 +6,7 @@ import { pricingSummary } from "../../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Getting Started Guide",
-  description: "Set up your ReservKit account, create your first activity, connect Stripe, and take your first booking in under 30 minutes.",
+  description: "Set up ReservKit, create your first activity, connect Stripe, configure waivers, and run a test booking before sharing your booking link.",
   alternates: { canonical: "https://reservkit.com/docs/getting-started" },
 };
 
@@ -64,7 +64,7 @@ const steps = [
     content: [
       "Every organization has a unique public booking link at app.reservkit.com/book/[your-slug]. Share this URL directly with customers, add it to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
       "The booking page shows all your published activities, available times, and handles the full checkout flow — guests pick a time, add guests, pay, and receive an automatic email confirmation.",
-      "You can also embed the booking widget as an iframe on your existing website. The embed code is available under Settings → Booking Page.",
+      "Add your booking link to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
     ],
   },
 ];
@@ -87,8 +87,8 @@ export default function GettingStarted() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Getting Started with ReservKit</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            From account creation to your first live booking in under 30 minutes. This guide walks you through
-            every step of the initial setup.
+            Move from request access to a tested first booking flow. This guide walks through the setup sequence
+            operators review during guided onboarding.
           </p>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <CheckCircle2 className="h-4 w-4 text-green-500" />
