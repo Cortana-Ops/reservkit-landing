@@ -83,10 +83,10 @@ const operatorWorkflows = [
 
 const proofImages = [
   {
-    src: "/product-public-booking.png",
-    alt: "ReservKit public booking page for a test activity",
+    src: "/product-public-booking-demo.png",
+    alt: "ReservKit public booking page with sanitized demo activity content",
     title: "Public booking page",
-    body: "Actual public booking flow from the production test organization.",
+    body: "Current public booking layout shown with sanitized demo content.",
   },
   {
     src: "/product-customer-lookup.png",
@@ -150,7 +150,7 @@ export default function Home() {
             </div>
             <div className="rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
               <Image
-                src="/product-public-booking.png"
+                src="/product-public-booking-demo.png"
                 alt="ReservKit public booking page screenshot"
                 width={1280}
                 height={900}
@@ -201,7 +201,7 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Real product evidence, not placeholder hype</h2>
                 <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-                  These images come from the current ReservKit product surface and production test organization, with no private customer data.
+                  These images show the current ReservKit product surface with sanitized demo data and no private customer information.
                 </p>
               </div>
               <TrackedLink
