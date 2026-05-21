@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CreditCard, RefreshCcw, DollarSign, Tag } from "lucide-react";
-import { pricingTiers } from "../../lib/marketing";
+import { enterpriseTier, pricingTiers } from "../../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Payments",
@@ -21,12 +21,22 @@ const breadcrumbSchema = {
   ],
 };
 
-const feeTable = pricingTiers.map((tier) => ({
-  plan: tier.name,
-  price: `${tier.price}${tier.period}`,
-  fee: tier.fee,
-  bookings: tier.volume,
-}));
+const feeTable = [
+  { plan: "Beta", price: "Approved access", fee: "0% for 30 days", bookings: "Guided onboarding" },
+  { plan: "Free", price: "$0/mo", fee: "4% platform fee", bookings: "10 bookings/month" },
+  ...pricingTiers.map((tier) => ({
+    plan: tier.name,
+    price: `${tier.price}${tier.period}`,
+    fee: tier.fee,
+    bookings: tier.volume,
+  })),
+  {
+    plan: enterpriseTier.name,
+    price: enterpriseTier.price,
+    fee: enterpriseTier.fee,
+    bookings: enterpriseTier.volume,
+  },
+];
 
 export default function Payments() {
   return (
@@ -75,7 +85,7 @@ export default function Payments() {
                 associated charges are not affected.
               </p>
               <p>
-                <strong className="text-navy">Important:</strong> Stripe requires your business to be based in a
+                <strong className="text-navy">Important:</strong>{" "}Stripe requires your business to be based in a
                 supported country. Payouts to your bank account happen on Stripe&apos;s standard schedule (typically
                 2 business days after a charge). Stripe&apos;s own processing fee (2.9% + 30¢ per transaction) is
                 separate from the ReservKit platform fee and is deducted by Stripe directly.
@@ -116,8 +126,22 @@ export default function Payments() {
               deducted at checkout — nothing you need to configure. Approved beta operators receive
               0% ReservKit platform fees for 30 days.
             </p>
-            <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden">
-              <table className="w-full text-sm">
+            <div className="grid gap-3 md:hidden">
+              {feeTable.map((row) => (
+                <div key={row.plan} className="rounded-xl border border-[var(--color-border)] bg-white p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="font-semibold text-navy">{row.plan}</p>
+                      <p className="mt-1 text-sm text-slate-500">{row.price}</p>
+                    </div>
+                    <p className="text-right text-sm font-semibold text-amber">{row.fee}</p>
+                  </div>
+                  <p className="mt-3 text-sm text-slate-600">{row.bookings}</p>
+                </div>
+              ))}
+            </div>
+            <div className="hidden overflow-x-auto rounded-2xl border border-[var(--color-border)] md:block">
+              <table className="min-w-[42rem] text-sm">
                 <thead>
                   <tr className="bg-[var(--color-surface)] border-b border-[var(--color-border)]">
                     <th className="text-left px-4 py-3 font-semibold text-navy">Plan</th>

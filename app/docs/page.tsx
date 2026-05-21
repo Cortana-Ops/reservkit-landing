@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { ArrowRight, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
-import { pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Documentation & Guides",
@@ -38,7 +37,7 @@ const sections = [
     icon: CreditCard,
     title: "Payments",
     href: "/docs/payments",
-    description: `Configure Stripe Connect, set pricing, deposits, and understand the platform fee structure. ${pricingSummary}`,
+    description: "Configure Stripe Connect, set pricing and deposits, and understand the current platform fee structure.",
     topics: ["Connecting Stripe", "Setting prices and deposits", "Issuing refunds", "Understanding platform fees", "Coupon codes"],
   },
   {

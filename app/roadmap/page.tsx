@@ -21,26 +21,23 @@ const breadcrumbSchema = {
 };
 
 const shipped = [
-  { label: "Phase 1 — Core platform", items: ["Online booking page with Stripe payments", "Activity management with time slots", "Customer booking confirmation emails", "Booking management dashboard"] },
-  { label: "Phase 2 — Staff & waivers", items: ["Digital liability waivers (per-guest signing)", "Staff portal with role-based access", "Staff task management", "Calendar view for all bookings"] },
-  { label: "Phase 3 — Payments & billing", items: ["Stripe Connect for direct payouts", "Deposits at booking, balance on arrival", "Coupon / discount codes", "Platform subscription billing (Starter, Growth, Pro)"] },
-  { label: "Phase 4 — Customer experience", items: ["Customer portal for viewing past bookings", "Tipping at checkout", "Dynamic pricing tiers per group size", "Add-on products (equipment, upgrades)"] },
-  { label: "Phase 5 — Mobile & go-live tools", items: ["Guided beta access with 0% platform fee for 30 days", "Current public pricing tiers", "Full mobile responsive overhaul", "SMS reminders", "Booking widget embed for existing sites", "Stripe billing portal", "Automated review request emails post-trip", "Migration Center V1 for structured imports"] },
+  { label: "Booking and checkout", items: ["Public booking pages for configured activities", "Stripe Checkout through the operator's connected Stripe account", "Guest details, selected-time review, and booking confirmation flow", "Call-to-book cutoff handling when online booking is not available"] },
+  { label: "Waivers and customer records", items: ["Per-guest digital waiver signing", "Optional drawn signature fields when configured", "Signed waiver evidence display", "Customer booking lookup without requiring a customer account"] },
+  { label: "Operator workflows", items: ["Activity setup, availability, booking detail, and operator dashboard workflows", "Staff-facing navigation and day-of workflow polish", "Reports views for revenue and booking review", "Migration Center V1 for structured imports"] },
+  { label: "Go-live readiness", items: ["Current public pricing tiers", "Guided beta request flow", "30-day 0% ReservKit platform fee offer for approved beta operators", "Public content guard for stale pricing and removed signup language"] },
 ];
 
 const inProgress = [
-  { title: "Multi-location consolidated reporting", description: "Operators with multiple locations or brands can already switch between organizations. Full cross-org analytics dashboard and consolidated revenue reporting is next." },
-  { title: "Google Calendar and iCal two-way sync", description: "Calendar sync is in design so operators can reduce duplicate availability work across tools." },
-  { title: "SMS reminders", description: "Reminder flows are in build for booking updates and day-before customer communication." },
+  { title: "Cleaner operator onboarding", description: "Continuing to reduce setup friction around Stripe, first activity configuration, availability, waivers, and test bookings." },
+  { title: "Better product captures", description: "Adding cleaner screenshots and examples from real configured workflows as beta operators come online." },
+  { title: "Reporting polish", description: "Tightening the reports experience around the views operators use during live operations." },
 ];
 
 const comingNext = [
-  { title: "Channel blocking", description: "Hold availability across platforms while operators move more bookings to their direct channel." },
-  { title: "Migration Center expansion", description: "Build on the shipped Migration Center V1 with deeper imports, review tools, and source-specific mapping." },
-  { title: "Group booking & capacity blocks", description: "Block-book multiple slots for corporate events, tour packages, and large groups with dynamic capacity and pricing rules." },
-  { title: "Public REST API with full developer docs", description: "Connect ReservKit to your own website, POS, or CRM with documented API access." },
-  { title: "Booking widget embed", description: "Embed ReservKit booking paths into existing websites without sending guests to a separate page first." },
-  { title: "Affiliate & referral tracking", description: "Give guides, influencers, and partners unique referral links with commission tracking built in." },
+  { title: "Calendar sync", description: "Assessing Google Calendar and iCal sync for operators who need availability reflected across tools." },
+  { title: "Website embed options", description: "Exploring the best way to place ReservKit booking flows on existing operator websites." },
+  { title: "Migration Center expansion", description: "Building on Migration Center V1 with deeper imports, review tools, and source-specific mapping." },
+  { title: "Channel blocking", description: "Evaluating availability holds for operators that are moving bookings gradually from other channels." },
 ];
 
 export default function Roadmap() {

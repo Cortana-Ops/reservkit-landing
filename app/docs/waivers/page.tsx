@@ -36,7 +36,7 @@ export default function Waivers() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Waivers</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Collect legally defensible digital liability waivers from every guest — signed on their phone
+            Collect digital liability waivers from every guest — signed on their phone
             after booking, no paper or clipboards required.
           </p>
         </div>

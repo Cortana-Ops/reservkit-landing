@@ -42,6 +42,13 @@ const forbidden = [
   "0% platform fees during onboarding",
   "0% ReservKit platform fees during onboarding",
   "operator login screenshot",
+  "Initial release — ReservKit public beta",
+  "SMS reminders sent 24 hours before booking",
+  "Dynamic pricing rules",
+  "Customer portal — guests can view",
+  "Settings → Booking Page",
+  "under 30 minutes",
+  "legally defensible",
 ];
 
 const allowedByFile = {
