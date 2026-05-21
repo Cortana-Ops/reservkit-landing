@@ -110,7 +110,9 @@ const setupSteps = [
 const productImages = [
   {
     src: "/product-public-booking-live.png",
-    alt: "ReservKit public booking page with configured activity cards",
+    width: 1440,
+    height: 1000,
+    alt: "ReservKit public booking page with configured lake activities",
     title: "Customer booking page",
     body: "Guests choose an activity, review details, select a date, and move toward secure checkout.",
     callouts: [
@@ -121,6 +123,8 @@ const productImages = [
   },
   {
     src: "/product-customer-lookup.png",
+    width: 1280,
+    height: 900,
     alt: "ReservKit customer booking lookup page",
     title: "Booking lookup",
     body: "Customers can return to booking details without creating an account, which keeps support simple after purchase.",
@@ -129,6 +133,29 @@ const productImages = [
       { text: "Booking email lookup", className: "right-[12%] top-[42%]" },
       { text: "Guest-friendly support", className: "left-[34%] bottom-[18%]" },
     ],
+  },
+];
+
+const operatorWorkflowCards = [
+  {
+    title: "Booking records",
+    body: "Each booking ties the guest, selected activity, time slot, payment status, waiver status, staff notes, and operational details together.",
+    bullets: ["Payment and balance status", "Guest count and notes", "Assigned staff"],
+  },
+  {
+    title: "Check-in manifest",
+    body: "Day-of teams can work from a manifest that separates ready bookings from the ones that still need attention.",
+    bullets: ["Ready and attention views", "Guest arrival tracking", "Printable and CSV-ready"],
+  },
+  {
+    title: "Waiver workflow",
+    body: "Required waivers attach to activities, collect guest signatures before arrival, and stay connected to the operator booking record.",
+    bullets: ["Per-guest signer status", "Shareable waiver link", "Signed record trail"],
+  },
+  {
+    title: "Stripe payments",
+    body: "ReservKit supports Stripe Connect, deposits, balances, coupons, refunds, and operator-owned checkout records.",
+    bullets: ["Operator Stripe account", "Deposits and balances", "Refund-ready history"],
   },
 ];
 
@@ -189,8 +216,8 @@ export default function Home() {
               <Image
                 src="/product-public-booking-live.png"
                 alt="ReservKit public booking page screenshot"
-                width={1280}
-                height={900}
+                width={1440}
+                height={1000}
                 priority
                 className="rounded-2xl object-cover object-top"
               />
@@ -260,7 +287,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">See ReservKit in action</h2>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-                The current public captures show the guest booking path and lookup flow. Operator dashboard and waiver captures will be added once clean configured examples are ready.
+                The guest-facing flow stays clean for customers. Behind it, ReservKit keeps the operator record connected to payments, waivers, staffing, and day-of work.
               </p>
             </div>
             <div className="mt-12 space-y-12">
@@ -270,8 +297,8 @@ export default function Home() {
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      width={1920}
-                      height={1350}
+                      width={image.width}
+                      height={image.height}
                       loading="lazy"
                       className="w-full object-cover object-top"
                     />
@@ -288,6 +315,22 @@ export default function Home() {
                     <h3 className="text-lg font-bold text-navy">{image.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{image.body}</p>
                   </div>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {operatorWorkflowCards.map((card) => (
+                <article key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-sm">
+                  <h3 className="text-base font-bold text-navy">{card.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{card.body}</p>
+                  <ul className="mt-4 space-y-2">
+                    {card.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
