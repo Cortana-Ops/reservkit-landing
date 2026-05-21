@@ -2,7 +2,7 @@ export const APP_URL = "https://app.reservkit.com";
 export const LOGIN_URL = `${APP_URL}/login`;
 export const BETA_URL = "/beta";
 export const PRIMARY_CTA_LABEL = "Request beta access";
-export const BETA_PLATFORM_FEE_OFFER = "0% platform fee for 30-60 days";
+export const BETA_PLATFORM_FEE_OFFER = "0% platform fee for 30 days";
 export const POSITIONING_LINE =
   "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waivers, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
@@ -15,7 +15,7 @@ export const pricingTiers = [
     period: "",
     fee: BETA_PLATFORM_FEE_OFFER,
     volume: "Guided onboarding",
-    description: "For approved operators getting 30-60 days of 0% ReservKit platform fees during setup.",
+    description: "For approved operators getting 30 days of 0% ReservKit platform fees during setup.",
     features: [
       "Guided setup",
       "Online booking and payments",
@@ -94,7 +94,7 @@ export const enterpriseTier = {
 };
 
 export const pricingSummary =
-  "Approved beta operators get 0% ReservKit platform fees for 30-60 days. Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
+  "Approved beta operators get 0% ReservKit platform fees for 30 days. Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
 
 export const betaRequestFields = [
   "name",

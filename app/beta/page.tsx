@@ -64,7 +64,7 @@ export default function BetaPage() {
               </div>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-slate-500">
-              Approved beta operators get 0% ReservKit platform fees for 30-60 days. Stripe processing still applies.
+              Approved beta operators get 0% ReservKit platform fees for 30 days. Stripe processing still applies.
             </p>
           </section>
 

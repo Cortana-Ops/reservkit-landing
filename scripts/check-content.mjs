@@ -34,6 +34,8 @@ const forbidden = [
   "all plans include the full product",
   "No long-term contract",
   "Cancel anytime",
+  "30-60",
+  "30–60",
 ];
 
 const allowedByFile = {
