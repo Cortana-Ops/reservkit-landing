@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Tour Operator Booking Software - Waivers, Payments, Staff",
@@ -40,7 +40,7 @@ const faqSchema = {
       name: "Is ReservKit available for tour operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is accepting controlled beta requests from tour, activity, and experience operators.",
+        text: "ReservKit is available to selected tour, activity, and experience operators through guided beta onboarding.",
       },
     },
     {
@@ -72,8 +72,7 @@ export default function TourOperatorSoftware() {
               <span className="text-amber">waivers, payments, and staff</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit helps guided tours and experience businesses sell direct bookings,
-              collect secure payments, gather waivers, and keep staff aligned.
+              {POSITIONING_LINE} Guided tours and experience businesses can sell direct, collect secure payments, gather waivers, and keep staff aligned.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
@@ -116,16 +115,16 @@ export default function TourOperatorSoftware() {
         <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-2xl font-bold text-navy">
-              A beta focused on direct operator trust
+              Direct booking software for real tour days
             </h2>
             <div className="space-y-4 text-slate-700">
               <p>
                 Tour operators need a booking flow that feels trustworthy for guests and practical
-                for guides. ReservKit is being hardened around payment clarity, waiver evidence,
-                staff visibility, and fast mobile check-in.
+                for guides. ReservKit connects checkout, waiver evidence, staff visibility, and
+                mobile check-in in one operator workspace.
               </p>
               <p>
-                Approved beta operators receive temporary invite-only 0% platform fee access.
+                Approved beta operators receive temporary 0% ReservKit platform fees during onboarding.
                 Public plan pricing is transparent for planning ahead: {pricingSummary}
               </p>
             </div>
@@ -135,10 +134,10 @@ export default function TourOperatorSoftware() {
         <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-2xl font-bold text-white">
-              Want to test ReservKit for tours?
+              Want ReservKit for tours?
             </h2>
             <p className="mb-8 text-slate-400">
-              Send your business type, booking volume, and current tool so we can review beta fit.
+              Send your business type, booking volume, and current tool so we can reply with onboarding next steps.
             </p>
             <TrackedLink
               href={BETA_URL}

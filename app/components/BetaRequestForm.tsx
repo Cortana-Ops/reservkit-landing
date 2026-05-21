@@ -93,7 +93,7 @@ export function BetaRequestForm() {
         <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden="true" />
         <h2 className="mt-4 text-xl font-bold">Beta request received</h2>
         <p className="mt-2 text-sm leading-relaxed text-emerald-800">
-          Thanks. We will review the fit and follow up with next steps if ReservKit is a good match for your beta window.
+          Thanks. We will review your business and follow up with onboarding next steps by email.
         </p>
       </div>
     );
@@ -129,8 +129,8 @@ export function BetaRequestForm() {
         <Field label="Website or social link" error={errors.website} className="sm:col-span-2">
           <input value={form.website} onChange={(event) => update("website", event.target.value)} className="form-input" placeholder="https://..." />
         </Field>
-        <Field label="What do you want beta access to help with?" error={errors.notes} className="sm:col-span-2">
-          <textarea value={form.notes} onChange={(event) => update("notes", event.target.value)} className="form-input min-h-28 resize-y" placeholder="Tell us what you rent, how bookings work today, and what would make beta useful." />
+        <Field label="What should we know before setup?" error={errors.notes} className="sm:col-span-2">
+          <textarea value={form.notes} onChange={(event) => update("notes", event.target.value)} className="form-input min-h-28 resize-y" placeholder="Tell us what you rent, how bookings work today, and what the first booking flow should support." />
         </Field>
       </div>
 

@@ -19,11 +19,27 @@ const forbidden = [
   "login?signup=true",
   "Game changer",
   "Trusted by rental operators and tour guides",
+  "What the beta is proving",
+  "product evidence",
+  "placeholder hype",
+  "sanitized demo",
+  "production test organization",
+  "good fit for this beta wave",
+  "careful beta",
+  "being hardened",
+  "being beta-tested",
+  "review beta fit",
+  "broader launch",
+  "vanity demos",
 ];
+
+const allowedByFile = {
+  "app/terms/page.tsx": ["invite-only"],
+};
 
 const required = [
   { file: "app/lib/marketing.ts", text: "Request beta access" },
-  { file: "app/beta/page.tsx", text: "Request beta access" },
+  { file: "app/components/BetaRequestForm.tsx", text: "Request beta access" },
   { file: "app/api/beta-request/route.ts", text: "BETA_REQUEST_TO_EMAIL" },
 ];
 
@@ -43,9 +59,19 @@ const failures = [];
 
 for (const file of files) {
   const source = readFileSync(file, "utf8");
+  const relativeFile = relative(root, file);
   for (const phrase of forbidden) {
     if (source.includes(phrase)) {
-      failures.push(`${relative(root, file)} contains stale phrase: ${phrase}`);
+      failures.push(`${relativeFile} contains stale phrase: ${phrase}`);
+    }
+  }
+  if (source.toLowerCase().includes("controlled beta")) {
+    failures.push(`${relativeFile} contains stale phrase: controlled beta`);
+  }
+  if (source.includes("Invite-only") || source.includes("invite-only")) {
+    const allowed = allowedByFile[relativeFile] ?? [];
+    if (!allowed.includes("invite-only")) {
+      failures.push(`${relativeFile} contains stale phrase: invite-only`);
     }
   }
 }

@@ -24,6 +24,7 @@ export function PageShell({ children }: PageShellProps) {
               height={28}
               priority
               className="h-7 w-auto object-contain"
+              style={{ width: "auto" }}
             />
           </Link>
           <TrackedLink

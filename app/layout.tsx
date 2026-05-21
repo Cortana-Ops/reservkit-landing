@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PostHogProvider } from "./components/PostHogProvider";
+import { METADATA_DESCRIPTION } from "./lib/marketing";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,8 +20,7 @@ export const metadata: Metadata = {
     default: "ReservKit — Booking Software for Rental & Experience Businesses",
     template: "%s — ReservKit",
   },
-  description:
-    "Invite-only beta access for rental operators, tour guides, and experience businesses that need online booking, payments, waivers, staff scheduling, and reports.",
+  description: METADATA_DESCRIPTION,
   keywords: [
     "booking software",
     "rental booking software",
@@ -41,8 +41,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://reservkit.com" },
   openGraph: {
     title: "ReservKit — Booking Software for Rental & Experience Businesses",
-    description:
-      "Invite-only beta access for online booking, payments, waivers, and staff tools built for rental operators and experience businesses.",
+    description: METADATA_DESCRIPTION,
     url: "https://reservkit.com",
     siteName: "ReservKit",
     type: "website",
@@ -51,8 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ReservKit — Booking Software for Rental & Experience Businesses",
-    description:
-      "Invite-only beta access for online booking, payments, waivers, and staff tools for rental operators.",
+    description: METADATA_DESCRIPTION,
     images: ["https://reservkit.com/opengraph-image.png"],
   },
   verification: {
@@ -88,7 +86,7 @@ const softwareApplicationSchema = {
     price: "0",
     priceCurrency: "USD",
     availability: "https://schema.org/LimitedAvailability",
-    description: "Invite-only beta access with temporary 0% platform fee for approved operators.",
+    description: "Limited beta onboarding with temporary 0% platform fee for approved operators.",
   },
   url: "https://reservkit.com",
 };

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Checkfront Alternative - ReservKit Booking Platform",
@@ -17,28 +17,35 @@ const comparison = [
   {
     feature: "Best fit",
     competitor: "Established booking management across many activity categories",
-    reservkit: "Focused beta for direct rental and experience operators",
+    reservkit: "Direct booking operations for rental and experience operators",
   },
   {
     feature: "Pricing visibility",
-    competitor: "Verify current plan pricing, limits, and add-ons with Checkfront",
+    competitor: "Public pricing centers on a monthly subscription plus online booking fee",
     reservkit: pricingSummary,
   },
   {
     feature: "Payments",
-    competitor: "Supports common payment processors depending on configuration",
+    competitor: "Payment options vary by configuration",
     reservkit: "Stripe Connect with payments routed to the operator account",
   },
   {
     feature: "Waivers",
-    competitor: "Confirm included capabilities and any add-on requirements",
+    competitor: "Waiver tooling is part of its feature set",
     reservkit: "Digital waivers included in core operator workflows",
   },
   {
     feature: "Migration",
-    competitor: "Export format and history depend on account setup",
+    competitor: "Migration details depend on account setup",
     reservkit: "Migration Center V1 is available for structured imports",
   },
+];
+
+const notFit = [
+  "You depend heavily on OTA or reseller marketplace distribution.",
+  "You need complex enterprise integrations before the first direct booking flow.",
+  "You are not ready to connect Stripe for operator-owned payments.",
+  "You do not want to rebuild core availability during onboarding.",
 ];
 
 const faqSchema = {
@@ -58,7 +65,7 @@ const faqSchema = {
       name: "Does ReservKit offer beta access?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. ReservKit is currently controlled beta access by request, with temporary 0% platform fee access for approved beta operators.",
+        text: "Yes. ReservKit is available through guided beta access, with temporary 0% ReservKit platform fees for approved operators during onboarding.",
       },
     },
   ],
@@ -78,12 +85,11 @@ export default function CheckfrontAlternative() {
               Checkfront Alternative
             </span>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
-              Evaluating ReservKit as a{" "}
-              <span className="text-amber">Checkfront alternative</span>
+              ReservKit vs. Checkfront for{" "}
+              <span className="text-amber">direct booking operations</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit is a controlled-beta booking platform for operators who want direct
-              bookings, Stripe-powered payments, waivers, and a cleaner mobile workflow.
+              {POSITIONING_LINE} Compare it when you want a focused direct booking workflow with Stripe-powered payments and a cleaner mobile path.
             </p>
             <div className="mt-8">
               <TrackedLink
@@ -101,7 +107,7 @@ export default function CheckfrontAlternative() {
         <section className="bg-white px-6 py-16" aria-label="Comparison">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-2xl font-bold text-navy">
-              Compare current plan terms carefully
+              Compare the operator decision points
             </h2>
             <div className="overflow-hidden rounded-2xl border border-[var(--color-border)]">
               <div className="grid grid-cols-3 bg-navy text-sm font-semibold text-white">
@@ -126,8 +132,7 @@ export default function CheckfrontAlternative() {
               ))}
             </div>
             <p className="mt-4 text-xs leading-relaxed text-slate-500">
-              Competitor plan details can change. Verify current public pages, invoices, add-ons,
-              and account terms before deciding whether to migrate.
+              Provider offerings, pricing, add-ons, and account terms can change. Verify current account terms directly before migration.
             </p>
           </div>
         </section>
@@ -135,11 +140,11 @@ export default function CheckfrontAlternative() {
         <section className="bg-[var(--color-surface)] px-6 py-16">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-2xl font-bold text-navy">
-              Where ReservKit is intentionally narrower
+              Where ReservKit is intentionally focused
             </h2>
             <div className="space-y-4 text-slate-700">
               <p>
-                This beta is focused on direct booking trust: accurate availability, clear checkout,
+                ReservKit focuses on direct booking trust: accurate availability, clear checkout,
                 waiver evidence, staff visibility, and operator-owned Stripe setup.
               </p>
               <p>
@@ -150,13 +155,26 @@ export default function CheckfrontAlternative() {
           </div>
         </section>
 
+        <section className="bg-white px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-6 text-2xl font-bold text-navy">ReservKit may not be the fit if...</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {notFit.map((item) => (
+                <div key={item} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm text-slate-700">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Want to compare your current setup?
             </h2>
             <p className="mb-8 text-slate-400">
-              Include your current tool and booking volume in the beta request.
+              Include your current tool and booking volume so we can review the safest onboarding path.
             </p>
             <TrackedLink
               href={BETA_URL}
