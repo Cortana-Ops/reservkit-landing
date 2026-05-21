@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { ArrowRight, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
-import { POSITIONING_LINE, pricingSummary } from "../lib/marketing";
+import { pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Documentation & Guides",
@@ -75,7 +75,7 @@ export default function Docs() {
         <div className="mb-12 max-w-2xl">
           <h1 className="text-3xl font-bold text-navy mb-3">ReservKit Documentation</h1>
           <p className="text-lg text-slate-600">
-            {POSITIONING_LINE} These guides walk through setup and daily operation.
+            These guides cover the full ReservKit setup, from connecting Stripe to running your first live booking. Start with Getting Started if you are new. Jump to a section if you are troubleshooting something specific.
           </p>
         </div>
 

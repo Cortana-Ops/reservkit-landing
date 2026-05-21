@@ -10,12 +10,19 @@ interface PageShellProps {
   children: React.ReactNode;
 }
 
+const shellLinks = [
+  { href: "/#features", label: "Features" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/docs", label: "Docs" },
+  { href: "/blog", label: "Blog" },
+];
+
 export function PageShell({ children }: PageShellProps) {
   return (
     <>
       {/* Simple static nav for inner pages */}
       <header className="border-b border-[var(--color-border)] bg-white px-6 py-4">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
@@ -27,6 +34,13 @@ export function PageShell({ children }: PageShellProps) {
               style={{ width: "auto" }}
             />
           </Link>
+          <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+            {shellLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-navy">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
           <TrackedLink
             href={BETA_URL}
             event="beta_access_cta_clicked"

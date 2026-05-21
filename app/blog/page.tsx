@@ -27,9 +27,9 @@ const articles = [
     tag: "Getting Started",
     date: "May 2026",
     readTime: "4 min read",
-    title: "What a first ReservKit setup looks like",
+    title: "Your first ReservKit setup, start to finish",
     intro:
-      "A guided setup starts with the basics: Stripe, one bookable activity, a real booking link, and clear waiver/payment rules.",
+      "Most operators are live with their first real booking link in a single session. Here is exactly what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
       POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",
@@ -46,9 +46,9 @@ const articles = [
     tag: "Business",
     date: "May 2026",
     readTime: "5 min read",
-    title: "How to evaluate booking software fees without surprises",
+    title: "The real cost of your booking platform and how to calculate it",
     intro:
-      "Platform fees, subscriptions, payment processing, refunds, and add-ons all affect what an operator actually keeps.",
+      "Monthly subscription, platform fee, Stripe processing, and volume limits all hit differently depending on how many bookings you take. Run the actual math before you commit.",
     content: [
       "The cleanest way to compare booking tools is to write down the monthly subscription, the per-booking platform fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
       "ReservKit's public pricing is intentionally direct. Free is $0/mo + 4% with 10 bookings/month. Starter is $79/mo + 2.5% with 100 bookings/month. Growth is $149/mo + 2% with unlimited bookings. Pro is $299/mo + 1.5% with unlimited bookings. Enterprise is custom.",
@@ -65,9 +65,9 @@ const articles = [
     tag: "Migration",
     date: "May 2026",
     readTime: "4 min read",
-    title: "Questions to ask before switching booking systems",
+    title: "Before you switch booking software, answer these five questions",
     intro:
-      "A better booking system should reduce operational risk, not create a migration scramble right before your busy season.",
+      "The wrong time to find out your migration plan has gaps is two weeks before your busy season. Verify the practical details before moving active bookings.",
     content: [
       "Before switching tools, confirm the practical details: how activities map over, how availability is rebuilt, where customer records live, what happens to historical bookings, and how payment disputes or refunds are handled in the old system.",
       "ReservKit includes a Migration Center V1 for structured imports. It is designed to make the first migration pass easier, while still leaving room for hands-on review before operators go live.",
@@ -75,6 +75,24 @@ const articles = [
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },
+      { href: "/docs/payments", label: "Payments & fee documentation" },
+    ],
+  },
+  {
+    id: "published-pricing",
+    tag: "Pricing",
+    date: "May 2026",
+    readTime: "3 min read",
+    title: "Why we show our pricing on the website",
+    intro:
+      "Most booking platforms will not show you a number until you have talked to a salesperson. We think that is backwards.",
+    content: [
+      "Operators should be able to estimate software cost before they change their calendar, payment flow, and staff process. Published pricing makes that decision simpler.",
+      "ReservKit uses a monthly subscription plus a per-booking platform fee that decreases as your plan goes up. Stripe processing is separate, and operators use their own Stripe account.",
+      "Transparent pricing does not mean every operator has the same implementation path. Larger enterprise rollouts may still need custom migration or support terms, but the core pricing model should be visible upfront.",
+    ],
+    relatedLinks: [
+      { href: "/pricing", label: "See ReservKit pricing" },
       { href: "/docs/payments", label: "Payments & fee documentation" },
     ],
   },
@@ -93,8 +111,8 @@ export default function Blog() {
             <Rss className="h-5 w-5 text-navy" aria-hidden="true" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-navy">ReservKit Blog</h1>
-            <p className="mt-0.5 text-sm text-slate-500">Operator guides for direct booking workflows</p>
+            <h1 className="text-3xl font-bold text-navy">Operator notes.</h1>
+            <p className="mt-0.5 text-sm text-slate-500">Practical writing for rental and experience operators evaluating direct booking, waivers, and payment setup. No fluff.</p>
           </div>
         </div>
 

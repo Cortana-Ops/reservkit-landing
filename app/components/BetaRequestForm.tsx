@@ -105,7 +105,7 @@ export function BetaRequestForm() {
         <Field label="Your name" error={errors.name}>
           <input value={form.name} onChange={(event) => update("name", event.target.value)} className="form-input" autoComplete="name" />
         </Field>
-        <Field label="Email" error={errors.email}>
+        <Field label="Email address" error={errors.email}>
           <input value={form.email} onChange={(event) => update("email", event.target.value)} className="form-input" autoComplete="email" inputMode="email" />
         </Field>
         <Field label="Business name" error={errors.businessName}>
@@ -129,7 +129,7 @@ export function BetaRequestForm() {
         <Field label="Website or social link" error={errors.website} className="sm:col-span-2">
           <input value={form.website} onChange={(event) => update("website", event.target.value)} className="form-input" placeholder="https://..." />
         </Field>
-        <Field label="What should we know before setup?" error={errors.notes} className="sm:col-span-2">
+        <Field label="Anything we should know before your first setup session?" error={errors.notes} className="sm:col-span-2">
           <textarea value={form.notes} onChange={(event) => update("notes", event.target.value)} className="form-input min-h-28 resize-y" placeholder="Tell us what you rent, how bookings work today, and what the first booking flow should support." />
         </Field>
       </div>
@@ -147,6 +147,9 @@ export function BetaRequestForm() {
         Request beta access
         {status !== "submitting" ? <ArrowRight className="h-4 w-4" aria-hidden="true" /> : null}
       </button>
+      <p className="mt-3 text-center text-xs leading-relaxed text-slate-500">
+        We review every request and reply by email. Limited spots available.
+      </p>
     </form>
   );
 }

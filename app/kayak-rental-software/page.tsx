@@ -82,7 +82,7 @@ export default function KayakRentalSoftware() {
                 {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </TrackedLink>
               <Link
-                href="/#pricing"
+                href="/pricing"
                 className="text-sm font-medium text-slate-600 transition-colors hover:text-navy"
               >
                 View pricing ↓

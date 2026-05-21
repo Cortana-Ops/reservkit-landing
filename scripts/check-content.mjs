@@ -36,6 +36,12 @@ const forbidden = [
   "Cancel anytime",
   "30-60",
   "30–60",
+  "ReservKit may not be the fit if",
+  "flat-rate pricing",
+  "operator-absorbed",
+  "0% platform fees during onboarding",
+  "0% ReservKit platform fees during onboarding",
+  "operator login screenshot",
 ];
 
 const allowedByFile = {

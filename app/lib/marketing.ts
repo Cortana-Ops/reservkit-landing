@@ -6,39 +6,9 @@ export const BETA_PLATFORM_FEE_OFFER = "0% platform fee for 30 days";
 export const POSITIONING_LINE =
   "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waivers, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
-  "Booking software for rental and experience operators to take direct bookings, Stripe payments, waivers, and staff workflows. Limited beta onboarding available.";
+  "Take direct bookings, collect Stripe payments, manage waivers, and run day-of operations. Transparent pricing published upfront. No sales call required.";
 
 export const pricingTiers = [
-  {
-    name: "Beta",
-    price: "Limited access",
-    period: "",
-    fee: BETA_PLATFORM_FEE_OFFER,
-    volume: "Guided onboarding",
-    description: "For approved operators getting 30 days of 0% ReservKit platform fees during setup.",
-    features: [
-      "Guided setup",
-      "Online booking and payments",
-      "Digital waivers",
-      "Guided onboarding",
-    ],
-    highlight: true,
-  },
-  {
-    name: "Free",
-    price: "$0",
-    period: "/mo",
-    fee: "4% platform fee",
-    volume: "10 bookings/month",
-    description: "For trying online booking at very low volume.",
-    features: [
-      "Public booking page",
-      "Customer management",
-      "Email confirmations",
-      "Stripe payment processing",
-    ],
-    highlight: false,
-  },
   {
     name: "Starter",
     price: "$79",
@@ -46,13 +16,7 @@ export const pricingTiers = [
     fee: "2.5% platform fee",
     volume: "100 bookings/month",
     description: "For small operators ready to take direct bookings regularly.",
-    features: [
-      "Everything in Free",
-      "Reports and activity views",
-      "Digital waivers",
-      "Staff scheduling",
-    ],
-    highlight: false,
+    highlight: true,
   },
   {
     name: "Growth",
@@ -61,12 +25,6 @@ export const pricingTiers = [
     fee: "2% platform fee",
     volume: "Unlimited bookings",
     description: "For growing rental and experience businesses.",
-    features: [
-      "Everything in Starter",
-      "Coupons and promotions",
-      "Broadcast SMS tools",
-      "Damage deposit management",
-    ],
     highlight: false,
   },
   {
@@ -76,12 +34,6 @@ export const pricingTiers = [
     fee: "1.5% platform fee",
     volume: "Unlimited bookings",
     description: "For higher-volume teams needing deeper operational support.",
-    features: [
-      "Everything in Growth",
-      "Advanced operational reporting",
-      "Priority support",
-      "Multi-org workflows",
-    ],
     highlight: false,
   },
 ];
@@ -89,9 +41,19 @@ export const pricingTiers = [
 export const enterpriseTier = {
   name: "Enterprise",
   price: "Custom",
-  fee: "custom volume and annual minimum",
+  fee: "Custom platform fee",
+  volume: "Custom volume",
   description: "For operators with larger rollout, migration, or support needs.",
 };
+
+export const betaPricingCallout =
+  "Approved beta operators get 0% ReservKit platform fees for 30 days. Stripe processing still applies.";
+
+export const freePlanFootnote =
+  "Need to try it at very low volume? The Free plan includes 10 bookings/month at 4% — no subscription required.";
+
+export const pricingFinePrint =
+  "Stripe processing fees (~2.9% + 30¢) apply separately. ReservKit’s platform fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
 
 export const pricingSummary =
   "Approved beta operators get 0% ReservKit platform fees for 30 days. Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";

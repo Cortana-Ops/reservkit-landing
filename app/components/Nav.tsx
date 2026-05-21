@@ -10,7 +10,7 @@ import { BETA_URL, LOGIN_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 const navLinks = [
   { href: "/#features", label: "Features" },
   { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#pricing", label: "Pricing" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/docs", label: "Docs" },
 ];
 

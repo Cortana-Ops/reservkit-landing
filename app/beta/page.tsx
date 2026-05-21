@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Mail, Settings, WalletCards } from "lucide-react";
 import { BetaRequestForm } from "../components/BetaRequestForm";
-import { POSITIONING_LINE } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Get Guided Beta Access",
+  title: "Request Beta Access — ReservKit",
   description:
-    "Get guided beta access to ReservKit booking software for rental, tour, and experience operators.",
+    "ReservKit is onboarding a limited number of operators with guided setup and temporary 0% platform fees. Tell us about your business.",
 };
 
-const fitSignals = [
-  "Tell us about your business and current booking workflow.",
-  "We reply by email with next steps for onboarding.",
-  "Setup starts with Stripe, one activity, availability, and a test booking.",
+const included = [
+  {
+    icon: Settings,
+    title: "Guided setup",
+    body: "We walk through Stripe, your first activity, availability, and waivers together.",
+  },
+  {
+    icon: WalletCards,
+    title: "0% platform fees for 30 days",
+    body: "Stripe processing still applies. ReservKit's fee is waived for the first 30 days.",
+  },
+  {
+    icon: Mail,
+    title: "Direct support",
+    body: "Not a ticket queue. A real reply from the team.",
+  },
 ];
 
 const nextSteps = [
@@ -39,33 +50,44 @@ export default function BetaPage() {
               Guided beta access
             </div>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-              Get guided beta access
+              Get set up with someone who knows the product.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              {POSITIONING_LINE} Tell us about your business so we can help set up the right booking flow.
+              We are personally onboarding a limited number of operators right now. You get guided setup, 0% ReservKit platform fees for 30 days, and a direct line if something is not working.
             </p>
-            <div className="mt-8 space-y-3">
-              {fitSignals.map((signal) => (
-                <div key={signal} className="flex gap-3 rounded-xl bg-white p-4 text-sm text-slate-700 shadow-sm">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
-                  <span>{signal}</span>
-                </div>
-              ))}
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
+              Tell us what you run and how bookings work today. We will reply within one business day.
+            </p>
+            <div className="mt-8 grid gap-3">
+              {included.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex gap-4 rounded-xl bg-white p-4 text-sm text-slate-700 shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-light text-amber-dark">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h2 className="font-bold text-navy">{item.title}</h2>
+                      <p className="mt-1 leading-relaxed text-slate-600">{item.body}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-sm">
               <h2 className="font-bold text-navy">What happens next</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-5">
                 {nextSteps.map((step, index) => (
                   <div key={step} className="rounded-xl bg-[var(--color-surface)] p-3 text-sm font-semibold text-slate-700">
-                    <span className="mb-2 block text-xs font-bold text-amber-dark">0{index + 1}</span>
+                    <span className="mb-2 flex items-center gap-1 text-xs font-bold text-amber-dark">
+                      <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
+                      0{index + 1}
+                    </span>
                     {step}
                   </div>
                 ))}
               </div>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-slate-500">
-              Approved beta operators get 0% ReservKit platform fees for 30 days. Stripe processing still applies.
-            </p>
           </section>
 
           <BetaRequestForm />
