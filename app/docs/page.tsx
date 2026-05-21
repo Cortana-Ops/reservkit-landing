@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { ArrowRight, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
-import { pricingSummary } from "../lib/marketing";
+import { POSITIONING_LINE, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Documentation & Guides",
-  description: "Get started with ReservKit — guides for rental operators and experience businesses.",
+  description: "ReservKit guides for direct bookings, Stripe payments, waivers, staff scheduling, and reports.",
   alternates: { canonical: "https://reservkit.com/docs" },
 };
 
@@ -75,8 +75,7 @@ export default function Docs() {
         <div className="mb-12 max-w-2xl">
           <h1 className="text-3xl font-bold text-navy mb-3">ReservKit Documentation</h1>
           <p className="text-lg text-slate-600">
-            Guides, tutorials, and reference documentation for rental operators and experience
-            businesses using ReservKit.
+            {POSITIONING_LINE} These guides walk through setup and daily operation.
           </p>
         </div>
 

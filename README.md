@@ -2,7 +2,7 @@
 
 Marketing website for ReservKit at `reservkit.com`.
 
-This site is currently positioned for controlled beta access. Public marketing CTAs should route to `/beta`; direct app login links are for existing users only.
+This site is positioned as working booking software with limited guided beta onboarding. Public marketing CTAs should route to `/beta`; direct app login links are for existing users only.
 
 ## Local Development
 

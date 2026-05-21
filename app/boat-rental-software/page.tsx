@@ -3,12 +3,12 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Boat Rental Booking Software - Payments & Waivers Included",
   description:
-    "ReservKit helps boat rental and charter operators take online bookings, collect Stripe payments, and manage digital waivers during controlled beta.",
+    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and guided beta onboarding.",
   keywords: [
     "boat rental booking software",
     "boat rental reservation system",
@@ -39,7 +39,7 @@ const faqSchema = {
       name: "Is ReservKit available for boat rental businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is accepting controlled beta requests from boat rental and charter operators. Approved beta operators receive guided setup and temporary 0% platform fee access.",
+        text: "ReservKit is available to selected boat rental and charter operators through guided beta onboarding. Approved operators receive setup help and temporary 0% ReservKit platform fees during onboarding.",
       },
     },
     {
@@ -71,8 +71,7 @@ export default function BoatRentalSoftware() {
               <span className="text-amber">Stripe payments and waivers</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit gives boat rental and charter operators one place to manage online
-              reservations, deposits, guest waivers, staff assignments, and check-in.
+              {POSITIONING_LINE} Boat rental teams can manage reservations, deposits, guest waivers, staff assignments, and check-in without stitching together separate tools.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
@@ -115,17 +114,17 @@ export default function BoatRentalSoftware() {
         <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-2xl font-bold text-navy">
-              A careful beta for operators with real schedules
+              Go live with a first boat rental flow
             </h2>
             <div className="space-y-4 text-slate-700">
               <p>
                 Boat rental operations depend on accurate capacity, clear deposits, signed waivers,
-                and staff who know what is leaving the dock next. ReservKit is being beta-tested
-                with those operational details in mind.
+                and staff who know what is leaving the dock next. ReservKit onboarding starts with
+                one configured activity and a test booking before you widen usage.
               </p>
               <p>
-                Approved beta operators get invite-only temporary 0% platform fee access while we
-                validate onboarding and production workflows. Public pricing remains transparent:
+                Approved beta operators get temporary 0% ReservKit platform fees during onboarding.
+                Public pricing remains transparent:
                 {` ${pricingSummary}`}
               </p>
             </div>
@@ -138,7 +137,7 @@ export default function BoatRentalSoftware() {
               Want ReservKit for boat rentals?
             </h2>
             <p className="mb-8 text-slate-400">
-              Share your current booking workflow and we will review fit for beta access.
+              Share your current booking workflow and we will reply with guided onboarding next steps.
             </p>
             <TrackedLink
               href={BETA_URL}

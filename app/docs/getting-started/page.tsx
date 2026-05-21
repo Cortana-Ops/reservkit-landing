@@ -25,8 +25,8 @@ const steps = [
     number: "01",
     title: "Request beta access",
     content: [
-      "ReservKit is currently controlled beta access by request. Submit your business name, booking volume, current booking tool, and website or social link from the beta request page.",
-      "If your business is a fit for the current beta, we will invite you into onboarding and help confirm the first production-ready setup steps.",
+      "Submit your business name, booking volume, current booking tool, and website or social link from the beta request page.",
+      "Approved operators receive guided onboarding to confirm the first production-ready setup steps.",
       pricingSummary,
     ],
   },
@@ -55,7 +55,7 @@ const steps = [
     content: [
       "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
       "Once connected, your Stripe account status will show \"Connected\" and your public booking page will be live and ready to accept payments.",
-      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive temporary 0% platform fee access during the beta period.",
+      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive temporary 0% ReservKit platform fees during onboarding.",
     ],
   },
   {
@@ -92,7 +92,7 @@ export default function GettingStarted() {
           </p>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Controlled beta by request</span>
+            <span>Guided beta access</span>
             <span className="mx-2">·</span>
             <CheckCircle2 className="h-4 w-4 text-green-500" />
             <span>Temporary 0% platform fee for approved beta operators</span>

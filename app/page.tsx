@@ -4,19 +4,28 @@ import {
   ArrowRight,
   CalendarDays,
   CheckCircle2,
+  ClipboardCheck,
   CreditCard,
   FileSignature,
+  Route,
   ShieldCheck,
   Users,
 } from "lucide-react";
 import Nav from "./components/Nav";
 import { TrackedLink } from "./components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, enterpriseTier, pricingSummary, pricingTiers } from "./lib/marketing";
+import {
+  BETA_URL,
+  POSITIONING_LINE,
+  PRIMARY_CTA_LABEL,
+  enterpriseTier,
+  pricingSummary,
+  pricingTiers,
+} from "./lib/marketing";
 
 const faqItems = [
   {
-    q: "Is ReservKit open to everyone?",
-    a: "ReservKit is currently in controlled beta. Operators can request access, and approved beta accounts receive temporary 0% ReservKit platform fees during the beta window.",
+    q: "Is ReservKit available now?",
+    a: "ReservKit is available through limited beta onboarding for selected rental, tour, and experience operators. Approved operators get guided setup and temporary 0% ReservKit platform fees during onboarding.",
   },
   {
     q: "How do customer payments work?",
@@ -24,10 +33,10 @@ const faqItems = [
   },
   {
     q: "Do customers need an account to book?",
-    a: "No. Customers can book, pay, and receive their confirmation without creating a ReservKit account.",
+    a: "No. Customers can book, pay, sign required waivers, and receive their confirmation without creating a ReservKit account.",
   },
   {
-    q: "What happens after beta?",
+    q: "What happens after guided access?",
     a: pricingSummary,
   },
 ];
@@ -42,63 +51,63 @@ const faqSchema = {
   })),
 };
 
-const featureRows = [
+const operatorPain = [
+  "Phone calls and DMs turn into manual calendar checks.",
+  "Payment links, waivers, and customer notes live in separate tools.",
+  "Staff need a clear view of who is arriving, paid, and signed.",
+  "Switching software feels risky when active bookings are on the line.",
+];
+
+const workflowSteps = [
   {
     icon: CalendarDays,
-    label: "Direct booking",
-    heading: "A customer booking flow you can share with confidence",
-    body: "Guests choose an activity, pick an available time, enter their details, and go straight to Stripe. The flow is built for direct bookings from your website, social bio, or Google Business profile.",
-    bullets: ["Public activity links", "Real availability slots", "Guest and price summary before Stripe", "Email confirmations"],
+    label: "Booking page",
+    heading: "Launch a direct booking flow",
+    body: "Publish bookable activities with availability, guest counts, pricing, cutoff rules, and a customer-friendly path from selection to checkout.",
+    bullets: ["Public activity links", "Availability slots", "Guest details", "Email confirmations"],
   },
   {
     icon: CreditCard,
-    label: "Payments",
-    heading: "Stripe Connect routes payment to the operator",
-    body: "ReservKit creates Stripe Checkout sessions on behalf of the connected business. The exact branding customers see comes from the operator's Stripe account profile.",
-    bullets: ["Connected-account payment flow", "Deposits and balances", "Coupons and adjustments", "Refund-ready payment records"],
+    label: "Stripe payments",
+    heading: "Get paid through your Stripe account",
+    body: "ReservKit creates Stripe Checkout sessions for the connected operator account, so customer payments and Stripe branding stay tied to the business.",
+    bullets: ["Stripe Connect", "Deposits and balances", "Coupons and adjustments", "Refund-ready records"],
   },
   {
     icon: FileSignature,
     label: "Operations",
-    heading: "Waivers, check-in, staff, and reporting in one operator workspace",
-    body: "ReservKit is not just a payment link. Operators can manage day-of readiness, digital waiver evidence, staff assignments, customer records, and revenue reporting after the booking comes in.",
-    bullets: ["Per-guest digital waivers", "Check-in manifest", "Staff schedule and tasks", "Reports and booking reconciliation"],
+    heading: "Run waivers and day-of work together",
+    body: "Keep waiver evidence, check-in status, staff assignments, customer records, and booking reports in one operator workspace.",
+    bullets: ["Per-guest waivers", "Check-in manifest", "Staff schedule", "Revenue reports"],
   },
 ];
 
-const operatorWorkflows = [
-  {
-    title: "Before launch",
-    body: "Set up activities, availability, Stripe, booking URL, and a test booking from the in-app onboarding checklist.",
-  },
-  {
-    title: "During the booking",
-    body: "Customers see the activity, selected time, guest details, price summary, and Stripe payment page without needing an account.",
-  },
-  {
-    title: "Day of service",
-    body: "Operators review the manifest, waiver status, staff coverage, and customer details from the same workspace.",
-  },
+const switchSteps = [
+  "Review your current booking setup",
+  "Configure the first activity",
+  "Connect Stripe",
+  "Run a test booking",
+  "Share the booking link with a small first group",
 ];
 
-const proofImages = [
+const productImages = [
   {
-    src: "/product-public-booking-demo.png",
-    alt: "ReservKit public booking page with sanitized demo activity content",
-    title: "Public booking page",
-    body: "Current public booking layout shown with sanitized demo content.",
+    src: "/product-public-booking-live.png",
+    alt: "ReservKit public booking page with configured activity cards",
+    title: "Customer booking page",
+    body: "Guests choose an activity, review details, select a date, and move toward secure checkout.",
   },
   {
     src: "/product-customer-lookup.png",
     alt: "ReservKit customer booking lookup page",
     title: "Customer lookup",
-    body: "Customer-facing booking lookup and self-service entry point.",
+    body: "Customers can return to booking details without needing an account.",
   },
   {
     src: "/product-operator-login.png",
     alt: "ReservKit operator login page",
     title: "Operator access",
-    body: "The operator workspace starts behind authenticated access.",
+    body: "The operator workspace stays behind authenticated access for staff and owners.",
   },
 ];
 
@@ -115,13 +124,13 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(28rem,1fr)] lg:items-center">
             <div>
               <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-                Controlled beta access for rental and experience operators
+                Now onboarding limited beta operators
               </div>
               <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-navy sm:text-6xl">
-                Direct booking software for operators who need fewer workarounds
+                Booking software for operators who want to sell direct
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-                ReservKit helps rental, tour, and experience businesses take direct bookings, collect Stripe payments, send waivers, and run day-of operations from one focused workspace.
+                {POSITIONING_LINE}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
@@ -133,14 +142,14 @@ export default function Home() {
                   {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </TrackedLink>
                 <Link
-                  href="#product-proof"
+                  href="#workflow"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-7 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:text-navy"
                 >
-                  See product evidence
+                  See how it works
                 </Link>
               </div>
               <div className="mt-6 grid gap-2 text-sm text-slate-600 sm:grid-cols-3">
-                {["Invite-only beta", "Temporary 0% beta fee", "Stripe-powered payments"].map((item) => (
+                {["Guided setup", "Temporary 0% platform fee", "Operator-owned Stripe payments"].map((item) => (
                   <span key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500" aria-hidden="true" />
                     {item}
@@ -150,7 +159,7 @@ export default function Home() {
             </div>
             <div className="rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
               <Image
-                src="/product-public-booking-demo.png"
+                src="/product-public-booking-live.png"
                 alt="ReservKit public booking page screenshot"
                 width={1280}
                 height={900}
@@ -162,18 +171,37 @@ export default function Home() {
         </section>
 
         <section id="features" className="bg-white px-6 py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Direct booking without the daily workarounds</h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                Operators do not switch booking systems for a prettier calendar. They switch when booking, payment, waivers, staff, and customer details finally work together.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {operatorPain.map((item) => (
+                <div key={item} className="flex gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm leading-relaxed text-slate-700">
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-amber-dark" aria-hidden="true" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="workflow" className="bg-[var(--color-surface)] px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">What the beta is proving</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">From booking link to day-of operations</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                The first beta wave is focused on real operator workflows: getting bookable, taking payment, collecting waiver evidence, and understanding what happened after the booking.
+                ReservKit connects the customer booking path to the operational records your team needs after the payment lands.
               </p>
             </div>
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {featureRows.map((feature) => {
+              {workflowSteps.map((feature) => {
                 const Icon = feature.icon;
                 return (
-                  <article key={feature.heading} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+                  <article key={feature.heading} className="rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-sm">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-light text-amber-dark">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
@@ -195,26 +223,48 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="product-proof" className="bg-[var(--color-surface)] px-6 py-20">
+        <section id="how-it-works" className="bg-white px-6 py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <Route className="h-10 w-10 text-amber-dark" aria-hidden="true" />
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Switch carefully, go live when ready</h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                ReservKit onboarding is designed around a first working flow, not a rushed migration. Start with one activity, prove the path, then widen usage when the setup is ready.
+              </p>
+            </div>
+            <div className="grid gap-3">
+              {switchSteps.map((step, index) => (
+                <div key={step} className="flex items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy text-sm font-bold text-white">
+                    {index + 1}
+                  </div>
+                  <p className="text-sm font-semibold text-slate-700">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="product-tour" className="bg-[var(--color-surface)] px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Real product evidence, not placeholder hype</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">See ReservKit in action</h2>
                 <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-                  These images show the current ReservKit product surface with sanitized demo data and no private customer information.
+                  The customer booking path and operator access are built for real reservation workflows, from first click through follow-up lookup.
                 </p>
               </div>
               <TrackedLink
                 href={BETA_URL}
                 event="beta_access_cta_clicked"
-                properties={{ location: "product_proof" }}
+                properties={{ location: "product_tour" }}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-navy-light"
               >
                 {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </TrackedLink>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {proofImages.map((image) => (
+              {productImages.map((image) => (
                 <article key={image.src} className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-sm">
                   <Image src={image.src} alt={image.alt} width={1280} height={900} className="aspect-[4/3] object-cover object-top" />
                   <div className="p-5">
@@ -227,34 +277,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="how-it-works" className="bg-white px-6 py-20">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">How the beta path works</h2>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {operatorWorkflows.map((workflow, index) => (
-                <article key={workflow.title} className="rounded-2xl border-l-4 border-amber bg-[var(--color-surface)] p-6">
-                  <div className="text-sm font-extrabold text-amber-dark">0{index + 1}</div>
-                  <h3 className="mt-3 text-xl font-bold text-navy">{workflow.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{workflow.body}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" className="bg-[var(--color-surface)] px-6 py-20">
+        <section id="pricing" className="bg-white px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Beta first, transparent pricing after</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Transparent pricing from day one</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Beta access is temporary and invite-only. Public pricing stays visible so operators know what changes after beta.
+                Approved beta operators get temporary 0% ReservKit platform fees during onboarding. Public pricing stays visible so there are no surprises later.
               </p>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
               {pricingTiers.map((tier) => (
                 <article
                   key={tier.name}
-                  className={`rounded-2xl p-6 ${tier.highlight ? "bg-navy text-white ring-2 ring-amber" : "border border-[var(--color-border)] bg-white"}`}
+                  className={`rounded-2xl p-6 ${tier.highlight ? "bg-navy text-white ring-2 ring-amber" : "border border-[var(--color-border)] bg-[var(--color-surface)]"}`}
                 >
                   <h3 className={`text-lg font-bold ${tier.highlight ? "text-white" : "text-navy"}`}>{tier.name}</h3>
                   <div className="mt-3 flex items-baseline gap-1">
@@ -267,7 +302,7 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-white p-6">
+            <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="font-bold text-navy">{enterpriseTier.name}</h3>
@@ -282,18 +317,18 @@ export default function Home() {
         <section className="bg-white px-6 py-20">
           <div className="mx-auto max-w-3xl">
             <div className="text-center">
-              <ShieldCheck className="mx-auto h-10 w-10 text-amber-dark" aria-hidden="true" />
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy">Built for careful beta onboarding</h2>
+              <ClipboardCheck className="mx-auto h-10 w-10 text-amber-dark" aria-hidden="true" />
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy">Built for operator-owned payments and practical support</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                We are inviting a small number of operators first so setup, payment confidence, and support loops stay manageable.
+                ReservKit keeps the important relationships clear: operators own their Stripe account, customers see the business at checkout, and setup starts with a working booking path.
               </p>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {[
                 "Operators keep their own Stripe account relationship.",
                 "ReservKit platform fee is operator-absorbed by default.",
-                "Beta feedback is reviewed before broader launch decisions.",
-                "Support is focused on real booking workflows, not vanity demos.",
+                "The first setup path includes a live-style test booking.",
+                "Support is focused on launch-critical booking workflows.",
               ].map((item) => (
                 <div key={item} className="flex gap-3 rounded-xl border border-[var(--color-border)] p-4 text-sm text-slate-700">
                   <Users className="mt-0.5 h-4 w-4 shrink-0 text-amber-dark" aria-hidden="true" />
@@ -306,9 +341,9 @@ export default function Home() {
 
         <section className="bg-navy px-6 py-20 text-center">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-white">Want to try ReservKit in beta?</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white">Ready for guided beta access?</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-300">
-              Tell us what you operate and how booking works today. We will follow up if your business is a good fit for this beta wave.
+              Tell us what you operate and how booking works today. We will reply by email with next steps for limited onboarding.
             </p>
             <TrackedLink
               href={BETA_URL}
@@ -325,9 +360,9 @@ export default function Home() {
       <footer className="bg-navy-light px-6 py-10 text-slate-300">
         <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-[1fr_auto_auto]">
           <div>
-            <Image src="/logo.png" alt="ReservKit" width={100} height={28} className="h-7 w-auto object-contain" />
+            <Image src="/logo.png" alt="ReservKit" width={100} height={28} className="h-7 w-auto object-contain" style={{ width: "auto" }} />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              Direct booking, payments, waivers, and operator tools for rental and experience businesses.
+              {POSITIONING_LINE}
             </p>
           </div>
           <div className="space-y-2 text-sm">

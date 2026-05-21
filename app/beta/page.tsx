@@ -2,17 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { BetaRequestForm } from "../components/BetaRequestForm";
+import { POSITIONING_LINE } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Request Beta Access",
+  title: "Get Guided Beta Access",
   description:
-    "Request invite-only beta access to ReservKit for rental, tour, and experience operators.",
+    "Get guided beta access to ReservKit booking software for rental, tour, and experience operators.",
 };
 
 const fitSignals = [
-  "You take reservations for rentals, tours, classes, or experiences.",
-  "You want direct online bookings and Stripe-powered payment collection.",
-  "You can test with real operating workflows and share concrete feedback.",
+  "Tell us about your business and current booking workflow.",
+  "We reply by email with next steps for onboarding.",
+  "Setup starts with Stripe, one activity, availability, and a test booking.",
+];
+
+const nextSteps = [
+  "Review your request",
+  "Confirm Stripe setup",
+  "Configure your first activity",
+  "Set availability",
+  "Run a test booking",
 ];
 
 export default function BetaPage() {
@@ -27,13 +36,13 @@ export default function BetaPage() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(26rem,1fr)] lg:items-start">
           <section className="pt-4">
             <div className="inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-              Invite-only beta
+              Guided beta access
             </div>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-              Request beta access to ReservKit
+              Get guided beta access
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              We are opening ReservKit carefully with operators who can run real booking workflows and tell us what needs to be sharper before a broader launch.
+              {POSITIONING_LINE} Tell us about your business so we can help set up the right booking flow.
             </p>
             <div className="mt-8 space-y-3">
               {fitSignals.map((signal) => (
@@ -43,8 +52,19 @@ export default function BetaPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-sm">
+              <h2 className="font-bold text-navy">What happens next</h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-5">
+                {nextSteps.map((step, index) => (
+                  <div key={step} className="rounded-xl bg-[var(--color-surface)] p-3 text-sm font-semibold text-slate-700">
+                    <span className="mb-2 block text-xs font-bold text-amber-dark">0{index + 1}</span>
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
             <p className="mt-6 text-sm leading-relaxed text-slate-500">
-              Beta access is temporarily 0% ReservKit platform fee. Stripe processing still applies. We will follow up by email if your use case is a good fit for this wave.
+              Approved beta operators get temporary 0% ReservKit platform fees during onboarding. Stripe processing still applies.
             </p>
           </section>
 

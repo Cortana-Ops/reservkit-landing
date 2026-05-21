@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "FareHarbor Alternative - ReservKit",
@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 const comparison = [
   {
     feature: "Best fit",
-    competitor: "Broad tours and activities marketplace workflows",
+    competitor: "Broad tour, activity, rental, and attraction operations",
     reservkit: "Direct booking operations for rental and experience operators",
   },
   {
     feature: "Pricing visibility",
-    competitor: "Verify current pricing and contract terms with FareHarbor",
+    competitor: "Demo-led evaluation and account-specific terms",
     reservkit: pricingSummary,
   },
   {
@@ -36,9 +36,16 @@ const comparison = [
   },
   {
     feature: "Migration",
-    competitor: "Export and historical data access vary by account",
+    competitor: "Future reservation transfer is part of FareHarbor onboarding",
     reservkit: "Migration Center V1 is available for structured imports",
   },
+];
+
+const notFit = [
+  "You depend heavily on OTA or reseller marketplace distribution.",
+  "You need complex enterprise integrations before the first direct booking flow.",
+  "You are not ready to connect Stripe for operator-owned payments.",
+  "You do not want to rebuild core availability during onboarding.",
 ];
 
 const faqSchema = {
@@ -78,12 +85,11 @@ export default function FareHarborAlternative() {
               FareHarbor Alternative
             </span>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
-              Evaluating ReservKit as a{" "}
-              <span className="text-amber">FareHarbor alternative</span>
+              ReservKit vs. FareHarbor for{" "}
+              <span className="text-amber">direct booking operations</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit is built for direct rental and experience operators who want a focused
-              booking workflow, Stripe payments, waivers, and guided beta onboarding.
+              {POSITIONING_LINE} Compare it when you want a focused direct booking workflow with operator-owned Stripe payments.
             </p>
             <div className="mt-8">
               <TrackedLink
@@ -101,7 +107,7 @@ export default function FareHarborAlternative() {
         <section className="bg-white px-6 py-16" aria-label="Comparison">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-2xl font-bold text-navy">
-              Compare current terms before switching
+              Compare the operator decision points
             </h2>
             <div className="overflow-hidden rounded-2xl border border-[var(--color-border)]">
               <div className="grid grid-cols-3 bg-navy text-sm font-semibold text-white">
@@ -126,9 +132,7 @@ export default function FareHarborAlternative() {
               ))}
             </div>
             <p className="mt-4 text-xs leading-relaxed text-slate-500">
-              Competitor pricing, contracts, payout timing, and add-ons can change by account and
-              sales channel. Always verify current terms directly with the provider before making a
-              migration decision.
+              Provider offerings, pricing, payout timing, and contract terms can change. Verify current account terms directly before migration.
             </p>
           </div>
         </section>
@@ -152,13 +156,26 @@ export default function FareHarborAlternative() {
           </div>
         </section>
 
+        <section className="bg-white px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-6 text-2xl font-bold text-navy">ReservKit may not be the fit if...</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {notFit.map((item) => (
+                <div key={item} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm text-slate-700">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Thinking about switching tools?
             </h2>
             <p className="mb-8 text-slate-400">
-              Include your current booking system in the beta request so we can review migration fit.
+              Include your current booking system in the request so we can review the safest onboarding path.
             </p>
             <TrackedLink
               href={BETA_URL}

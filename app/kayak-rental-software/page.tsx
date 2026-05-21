@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Kayak Rental Booking Software - Online Reservations & Waivers",
@@ -38,7 +38,7 @@ const faqSchema = {
       name: "Is ReservKit accepting kayak rental operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is reviewing controlled beta requests from kayak, paddleboard, and watersports rental operators.",
+        text: "ReservKit is available to selected kayak, paddleboard, and watersports rental operators through guided beta onboarding.",
       },
     },
     {
@@ -70,8 +70,7 @@ export default function KayakRentalSoftware() {
               <span className="text-amber">reservations, payments, and waivers</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit helps kayak and paddleboard rental operators move from phone calls,
-              spreadsheets, and paper waivers into a cleaner online booking flow.
+              {POSITIONING_LINE} Kayak and paddleboard rental operators can move from phone calls, spreadsheets, and paper waivers into a cleaner online booking flow.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
@@ -114,17 +113,17 @@ export default function KayakRentalSoftware() {
         <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-2xl font-bold text-navy">
-              Invite-only beta for seasonal operators
+              Online booking for seasonal rental teams
             </h2>
             <div className="space-y-4 text-slate-700">
               <p>
                 Rental operators need simple availability, clear customer details, signed waivers,
-                and payment records that match what happened at the launch site. ReservKit is being
-                hardened around those everyday details before broader rollout.
+                and payment records that match what happened at the launch site. ReservKit starts
+                with a focused setup path for the first activity you want customers to book online.
               </p>
               <p>
-                Beta access is reviewed manually and includes temporary 0% platform fee access for
-                approved operators. Public pricing is documented here: {pricingSummary}
+                Approved beta operators receive temporary 0% ReservKit platform fees during onboarding.
+                Public pricing is documented here: {pricingSummary}
               </p>
             </div>
           </div>
@@ -133,7 +132,7 @@ export default function KayakRentalSoftware() {
         <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-2xl font-bold text-white">
-              Ready to test ReservKit for kayak rentals?
+              Ready to use ReservKit for kayak rentals?
             </h2>
             <p className="mb-8 text-slate-400">
               Tell us about your rental volume, seasonality, and current booking tool.

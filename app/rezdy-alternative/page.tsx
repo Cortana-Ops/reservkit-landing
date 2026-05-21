@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Rezdy Alternative - Modern Booking Software for Operators",
@@ -16,22 +16,22 @@ export const metadata: Metadata = {
 const comparison = [
   {
     feature: "Best fit",
-    competitor: "Tours and activities with marketplace and reseller workflows",
+    competitor: "Tours and activities with marketplace, reseller, and channel workflows",
     reservkit: "Direct booking operations for rentals and experiences",
   },
   {
     feature: "Pricing visibility",
-    competitor: "Verify current subscription, booking, and channel terms with Rezdy",
+    competitor: "Public trial and plan-led evaluation with channel tools",
     reservkit: pricingSummary,
   },
   {
     feature: "Payments",
-    competitor: "Payment processor support depends on account configuration",
+    competitor: "Payment processor support depends on account setup",
     reservkit: "Stripe Connect with operator-owned Stripe accounts",
   },
   {
     feature: "Waivers",
-    competitor: "Confirm native and third-party waiver options",
+    competitor: "Confirm waiver workflow fit for your account",
     reservkit: "Digital waiver workflows built into setup",
   },
   {
@@ -39,6 +39,13 @@ const comparison = [
     competitor: "Export scope depends on the existing account",
     reservkit: "Migration Center V1 is available for structured imports",
   },
+];
+
+const notFit = [
+  "You depend heavily on OTA or reseller marketplace distribution.",
+  "You need complex enterprise integrations before the first direct booking flow.",
+  "You are not ready to connect Stripe for operator-owned payments.",
+  "You do not want to rebuild core availability during onboarding.",
 ];
 
 const faqSchema = {
@@ -58,7 +65,7 @@ const faqSchema = {
       name: "How does ReservKit pricing work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit beta access is invite-only with temporary 0% platform fee access. Public plans are Free, Starter, Growth, Pro, and Enterprise with published subscription and platform-fee terms.",
+        text: "Approved beta operators get temporary 0% ReservKit platform fees during onboarding. Public plans are Free, Starter, Growth, Pro, and Enterprise with published subscription and platform-fee terms.",
       },
     },
   ],
@@ -78,11 +85,10 @@ export default function RezdyAlternative() {
               Rezdy Alternative
             </span>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
-              Evaluating ReservKit as a <span className="text-amber">Rezdy alternative</span>
+              ReservKit vs. Rezdy for <span className="text-amber">direct booking operations</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              ReservKit is a controlled-beta booking platform for operators who want direct
-              bookings, clear checkout, Stripe payments, and practical staff workflows.
+              {POSITIONING_LINE} Compare it when direct bookings, clear checkout, Stripe payments, and practical staff workflows matter most.
             </p>
             <div className="mt-8">
               <TrackedLink
@@ -100,7 +106,7 @@ export default function RezdyAlternative() {
         <section className="bg-white px-6 py-16" aria-label="Comparison">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-8 text-center text-2xl font-bold text-navy">
-              Compare fit, not just feature lists
+              Compare the operator decision points
             </h2>
             <div className="overflow-hidden rounded-2xl border border-[var(--color-border)]">
               <div className="grid grid-cols-3 bg-navy text-sm font-semibold text-white">
@@ -125,8 +131,7 @@ export default function RezdyAlternative() {
               ))}
             </div>
             <p className="mt-4 text-xs leading-relaxed text-slate-500">
-              Verify competitor pricing, channel fees, add-ons, and integration terms directly
-              before switching systems.
+              Provider offerings, channel fees, add-ons, and integration terms can change. Verify current account terms directly before migration.
             </p>
           </div>
         </section>
@@ -139,7 +144,7 @@ export default function RezdyAlternative() {
             <div className="space-y-4 text-slate-700">
               <p>
                 ReservKit is not trying to be every marketplace, reseller, and enterprise workflow
-                at once. The beta is focused on direct operator booking, payment, waiver, and staff
+                at once. It focuses on direct operator booking, payment, waiver, and staff
                 workflows.
               </p>
               <p>
@@ -151,13 +156,26 @@ export default function RezdyAlternative() {
           </div>
         </section>
 
+        <section className="bg-white px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-6 text-2xl font-bold text-navy">ReservKit may not be the fit if...</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {notFit.map((item) => (
+                <div key={item} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm text-slate-700">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Want to evaluate ReservKit against Rezdy?
             </h2>
             <p className="mb-8 text-slate-400">
-              Share your current setup, booking volume, and migration needs in the beta request.
+              Share your current setup, booking volume, and migration needs so we can review the safest onboarding path.
             </p>
             <TrackedLink
               href={BETA_URL}

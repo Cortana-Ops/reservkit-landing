@@ -3,12 +3,12 @@ import Link from "next/link";
 import { ArrowRight, Clock, Rss } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Blog — Rental Operator Guides & Beta Notes",
+  title: "Blog — Rental Operator Guides",
   description:
-    "Practical notes for rental operators and experience businesses evaluating ReservKit during controlled beta.",
+    "Practical notes for rental operators and experience businesses evaluating direct booking, Stripe payments, waivers, and day-of workflows.",
   alternates: { canonical: "https://reservkit.com/blog" },
 };
 
@@ -27,14 +27,14 @@ const articles = [
     tag: "Getting Started",
     date: "May 2026",
     readTime: "4 min read",
-    title: "What a first ReservKit beta setup looks like",
+    title: "What a first ReservKit setup looks like",
     intro:
-      "A controlled beta setup starts with the basics: Stripe, one bookable activity, a real booking link, and clear waiver/payment rules.",
+      "A guided setup starts with the basics: Stripe, one bookable activity, a real booking link, and clear waiver/payment rules.",
     content: [
-      "ReservKit is currently accepting beta operators by request so onboarding can stay hands-on. The goal is not to push every business into self-serve signup at once; it is to help a focused group get a clean booking flow live and tell us where the product still needs sharper edges.",
+      POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",
-      "During beta, approved operators receive temporary invite-only access at 0% platform fee. Public plan pricing after beta is documented plainly: " + pricingSummary,
-      "If you are evaluating ReservKit, the best next step is to request beta access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to tell whether this beta is a good fit right now.",
+      "Approved beta operators receive temporary 0% ReservKit platform fees during onboarding. Public plan pricing is documented plainly: " + pricingSummary,
+      "If you are evaluating ReservKit, the best next step is to request beta access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },
@@ -53,7 +53,7 @@ const articles = [
       "The cleanest way to compare booking tools is to write down the monthly subscription, the per-booking platform fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
       "ReservKit's public pricing is intentionally direct. Free is $0/mo + 4% with 10 bookings/month. Starter is $79/mo + 2.5% with 100 bookings/month. Growth is $149/mo + 2% with unlimited bookings. Pro is $299/mo + 1.5% with unlimited bookings. Enterprise is custom.",
       "Stripe processing is separate from ReservKit's platform fee. Tips are treated as operator revenue and are not marked up by ReservKit. Deposits are charged on the amount collected at checkout, not the full future balance.",
-      "During beta, the most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
+      "The most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
     ],
     relatedLinks: [
       { href: "/docs/payments", label: "Payments & fee documentation" },
@@ -71,7 +71,7 @@ const articles = [
     content: [
       "Before switching tools, confirm the practical details: how activities map over, how availability is rebuilt, where customer records live, what happens to historical bookings, and how payment disputes or refunds are handled in the old system.",
       "ReservKit includes a Migration Center V1 for structured imports. It is designed to make the first migration pass easier, while still leaving room for hands-on review before operators go live.",
-      "If you currently use another booking platform, include that in your beta request. We will prioritize beta fits where the product can solve a real workflow problem without asking the operator to gamble with active bookings.",
+      "If you currently use another booking platform, include that in your beta request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
     ],
     relatedLinks: [
       { href: "/fareharbor-alternative", label: "FareHarbor comparison" },
@@ -94,7 +94,7 @@ export default function Blog() {
           </div>
           <div>
             <h1 className="text-3xl font-bold text-navy">ReservKit Blog</h1>
-            <p className="mt-0.5 text-sm text-slate-500">Beta notes and operator guides</p>
+            <p className="mt-0.5 text-sm text-slate-500">Operator guides for direct booking workflows</p>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export default function Blog() {
         </div>
 
         <div className="mt-8 rounded-2xl bg-navy p-8 text-center">
-          <h2 className="mb-2 text-xl font-bold text-white">Evaluating ReservKit for beta?</h2>
+          <h2 className="mb-2 text-xl font-bold text-white">Evaluating ReservKit?</h2>
           <p className="mb-5 text-sm text-slate-400">
             Tell us what you run, how bookings work today, and what you need before going live.
           </p>
