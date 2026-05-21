@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const root = process.cwd();
@@ -31,6 +31,9 @@ const forbidden = [
   "review beta fit",
   "broader launch",
   "vanity demos",
+  "all plans include the full product",
+  "No long-term contract",
+  "Cancel anytime",
 ];
 
 const allowedByFile = {
@@ -41,6 +44,12 @@ const required = [
   { file: "app/lib/marketing.ts", text: "Request beta access" },
   { file: "app/components/BetaRequestForm.tsx", text: "Request beta access" },
   { file: "app/api/beta-request/route.ts", text: "BETA_REQUEST_TO_EMAIL" },
+];
+
+const removedRoutes = [
+  "app/fareharbor-alternative/page.tsx",
+  "app/checkfront-alternative/page.tsx",
+  "app/rezdy-alternative/page.tsx",
 ];
 
 function listFiles(target) {
@@ -82,6 +91,12 @@ for (const { file, text } of required) {
     if (!source.includes(text)) failures.push(`${file} is missing required text: ${text}`);
   } catch {
     failures.push(`${file} is missing`);
+  }
+}
+
+for (const file of removedRoutes) {
+  if (existsSync(join(root, file))) {
+    failures.push(`${file} should not exist; competitor pages redirect from next.config.ts`);
   }
 }
 

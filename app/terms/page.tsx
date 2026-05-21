@@ -44,7 +44,7 @@ export default function Terms() {
               percentage of each completed booking transaction according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
-              <li>Beta: invite-only temporary 0% platform fee during the beta period</li>
+              <li>Beta: invite-only 0% platform fee for 30-60 days for approved operators</li>
               <li>Free ($0/month): 4% platform fee, 10 bookings per month</li>
               <li>Starter ($79/month): 2.5% platform fee, 100 bookings per month</li>
               <li>Growth ($149/month): 2% platform fee, unlimited bookings</li>
@@ -82,11 +82,21 @@ export default function Terms() {
           </section>
 
           <section>
+            <h2 className="text-xl font-semibold text-navy mb-3">Cancellation</h2>
+            <p>
+              Monthly plans can be canceled at any time and remain active through the end of the
+              current billing period. Unless required by law or agreed in writing, subscription
+              fees already charged are not prorated or refunded. Enterprise plans may include
+              annual minimums, custom terms, or separate cancellation requirements in the signed
+              agreement.
+            </p>
+          </section>
+
+          <section>
             <h2 className="text-xl font-semibold text-navy mb-3">Termination</h2>
             <p>
               We reserve the right to suspend or terminate accounts that violate these terms,
-              engage in fraudulent activity, or cause harm to customers or the platform. You may
-              cancel your account at any time.
+              engage in fraudulent activity, or cause harm to customers or the platform.
             </p>
           </section>
 
