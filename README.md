@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReservKit Landing
 
-## Getting Started
+Marketing website for ReservKit at `reservkit.com`.
 
-First, run the development server:
+This site is currently positioned for controlled beta access. Public marketing CTAs should route to `/beta`; direct app login links are for existing users only.
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Gates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run these before opening or merging a PR:
 
-## Learn More
+```bash
+npm run check:content
+npm run lint
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+`check:content` blocks stale launch/pricing phrases and direct open-signup URLs that should not return during beta.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Beta Intake
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The beta request form posts to `POST /api/beta-request` and sends an intake email with Resend.
 
-## Deploy on Vercel
+Required environment variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `RESEND_API_KEY`
+- `BETA_REQUEST_TO_EMAIL`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optional environment variable:
+
+- `BETA_REQUEST_FROM_EMAIL`
+
+Do not commit secrets or paste live credentials into docs, issues, PRs, or chat.
+
+## Shared Marketing Copy
+
+Pricing and CTA constants live in `app/lib/marketing.ts`. Use those constants when editing pages so the website stays aligned with the app.

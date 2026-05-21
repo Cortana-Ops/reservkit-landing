@@ -1,27 +1,44 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
+import { TrackedLink } from "../components/TrackedLink";
+import { BETA_URL, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Checkfront Alternative — ReservKit Booking Platform",
+  title: "Checkfront Alternative - ReservKit Booking Platform",
   description:
-    "Replace Checkfront with ReservKit — simpler pricing, no minimum spend, Stripe Connect, digital waivers, and a mobile-first experience. Free to start.",
-  keywords: ["Checkfront alternative", "Checkfront competitor", "replace Checkfront", "cheaper than Checkfront"],
+    "Compare ReservKit with Checkfront when evaluating booking software for direct reservations, Stripe payments, waivers, and operator workflows.",
+  keywords: ["Checkfront alternative", "Checkfront competitor", "replace Checkfront"],
   alternates: { canonical: "https://reservkit.com/checkfront-alternative" },
 };
 
-const APP_URL = "https://app.reservkit.com";
-
 const comparison = [
-  { feature: "Starting price", checkfront: "$125+/mo (Soho plan)", reservkit: "$0 — Free plan + 14-day trial" },
-  { feature: "Platform fee", checkfront: "None, but high subscription", reservkit: "4% (Free) or 2% on Starter ($79/mo)" },
-  { feature: "Contract", checkfront: "Annual plans required for best rates", reservkit: "No contract, month-to-month" },
-  { feature: "Digital waivers", checkfront: "Add-on", reservkit: "Built in (all plans)" },
-  { feature: "Stripe Connect", checkfront: "Stripe or Braintree", reservkit: "Stripe Connect — direct payouts" },
-  { feature: "Mobile experience", checkfront: "Desktop-first", reservkit: "Mobile-first design" },
-  { feature: "Setup time", checkfront: "Days with onboarding", reservkit: "5-minute self-serve" },
-  { feature: "Staff scheduling", checkfront: "Add-on (Checkfront+)", reservkit: "Included (all plans)" },
+  {
+    feature: "Best fit",
+    competitor: "Established booking management across many activity categories",
+    reservkit: "Focused beta for direct rental and experience operators",
+  },
+  {
+    feature: "Pricing visibility",
+    competitor: "Verify current plan pricing, limits, and add-ons with Checkfront",
+    reservkit: pricingSummary,
+  },
+  {
+    feature: "Payments",
+    competitor: "Supports common payment processors depending on configuration",
+    reservkit: "Stripe Connect with payments routed to the operator account",
+  },
+  {
+    feature: "Waivers",
+    competitor: "Confirm included capabilities and any add-on requirements",
+    reservkit: "Digital waivers included in core operator workflows",
+  },
+  {
+    feature: "Migration",
+    competitor: "Export format and history depend on account setup",
+    reservkit: "Migration Center V1 is available for structured imports",
+  },
 ];
 
 const faqSchema = {
@@ -30,26 +47,18 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Does ReservKit have a free plan — unlike Checkfront?",
+      name: "Is ReservKit a Checkfront alternative?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. ReservKit offers a Free plan with no monthly fee (4% per booking). Checkfront starts at $125+/month. Every new ReservKit account also gets a free 14-day Growth plan trial with no credit card required.",
+        text: "ReservKit can be evaluated as a Checkfront alternative for direct booking operations. Operators should verify current Checkfront pricing, limits, and add-ons before comparing tools.",
       },
     },
     {
       "@type": "Question",
-      name: "Does ReservKit support Stripe Connect like Checkfront?",
+      name: "Does ReservKit offer beta access?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes — ReservKit uses Stripe Connect so booking payments go directly to your bank account, typically within 2 business days. Both ReservKit and Checkfront support Stripe, but ReservKit's setup takes minutes vs days of onboarding.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are waivers and staff scheduling included in ReservKit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — digital waivers and full staff scheduling are included in all ReservKit plans, including the Free plan. Checkfront requires paid add-ons for both features.",
+        text: "Yes. ReservKit is currently controlled beta access by request, with temporary 0% platform fee access for approved beta operators.",
       },
     },
   ],
@@ -63,43 +72,42 @@ export default function CheckfrontAlternative() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main>
-        {/* Hero */}
-        <section className="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">
+        <section className="bg-gradient-to-b from-slate-50 to-white px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-block mb-4 rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
+            <span className="mb-4 inline-block rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
               Checkfront Alternative
             </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl leading-tight">
-              Checkfront Alternative —{" "}
-              <span className="text-amber">No Monthly Minimum, Free to Start</span>
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
+              Evaluating ReservKit as a{" "}
+              <span className="text-amber">Checkfront alternative</span>
             </h1>
-            <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              ReservKit is a modern Checkfront alternative for rental operators and experience
-              businesses. Start free — no $125/month subscription, no contract, no setup fee.
-              Payments go directly to your Stripe account.
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+              ReservKit is a controlled-beta booking platform for operators who want direct
+              bookings, Stripe-powered payments, waivers, and a cleaner mobile workflow.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href={`${APP_URL}/login?signup=true`}
-                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors shadow-lg"
+            <div className="mt-8">
+              <TrackedLink
+                href={BETA_URL}
+                event="beta_access_cta_clicked"
+                properties={{ location: "checkfront_hero" }}
+                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
               >
-                Start free — no credit card <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+                {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </TrackedLink>
             </div>
           </div>
         </section>
 
-        {/* Comparison */}
-        <section className="px-6 py-16 bg-white" aria-label="Feature comparison">
+        <section className="bg-white px-6 py-16" aria-label="Comparison">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-navy mb-8 text-center">
-              ReservKit vs Checkfront — side by side
+            <h2 className="mb-8 text-center text-2xl font-bold text-navy">
+              Compare current plan terms carefully
             </h2>
-            <div className="rounded-2xl border border-[var(--color-border)] overflow-hidden">
-              <div className="grid grid-cols-3 bg-navy text-white text-sm font-semibold">
-                <div className="px-4 py-3">Feature</div>
-                <div className="px-4 py-3 border-l border-white/10">Checkfront</div>
-                <div className="px-4 py-3 border-l border-white/10 text-amber">ReservKit</div>
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-border)]">
+              <div className="grid grid-cols-3 bg-navy text-sm font-semibold text-white">
+                <div className="px-4 py-3">Area</div>
+                <div className="border-l border-white/10 px-4 py-3">Checkfront</div>
+                <div className="border-l border-white/10 px-4 py-3 text-amber">ReservKit</div>
               </div>
               {comparison.map((row, i) => (
                 <div
@@ -107,64 +115,67 @@ export default function CheckfrontAlternative() {
                   className={`grid grid-cols-3 text-sm ${i % 2 === 0 ? "bg-white" : "bg-[var(--color-surface)]"}`}
                 >
                   <div className="px-4 py-3 font-medium text-navy">{row.feature}</div>
-                  <div className="px-4 py-3 border-l border-[var(--color-border)] text-slate-600 flex items-start gap-1.5">
-                    <XCircle className="h-4 w-4 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
-                    {row.checkfront}
+                  <div className="border-l border-[var(--color-border)] px-4 py-3 text-slate-600">
+                    {row.competitor}
                   </div>
-                  <div className="px-4 py-3 border-l border-[var(--color-border)] text-slate-700 flex items-start gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <div className="flex items-start gap-1.5 border-l border-[var(--color-border)] px-4 py-3 text-slate-700">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
                     {row.reservkit}
                   </div>
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-xs leading-relaxed text-slate-500">
+              Competitor plan details can change. Verify current public pages, invoices, add-ons,
+              and account terms before deciding whether to migrate.
+            </p>
           </div>
         </section>
 
-        {/* Why switch */}
-        <section className="px-6 py-16 bg-[var(--color-surface)]">
+        <section className="bg-[var(--color-surface)] px-6 py-16">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold text-navy mb-6">
-              Why operators choose ReservKit over Checkfront
+            <h2 className="mb-6 text-2xl font-bold text-navy">
+              Where ReservKit is intentionally narrower
             </h2>
-            <div className="prose prose-slate max-w-none space-y-4 text-slate-700">
+            <div className="space-y-4 text-slate-700">
               <p>
-                Checkfront&apos;s entry-level plan starts at $125/month — before you&apos;ve taken
-                a single booking. For seasonal operators or businesses just getting started with
-                online booking, that&apos;s a significant overhead cost with no guarantee of ROI.
+                This beta is focused on direct booking trust: accurate availability, clear checkout,
+                waiver evidence, staff visibility, and operator-owned Stripe setup.
               </p>
               <p>
-                ReservKit starts at $0 — the Free plan charges a 4% fee with 50 bookings/month. If you have
-                a slow month, you pay nothing. There&apos;s no contract, no setup fee, and no
-                minimum spend. Upgrade to Starter ($79/mo) for 2% fees and more features.
-              </p>
-              <p>
-                ReservKit is also built mobile-first — designed for operators who manage their
-                business from a phone in the field, not a desktop in an office. The customer
-                booking experience is clean, fast, and works on any device.
+                If you rely on a complex set of legacy integrations, review those needs before
+                moving active operations.
               </p>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="px-6 py-16 bg-navy">
+        <section className="bg-navy px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Switch from Checkfront — start free today
+            <h2 className="mb-4 text-2xl font-bold text-white">
+              Want to compare your current setup?
             </h2>
-            <p className="text-slate-400 mb-8">No monthly minimum. No contract. 5-minute setup.</p>
-            <Link
-              href={`${APP_URL}/login?signup=true`}
-              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy hover:bg-amber-dark transition-colors"
+            <p className="mb-8 text-slate-400">
+              Include your current tool and booking volume in the beta request.
+            </p>
+            <TrackedLink
+              href={BETA_URL}
+              event="beta_access_cta_clicked"
+              properties={{ location: "checkfront_footer" }}
+              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
             >
-              Get started free <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+              {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </TrackedLink>
             <p className="mt-4 text-sm text-slate-500">
-              Also see:{" "}
-              <Link href="/fareharbor-alternative" className="text-slate-400 underline hover:text-white">FareHarbor alternative</Link>{" "}
-              ·{" "}
-              <Link href="/rezdy-alternative" className="text-slate-400 underline hover:text-white">Rezdy alternative</Link>
+              Also see{" "}
+              <Link href="/fareharbor-alternative" className="text-slate-400 underline hover:text-white">
+                FareHarbor alternative
+              </Link>{" "}
+              and{" "}
+              <Link href="/rezdy-alternative" className="text-slate-400 underline hover:text-white">
+                Rezdy alternative
+              </Link>
+              .
             </p>
           </div>
         </section>

@@ -40,7 +40,7 @@ export default function Reports() {
             export everything for your accounting.
           </p>
           <p className="mt-3 text-sm text-amber font-medium">
-            Reports & Analytics require a Starter plan or higher.
+            Reports availability follows your active plan and beta access.
           </p>
         </div>
 

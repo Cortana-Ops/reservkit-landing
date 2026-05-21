@@ -21,7 +21,6 @@ export default function Image() {
         }}
       >
         {/* Logo */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://reservkit.com/logo.png"
           alt="ReservKit"
