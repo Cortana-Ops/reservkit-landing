@@ -56,8 +56,8 @@ const allowedByFile = {
 };
 
 const required = [
-  { file: "app/lib/marketing.ts", text: "Request beta access" },
-  { file: "app/components/BetaRequestForm.tsx", text: "Request beta access" },
+  { file: "app/lib/marketing.ts", text: "Get early access" },
+  { file: "app/components/BetaRequestForm.tsx", text: "Submit my application" },
   { file: "app/api/beta-request/route.ts", text: "BETA_REQUEST_TO_EMAIL" },
 ];
 

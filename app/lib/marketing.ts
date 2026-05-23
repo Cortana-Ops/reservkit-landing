@@ -1,14 +1,23 @@
 export const APP_URL = "https://app.reservkit.com";
 export const LOGIN_URL = `${APP_URL}/login`;
 export const BETA_URL = "/beta";
-export const PRIMARY_CTA_LABEL = "Request beta access";
+export const PRIMARY_CTA_LABEL = "Get early access";
 export const BETA_PLATFORM_FEE_OFFER = "0% platform fee for 30 days";
 export const POSITIONING_LINE =
-  "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waivers, and run day-of operations from one workspace.";
+  "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waiver evidence, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
-  "Take direct bookings, collect Stripe payments, manage waivers, and run day-of operations. Transparent pricing published upfront. No sales call required.";
+  "Take direct bookings, collect Stripe payments, manage waiver evidence, refundable deposits, and day-of operations. Transparent pricing published upfront.";
 
 export const pricingTiers = [
+  {
+    name: "Free",
+    price: "$0",
+    period: "/mo",
+    fee: "4% platform fee",
+    volume: "10 bookings/month",
+    description: "For setup, testing, and first live bookings before you commit to a paid plan.",
+    highlight: false,
+  },
   {
     name: "Starter",
     price: "$79",

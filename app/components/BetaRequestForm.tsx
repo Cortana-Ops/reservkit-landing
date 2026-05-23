@@ -144,11 +144,11 @@ export function BetaRequestForm() {
         className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy shadow-lg shadow-amber/20 transition-colors hover:bg-amber-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : null}
-        Request beta access
+        Submit my application
         {status !== "submitting" ? <ArrowRight className="h-4 w-4" aria-hidden="true" /> : null}
       </button>
       <p className="mt-3 text-center text-xs leading-relaxed text-slate-500">
-        We review every request and reply by email. Limited spots available.
+        We review every application and reply within one business day. Limited spots.
       </p>
     </form>
   );
