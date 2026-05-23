@@ -50,13 +50,13 @@ export default function BetaPage() {
               Guided beta access
             </div>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-              Get set up with someone who knows the product.
+              We onboard you personally. You take a real booking by the end of the session.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              We are personally onboarding a limited number of operators right now. You get guided setup, 0% ReservKit platform fees for 30 days, and a direct line if something is not working.
+              We are personally onboarding a limited number of operators right now. You get guided setup, 0% ReservKit platform fees for 30 days, and a direct line — not a ticket queue — if something is not working.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
-              Tell us what you run and how bookings work today. We will reply within one business day.
+              Tell us what you operate and how bookings work today. We reply within one business day.
             </p>
             <div className="mt-8 grid gap-3">
               {included.map((item) => {

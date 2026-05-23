@@ -44,7 +44,7 @@ export default function PricingPage() {
             Pricing you can actually read.
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            A monthly subscription plus a per-booking platform fee that decreases as your plan goes up. No features hidden behind a sales demo.
+            A monthly subscription plus a per-booking platform fee that decreases as your plan goes up. Every number is here — no call required to see what it costs.
           </p>
         </div>
 
