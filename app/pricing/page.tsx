@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PricingSection } from "../components/PricingSection";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Pricing — ReservKit",
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "All plans include the booking page, Stripe Connect payments, digital waivers, staff portal, check-in manifest, and revenue reports. Volume and platform fee percentage are what change.",
+    a: "All plans include the booking page, Stripe Connect payments, digital waivers, staff portal, check-in manifest, and revenue reports. Volume and booking fee percentage are what change.",
   },
   {
-    q: "What does platform fee mean?",
-    a: "ReservKit charges a percentage on each booking subtotal. This is separate from Stripe processing fees. At higher plan tiers, the ReservKit platform fee decreases.",
+    q: "What does booking fee mean?",
+    a: "ReservKit charges a percentage on each booking subtotal. This is separate from Stripe processing fees. At higher plan tiers, the ReservKit booking fee decreases.",
   },
   {
     q: "Do I need my own Stripe account?",
@@ -30,8 +30,8 @@ const faqs = [
     a: "Yes. Monthly plans can be cancelled from the billing portal. Enterprise agreements follow the cancellation terms in the signed agreement.",
   },
   {
-    q: "What is the beta offer?",
-    a: "Approved beta operators get 0% ReservKit platform fees for 30 days. Stripe processing still applies. After that, you choose the plan that fits your volume.",
+    q: "What is early access?",
+    a: "Early access is limited pre-launch onboarding for operators who want help setting up the first real booking flow before ReservKit opens publicly.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function PricingPage() {
             Pricing you can actually read.
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            A monthly subscription plus a per-booking platform fee that decreases as your plan goes up. Every number is here — no call required to see what it costs.
+            A monthly subscription plus a booking fee that decreases as your plan goes up. Every number is here — no call required to see what it costs.
           </p>
         </div>
 
@@ -68,8 +68,8 @@ export default function PricingPage() {
             Tell us what you operate and how many bookings you handle today. We will help map the right setup path.
           </p>
           <TrackedLink
-            href={BETA_URL}
-            event="beta_access_cta_clicked"
+            href={EARLY_ACCESS_URL}
+            event="early_access_cta_clicked"
             properties={{ location: "pricing_footer" }}
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy transition-colors hover:bg-amber-dark"
           >

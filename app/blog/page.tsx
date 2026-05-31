@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Rss } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { EARLY_ACCESS_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Blog — Rental Operator Guides",
@@ -32,9 +32,9 @@ const articles = [
       "The first setup session focuses on one working booking link. Here is what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
       POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
-      "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's platform fee behind the scenes.",
-      "Approved beta operators receive 0% ReservKit platform fees for 30 days. Public plan pricing is documented plainly: " + pricingSummary,
-      "If you are evaluating ReservKit, the best next step is to request beta access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
+      "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's booking fee behind the scenes.",
+      "Public plan pricing is documented plainly: " + pricingSummary,
+      "If you are evaluating ReservKit, the best next step is to request early access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },
@@ -48,11 +48,11 @@ const articles = [
     readTime: "5 min read",
     title: "The real cost of your booking platform and how to calculate it",
     intro:
-      "Monthly subscription, platform fee, Stripe processing, and volume limits all hit differently depending on how many bookings you take. Run the actual math before you commit.",
+      "Monthly subscription, booking fee, Stripe processing, and volume limits all hit differently depending on how many bookings you take. Run the actual math before you commit.",
     content: [
-      "The cleanest way to compare booking tools is to write down the monthly subscription, the per-booking platform fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
+      "The cleanest way to compare booking tools is to write down the monthly subscription, the booking fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
       "ReservKit's public pricing is intentionally direct. Free is $0/mo + 4% with 10 bookings/month. Starter is $79/mo + 2.5% with 100 bookings/month. Growth is $149/mo + 2% with unlimited bookings. Pro is $299/mo + 1.5% with unlimited bookings. Enterprise is custom.",
-      "Stripe processing is separate from ReservKit's platform fee. Tips are treated as operator revenue and are not marked up by ReservKit. Deposits are charged on the amount collected at checkout, not the full future balance.",
+      "Stripe processing is separate from ReservKit's booking fee. Tips are treated as operator revenue and are not marked up by ReservKit. Deposits are charged on the amount collected at checkout, not the full future balance.",
       "The most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
     ],
     relatedLinks: [
@@ -71,7 +71,7 @@ const articles = [
     content: [
       "Before switching tools, confirm the practical details: how activities map over, how availability is rebuilt, where customer records live, what happens to historical bookings, and how payment disputes or refunds are handled in the old system.",
       "ReservKit includes a Migration Center V1 for structured imports. It is designed to make the first migration pass easier, while still leaving room for hands-on review before operators go live.",
-      "If you currently use another booking platform, include that in your beta request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
+      "If you currently use another booking platform, include that in your early access request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },
@@ -88,7 +88,7 @@ const articles = [
       "Most booking platforms will not show you a number until you have talked to a salesperson. We think that is backwards.",
     content: [
       "Operators should be able to estimate software cost before they change their calendar, payment flow, and staff process. Published pricing makes that decision simpler.",
-      "ReservKit uses a monthly subscription plus a per-booking platform fee that decreases as your plan goes up. Stripe processing is separate, and operators use their own Stripe account.",
+      "ReservKit uses a monthly subscription plus a booking fee that decreases as your plan goes up. Stripe processing is separate, and operators use their own Stripe account.",
       "Transparent pricing does not mean every operator has the same implementation path. Larger enterprise rollouts may still need custom migration or support terms, but the core pricing model should be visible upfront.",
     ],
     relatedLinks: [
@@ -177,8 +177,8 @@ export default function Blog() {
             Tell us what you run, how bookings work today, and what you need before going live.
           </p>
           <TrackedLink
-            href={BETA_URL}
-            event="beta_access_cta_clicked"
+            href={EARLY_ACCESS_URL}
+            event="early_access_cta_clicked"
             properties={{ location: "blog_footer" }}
             className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-amber-dark"
           >

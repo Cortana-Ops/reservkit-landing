@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 interface PageShellProps {
   children: React.ReactNode;
@@ -42,8 +42,8 @@ export function PageShell({ children }: PageShellProps) {
             ))}
           </nav>
           <TrackedLink
-            href={BETA_URL}
-            event="beta_access_cta_clicked"
+            href={EARLY_ACCESS_URL}
+            event="early_access_cta_clicked"
             properties={{ location: 'page_shell' }}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >

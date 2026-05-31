@@ -16,7 +16,7 @@ import Nav from "./components/Nav";
 import { PricingSection } from "./components/PricingSection";
 import { TrackedLink } from "./components/TrackedLink";
 import {
-  BETA_URL,
+  EARLY_ACCESS_URL,
   POSITIONING_LINE,
   PRIMARY_CTA_LABEL,
   pricingSummary,
@@ -25,7 +25,7 @@ import {
 const faqItems = [
   {
     q: "Is ReservKit available now?",
-    a: "ReservKit is available through limited guided beta onboarding for selected rental, tour, and experience operators. Approved operators get 0% ReservKit platform fees for 30 days.",
+    a: "ReservKit is available through limited pre-launch early access for selected rental, tour, and experience operators before public launch.",
   },
   {
     q: "Can I switch from FareHarbor, Peek, Checkfront, Rezdy, or another booking platform?",
@@ -77,7 +77,7 @@ const painCards = [
 const whyReservKit = [
   {
     title: "Know what the platform costs",
-    body: "Public pricing, plan limits, and platform fees are visible before an operator books a demo or changes their booking process.",
+    body: "Public pricing, plan limits, and booking fees are visible before an operator books a demo or changes their booking process.",
   },
   {
     title: "Keep payments tied to your business",
@@ -105,8 +105,8 @@ const switchingSteps = [
 ];
 
 const revenuePoints = [
-  "Published monthly plans and platform fees",
-  "Lower platform percentage on higher-volume plans",
+  "Published monthly plans and booking fees",
+  "Lower booking fee percentage on higher-volume plans",
   "Operator-controlled customer-facing service fees",
   "Stripe payments routed to your connected account",
 ];
@@ -229,7 +229,7 @@ const operatorFeatures = [
     alt: "ReservKit revenue and booking reports dashboard",
     label: "Reports",
     heading: "Know your numbers by activity and date range",
-    body: "Revenue reports break down gross bookings, platform fees, and net revenue by activity. Filter by date, export to CSV, and compare periods without leaving the dashboard.",
+    body: "Revenue reports break down gross bookings, booking fees, and net revenue by activity. Filter by date, export to CSV, and compare periods without leaving the dashboard.",
     bullets: ["Revenue by activity", "Booking volume trends", "Date range filtering", "CSV export"],
   },
 ];
@@ -253,7 +253,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
             <div>
               <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-                Limited guided beta access
+                Pre-launch early access
               </div>
               <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-navy sm:text-6xl">
                 Booking software that keeps operators in control of bookings, payments, and the day of work.
@@ -263,8 +263,8 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
-                  href={BETA_URL}
-                  event="beta_access_cta_clicked"
+                  href={EARLY_ACCESS_URL}
+                  event="early_access_cta_clicked"
                   properties={{ location: "hero" }}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3.5 text-base font-bold text-navy shadow-lg shadow-amber/20 transition-colors hover:bg-amber-dark"
                 >
@@ -352,7 +352,7 @@ export default function Home() {
                 Coming from FareHarbor, Peek, Checkfront, Rezdy, spreadsheets, or a custom form?
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                The risky part is not buying new software. It is changing your booking flow without breaking your season. Guided beta onboarding is built around a tested switch: one working activity, one payment path, one waiver path, and one booking link before you move traffic.
+                The risky part is not buying new software. It is changing your booking flow without breaking your season. Early-access onboarding is built around a tested switch: one working activity, one payment path, one waiver path, and one booking link before you move traffic.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {industryLinks.map((link) => (
@@ -426,7 +426,7 @@ export default function Home() {
                 At real booking volume, every percentage point matters.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                If your business does tens of thousands in monthly bookings, small platform-fee differences become real money. ReservKit keeps the model visible: monthly plan plus a published platform fee, with lower rates on higher-volume plans.
+                If your business does tens of thousands in monthly bookings, small booking-fee differences become real money. ReservKit keeps the model visible: monthly plan plus a published booking fee, with lower rates on higher-volume plans.
               </p>
               <Link
                 href="/pricing"
@@ -581,8 +581,8 @@ export default function Home() {
               We onboard operators personally: Stripe, one activity, waiver and deposit setup, and one test booking before you share the link.
             </p>
             <TrackedLink
-              href={BETA_URL}
-              event="beta_access_cta_clicked"
+              href={EARLY_ACCESS_URL}
+              event="early_access_cta_clicked"
               properties={{ location: "final_cta" }}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3.5 text-base font-bold text-navy transition-colors hover:bg-amber-dark"
             >

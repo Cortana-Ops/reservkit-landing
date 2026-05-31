@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
-import { BETA_URL, LOGIN_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { EARLY_ACCESS_URL, LOGIN_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 const navLinks = [
   { href: "/#features", label: "Features" },
@@ -60,8 +60,8 @@ export default function Nav() {
             Log in
           </TrackedLink>
           <TrackedLink
-            href={BETA_URL}
-            event="beta_access_cta_clicked"
+            href={EARLY_ACCESS_URL}
+            event="early_access_cta_clicked"
             properties={{ location: 'nav' }}
             className="inline-flex items-center gap-1.5 rounded-full bg-amber px-5 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors shadow-sm"
           >
@@ -104,8 +104,8 @@ export default function Nav() {
               Log in
             </TrackedLink>
             <TrackedLink
-              href={BETA_URL}
-              event="beta_access_cta_clicked"
+              href={EARLY_ACCESS_URL}
+              event="early_access_cta_clicked"
               properties={{ location: 'nav_mobile' }}
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"

@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
     price: "0",
     priceCurrency: "USD",
     availability: "https://schema.org/LimitedAvailability",
-    description: "Limited beta onboarding with 0% platform fee for 30 days for approved operators.",
+    description: "Limited pre-launch early access for selected rental, tour, and experience operators.",
   },
   url: "https://reservkit.com",
 };

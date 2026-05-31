@@ -2,7 +2,7 @@
 
 Marketing website for ReservKit at `reservkit.com`.
 
-This site is positioned as working booking software with limited guided beta onboarding. Public marketing CTAs should route to `/beta`; direct app login links are for existing users only.
+This site is positioned as working booking software with limited pre-launch early access. Public marketing CTAs should route to `/early-access`; direct app login links are for existing users only.
 
 ## Local Development
 
@@ -23,20 +23,20 @@ npm run lint
 npm run build
 ```
 
-`check:content` blocks stale launch/pricing phrases and direct open-signup URLs that should not return during beta.
+`check:content` blocks stale launch/pricing phrases and direct open-signup URLs that should not return before public launch.
 
-## Beta Intake
+## Early Access Intake
 
-The beta request form posts to `POST /api/beta-request` and sends an intake email with Resend.
+The early access request form posts to `POST /api/early-access-request` and sends an intake email with Resend.
 
 Required environment variables:
 
 - `RESEND_API_KEY`
-- `BETA_REQUEST_TO_EMAIL`
+- `EARLY_ACCESS_REQUEST_TO_EMAIL`
 
 Optional environment variable:
 
-- `BETA_REQUEST_FROM_EMAIL`
+- `EARLY_ACCESS_REQUEST_FROM_EMAIL`
 
 Do not commit secrets or paste live credentials into docs, issues, PRs, or chat.
 

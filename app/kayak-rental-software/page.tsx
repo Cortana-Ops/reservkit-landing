@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { EARLY_ACCESS_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Kayak Rental Booking Software - Online Reservations & Waivers",
@@ -38,7 +38,7 @@ const faqSchema = {
       name: "Is ReservKit accepting kayak rental operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected kayak, paddleboard, and watersports rental operators through guided beta onboarding.",
+        text: "ReservKit is available to selected kayak, paddleboard, and watersports rental operators through pre-launch early access.",
       },
     },
     {
@@ -74,8 +74,8 @@ export default function KayakRentalSoftware() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
-                href={BETA_URL}
-                event="beta_access_cta_clicked"
+                href={EARLY_ACCESS_URL}
+                event="early_access_cta_clicked"
                 properties={{ location: "kayak_rental_hero" }}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
               >
@@ -122,7 +122,7 @@ export default function KayakRentalSoftware() {
                 with a focused setup path for the first activity you want customers to book online.
               </p>
               <p>
-                Approved beta operators receive 0% ReservKit platform fees for 30 days.
+                Early-access operators get hands-on setup for the first live booking flow.
                 Public pricing is documented here: {pricingSummary}
               </p>
             </div>
@@ -138,8 +138,8 @@ export default function KayakRentalSoftware() {
               Tell us about your rental volume, seasonality, and current booking tool.
             </p>
             <TrackedLink
-              href={BETA_URL}
-              event="beta_access_cta_clicked"
+              href={EARLY_ACCESS_URL}
+              event="early_access_cta_clicked"
               properties={{ location: "kayak_rental_footer" }}
               className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
             >

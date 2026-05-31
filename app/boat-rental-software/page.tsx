@@ -3,12 +3,12 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { EARLY_ACCESS_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Boat Rental Booking Software - Payments & Waivers Included",
   description:
-    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and guided beta onboarding.",
+    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and pre-launch onboarding.",
   keywords: [
     "boat rental booking software",
     "boat rental reservation system",
@@ -39,7 +39,7 @@ const faqSchema = {
       name: "Is ReservKit available for boat rental businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected boat rental and charter operators through guided beta onboarding. Approved operators receive setup help and 0% ReservKit platform fees for 30 days.",
+        text: "ReservKit is available to selected boat rental and charter operators through pre-launch early access.",
       },
     },
     {
@@ -75,8 +75,8 @@ export default function BoatRentalSoftware() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
-                href={BETA_URL}
-                event="beta_access_cta_clicked"
+                href={EARLY_ACCESS_URL}
+                event="early_access_cta_clicked"
                 properties={{ location: "boat_rental_hero" }}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
               >
@@ -123,7 +123,7 @@ export default function BoatRentalSoftware() {
                 one configured activity and a test booking before you widen usage.
               </p>
               <p>
-                Approved beta operators get 0% ReservKit platform fees for 30 days.
+                Early-access operators get hands-on setup for the first live booking flow.
                 Public pricing remains transparent:
                 {` ${pricingSummary}`}
               </p>
@@ -140,8 +140,8 @@ export default function BoatRentalSoftware() {
               Share your current booking workflow and we will reply with guided onboarding next steps.
             </p>
             <TrackedLink
-              href={BETA_URL}
-              event="beta_access_cta_clicked"
+              href={EARLY_ACCESS_URL}
+              event="early_access_cta_clicked"
               properties={{ location: "boat_rental_footer" }}
               className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
             >

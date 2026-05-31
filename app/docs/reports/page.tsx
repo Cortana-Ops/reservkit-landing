@@ -40,7 +40,7 @@ export default function Reports() {
             export everything for your accounting.
           </p>
           <p className="mt-3 text-sm text-amber font-medium">
-            Reports availability follows your active plan and beta access.
+            Reports availability follows your active plan.
           </p>
         </div>
 
@@ -55,8 +55,8 @@ export default function Reports() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                The Revenue report shows gross booking revenue (total charged at checkout before platform fee),
-                platform fees paid, and net revenue for any date range you choose. Revenue is broken down by
+                The Revenue report shows gross booking revenue (total charged at checkout before booking fee),
+                booking fees paid, and net revenue for any date range you choose. Revenue is broken down by
                 activity so you can see which products are driving the most income.
               </p>
               <p>
@@ -129,7 +129,7 @@ export default function Reports() {
               </p>
               <p>
                 Exported booking data includes: booking ID, activity name, trip date, customer name, customer email,
-                party size, gross revenue, platform fee, net revenue, payment status, and booking status.
+                party size, gross revenue, booking fee, net revenue, payment status, and booking status.
               </p>
               <p>
                 For tax purposes, your accountant can request a full-year export that includes every completed transaction.

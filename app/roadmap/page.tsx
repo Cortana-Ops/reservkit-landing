@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { CheckCircle2, Zap, Clock, Lightbulb } from "lucide-react";
 import { TrackedLink } from "../components/TrackedLink";
-import { BETA_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Product Roadmap",
@@ -24,12 +24,12 @@ const shipped = [
   { label: "Booking and checkout", items: ["Public booking pages for configured activities", "Stripe Checkout through the operator's connected Stripe account", "Guest details, selected-time review, and booking confirmation flow", "Call-to-book cutoff handling when online booking is not available"] },
   { label: "Waivers and customer records", items: ["Per-guest digital waiver signing", "Optional drawn signature fields when configured", "Signed waiver evidence display", "Customer booking lookup without requiring a customer account"] },
   { label: "Operator workflows", items: ["Activity setup, availability, booking detail, and operator dashboard workflows", "Staff-facing navigation and day-of workflow polish", "Reports views for revenue and booking review", "Migration Center V1 for structured imports"] },
-  { label: "Go-live readiness", items: ["Current public pricing tiers", "Guided beta request flow", "30-day 0% ReservKit platform fee offer for approved beta operators", "Public content guard for stale pricing and removed signup language"] },
+  { label: "Go-live readiness", items: ["Current public pricing tiers", "Early access request flow", "Pre-launch onboarding path for selected operators", "Public content guard for stale pricing and removed signup language"] },
 ];
 
 const inProgress = [
   { title: "Cleaner operator onboarding", description: "Continuing to reduce setup friction around Stripe, first activity configuration, availability, waivers, and test bookings." },
-  { title: "Better product captures", description: "Adding cleaner screenshots and examples from real configured workflows as beta operators come online." },
+  { title: "Better product captures", description: "Adding cleaner screenshots and examples from real configured workflows as early-access operators come online." },
   { title: "Reporting polish", description: "Tightening the reports experience around the views operators use during live operations." },
 ];
 
@@ -125,13 +125,13 @@ export default function Roadmap() {
 
         {/* CTA */}
         <div className="rounded-2xl bg-navy p-8 text-center">
-          <h2 className="text-xl font-bold text-white mb-2">Get guided beta access</h2>
+          <h2 className="text-xl font-bold text-white mb-2">Get early access</h2>
           <p className="text-slate-400 text-sm mb-5 max-w-md mx-auto">
             Share your current booking workflow and we will reply with onboarding next steps.
           </p>
           <TrackedLink
-            href={BETA_URL}
-            event="beta_access_cta_clicked"
+            href={EARLY_ACCESS_URL}
+            event="early_access_cta_clicked"
             properties={{ location: "roadmap_footer" }}
             className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >

@@ -37,8 +37,8 @@ const sections = [
     icon: CreditCard,
     title: "Payments",
     href: "/docs/payments",
-    description: "Configure Stripe Connect, set pricing and deposits, and understand the current platform fee structure.",
-    topics: ["Connecting Stripe", "Setting prices and deposits", "Issuing refunds", "Understanding platform fees", "Coupon codes"],
+    description: "Configure Stripe Connect, set pricing and deposits, and understand the current booking fee structure.",
+    topics: ["Connecting Stripe", "Setting prices and deposits", "Issuing refunds", "Understanding booking fees", "Coupon codes"],
   },
   {
     icon: FileSignature,

@@ -30,7 +30,7 @@ const releases: Release[] = [
     version: "Production readiness",
     date: "May 2026",
     items: [
-      { tag: "Changed", text: "Updated public pricing to Starter, Growth, Pro, Enterprise, Free, and the 30-day beta fee waiver." },
+      { tag: "Changed", text: "Updated public pricing to Starter, Growth, Pro, Enterprise, and Free." },
       { tag: "Changed", text: "Repositioned the public site around direct bookings, operator-owned Stripe payments, waivers, and day-of operations." },
       { tag: "Fixed", text: "Removed competitor comparison pages and redirected those URLs to the homepage." },
       { tag: "Fixed", text: "Added content checks that block stale pricing, open-signup CTAs, and removed comparison-page copy." },

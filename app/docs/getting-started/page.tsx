@@ -23,9 +23,9 @@ const breadcrumbSchema = {
 const steps = [
   {
     number: "01",
-    title: "Request beta access",
+    title: "Request early access",
     content: [
-      "Submit your business name, booking volume, current booking tool, and website or social link from the beta request page.",
+      "Submit your business name, booking volume, current booking tool, and website or social link from the early access request page.",
       "Approved operators receive guided onboarding to confirm the first production-ready setup steps.",
       pricingSummary,
     ],
@@ -55,7 +55,7 @@ const steps = [
     content: [
       "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
       "Once connected, your Stripe account status will show \"Connected\" and your public booking page will be live and ready to accept payments.",
-      "The platform fee is automatically deducted from each transaction at checkout based on your active plan. Approved beta operators receive 0% ReservKit platform fees for 30 days.",
+      "The booking fee is automatically deducted from each transaction at checkout based on your active plan.",
     ],
   },
   {
@@ -92,10 +92,10 @@ export default function GettingStarted() {
           </p>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Guided beta access</span>
+            <span>Pre-launch early access</span>
             <span className="mx-2">·</span>
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>0% platform fee for 30 days for approved beta operators</span>
+            <span>Hands-on setup for selected operators</span>
           </div>
         </div>
 
@@ -135,7 +135,7 @@ export default function GettingStarted() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Payments & Fees →</p>
-              <p className="text-sm text-slate-500">Understand pricing, deposits, refunds, and the platform fee structure.</p>
+              <p className="text-sm text-slate-500">Understand pricing, deposits, refunds, and the booking fee structure.</p>
             </Link>
           </div>
           <div className="mt-6">

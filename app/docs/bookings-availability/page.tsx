@@ -155,7 +155,7 @@ export default function BookingsAvailability() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Payments & Fees →</p>
-              <p className="text-sm text-slate-500">Understand Stripe Connect, pricing, refunds, and platform fees.</p>
+              <p className="text-sm text-slate-500">Understand Stripe Connect, pricing, refunds, and booking fees.</p>
             </Link>
             <Link
               href="/docs/waivers"

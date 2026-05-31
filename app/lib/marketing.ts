@@ -1,8 +1,9 @@
 export const APP_URL = "https://app.reservkit.com";
 export const LOGIN_URL = `${APP_URL}/login`;
-export const BETA_URL = "/beta";
+export const EARLY_ACCESS_URL = "/early-access";
 export const PRIMARY_CTA_LABEL = "Get early access";
-export const BETA_PLATFORM_FEE_OFFER = "0% platform fee for 30 days";
+export const EARLY_ACCESS_POSITIONING =
+  "Limited pre-launch onboarding for operators who want to switch to direct bookings before public launch.";
 export const POSITIONING_LINE =
   "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waiver evidence, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
@@ -13,7 +14,7 @@ export const pricingTiers = [
     name: "Free",
     price: "$0",
     period: "/mo",
-    fee: "4% platform fee",
+    fee: "4% booking fee",
     volume: "10 bookings/month",
     description: "For setup, testing, and first live bookings before you commit to a paid plan.",
     highlight: false,
@@ -22,7 +23,7 @@ export const pricingTiers = [
     name: "Starter",
     price: "$79",
     period: "/mo",
-    fee: "2.5% platform fee",
+    fee: "2.5% booking fee",
     volume: "100 bookings/month",
     description: "For small operators ready to take direct bookings regularly.",
     highlight: true,
@@ -31,7 +32,7 @@ export const pricingTiers = [
     name: "Growth",
     price: "$149",
     period: "/mo",
-    fee: "2% platform fee",
+    fee: "2% booking fee",
     volume: "Unlimited bookings",
     description: "For growing rental and experience businesses.",
     highlight: false,
@@ -40,7 +41,7 @@ export const pricingTiers = [
     name: "Pro",
     price: "$299",
     period: "/mo",
-    fee: "1.5% platform fee",
+    fee: "1.5% booking fee",
     volume: "Unlimited bookings",
     description: "For higher-volume teams needing deeper operational support.",
     highlight: false,
@@ -50,24 +51,24 @@ export const pricingTiers = [
 export const enterpriseTier = {
   name: "Enterprise",
   price: "Custom",
-  fee: "Custom platform fee",
+  fee: "Custom booking fee",
   volume: "Custom volume",
   description: "For operators with larger rollout, migration, or support needs.",
 };
 
-export const betaPricingCallout =
-  "Approved beta operators get 0% ReservKit platform fees for 30 days. Stripe processing still applies.";
+export const earlyAccessPricingCallout =
+  "Early-access operators get a hands-on setup path before public launch. We help map the right plan before live traffic moves over.";
 
 export const freePlanFootnote =
   "Need to try it at very low volume? The Free plan includes 10 bookings/month at 4% — no subscription required.";
 
 export const pricingFinePrint =
-  "Stripe processing fees (~2.9% + 30¢) apply separately. ReservKit’s platform fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
+  "Stripe processing fees (~2.9% + 30¢) apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
 
 export const pricingSummary =
-  "Approved beta operators get 0% ReservKit platform fees for 30 days. Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
+  "Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
 
-export const betaRequestFields = [
+export const earlyAccessRequestFields = [
   "name",
   "email",
   "businessName",

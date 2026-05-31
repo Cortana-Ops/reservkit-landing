@@ -7,7 +7,7 @@ import { enterpriseTier, pricingTiers } from "../../lib/marketing";
 export const metadata: Metadata = {
   title: "Payments",
   description:
-    "Connect Stripe, set pricing and deposits, issue refunds, and understand ReservKit's current platform fee structure.",
+    "Connect Stripe, set pricing and deposits, issue refunds, and understand ReservKit's current booking fee structure.",
   alternates: { canonical: "https://reservkit.com/docs/payments" },
 };
 
@@ -22,8 +22,7 @@ const breadcrumbSchema = {
 };
 
 const feeTable = [
-  { plan: "Beta", price: "Approved access", fee: "0% for 30 days", bookings: "Guided onboarding" },
-  { plan: "Free", price: "$0/mo", fee: "4% platform fee", bookings: "10 bookings/month" },
+  { plan: "Free", price: "$0/mo", fee: "4% booking fee", bookings: "10 bookings/month" },
   ...pricingTiers.map((tier) => ({
     plan: tier.name,
     price: `${tier.price}${tier.period}`,
@@ -56,7 +55,7 @@ export default function Payments() {
           <h1 className="text-3xl font-bold text-navy mb-3">Payments</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
             ReservKit uses Stripe Connect to process payments. Money flows directly to your Stripe account —
-            ReservKit deducts a small platform fee per transaction. No monthly billing required on the free plan.
+            ReservKit deducts a small booking fee per transaction. No monthly billing required on the free plan.
           </p>
         </div>
 
@@ -76,7 +75,7 @@ export default function Payments() {
               </p>
               <p>
                 ReservKit uses Stripe Connect Standard. This means each business owner has their own Stripe account
-                and receives payouts directly. ReservKit collects the platform fee automatically at checkout — you
+                and receives payouts directly. ReservKit collects the booking fee automatically at checkout — you
                 never need to manually split payments or transfer funds.
               </p>
               <p>
@@ -88,7 +87,7 @@ export default function Payments() {
                 <strong className="text-navy">Important:</strong>{" "}Stripe requires your business to be based in a
                 supported country. Payouts to your bank account happen on Stripe&apos;s standard schedule (typically
                 2 business days after a charge). Stripe&apos;s own processing fee (2.9% + 30¢ per transaction) is
-                separate from the ReservKit platform fee and is deducted by Stripe directly.
+                separate from the ReservKit booking fee and is deducted by Stripe directly.
               </p>
             </div>
           </section>
@@ -108,23 +107,22 @@ export default function Payments() {
                 balance is collected separately (e.g., on arrival).
               </p>
               <p>
-                The platform fee is calculated on the total amount charged at checkout. If you collect a $50 deposit
-                on a $200 activity, the platform fee applies to the $50 charged, not the full $200.
+                The booking fee is calculated on the total amount charged at checkout. If you collect a $50 deposit
+                on a $200 activity, the booking fee applies to the $50 charged, not the full $200.
               </p>
               <p>
                 Tip: customers can also tip your business at checkout. Tips go directly to your Stripe account and
-                are not subject to the platform fee.
+                are not subject to the booking fee.
               </p>
             </div>
           </section>
 
-          {/* Platform fees */}
+          {/* Booking fees */}
           <section>
-            <h2 className="text-xl font-bold text-navy mb-4">Platform fee breakdown</h2>
+            <h2 className="text-xl font-bold text-navy mb-4">Booking fee breakdown</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
-              The platform fee is a percentage of each booking&apos;s total charged amount. It&apos;s automatically
-              deducted at checkout — nothing you need to configure. Approved beta operators receive
-              0% ReservKit platform fees for 30 days.
+              The booking fee is a percentage of each booking&apos;s total charged amount. It&apos;s automatically
+              deducted at checkout — nothing you need to configure.
             </p>
             <div className="grid gap-3 md:hidden">
               {feeTable.map((row) => (
@@ -146,7 +144,7 @@ export default function Payments() {
                   <tr className="bg-[var(--color-surface)] border-b border-[var(--color-border)]">
                     <th className="text-left px-4 py-3 font-semibold text-navy">Plan</th>
                     <th className="text-left px-4 py-3 font-semibold text-navy">Monthly cost</th>
-                    <th className="text-left px-4 py-3 font-semibold text-navy">Platform fee</th>
+                    <th className="text-left px-4 py-3 font-semibold text-navy">Booking fee</th>
                     <th className="text-left px-4 py-3 font-semibold text-navy">Booking volume</th>
                   </tr>
                 </thead>
@@ -163,7 +161,7 @@ export default function Payments() {
               </table>
             </div>
             <p className="text-xs text-slate-400 mt-3">
-              Stripe&apos;s standard processing fee (2.9% + 30¢) applies in addition to the platform fee and is
+              Stripe&apos;s standard processing fee (2.9% + 30¢) applies in addition to the booking fee and is
               charged by Stripe directly.
             </p>
           </section>
@@ -187,7 +185,7 @@ export default function Payments() {
                 to keep the deposit or apply a cancellation fee while returning the remainder.
               </p>
               <p>
-                When you issue a refund, the platform fee is not automatically returned. Stripe&apos;s own processing
+                When you issue a refund, the booking fee is not automatically returned. Stripe&apos;s own processing
                 fee is also non-refundable per Stripe&apos;s terms. If you process a large volume of refunds, contact
                 ReservKit support to discuss your situation.
               </p>
@@ -210,7 +208,7 @@ export default function Payments() {
               </p>
               <p>
                 Customers enter the coupon code on the checkout page. The discount is applied to the total before
-                the platform fee is calculated. Coupon redemptions are tracked in the Coupons dashboard so you can
+                the booking fee is calculated. Coupon redemptions are tracked in the Coupons dashboard so you can
                 see usage at a glance.
               </p>
             </div>
