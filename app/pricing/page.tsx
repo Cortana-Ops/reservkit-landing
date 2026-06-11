@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "All plans include the booking page, Stripe Connect payments, digital waivers, staff portal, check-in manifest, and revenue reports. Volume and booking fee percentage are what change.",
+    a: "Free and Starter include the core booking page, Stripe Connect payments, customer records, and email confirmations. Growth adds reports, waivers, broadcasts, equipment, and dynamic pricing. Pro adds higher-tier advanced access.",
   },
   {
     q: "What does booking fee mean?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Can I cancel?",
-    a: "Yes. Monthly plans can be cancelled from the billing portal. Enterprise agreements follow the cancellation terms in the signed agreement.",
+    a: "Yes. Monthly plans can be cancelled from the billing portal to prevent future renewals. Paid subscription charges are non-refundable except for billing errors, duplicate charges, fraud, or legally required refunds. Enterprise agreements follow the cancellation terms in the signed agreement.",
   },
   {
     q: "What is early access?",
