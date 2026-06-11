@@ -45,7 +45,7 @@ export default function Terms() {
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
               <li>Free ($0/month): 4% booking fee, 10 bookings per month</li>
-              <li>Starter ($79/month): 2.5% booking fee, 100 bookings per month</li>
+              <li>Starter ($79/month): 3% booking fee, 100 bookings per month</li>
               <li>Growth ($149/month): 2% booking fee, unlimited bookings</li>
               <li>Pro ($299/month): 1.5% booking fee, unlimited bookings</li>
               <li>Enterprise: custom monthly pricing, custom volume, and annual minimum</li>
@@ -85,7 +85,8 @@ export default function Terms() {
             <p>
               Monthly plans can be canceled at any time and remain active through the end of the
               current billing period. Unless required by law or agreed in writing, subscription
-              fees already charged are not prorated or refunded. Enterprise plans may include
+              paid subscription charges are not prorated or refunded except for billing errors,
+              duplicate charges, fraud, or refunds required by law. Enterprise plans may include
               annual minimums, custom terms, or separate cancellation requirements in the signed
               agreement.
             </p>

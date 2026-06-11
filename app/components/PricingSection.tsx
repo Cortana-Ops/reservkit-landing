@@ -23,7 +23,7 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
             Pricing you can read without booking a demo.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Every plan includes bookings, payments, waivers, and staff access. Pick the one that fits your volume.
+            Every plan includes the core booking page, Stripe Connect payments, customer records, and email confirmations. Growth adds the deeper operator tools.
           </p>
         </div>
 

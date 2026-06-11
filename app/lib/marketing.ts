@@ -23,9 +23,9 @@ export const pricingTiers = [
     name: "Starter",
     price: "$79",
     period: "/mo",
-    fee: "2.5% booking fee",
+    fee: "3% booking fee",
     volume: "100 bookings/month",
-    description: "For small operators ready to take direct bookings regularly.",
+    description: "For small operators who need the core direct-booking workflow.",
     highlight: true,
   },
   {
@@ -34,7 +34,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2% booking fee",
     volume: "Unlimited bookings",
-    description: "For growing rental and experience businesses.",
+    description: "For growing teams that need reports, waivers, broadcasts, equipment, and dynamic pricing.",
     highlight: false,
   },
   {
@@ -66,7 +66,7 @@ export const pricingFinePrint =
   "Stripe processing fees (~2.9% + 30¢) apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
 
 export const pricingSummary =
-  "Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 2.5%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
+  "Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 3%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
 
 export const earlyAccessRequestFields = [
   "name",
