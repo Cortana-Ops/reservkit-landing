@@ -60,6 +60,12 @@ const forbidden = [
   "Settings → Booking Page",
   "under 30 minutes",
   "legally defensible",
+  "net revenue",
+  "block-out dates",
+  "stored indefinitely",
+  "email copy of their signed waiver",
+  "Capacity controls for vessels",
+  "Website embed options",
 ];
 
 const allowedByFile = {

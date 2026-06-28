@@ -23,7 +23,7 @@ const features = [
   "Stripe Connect payments to the operator account",
   "Deposit collection at booking",
   "Per-guest digital liability waivers",
-  "Capacity controls for vessels and time slots",
+  "Activity and time-slot capacity controls",
   "Duration-based pricing for hourly, half-day, or full-day rentals",
   "Staff and captain scheduling",
   "Check-in management and guest tracking",

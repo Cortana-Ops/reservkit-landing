@@ -22,8 +22,8 @@ const breadcrumbSchema = {
 const roles = [
   { role: "Owner", description: "Full account ownership, including billing, settings, staff, and organization data." },
   { role: "Admin", description: "Full operational access for activities, bookings, staff management, and settings." },
-  { role: "Manager", description: "Can manage day-to-day booking operations, staff assignments, and customer workflows." },
-  { role: "Staff", description: "Can view assigned work, help with check-in, and use staff-facing operational views." },
+  { role: "Staff", description: "Can use staff-facing operational views and any permissions the owner or admin grants." },
+  { role: "Member", description: "Permission-based access for limited team workflows when an organization needs tighter control." },
 ];
 
 export default function Staff() {
@@ -111,12 +111,11 @@ export default function Staff() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 Open any booking from the Bookings page and use the &quot;Assigned staff&quot; dropdown to assign one or more
-                team members to that booking. Assigned staff can see the booking in their personal schedule view.
+                team members to that booking. Assigned staff can use staff-facing schedule and workflow views.
               </p>
               <p>
-                Assignments help your team know who is responsible for each trip, tour, or rental session. Staff who are
-                assigned to a booking receive a notification (if notifications are enabled) and can view full booking
-                details including customer contact info and any special requests.
+                Assignments help your team know who is responsible for each trip, tour, or rental session. Owners and admins
+                can review staff tip totals in Reports without exposing every teammate&apos;s tip totals to all staff.
               </p>
               <p>
                 You can also create staff tasks — pre-trip checklist items like equipment prep, boat inspection, or
@@ -135,9 +134,7 @@ export default function Staff() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Every team member sees a personal schedule view on their dashboard showing only the bookings they
-                are assigned to. This gives your crew a focused view of their upcoming workday without the
-                noise of the full calendar.
+                Staff-facing schedule views help team members focus on assigned work without the noise of the full operator calendar.
               </p>
               <p>
                 The schedule view shows the activity name, time, customer party size, and check-in status for each

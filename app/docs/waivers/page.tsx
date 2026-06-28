@@ -105,16 +105,15 @@ export default function Waivers() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 Waivers are collected <strong className="text-navy">after payment</strong> — not during checkout. Once a booking is confirmed,
-                the customer receives a booking confirmation email with individual signing links for each guest in their party.
+                the customer can open the waiver hub and send each guest through the signing flow for the waivers required by the booked activity.
               </p>
               <p>
-                Each guest in the party gets their own unique waiver link. Guests sign directly on their phone — no app download required.
-                The signing page is mobile-optimized and works in any browser. Signatures are captured either by drawing on the screen
-                or typing their name.
+                Each guest verifies their email once for that signing session, then signs each required waiver in order. Guests sign directly
+                on their phone — no app download required. Signatures are captured either by drawing on the screen or typing their name.
               </p>
               <p>
-                After signing, the guest sees a confirmation screen and receives an email copy of their signed waiver. The signed
-                waiver is also attached to the booking in ReservKit for your records.
+                After signing, the guest sees a confirmation screen. The signed waiver evidence stays attached to the booking in ReservKit
+                for operator review.
               </p>
             </div>
           </section>
@@ -129,9 +128,8 @@ export default function Waivers() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                The Waivers page shows a compliance overview for all upcoming bookings. You can see at a glance which guests in each
-                booking have signed and which are still pending. Bookings with unsigned waivers are flagged so staff can follow up
-                before arrival.
+                Booking detail and waiver views show progress by guest and by required waiver template. You can see which guests have
+                signed, which templates are still pending, and where staff need to follow up before arrival.
               </p>
               <p>
                 From the booking detail view, staff can send a reminder waiver link to any guest who hasn&apos;t signed yet. This is
@@ -139,9 +137,8 @@ export default function Waivers() {
                 the activity begins.
               </p>
               <p>
-                Signed waivers are stored indefinitely and can be downloaded as PDF at any time. To download, open the booking
-                and click &quot;Download waivers.&quot; Each signed waiver includes the guest&apos;s information, the signed document text,
-                and the date/time of signing.
+                Signed waivers stay with the booking record and can be printed or downloaded as part of the waiver packet. Each signed
+                waiver includes the guest&apos;s information, the accepted document text, and signing audit details.
               </p>
             </div>
           </section>

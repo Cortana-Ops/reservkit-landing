@@ -63,8 +63,8 @@ export default function BookingsAvailability() {
                 2:00, and 4:30 — with the last slot ending at or before 5 PM.
               </p>
               <p>
-                You can also block off specific dates (holidays, maintenance, personal days) without removing your regular
-                schedule. Blocked dates are greyed out on your booking calendar and hidden from the public booking page.
+                You can adjust generated slots and create manual slots for special cases without rebuilding the whole activity.
+                Public availability reflects the slots that are actually bookable.
               </p>
             </div>
           </section>
@@ -115,8 +115,8 @@ export default function BookingsAvailability() {
                 instructions on issuing partial and full refunds.
               </p>
               <p>
-                Your cancellation policy is shown to customers on the booking confirmation page and in their confirmation email.
-                You can configure the policy text under Settings → Booking Rules.
+                Keep your cancellation policy clear in customer-facing confirmation copy and your business terms. Dedicated
+                policy customization can be expanded as operator needs become clearer.
               </p>
             </div>
           </section>
@@ -131,8 +131,8 @@ export default function BookingsAvailability() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                On the day of an activity, use the Calendar view to pull up the day&apos;s bookings. Each booking card shows the
-                customer name, party size, and whether their waiver has been signed.
+                On the day of an activity, use the Check-In page or Calendar view to pull up the day&apos;s bookings. Each booking
+                card shows the customer name, party size, and whether their waiver has been signed.
               </p>
               <p>
                 To check in a guest, click the booking and mark it as &quot;Checked In.&quot; This updates the booking status and

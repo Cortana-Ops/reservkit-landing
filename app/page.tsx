@@ -114,7 +114,7 @@ const revenuePoints = [
 const controlPoints = [
   "Direct booking page for your activities",
   "Operator-owned Stripe Connect payments",
-  "Chargeback-ready waiver evidence",
+  "Signed waiver evidence",
   "Refundable damage deposits at checkout",
   "Call-to-book cutoff handling",
   "Day-of check-in and staff visibility",
@@ -138,9 +138,9 @@ const workflowSteps = [
   {
     icon: FileSignature,
     label: "Waivers",
-    heading: "Collect chargeback-ready waiver evidence",
-    body: "Build a liability waiver once. Every guest signs before the trip, and the signed record stays tied to the booking with verification and audit details.",
-    bullets: ["Per-guest digital signing", "Email verification", "IP and device context", "Downloadable signed waivers"],
+    heading: "Collect signed waiver evidence",
+    body: "Attach one or more waiver templates to an activity. Guests verify by email, sign before the trip, and the signed record stays tied to the booking with audit details.",
+    bullets: ["Per-guest digital signing", "Email verification", "IP and device context", "Printable waiver packets"],
   },
   {
     icon: Users,
@@ -229,8 +229,8 @@ const operatorFeatures = [
     alt: "ReservKit revenue and booking reports dashboard",
     label: "Reports",
     heading: "Know your numbers by activity and date range",
-    body: "Revenue reports break down gross bookings, booking fees, and net revenue by activity. Filter by date, export to CSV, and compare periods without leaving the dashboard.",
-    bullets: ["Revenue by activity", "Booking volume trends", "Date range filtering", "CSV export"],
+    body: "Reports separate booking income from customer tips, show booking fees, and make activity performance easier to review by date range.",
+    bullets: ["Booking income by activity", "Customer tips separated", "Date range filtering", "CSV export"],
   },
 ];
 
