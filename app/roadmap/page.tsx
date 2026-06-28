@@ -24,7 +24,7 @@ const shipped = [
   { label: "Booking and checkout", items: ["Public booking pages for configured activities", "Stripe Checkout through the operator's connected Stripe account", "Guest details, selected-time review, and booking confirmation flow", "Call-to-book cutoff handling when online booking is not available"] },
   { label: "Waivers and customer records", items: ["Per-guest digital waiver signing", "Optional drawn signature fields when configured", "Signed waiver evidence display", "Customer booking lookup without requiring a customer account"] },
   { label: "Operator workflows", items: ["Activity setup, availability, booking detail, and operator dashboard workflows", "Staff-facing navigation and day-of workflow polish", "Reports views for revenue and booking review", "Migration Center V1 for structured imports"] },
-  { label: "Go-live readiness", items: ["Current public pricing tiers", "Early access request flow", "Pre-launch onboarding path for selected operators", "Public content guard for stale pricing and removed signup language"] },
+  { label: "Go-live readiness", items: ["Current public pricing tiers", "Early access request flow", "Pre-launch onboarding path for selected operators", "All-activity and single-activity booking links plus iframe snippets", "Public content guard for stale pricing and removed signup language"] },
 ];
 
 const inProgress = [
@@ -35,7 +35,7 @@ const inProgress = [
 
 const comingNext = [
   { title: "Calendar sync", description: "Assessing Google Calendar and iCal sync for operators who need availability reflected across tools." },
-  { title: "Website embed options", description: "Exploring the best way to place ReservKit booking flows on existing operator websites." },
+  { title: "Dedicated embed layouts", description: "Calendar-only, card-only, and other specialized website layouts are still future work beyond the current booking links and iframe snippets." },
   { title: "Migration Center expansion", description: "Building on Migration Center V1 with deeper imports, review tools, and source-specific mapping." },
   { title: "Channel blocking", description: "Evaluating availability holds for operators that are moving bookings gradually from other channels." },
 ];

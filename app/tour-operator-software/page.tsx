@@ -23,7 +23,7 @@ const features = [
   "Guest count selection and add-ons",
   "Stripe payments for full or deposit checkout",
   "Per-guest digital waiver signing",
-  "Availability windows and block-out dates",
+  "Availability windows and booking cutoffs",
   "Staff assignment and guide scheduling",
   "Confirmation emails",
   "Check-in with guest list and waiver status",

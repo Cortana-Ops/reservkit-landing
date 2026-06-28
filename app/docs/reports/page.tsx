@@ -5,7 +5,7 @@ import { BarChart3, TrendingUp, Filter, Download } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Reports & Analytics",
-  description: "Track revenue, booking volume, and guest counts in ReservKit. Filter by date range and export data for accounting.",
+  description: "Track booking income, customer tips, booking volume, and guest counts in ReservKit. Filter by date range and export CSVs for review.",
   alternates: { canonical: "https://reservkit.com/docs/reports" },
 };
 
@@ -36,8 +36,8 @@ export default function Reports() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Reports & Analytics</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Understand your business performance at a glance. Track revenue, booking volume, and guest counts — and
-            export everything for your accounting.
+            Understand your business performance at a glance. Track booking income, customer tips, booking volume,
+            and guest counts — and export CSVs for review.
           </p>
           <p className="mt-3 text-sm text-amber font-medium">
             Reports availability follows your active plan.
@@ -55,17 +55,17 @@ export default function Reports() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                The Revenue report shows gross booking revenue (total charged at checkout before booking fee),
-                booking fees paid, and net revenue for any date range you choose. Revenue is broken down by
-                activity so you can see which products are driving the most income.
+                Reports show paid booking income, customer tips, booking fees, active booking counts, and excluded
+                cancelled or refunded records for the date range you choose. Activity views help you see which products
+                are driving the most booked value.
               </p>
               <p>
-                Revenue figures reflect confirmed bookings only — cancelled bookings are excluded. Partial refunds
-                are deducted from the reported revenue automatically, so the numbers match what hit your Stripe account.
+                Customer tips are shown separately from booking income so owner revenue and staff gratuities do not
+                get mixed together. Stripe paid income is also separated from offline or manual paid records.
               </p>
               <p>
-                The monthly summary view gives you a quick year-to-date revenue picture useful for tax planning,
-                forecasting, and comparing season-over-season performance.
+                Reports are built for operational review, forecasting, and payout checks. They are not a replacement
+                for Stripe, payroll, tax, or accounting records.
               </p>
             </div>
           </section>
@@ -123,17 +123,16 @@ export default function Reports() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Any filtered report view can be exported to CSV. Click &quot;Export&quot; in the top-right of the report and
-                choose which columns to include. The CSV file can be opened directly in Excel, Google Sheets, or imported
-                into your accounting software.
+                Matching report records can be exported to CSV. The CSV file can be opened in Excel or Google Sheets
+                for review with your internal records.
               </p>
               <p>
                 Exported booking data includes: booking ID, activity name, trip date, customer name, customer email,
-                party size, gross revenue, booking fee, net revenue, payment status, and booking status.
+                party size, booking income, customer tips, booking fee, payment status, and booking status.
               </p>
               <p>
-                For tax purposes, your accountant can request a full-year export that includes every completed transaction.
-                ReservKit does not provide tax advice — consult your accountant for reporting requirements in your jurisdiction.
+                ReservKit does not provide tax advice or an accounting-grade ledger. Use Stripe, your accounting system,
+                and your accountant for official reporting requirements.
               </p>
             </div>
           </section>
