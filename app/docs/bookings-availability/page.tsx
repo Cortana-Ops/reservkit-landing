@@ -106,7 +106,7 @@ export default function BookingsAvailability() {
               <p>
                 Cancellations can be processed from the Bookings page. Select the booking, click the status dropdown, and
                 choose &quot;Cancelled.&quot; ReservKit will update the booking status and release that slot back to available
-                inventory automatically.
+                capacity automatically.
               </p>
               <p>
                 You control the refund from Stripe separately. ReservKit does not automatically issue refunds — this gives you
