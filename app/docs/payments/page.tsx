@@ -22,7 +22,6 @@ const breadcrumbSchema = {
 };
 
 const feeTable = [
-  { plan: "Free", price: "$0/mo", fee: "4% booking fee", bookings: "10 bookings/month" },
   ...pricingTiers.map((tier) => ({
     plan: tier.name,
     price: `${tier.price}${tier.period}`,
@@ -202,7 +201,7 @@ export default function Payments() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Create discount coupon codes from Settings → Coupons. Coupons can be a fixed dollar amount or
+                Create discount coupon codes from Promo Codes. Coupons can be a fixed dollar amount or
                 percentage off. You can set a maximum number of uses, an expiration date, or restrict the coupon
                 to specific activities.
               </p>

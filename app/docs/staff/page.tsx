@@ -22,8 +22,8 @@ const breadcrumbSchema = {
 const roles = [
   { role: "Owner", description: "Full account ownership, including billing, settings, staff, and organization data." },
   { role: "Admin", description: "Full operational access for activities, bookings, staff management, and settings." },
-  { role: "Staff", description: "Can use staff-facing operational views and any permissions the owner or admin grants." },
-  { role: "Member", description: "Permission-based access for limited team workflows when an organization needs tighter control." },
+  { role: "Staff", description: "Can use staff-facing operational views for assigned schedule, task, and booking work." },
+  { role: "Member", description: "Limited team access for organizations that need narrower operational visibility." },
 ];
 
 export default function Staff() {
