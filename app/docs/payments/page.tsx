@@ -97,18 +97,17 @@ export default function Payments() {
               <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
                 <DollarSign className="h-5 w-5 text-amber" aria-hidden="true" />
               </div>
-              <h2 className="text-xl font-bold text-navy">Pricing & Deposits</h2>
+              <h2 className="text-xl font-bold text-navy">Pricing & Refundable Damage Deposits</h2>
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Set a base price per guest on each activity&apos;s Pricing tab. You can also configure a deposit
-                amount — if a deposit is set, customers pay only the deposit amount at booking and the remaining
-                balance is collected separately (e.g., on arrival).
+                Set a base price per guest on each activity&apos;s Pricing tab. You can also configure a refundable
+                damage deposit that is collected alongside the booking payment as a separate Stripe Checkout line
+                item, then marked released or charged from Booking Detail after the activity.
               </p>
               <p>
                 The booking fee is calculated on the booking subtotal collected at checkout, after coupon discounts
-                and before customer tips. If you collect a $50 deposit on a $200 activity, the booking fee applies to
-                the $50 collected at checkout, not the full $200 future balance.
+                and before customer tips, taxes, operator service fees, or refundable damage deposits.
               </p>
               <p>
                 Tip: customers can also tip your business at checkout. Tips go directly to your Stripe account and

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const features = [
   "Public booking page for rentals and tours",
-  "Stripe payments for full price or deposits",
+  "Stripe payments and refundable damage deposits",
   "Per-guest digital liability waiver signing",
   "Availability windows and booking cutoffs",
   "Duration-based rental pricing",
@@ -46,7 +46,7 @@ const faqSchema = {
       name: "Can ReservKit collect deposits and waivers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Operators can collect payment or deposits through Stripe and require per-guest digital waivers after booking.",
+        text: "Yes. Operators can collect booking payments and refundable damage deposits through Stripe and require per-guest digital waivers after booking.",
       },
     },
   ],

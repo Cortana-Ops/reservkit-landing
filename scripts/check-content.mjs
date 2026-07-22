@@ -110,6 +110,14 @@ const forbidden = [
   "2.9% + 30¢",
   "2.9% + 30",
   "2 business days after a charge",
+  "pay only the deposit",
+  "remaining balance is collected separately",
+  "deposit checkout",
+  "full or deposit checkout",
+  "full price or deposits",
+  "Deposit collection at booking",
+  "deposit amount (collected at booking)",
+  "not the full future balance",
 ];
 
 const allowedByFile = {
@@ -132,6 +140,8 @@ const required = [
   { file: "app/docs/payments/page.tsx", text: "customer tips are not marked up" },
   { file: "app/docs/payments/page.tsx", text: "Stripe&apos;s published processing fees" },
   { file: "app/lib/marketing.ts", text: "Stripe’s published processing fees apply separately" },
+  { file: "app/docs/payments/page.tsx", text: "refundable damage deposit" },
+  { file: "app/lib/marketing.ts", text: "refundable damage deposits are not marked up" },
 ];
 
 const removedRoutes = [

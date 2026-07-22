@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const features = [
   "Online booking page for rentals and charters",
   "Stripe Connect payments to the operator account",
-  "Deposit collection at booking",
+  "Refundable damage deposits at checkout",
   "Per-guest digital liability waivers",
   "Activity and time-slot capacity controls",
   "Duration-based pricing for hourly, half-day, or full-day rentals",
@@ -47,7 +47,7 @@ const faqSchema = {
       name: "Does ReservKit support deposits and digital waivers for boat rentals?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Operators can collect a deposit at booking and attach digital waiver requirements so guests sign before arrival.",
+        text: "Yes. Operators can collect refundable damage deposits at checkout and attach digital waiver requirements so guests sign before arrival.",
       },
     },
   ],

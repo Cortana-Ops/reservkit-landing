@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const features = [
   "Public booking page for each activity",
   "Guest count selection and add-ons",
-  "Stripe payments for full or deposit checkout",
+  "Stripe payments and refundable damage deposits",
   "Per-guest digital waiver signing",
   "Availability windows and booking cutoffs",
   "Staff assignment and schedule visibility",
@@ -48,7 +48,7 @@ const faqSchema = {
       name: "Can tour operators collect deposits and waivers with ReservKit?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Operators can collect payment or deposits through Stripe and require per-guest digital waiver signing after booking.",
+        text: "Yes. Operators can collect booking payments and refundable damage deposits through Stripe and require per-guest digital waiver signing after booking.",
       },
     },
   ],
