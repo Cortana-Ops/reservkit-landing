@@ -99,6 +99,9 @@ const forbidden = [
   "live product screenshots",
   "Staff and captain scheduling",
   "Staff assignment and guide scheduling",
+  "booking fee is calculated on the total amount charged",
+  "booking's total charged amount",
+  "booking&apos;s total charged amount",
 ];
 
 const allowedByFile = {
@@ -117,6 +120,8 @@ const required = [
   { file: "app/early-access/page.tsx", text: "waiver evidence" },
   { file: "app/early-access/page.tsx", text: "refundable deposits" },
   { file: "app/early-access/page.tsx", text: "reply within one business day" },
+  { file: "app/docs/payments/page.tsx", text: "booking subtotal collected at checkout" },
+  { file: "app/docs/payments/page.tsx", text: "customer tips are not marked up" },
 ];
 
 const removedRoutes = [
