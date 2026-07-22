@@ -505,7 +505,7 @@ export default function Home() {
             <div>
               <Route className="h-10 w-10 text-amber-dark" aria-hidden="true" />
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-                From signup to first real booking in a single session.
+                From guided setup to first real booking in a single session.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Setup is focused on a working booking path: Stripe, one activity, waivers, and a test booking before you share the link.
