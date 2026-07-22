@@ -106,8 +106,9 @@ export default function Payments() {
                 balance is collected separately (e.g., on arrival).
               </p>
               <p>
-                The booking fee is calculated on the total amount charged at checkout. If you collect a $50 deposit
-                on a $200 activity, the booking fee applies to the $50 charged, not the full $200.
+                The booking fee is calculated on the booking subtotal collected at checkout, after coupon discounts
+                and before customer tips. If you collect a $50 deposit on a $200 activity, the booking fee applies to
+                the $50 collected at checkout, not the full $200 future balance.
               </p>
               <p>
                 Tip: customers can also tip your business at checkout. Tips go directly to your Stripe account and
@@ -120,8 +121,8 @@ export default function Payments() {
           <section>
             <h2 className="text-xl font-bold text-navy mb-4">Booking fee breakdown</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
-              The booking fee is a percentage of each booking&apos;s total charged amount. It&apos;s automatically
-              deducted at checkout — nothing you need to configure.
+              The booking fee is a percentage of the booking subtotal collected at checkout. It&apos;s automatically
+              deducted at checkout, and customer tips are not marked up.
             </p>
             <div className="grid gap-3 md:hidden">
               {feeTable.map((row) => (
