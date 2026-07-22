@@ -25,7 +25,7 @@ const features = [
   "Per-guest digital liability waivers",
   "Activity and time-slot capacity controls",
   "Duration-based pricing for hourly, half-day, or full-day rentals",
-  "Staff and captain scheduling",
+  "Staff assignment and schedule visibility",
   "Check-in management and guest tracking",
   "Revenue and booking reports",
 ];

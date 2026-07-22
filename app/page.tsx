@@ -152,17 +152,17 @@ const workflowSteps = [
 ];
 
 const setupSteps = [
-  { title: "Connect Stripe", body: "Link your existing Stripe account or create one. Takes five minutes." },
+  { title: "Connect Stripe", body: "Link your existing Stripe account or create one before taking paid bookings." },
   { title: "Set up your first activity", body: "Name it, set pricing, guest limits, availability windows, and cutoff rules." },
   { title: "Configure waivers", body: "Build your waiver templates once, then assign the required templates to each activity." },
   { title: "Run a test booking", body: "Go through the full customer flow yourself before sharing with anyone." },
-  { title: "Share your booking link", body: "Send it to your first group. Watch the bookings come in." },
+  { title: "Share your booking link", body: "Add the tested booking link to the places customers already find you." },
 ];
 
 const operatorProof = [
   {
     title: "Real product, not mockup-only marketing",
-    body: "The homepage uses live product screenshots from configured public booking and operator workflows.",
+    body: "The homepage uses current product screenshots from configured public booking and operator workflows.",
   },
   {
     title: "Stripe Connect from the start",
