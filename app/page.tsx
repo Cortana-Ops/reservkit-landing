@@ -200,7 +200,7 @@ const operatorFeatures = [
     label: "Bookings",
     heading: "Every booking in one place",
     body: "The bookings list ties together the guest, activity, time slot, payment status, waiver status, assigned staff, and any operator notes — all in a single view.",
-    bullets: ["Payment and balance status", "Waiver compliance at a glance", "Assigned staff", "Guest count and notes"],
+    bullets: ["Payment and balance status", "Waiver status at a glance", "Assigned staff", "Guest count and notes"],
   },
   {
     src: "/product-checkin-manifest.png",
@@ -216,7 +216,7 @@ const operatorFeatures = [
     src: "/product-waiver-compliance.png",
     width: 1440,
     height: 900,
-    alt: "ReservKit waiver compliance view showing guest signing status",
+    alt: "ReservKit waiver status view showing guest signing status",
     label: "Waivers",
     heading: "Waiver evidence collected before arrival",
     body: "Required waivers attach to activities. Guests can open the waiver hub after booking, verify by email, and sign each required waiver. Signed records stay tied to the booking with verification timestamps, IP/device context, signature evidence, and the exact waiver text accepted.",
