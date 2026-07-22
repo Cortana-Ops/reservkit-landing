@@ -83,6 +83,7 @@ const forbidden = [
   "click the status dropdown",
   "whether their waiver has been signed",
   "Waiver compliance at a glance",
+  "product-waiver-compliance",
   "waiver compliance view",
   "track waiver compliance",
   "Tracking waiver compliance",

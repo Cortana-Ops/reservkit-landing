@@ -213,7 +213,7 @@ const operatorFeatures = [
     bullets: ["Ready vs. attention split", "Waiver status per guest", "One-tap check-in", "Printable and CSV-ready"],
   },
   {
-    src: "/product-waiver-compliance.png",
+    src: "/product-waiver-status.png",
     width: 1440,
     height: 900,
     alt: "ReservKit waiver status view showing guest signing status",
