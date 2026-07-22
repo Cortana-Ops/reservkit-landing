@@ -588,7 +588,7 @@ export default function Home() {
             >
               {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </TrackedLink>
-            <p className="mt-3 text-sm text-slate-400">No sales call. Monthly plans can be cancelled from the billing portal.</p>
+            <p className="mt-3 text-sm text-slate-400">Pricing is published upfront. Monthly plans can be cancelled from the billing portal.</p>
           </div>
         </section>
       </main>
