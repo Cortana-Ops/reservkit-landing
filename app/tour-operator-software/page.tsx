@@ -45,7 +45,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Can tour operators collect deposits and waivers with ReservKit?",
+      name: "Can tour operators collect damage deposits and waivers with ReservKit?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Operators can collect booking payments and refundable damage deposits through Stripe and require per-guest digital waiver signing after booking.",

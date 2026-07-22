@@ -43,7 +43,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Can ReservKit collect deposits and waivers?",
+      name: "Can ReservKit collect damage deposits and waivers?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Operators can collect booking payments and refundable damage deposits through Stripe and require per-guest digital waivers after booking.",

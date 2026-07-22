@@ -140,7 +140,7 @@ export function EarlyAccessRequestForm() {
             value={form.biggestBookingProblem}
             onChange={(event) => update("biggestBookingProblem", event.target.value)}
             className="form-input min-h-24 resize-y"
-            placeholder="Examples: switching from FareHarbor, collecting waivers, reducing booking fees, handling deposits, cleaning up day-of check-in..."
+            placeholder="Examples: switching from FareHarbor, collecting waivers, reducing booking fees, handling damage deposits, cleaning up day-of check-in..."
           />
         </Field>
         <Field label="Website or social link" error={errors.website} className="sm:col-span-2">

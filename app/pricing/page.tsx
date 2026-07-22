@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "Free and Starter include the core booking page, Stripe Connect payments, customer records, and email confirmations. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, deposits, and priced add-ons. Pro adds higher-tier operational support.",
+    a: "Free and Starter include the core booking page, Stripe Connect payments, customer records, and email confirmations. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, refundable damage deposits, and priced add-ons. Pro adds higher-tier operational support.",
   },
   {
     q: "What does booking fee mean?",

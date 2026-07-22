@@ -135,7 +135,7 @@ export default function GettingStarted() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Payments & Fees →</p>
-              <p className="text-sm text-slate-500">Understand pricing, deposits, refunds, and the booking fee structure.</p>
+              <p className="text-sm text-slate-500">Understand pricing, refundable damage deposits, refunds, and the booking fee structure.</p>
             </Link>
           </div>
           <div className="mt-6">

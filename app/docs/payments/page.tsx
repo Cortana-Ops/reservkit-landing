@@ -7,7 +7,7 @@ import { enterpriseTier, pricingTiers } from "../../lib/marketing";
 export const metadata: Metadata = {
   title: "Payments",
   description:
-    "Connect Stripe, set pricing and deposits, issue refunds, and understand ReservKit's current booking fee structure.",
+    "Connect Stripe, set pricing and refundable damage deposits, issue refunds, and understand ReservKit's current booking fee structure.",
   alternates: { canonical: "https://reservkit.com/docs/payments" },
 };
 
@@ -179,8 +179,8 @@ export default function Payments() {
                 booking record, and releases capacity on full refunds when the booking can be cancelled safely.
               </p>
               <p>
-                Partial refunds let you refund any amount up to the original charge. This is useful when you want
-                to keep the deposit or apply a cancellation fee while returning the remainder.
+                Partial refunds let you refund any amount up to the original charge. This is useful when you need
+                to keep part of a refundable damage deposit or apply a cancellation fee while returning the remainder.
               </p>
               <p>
                 Booking-fee refund handling depends on the Stripe payment path for that charge. Stripe&apos;s own processing

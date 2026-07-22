@@ -7,7 +7,7 @@ export const EARLY_ACCESS_POSITIONING =
 export const POSITIONING_LINE =
   "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waiver evidence, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
-  "Take direct bookings, collect Stripe payments, manage waiver evidence, refundable deposits, and day-of operations. Transparent pricing published upfront.";
+  "Take direct bookings, collect Stripe payments, manage waiver evidence, refundable damage deposits, and day-of operations. Transparent pricing published upfront.";
 
 export const pricingTiers = [
   {
@@ -34,7 +34,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2% booking fee",
     volume: "Unlimited bookings",
-    description: "For growing teams that need unlimited bookings, waivers, broadcasts, reports, coupons, deposits, and add-ons.",
+    description: "For growing teams that need unlimited bookings, waivers, broadcasts, reports, coupons, refundable damage deposits, and add-ons.",
     highlight: false,
   },
   {

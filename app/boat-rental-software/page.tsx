@@ -44,7 +44,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Does ReservKit support deposits and digital waivers for boat rentals?",
+      name: "Does ReservKit support damage deposits and digital waivers for boat rentals?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. Operators can collect refundable damage deposits at checkout and attach digital waiver requirements so guests sign before arrival.",
@@ -71,7 +71,7 @@ export default function BoatRentalSoftware() {
               <span className="text-amber">Stripe payments and waivers</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              {POSITIONING_LINE} Boat rental teams can manage reservations, deposits, guest waivers, staff assignments, and check-in without stitching together separate tools.
+              {POSITIONING_LINE} Boat rental teams can manage reservations, refundable damage deposits, guest waivers, staff assignments, and check-in without stitching together separate tools.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
@@ -118,7 +118,7 @@ export default function BoatRentalSoftware() {
             </h2>
             <div className="space-y-4 text-slate-700">
               <p>
-                Boat rental operations depend on accurate capacity, clear deposits, signed waivers,
+                Boat rental operations depend on accurate capacity, clear refundable damage deposits, signed waivers,
                 and staff who know what is leaving the dock next. ReservKit onboarding starts with
                 one configured activity and a test booking before you widen usage.
               </p>

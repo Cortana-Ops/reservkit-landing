@@ -85,14 +85,14 @@ const whyReservKit = [
   },
   {
     title: "Collect the messy operational pieces together",
-    body: "Waiver evidence, refundable deposits, guest counts, notes, staff context, and check-in status live with the booking record.",
+    body: "Waiver evidence, refundable damage deposits, guest counts, notes, staff context, and check-in status live with the booking record.",
   },
 ];
 
 const switchingSteps = [
   {
     title: "Map your current setup",
-    body: "Activities, durations, deposits, waiver needs, staff handoffs, cutoff rules, and the links customers use today.",
+    body: "Activities, durations, refundable damage deposits, waiver needs, staff handoffs, cutoff rules, and the links customers use today.",
   },
   {
     title: "Rebuild the live booking path",
@@ -237,7 +237,7 @@ const operatorFeatures = [
 export const metadata = {
   title: "ReservKit — Booking software for rental, tour, and experience operators",
   description:
-    "Switch to direct booking software with Stripe payments, waiver evidence, refundable deposits, day-of operations, and transparent pricing for rental, tour, and experience operators.",
+    "Switch to direct booking software with Stripe payments, waiver evidence, refundable damage deposits, day-of operations, and transparent pricing for rental, tour, and experience operators.",
 };
 
 export default function Home() {
@@ -259,7 +259,7 @@ export default function Home() {
                 Booking software that keeps operators in control of bookings, payments, and the day of work.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-                ReservKit helps rental, tour, and experience businesses take direct bookings, collect payments through their own Stripe account, gather waiver evidence, handle deposits, and give staff a clear day-of view.
+                ReservKit helps rental, tour, and experience businesses take direct bookings, collect payments through their own Stripe account, gather waiver evidence, handle refundable damage deposits, and give staff a clear day-of view.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
@@ -309,7 +309,7 @@ export default function Home() {
                 Operators should not have to trade control for online bookings.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                A booking platform should help you sell online without hiding fees, taking over the payment relationship, or scattering waivers, deposits, and day-of work across disconnected tools.
+                A booking platform should help you sell online without hiding fees, taking over the payment relationship, or scattering waivers, refundable damage deposits, and day-of work across disconnected tools.
               </p>
             </div>
             <div className="grid gap-4">
@@ -534,7 +534,7 @@ export default function Home() {
                 Built by someone who has operated a rental business.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                ReservKit is early, but it is not vaporware. The product already covers the core path operators need to trust before switching: direct bookings, Stripe payments, waiver evidence, refundable deposits, check-in, staff context, reports, and guided setup.
+                ReservKit is early, but it is not vaporware. The product already covers the core path operators need to trust before switching: direct bookings, Stripe payments, waiver evidence, refundable damage deposits, check-in, staff context, reports, and guided setup.
               </p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -578,7 +578,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-white">Ready to take direct bookings?</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-300">
-              We onboard operators personally: Stripe, one activity, waiver and deposit setup, and one test booking before you share the link.
+              We onboard operators personally: Stripe, one activity, waiver and refundable damage deposit setup, and one test booking before you share the link.
             </p>
             <TrackedLink
               href={EARLY_ACCESS_URL}

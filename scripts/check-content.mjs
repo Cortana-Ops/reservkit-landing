@@ -134,7 +134,7 @@ const required = [
   { file: "app/api/early-access-request/route.ts", text: "biggestBookingProblem" },
   { file: "app/early-access/page.tsx", text: "Get early access to a real ReservKit booking flow before public launch." },
   { file: "app/early-access/page.tsx", text: "waiver evidence" },
-  { file: "app/early-access/page.tsx", text: "refundable deposits" },
+  { file: "app/early-access/page.tsx", text: "refundable damage deposits" },
   { file: "app/early-access/page.tsx", text: "reply within one business day" },
   { file: "app/docs/payments/page.tsx", text: "booking subtotal collected at checkout" },
   { file: "app/docs/payments/page.tsx", text: "customer tips are not marked up" },

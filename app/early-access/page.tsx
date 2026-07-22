@@ -36,8 +36,8 @@ const setupTogether = [
   },
   {
     icon: FileSignature,
-    title: "Waiver evidence and deposits",
-    body: "Attach waiver requirements and refundable deposits to the booking flow instead of handling them separately.",
+    title: "Waiver evidence and damage deposits",
+    body: "Attach waiver requirements and refundable damage deposits to the booking flow instead of handling them separately.",
   },
   {
     icon: ClipboardCheck,
@@ -49,7 +49,7 @@ const setupTogether = [
 const goodFit = [
   "You run rentals, tours, watersports, equipment, classes, or guided experiences.",
   "You want direct bookings without guessing what the platform costs later.",
-  "You need payments, waiver evidence, deposits, and day-of operations in one workflow.",
+  "You need payments, waiver evidence, refundable damage deposits, and day-of operations in one workflow.",
   "You are switching from phone bookings, spreadsheets, FareHarbor, Peek, Checkfront, Rezdy, or a custom form.",
 ];
 
@@ -79,7 +79,7 @@ export default function EarlyAccessPage() {
               Get early access to a real ReservKit booking flow before public launch.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              We personally help qualified operators set up one activity, Stripe payments, availability, waiver evidence, refundable deposits, and a test booking before they send customers to ReservKit.
+              We personally help qualified operators set up one activity, Stripe payments, availability, waiver evidence, refundable damage deposits, and a test booking before they send customers to ReservKit.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
               Tell us what you operate and how bookings work today. We reply within one business day.
