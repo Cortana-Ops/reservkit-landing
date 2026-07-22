@@ -76,6 +76,7 @@ const forbidden = [
   "Downloading signed waivers",
   "printed or downloaded as part of the waiver packet",
   "From signup to first real booking",
+  "No sales call.",
 ];
 
 const allowedByFile = {
