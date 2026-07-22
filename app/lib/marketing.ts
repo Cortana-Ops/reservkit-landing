@@ -63,7 +63,7 @@ export const freePlanFootnote =
   "Need to try it at very low volume? The Free plan includes 10 bookings/month at 4% — no subscription required.";
 
 export const pricingFinePrint =
-  "Stripe processing fees (~2.9% + 30¢) apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
+  "Stripe’s published processing fees apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips are not marked up. Deposits are charged on what’s collected at checkout, not the full future balance.";
 
 export const pricingSummary =
   "Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 3%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";

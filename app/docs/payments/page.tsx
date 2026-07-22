@@ -84,9 +84,9 @@ export default function Payments() {
               </p>
               <p>
                 <strong className="text-navy">Important:</strong>{" "}Stripe requires your business to be based in a
-                supported country. Payouts to your bank account happen on Stripe&apos;s standard schedule (typically
-                2 business days after a charge). Stripe&apos;s own processing fee (2.9% + 30¢ per transaction) is
-                separate from the ReservKit booking fee and is deducted by Stripe directly.
+                supported country. Payout timing follows the schedule and risk settings on your connected Stripe
+                account. Stripe&apos;s published processing fees are separate from the ReservKit booking fee and are
+                deducted by Stripe directly.
               </p>
             </div>
           </section>
@@ -161,8 +161,7 @@ export default function Payments() {
               </table>
             </div>
             <p className="text-xs text-slate-400 mt-3">
-              Stripe&apos;s standard processing fee (2.9% + 30¢) applies in addition to the booking fee and is
-              charged by Stripe directly.
+              Stripe&apos;s published processing fees apply in addition to the booking fee and are charged by Stripe directly.
             </p>
           </section>
 

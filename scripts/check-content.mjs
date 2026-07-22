@@ -107,6 +107,9 @@ const forbidden = [
   "booking fee is calculated on the total amount charged",
   "booking's total charged amount",
   "booking&apos;s total charged amount",
+  "2.9% + 30¢",
+  "2.9% + 30",
+  "2 business days after a charge",
 ];
 
 const allowedByFile = {
@@ -127,6 +130,8 @@ const required = [
   { file: "app/early-access/page.tsx", text: "reply within one business day" },
   { file: "app/docs/payments/page.tsx", text: "booking subtotal collected at checkout" },
   { file: "app/docs/payments/page.tsx", text: "customer tips are not marked up" },
+  { file: "app/docs/payments/page.tsx", text: "Stripe&apos;s published processing fees" },
+  { file: "app/lib/marketing.ts", text: "Stripe’s published processing fees apply separately" },
 ];
 
 const removedRoutes = [
