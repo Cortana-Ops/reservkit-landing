@@ -70,6 +70,11 @@ const forbidden = [
   "bold text, numbered lists, and section headers",
   "Settings → Team",
   "cancel a pending invitation",
+  "It attaches to every booking automatically",
+  "Every guest gets a signing link after booking",
+  "Downloadable signed waivers",
+  "Downloading signed waivers",
+  "printed or downloaded as part of the waiver packet",
 ];
 
 const allowedByFile = {

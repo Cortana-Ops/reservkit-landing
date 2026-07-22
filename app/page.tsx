@@ -154,7 +154,7 @@ const workflowSteps = [
 const setupSteps = [
   { title: "Connect Stripe", body: "Link your existing Stripe account or create one. Takes five minutes." },
   { title: "Set up your first activity", body: "Name it, set pricing, guest limits, availability windows, and cutoff rules." },
-  { title: "Configure waivers", body: "Build your liability waiver once. It attaches to every booking automatically." },
+  { title: "Configure waivers", body: "Build your waiver templates once, then assign the required templates to each activity." },
   { title: "Run a test booking", body: "Go through the full customer flow yourself before sharing with anyone." },
   { title: "Share your booking link", body: "Send it to your first group. Watch the bookings come in." },
 ];
@@ -219,8 +219,8 @@ const operatorFeatures = [
     alt: "ReservKit waiver compliance view showing guest signing status",
     label: "Waivers",
     heading: "Waiver evidence collected before arrival",
-    body: "Required waivers attach to activities. Every guest gets a signing link after booking. Signed records stay tied to the booking with verification timestamps, IP/device context, signature evidence, and the exact waiver text accepted.",
-    bullets: ["Per-guest signer status", "Shareable waiver link", "Audit-ready evidence", "Downloadable signed waivers"],
+    body: "Required waivers attach to activities. Guests can open the waiver hub after booking, verify by email, and sign each required waiver. Signed records stay tied to the booking with verification timestamps, IP/device context, signature evidence, and the exact waiver text accepted.",
+    bullets: ["Per-guest signer status", "Shareable waiver hub", "Audit-ready evidence", "Printable evidence packets"],
   },
   {
     src: "/product-reports.png",

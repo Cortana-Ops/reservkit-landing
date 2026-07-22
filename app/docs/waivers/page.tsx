@@ -137,7 +137,7 @@ export default function Waivers() {
                 the activity begins.
               </p>
               <p>
-                Signed waivers stay with the booking record and can be printed or downloaded as part of the waiver packet. Each signed
+                Signed waivers stay with the booking record and can be printed or saved as part of the waiver packet. Each signed
                 waiver includes the guest&apos;s information, the accepted document text, and signing audit details.
               </p>
             </div>
