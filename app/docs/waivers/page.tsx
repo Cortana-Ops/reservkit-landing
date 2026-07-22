@@ -5,7 +5,7 @@ import { FileSignature, Settings, UserCheck, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Waivers",
-  description: "Create digital liability waiver templates, configure per-guest signer fields, manage guest signing, and track waiver compliance in ReservKit.",
+  description: "Create digital liability waiver templates, configure per-guest signer fields, manage guest signing, and track waiver status in ReservKit.",
   alternates: { canonical: "https://reservkit.com/docs/waivers" },
 };
 
@@ -118,13 +118,13 @@ export default function Waivers() {
             </div>
           </section>
 
-          {/* Compliance dashboard */}
+          {/* Waiver status */}
           <section>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
                 <ShieldCheck className="h-5 w-5 text-amber" aria-hidden="true" />
               </div>
-              <h2 className="text-xl font-bold text-navy">Tracking waiver compliance</h2>
+              <h2 className="text-xl font-bold text-navy">Tracking waiver status</h2>
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
