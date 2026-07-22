@@ -175,18 +175,18 @@ export default function Payments() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Full and partial refunds are issued from the Bookings page. Open the booking, click &quot;Refund,&quot;
-                and enter the amount to refund. For a full refund, the full charged amount is returned to the
-                customer&apos;s payment method within 5–10 business days.
+                Full and partial refunds are started from Booking Detail. Open the booking, click &quot;Refund,&quot;
+                and enter the amount to refund. ReservKit sends the refund request to Stripe, updates the
+                booking record, and releases capacity on full refunds when the booking can be cancelled safely.
               </p>
               <p>
                 Partial refunds let you refund any amount up to the original charge. This is useful when you want
                 to keep the deposit or apply a cancellation fee while returning the remainder.
               </p>
               <p>
-                When you issue a refund, the booking fee is not automatically returned. Stripe&apos;s own processing
-                fee is also non-refundable per Stripe&apos;s terms. If you process a large volume of refunds, contact
-                ReservKit support to discuss your situation.
+                Booking-fee refund handling depends on the Stripe payment path for that charge. Stripe&apos;s own processing
+                fee is generally not returned by Stripe. If a refund succeeds in Stripe but ReservKit cannot update
+                the booking record, the dashboard will tell you to reconcile the booking manually.
               </p>
             </div>
           </section>

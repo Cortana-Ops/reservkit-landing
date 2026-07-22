@@ -77,6 +77,9 @@ const forbidden = [
   "printed or downloaded as part of the waiver packet",
   "From signup to first real booking",
   "No sales call.",
+  "booking fee is not automatically returned",
+  "within 5–10 business days",
+  "subscription paid subscription charges",
 ];
 
 const allowedByFile = {
