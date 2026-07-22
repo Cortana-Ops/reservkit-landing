@@ -82,6 +82,12 @@ const forbidden = [
   "subscription paid subscription charges",
   "click the status dropdown",
   "whether their waiver has been signed",
+  "This week,\"",
+  "This quarter",
+  "You can sort and filter this list any way you need",
+  "payment status, and booking status",
+  "Staff can mark guests as checked in directly from this view",
+  "Member\", description",
 ];
 
 const allowedByFile = {

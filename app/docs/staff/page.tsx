@@ -21,9 +21,9 @@ const breadcrumbSchema = {
 
 const roles = [
   { role: "Owner", description: "Full account ownership, including billing, settings, staff, and organization data." },
-  { role: "Admin", description: "Full operational access for activities, bookings, staff management, and settings." },
+  { role: "Admin", description: "Broad operational access for activities, bookings, staff management, reports, and settings." },
+  { role: "Manager", description: "Operational access for bookings, activities, calendar, equipment, and report review without billing ownership." },
   { role: "Staff", description: "Can use staff-facing operational views for assigned schedule, task, and booking work." },
-  { role: "Member", description: "Limited team access for organizations that need narrower operational visibility." },
 ];
 
 export default function Staff() {
@@ -59,7 +59,7 @@ export default function Staff() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Team Members and click &quot;Invite member.&quot; Enter the team member&apos;s email address and select their role.
+                Go to Team Members and click &quot;Invite Member.&quot; Enter the team member&apos;s email address and select their starting role.
                 They&apos;ll receive an invitation email with a link to create their account and join your organization.
               </p>
               <p>
@@ -110,7 +110,7 @@ export default function Staff() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Open any booking from the Bookings page and use the &quot;Assigned staff&quot; dropdown to assign one or more
+                Open any booking from the Bookings page and use the Assigned Staff control to assign one or more
                 team members to that booking. Assigned staff can use staff-facing schedule and workflow views.
               </p>
               <p>
@@ -138,11 +138,12 @@ export default function Staff() {
               </p>
               <p>
                 The schedule view shows the activity name, time, customer party size, and check-in status for each
-                assigned booking. Staff can mark guests as checked in directly from this view.
+                assigned booking. Schedule cards link back to Booking Detail for deeper booking actions when the team
+                member has the right access.
               </p>
               <p>
-                Owners and admins see the full calendar with all bookings across all staff. Use the calendar filters
-                to view by activity, staff member, or date range.
+                Owners and admins can review all bookings across the Calendar, Bookings, Booking Detail, and Reports
+                workflows instead of relying only on an individual staff schedule.
               </p>
             </div>
           </section>

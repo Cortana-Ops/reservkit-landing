@@ -80,13 +80,12 @@ export default function Reports() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                The Bookings report shows the total number of bookings and total guests served over any period. This
-                is useful for capacity planning — understanding which activities are most popular, which days of
-                the week are busiest, and how lead time varies by activity type.
+                Reports show active booking counts, active guest counts, average paid booking value, unpaid active
+                bookings, cancellation trends, and activity performance for the reporting window you choose.
               </p>
               <p>
-                Each booking entry shows the activity, booking date, trip date, party size, revenue, and current
-                status. You can sort and filter this list any way you need.
+                The Operations tab includes status breakdown, occupancy, and cancellation-rate views. Reports also
+                provide a link back to the matching booking records when you need the underlying booking list.
               </p>
             </div>
           </section>
@@ -102,13 +101,12 @@ export default function Reports() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 All reports support custom date range filtering. Use the date picker at the top of the Reports page
-                to set a start and end date. Preset shortcuts include &quot;This week,&quot; &quot;This month,&quot; &quot;Last month,&quot;
-                &quot;This quarter,&quot; and &quot;This year.&quot;
+                to set a start and end date. Preset shortcuts include 7 Days, 30 Days, 90 Days, Ops Window, and
+                12 Months.
               </p>
               <p>
-                You can also filter by activity, booking status (confirmed, cancelled, checked in), and payment status.
-                Combining filters lets you answer specific questions quickly — for example, &quot;how much revenue came from
-                kayak rentals last June?&quot;
+                Reports use activity date. The Ops Window preset looks 90 days back and 30 days ahead so operators can
+                review recent activity and near-future operational demand in one place.
               </p>
             </div>
           </section>
@@ -127,8 +125,9 @@ export default function Reports() {
                 for review with your internal records.
               </p>
               <p>
-                Exported booking data includes: booking ID, activity name, trip date, customer name, customer email,
-                party size, booking income, customer tips, booking fee, payment status, and booking status.
+                The main CSV export includes matching booking rows with booking ID, created date, status, guest count,
+                booking total, customer name, customer email, and activity. Staff tip payout review has its own CSV export
+                when the signed-in operator has permission to view staff tip totals.
               </p>
               <p>
                 ReservKit does not provide tax advice or an accounting-grade ledger. Use Stripe, your accounting system,
