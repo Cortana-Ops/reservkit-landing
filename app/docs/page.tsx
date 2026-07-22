@@ -51,7 +51,7 @@ const sections = [
     icon: Users,
     title: "Staff",
     href: "/docs/staff",
-    description: "Invite team members, assign roles, and manage staff scheduling.",
+    description: "Invite team members, assign roles, and manage staff scheduling on Starter and higher plans.",
     topics: ["Inviting team members", "Staff roles and permissions", "Assigning staff to bookings", "Staff schedule view", "Staff task management"],
   },
   {
