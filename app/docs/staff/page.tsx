@@ -59,7 +59,7 @@ export default function Staff() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Settings → Team and click &quot;Invite member.&quot; Enter the team member&apos;s email address and select their role.
+                Go to Team Members and click &quot;Invite member.&quot; Enter the team member&apos;s email address and select their role.
                 They&apos;ll receive an invitation email with a link to create their account and join your organization.
               </p>
               <p>
@@ -67,8 +67,8 @@ export default function Staff() {
                 operations under different organization accounts.
               </p>
               <p>
-                Pending invitations are shown in the Team list until accepted. You can cancel a pending invitation at any time.
-                Once a team member accepts, they appear as an active member and can log in immediately.
+                Invite links expire after seven days. Once a team member accepts, they appear as an active member and can log in immediately.
+                Owners and admins can remove a team member later, which revokes access and requires a new invitation to rejoin.
               </p>
             </div>
           </section>
