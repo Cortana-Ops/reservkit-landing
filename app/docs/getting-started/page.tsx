@@ -44,7 +44,7 @@ const steps = [
     title: "Add your first activity",
     content: [
       "Go to Activities and click \"New activity.\" Give it a name, description, and duration. Activities are the bookable products your customers see on your booking page — examples include \"2-Hour Kayak Rental,\" \"Sunset Paddleboard Tour,\" or \"Half-Day Boat Charter.\"",
-      "Under the Availability tab, set the days and time windows when this activity can be booked. You can create recurring weekly schedules or block off specific dates.",
+      "Under the Availability tab, set the days and time windows when this activity can be booked. You can create recurring weekly schedules and manual slots for special cases.",
       "Under the Pricing tab, set your base price per guest. You can add a deposit amount (collected at booking), configure group pricing tiers, and create add-ons (e.g., wetsuits, life jackets, photography packages).",
       "Under the Waivers tab, attach a liability waiver template if required for your activity. Guests sign digitally after payment — no paper required.",
     ],
@@ -54,7 +54,7 @@ const steps = [
     title: "Connect Stripe",
     content: [
       "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
-      "Once connected, your Stripe account status will show \"Connected\" and your public booking page will be live and ready to accept payments.",
+      "Once connected, your Stripe account status will show \"Connected.\" Your public booking page can accept paid bookings after your organization slug, published activity, pricing, and availability are also configured.",
       "The booking fee is automatically deducted from each transaction at checkout based on your active plan.",
     ],
   },
@@ -62,7 +62,7 @@ const steps = [
     number: "05",
     title: "Share your booking link",
     content: [
-      "Every organization has a unique public booking link at app.reservkit.com/book/[your-slug]. Share this URL directly with customers, add it to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
+      "Every organization with a public slug has a booking link at app.reservkit.com/book/[your-slug]. Settings can also generate activity-specific booking links and iframe snippets when you want to send customers to one activity instead of the full catalog.",
       "The booking page shows all your published activities, available times, and handles the full checkout flow — guests pick a time, add guests, pay, and receive an automatic email confirmation.",
       "Add your booking link to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
     ],
