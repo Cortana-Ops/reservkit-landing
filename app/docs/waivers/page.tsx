@@ -52,7 +52,7 @@ export default function Waivers() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Settings → Waivers and click &quot;New template.&quot; Give the template a name (e.g., &quot;Standard Water Sports Liability Waiver&quot;)
+                Go to Waivers and click &quot;New template.&quot; Give the template a name (e.g., &quot;Standard Water Sports Liability Waiver&quot;)
                 and paste or type the full waiver text. You can use your existing waiver language or have an attorney draft one specific to your activities.
               </p>
               <p>
@@ -60,8 +60,8 @@ export default function Waivers() {
                 can require multiple waivers if you have different liability requirements per activity type.
               </p>
               <p>
-                Templates support rich text formatting — bold text, numbered lists, and section headers — so your waiver language displays
-                clearly to guests on any device.
+                Templates keep the accepted waiver text evidence-safe while offering formatting helpers for headings,
+                bullets, numbered lists, and dividers so your language stays readable on any device.
               </p>
             </div>
           </section>

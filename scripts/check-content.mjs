@@ -66,6 +66,10 @@ const forbidden = [
   "email copy of their signed waiver",
   "Capacity controls for vessels",
   "Website embed options",
+  "Templates support rich text formatting",
+  "bold text, numbered lists, and section headers",
+  "Settings → Team",
+  "cancel a pending invitation",
 ];
 
 const allowedByFile = {
