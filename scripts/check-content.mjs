@@ -88,6 +88,12 @@ const forbidden = [
   "payment status, and booking status",
   "Staff can mark guests as checked in directly from this view",
   "Member\", description",
+  "block off specific dates",
+  "public booking page will be live and ready to accept payments",
+  "Growth adds reports, waivers, broadcasts, equipment, and dynamic pricing",
+  "For growing teams that need reports, waivers, broadcasts, equipment, and dynamic pricing",
+  "title: \"Pricing — ReservKit\"",
+  "title: \"Request Early Access — ReservKit\"",
 ];
 
 const allowedByFile = {

@@ -34,7 +34,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2% booking fee",
     volume: "Unlimited bookings",
-    description: "For growing teams that need reports, waivers, broadcasts, equipment, and dynamic pricing.",
+    description: "For growing teams that need unlimited bookings, waivers, broadcasts, reports, coupons, deposits, and add-ons.",
     highlight: false,
   },
   {

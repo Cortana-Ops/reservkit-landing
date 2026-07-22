@@ -4,7 +4,7 @@ import { ArrowLeft, CheckCircle2, ClipboardCheck, CreditCard, FileSignature, Lif
 import { EarlyAccessRequestForm } from "../components/EarlyAccessRequestForm";
 
 export const metadata: Metadata = {
-  title: "Request Early Access — ReservKit",
+  title: "Request Early Access",
   description:
     "ReservKit is onboarding a limited number of operators before public launch. Tell us about your business and first booking flow.",
   alternates: { canonical: "https://reservkit.com/early-access" },

@@ -6,7 +6,7 @@ import { TrackedLink } from "../components/TrackedLink";
 import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
-  title: "Pricing — ReservKit",
+  title: "Pricing",
   description:
     "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $299/month.",
   alternates: { canonical: "https://reservkit.com/pricing" },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "Free and Starter include the core booking page, Stripe Connect payments, customer records, and email confirmations. Growth adds reports, waivers, broadcasts, equipment, and dynamic pricing. Pro adds higher-tier advanced access.",
+    a: "Free and Starter include the core booking page, Stripe Connect payments, customer records, and email confirmations. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, deposits, and priced add-ons. Pro adds higher-tier operational support.",
   },
   {
     q: "What does booking fee mean?",
