@@ -80,6 +80,8 @@ const forbidden = [
   "booking fee is not automatically returned",
   "within 5–10 business days",
   "subscription paid subscription charges",
+  "click the status dropdown",
+  "whether their waiver has been signed",
 ];
 
 const allowedByFile = {
