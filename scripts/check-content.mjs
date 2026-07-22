@@ -94,6 +94,11 @@ const forbidden = [
   "For growing teams that need reports, waivers, broadcasts, equipment, and dynamic pricing",
   "title: \"Pricing — ReservKit\"",
   "title: \"Request Early Access — ReservKit\"",
+  "Takes five minutes",
+  "Watch the bookings come in",
+  "live product screenshots",
+  "Staff and captain scheduling",
+  "Staff assignment and guide scheduling",
 ];
 
 const allowedByFile = {
