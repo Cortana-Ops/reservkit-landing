@@ -104,15 +104,14 @@ export default function BookingsAvailability() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Cancellations can be processed from the Bookings page. Select the booking, click the status dropdown, and
-                choose &quot;Cancelled.&quot; ReservKit will update the booking status and release that slot back to available
-                capacity automatically.
+                Cancellations are processed from Booking Detail. Open the booking and use the Cancel action so ReservKit can
+                update the booking status, release reserved slot capacity, and send the customer cancellation email.
               </p>
               <p>
-                You control the refund from Stripe separately. ReservKit does not automatically issue refunds — this gives you
-                full control over your cancellation policy (full refund, partial refund, or no refund depending on how far in
-                advance the cancellation is made). See the <Link href="/docs/payments" className="text-amber hover:underline">Payments guide</Link> for
-                instructions on issuing partial and full refunds.
+                Cancelling a booking does not automatically refund a Stripe charge. Use the Refund action from Booking Detail
+                when money needs to go back to the customer, then choose the refund amount according to your policy. See the{" "}
+                <Link href="/docs/payments" className="text-amber hover:underline">Payments guide</Link> for instructions on
+                issuing partial and full refunds.
               </p>
               <p>
                 Keep your cancellation policy clear in customer-facing confirmation copy and your business terms. Dedicated
@@ -132,7 +131,7 @@ export default function BookingsAvailability() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 On the day of an activity, use the Check-In page or Calendar view to pull up the day&apos;s bookings. Each booking
-                card shows the customer name, party size, and whether their waiver has been signed.
+                card shows the customer name, party size, and waiver status or progress.
               </p>
               <p>
                 To check in a guest, click the booking and mark it as &quot;Checked In.&quot; This updates the booking status and
