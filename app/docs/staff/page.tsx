@@ -46,6 +46,10 @@ export default function Staff() {
             Bring your team into ReservKit. Assign roles, link staff to specific bookings, and give your crew
             the schedule view they need to run operations smoothly.
           </p>
+          <p className="mt-4 rounded-2xl border border-amber/30 bg-amber-light p-4 text-sm leading-relaxed text-slate-700">
+            Team and staff tools are available on Starter and higher plans. Free is intended for setup, testing,
+            and the first low-volume bookings before adding staff access.
+          </p>
         </div>
 
         <div className="space-y-12">

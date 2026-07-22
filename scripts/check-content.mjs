@@ -142,6 +142,8 @@ const required = [
   { file: "app/lib/marketing.ts", text: "Stripe’s published processing fees apply separately" },
   { file: "app/docs/payments/page.tsx", text: "refundable damage deposit" },
   { file: "app/lib/marketing.ts", text: "refundable damage deposits are not marked up" },
+  { file: "app/docs/staff/page.tsx", text: "Team and staff tools are available on Starter and higher plans" },
+  { file: "app/docs/page.tsx", text: "staff scheduling on Starter and higher plans" },
 ];
 
 const removedRoutes = [
