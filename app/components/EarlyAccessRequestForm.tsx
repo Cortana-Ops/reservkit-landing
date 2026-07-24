@@ -111,43 +111,121 @@ export function EarlyAccessRequestForm() {
             Share enough context for us to understand your first booking flow and whether ReservKit is a fit right now.
           </p>
         </div>
-        <Field label="Your name" error={errors.name}>
-          <input value={form.name} onChange={(event) => update("name", event.target.value)} className="form-input" autoComplete="name" />
+        <Field id="early-access-name" label="Your name" error={errors.name}>
+          <input
+            id="early-access-name"
+            name="name"
+            type="text"
+            value={form.name}
+            onChange={(event) => update("name", event.target.value)}
+            className="form-input"
+            autoComplete="name"
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? "early-access-name-error" : undefined}
+          />
         </Field>
-        <Field label="Email address" error={errors.email}>
-          <input value={form.email} onChange={(event) => update("email", event.target.value)} className="form-input" autoComplete="email" inputMode="email" />
+        <Field id="early-access-email" label="Email address" error={errors.email}>
+          <input
+            id="early-access-email"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={(event) => update("email", event.target.value)}
+            className="form-input"
+            autoComplete="email"
+            inputMode="email"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? "early-access-email-error" : undefined}
+          />
         </Field>
-        <Field label="Business name" error={errors.businessName}>
-          <input value={form.businessName} onChange={(event) => update("businessName", event.target.value)} className="form-input" autoComplete="organization" />
+        <Field id="early-access-business-name" label="Business name" error={errors.businessName}>
+          <input
+            id="early-access-business-name"
+            name="businessName"
+            type="text"
+            value={form.businessName}
+            onChange={(event) => update("businessName", event.target.value)}
+            className="form-input"
+            autoComplete="organization"
+            aria-invalid={Boolean(errors.businessName)}
+            aria-describedby={errors.businessName ? "early-access-business-name-error" : undefined}
+          />
         </Field>
-        <Field label="Business type" error={errors.businessType}>
-          <select value={form.businessType} onChange={(event) => update("businessType", event.target.value)} className="form-input">
+        <Field id="early-access-business-type" label="Business type" error={errors.businessType}>
+          <select
+            id="early-access-business-type"
+            name="businessType"
+            value={form.businessType}
+            onChange={(event) => update("businessType", event.target.value)}
+            className="form-input"
+            autoComplete="organization-title"
+            aria-invalid={Boolean(errors.businessType)}
+            aria-describedby={errors.businessType ? "early-access-business-type-error" : undefined}
+          >
             <option value="">Choose one</option>
             {businessTypes.map((type) => <option key={type}>{type}</option>)}
           </select>
         </Field>
-        <Field label="Current booking tool">
-          <input value={form.currentBookingTool} onChange={(event) => update("currentBookingTool", event.target.value)} className="form-input" placeholder="Phone, spreadsheets, FareHarbor, Rezdy..." />
+        <Field id="early-access-current-booking-tool" label="Current booking tool">
+          <input
+            id="early-access-current-booking-tool"
+            name="currentBookingTool"
+            type="text"
+            value={form.currentBookingTool}
+            onChange={(event) => update("currentBookingTool", event.target.value)}
+            className="form-input"
+            placeholder="Phone, spreadsheets, FareHarbor, Rezdy..."
+          />
         </Field>
-        <Field label="Monthly booking volume">
-          <select value={form.monthlyBookingVolume} onChange={(event) => update("monthlyBookingVolume", event.target.value)} className="form-input">
+        <Field id="early-access-monthly-booking-volume" label="Monthly booking volume">
+          <select
+            id="early-access-monthly-booking-volume"
+            name="monthlyBookingVolume"
+            value={form.monthlyBookingVolume}
+            onChange={(event) => update("monthlyBookingVolume", event.target.value)}
+            className="form-input"
+          >
             <option value="">Choose one</option>
             {volumeOptions.map((volume) => <option key={volume}>{volume}</option>)}
           </select>
         </Field>
-        <Field label="What is the biggest thing you need ReservKit to fix?" error={errors.biggestBookingProblem} className="sm:col-span-2">
+        <Field id="early-access-biggest-booking-problem" label="What is the biggest thing you need ReservKit to fix?" error={errors.biggestBookingProblem} className="sm:col-span-2">
           <textarea
+            id="early-access-biggest-booking-problem"
+            name="biggestBookingProblem"
             value={form.biggestBookingProblem}
             onChange={(event) => update("biggestBookingProblem", event.target.value)}
             className="form-input min-h-24 resize-y"
             placeholder="Examples: switching from FareHarbor, collecting waivers, reducing booking fees, handling damage deposits, cleaning up day-of check-in..."
+            aria-invalid={Boolean(errors.biggestBookingProblem)}
+            aria-describedby={errors.biggestBookingProblem ? "early-access-biggest-booking-problem-error" : undefined}
           />
         </Field>
-        <Field label="Website or social link" error={errors.website} className="sm:col-span-2">
-          <input value={form.website} onChange={(event) => update("website", event.target.value)} className="form-input" placeholder="https://..." />
+        <Field id="early-access-website" label="Website or social link" error={errors.website} className="sm:col-span-2">
+          <input
+            id="early-access-website"
+            name="website"
+            type="url"
+            value={form.website}
+            onChange={(event) => update("website", event.target.value)}
+            className="form-input"
+            placeholder="https://..."
+            autoComplete="url"
+            aria-invalid={Boolean(errors.website)}
+            aria-describedby={errors.website ? "early-access-website-error" : undefined}
+          />
         </Field>
-        <Field label="Anything we should know before your first setup session?" error={errors.notes} className="sm:col-span-2">
-          <textarea value={form.notes} onChange={(event) => update("notes", event.target.value)} className="form-input min-h-28 resize-y" placeholder="Tell us what you rent, how bookings work today, and what the first booking flow should support." />
+        <Field id="early-access-notes" label="Anything we should know before your first setup session?" error={errors.notes} className="sm:col-span-2">
+          <textarea
+            id="early-access-notes"
+            name="notes"
+            value={form.notes}
+            onChange={(event) => update("notes", event.target.value)}
+            className="form-input min-h-28 resize-y"
+            placeholder="Tell us what you rent, how bookings work today, and what the first booking flow should support."
+            aria-invalid={Boolean(errors.notes)}
+            aria-describedby={errors.notes ? "early-access-notes-error" : undefined}
+          />
         </Field>
       </div>
 
@@ -172,11 +250,13 @@ export function EarlyAccessRequestForm() {
 }
 
 function Field({
+  id,
   label,
   error,
   className = "",
   children,
 }: {
+  id: string;
   label: string;
   error?: string;
   className?: string;
@@ -186,7 +266,7 @@ function Field({
     <label className={`block ${className}`}>
       <span className="text-sm font-semibold text-navy">{label}</span>
       <span className="mt-1 block">{children}</span>
-      {error ? <span className="mt-1 block text-xs text-red-600">{error}</span> : null}
+      {error ? <span id={`${id}-error`} className="mt-1 block text-xs text-red-600">{error}</span> : null}
     </label>
   );
 }
