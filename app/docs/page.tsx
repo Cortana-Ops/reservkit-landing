@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
-import { ArrowRight, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
+import { ArrowRight, Bell, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Documentation & Guides",
@@ -46,6 +46,13 @@ const sections = [
     href: "/docs/waivers",
     description: "Create liability waiver templates and configure per-guest signing requirements.",
     topics: ["Creating waiver templates", "Configuring required fields", "Guest signing flow", "Tracking waiver status", "Printing evidence packets"],
+  },
+  {
+    icon: Bell,
+    title: "Notifications",
+    href: "/docs/notifications",
+    description: "Understand booking emails, SMS reminders, review requests, and optional custom sender setup.",
+    topics: ["Business identity", "Booking emails", "SMS reminders", "Google review links", "Custom Resend and Twilio"],
   },
   {
     icon: Users,
