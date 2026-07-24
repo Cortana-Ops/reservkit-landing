@@ -127,6 +127,12 @@ const allowedByFile = {
 const required = [
   { file: "app/lib/marketing.ts", text: "Get early access" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "Submit my application" },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="email"' },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: 'type="email"' },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: 'autoComplete="email"' },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="businessName"' },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="biggestBookingProblem"' },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: "aria-describedby" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "biggestBookingProblem" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "What is the biggest thing you need ReservKit to fix?" },
   { file: "app/lib/marketing.ts", text: "/early-access" },
