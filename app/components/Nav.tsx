@@ -25,12 +25,11 @@ export default function Nav() {
           <Image
             src="/logo.png"
             alt="ReservKit"
-            width={120}
+            width={32}
             height={32}
             priority
-            className="h-8 w-auto object-contain"
-            style={{ width: "auto", height: "auto" }}
           />
+          <span className="text-sm font-bold text-navy">ReservKit</span>
         </Link>
 
         {/* Desktop nav */}

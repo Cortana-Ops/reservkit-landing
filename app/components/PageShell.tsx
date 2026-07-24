@@ -27,12 +27,11 @@ export function PageShell({ children }: PageShellProps) {
             <Image
               src="/logo.png"
               alt="ReservKit"
-              width={100}
+              width={28}
               height={28}
               priority
-              className="h-7 w-auto object-contain"
-              style={{ width: "auto", height: "auto" }}
             />
+            <span className="text-sm font-bold text-navy">ReservKit</span>
           </Link>
           <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
             {shellLinks.map((link) => (

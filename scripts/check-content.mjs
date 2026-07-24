@@ -144,6 +144,11 @@ const required = [
   { file: "app/lib/marketing.ts", text: "refundable damage deposits are not marked up" },
   { file: "app/docs/staff/page.tsx", text: "Team and staff tools are available on Starter and higher plans" },
   { file: "app/docs/page.tsx", text: "staff scheduling on Starter and higher plans" },
+  { file: "app/docs/page.tsx", text: "/docs/notifications" },
+  { file: "app/docs/notifications/page.tsx", text: "ReservKit-managed email delivery" },
+  { file: "app/docs/notifications/page.tsx", text: "Automated SMS reminders can use ReservKit-managed delivery" },
+  { file: "app/docs/notifications/page.tsx", text: "does not currently include a full operator-facing email or SMS template editor" },
+  { file: "app/docs/notifications/page.tsx", text: "Test emails from Settings go only to the signed-in operator" },
 ];
 
 const removedRoutes = [

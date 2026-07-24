@@ -9,6 +9,7 @@ const routes = [
   "/docs/payments",
   "/docs/staff",
   "/docs/waivers",
+  "/docs/notifications",
   "/docs/reports",
   "/docs/bookings-availability",
   "/roadmap",
@@ -31,6 +32,7 @@ const requiredByRoute = {
   ],
   "/docs/staff": ["Team and staff tools are available on Starter and higher plans"],
   "/docs/waivers": ["Each guest verifies their email once", "signed waiver evidence"],
+  "/docs/notifications": ["ReservKit-managed email delivery", "does not currently include a full operator-facing email or SMS template editor"],
   "/docs/reports": ["Customer tips are shown separately from booking income"],
 };
 
