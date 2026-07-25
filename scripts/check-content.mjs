@@ -102,6 +102,8 @@ const forbidden = [
   "Takes five minutes",
   "Watch the bookings come in",
   "live product screenshots",
+  "current product screenshots",
+  "Here is what the operator side looks like",
   "Staff and captain scheduling",
   "Staff assignment and guide scheduling",
   "booking fee is calculated on the total amount charged",
@@ -158,6 +160,9 @@ const required = [
   { file: "app/docs/notifications/page.tsx", text: "Automated SMS reminders can use ReservKit-managed delivery" },
   { file: "app/docs/notifications/page.tsx", text: "does not currently include a full operator-facing email or SMS template editor" },
   { file: "app/docs/notifications/page.tsx", text: "Test emails from Settings go only to the signed-in operator" },
+  { file: "app/page.tsx", text: "real ReservKit screens from configured public booking and operator workflows" },
+  { file: "app/page.tsx", text: "public captures reviewed before wider marketing" },
+  { file: "app/page.tsx", text: "representative screens show the operator workflows ReservKit is built around" },
 ];
 
 const removedRoutes = [

@@ -162,7 +162,7 @@ const setupSteps = [
 const operatorProof = [
   {
     title: "Real product, not mockup-only marketing",
-    body: "The homepage uses current product screenshots from configured public booking and operator workflows.",
+    body: "The homepage uses real ReservKit screens from configured public booking and operator workflows, with public captures reviewed before wider marketing.",
   },
   {
     title: "Stripe Connect from the start",
@@ -462,7 +462,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Inside the operator workspace</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                ReservKit connects bookings, payments, waivers, and staff in one place. Here is what the operator side looks like.
+                ReservKit connects bookings, payments, waivers, and staff in one place. These representative screens show the operator workflows ReservKit is built around.
               </p>
             </div>
             <div className="mt-12 space-y-16">
