@@ -126,6 +126,44 @@ const allowedByFile = {
   "app/terms/page.tsx": ["invite-only"],
 };
 
+const unsupportedLiveClaimPatterns = [
+  {
+    name: "open public signup",
+    pattern: /\b(start\s+(for\s+)?free|sign\s+up\s+now|public\s+signup\s+is\s+open|create\s+your\s+account\s+now)\b/i,
+    allowedContext: /early access|before public launch|public self-serve signup is.*future/i,
+  },
+  {
+    name: "cart or multi-item checkout",
+    pattern: /\b(cart checkout|multi[-\s]?item checkout|multiple activities.*one checkout)\b/i,
+    allowedContext: /future|coming next|roadmap|not currently/i,
+  },
+  {
+    name: "resources or variants",
+    pattern: /\b(resource variants|customer-selectable resources|physical unit assignment|inventory blocking)\b/i,
+    allowedContext: /future|coming next|roadmap|not currently/i,
+  },
+  {
+    name: "multi-day bookings",
+    pattern: /\b(multi[-\s]?day bookings|overnight rentals|lodging-style stays)\b/i,
+    allowedContext: /future|coming next|roadmap|not currently/i,
+  },
+  {
+    name: "template editor",
+    pattern: /\b(template editor|edit email templates|edit sms templates|customize email templates|customize sms templates)\b/i,
+    allowedContext: /does not currently include|future|coming next|roadmap|not currently/i,
+  },
+  {
+    name: "staff tip self-service",
+    pattern: /\b(my tips|staff can see (their|own) tips|employees can see (their|own) tips)\b/i,
+    allowedContext: /future|not exposed|not currently/i,
+  },
+  {
+    name: "dedicated embed layouts",
+    pattern: /\b(calendar-only embed|card-only embed|activity-card-only embed)\b/i,
+    allowedContext: /future options|future work|coming next|roadmap|beyond the current booking links/i,
+  },
+];
+
 const required = [
   { file: "app/lib/marketing.ts", text: "Get early access" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "Submit my application" },
@@ -200,6 +238,16 @@ for (const file of files) {
     const allowed = allowedByFile[relativeFile] ?? [];
     if (!allowed.includes("invite-only")) {
       failures.push(`${relativeFile} contains stale phrase: invite-only`);
+    }
+  }
+  for (const { name, pattern, allowedContext } of unsupportedLiveClaimPatterns) {
+    for (const match of source.matchAll(new RegExp(pattern.source, `${pattern.flags}g`))) {
+      const lineStart = source.lastIndexOf("\n", match.index) + 1;
+      const lineEnd = source.indexOf("\n", match.index);
+      const line = source.slice(lineStart, lineEnd === -1 ? source.length : lineEnd);
+      if (!allowedContext.test(line)) {
+        failures.push(`${relativeFile} may imply unsupported live ${name}: ${match[0]}`);
+      }
     }
   }
 }
