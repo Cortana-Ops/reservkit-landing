@@ -34,6 +34,7 @@ const requiredByRoute = {
   "/docs/waivers": ["Each guest verifies their email once", "signed waiver evidence"],
   "/docs/notifications": ["ReservKit-managed email delivery", "does not currently include a full operator-facing email or SMS template editor"],
   "/docs/reports": ["Customer tips are shown separately from booking income"],
+  "/docs/bookings-availability": ["all-activity booking links and activity-specific booking links", "Dedicated calendar-only or activity-card-only embeds are future options"],
 };
 
 const forbidden = [

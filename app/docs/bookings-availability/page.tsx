@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
-import { CalendarDays, Clock, X, CheckSquare } from "lucide-react";
+import { CalendarDays, Clock, Link2, X, CheckSquare } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Bookings & Availability",
@@ -90,6 +90,32 @@ export default function BookingsAvailability() {
               <p>
                 Staff can create bookings manually on behalf of customers through the Bookings page. Manual bookings bypass
                 the public payment flow and are useful for walk-in customers, phone reservations, or groups with custom pricing.
+              </p>
+            </div>
+          </section>
+
+          {/* Sharing booking links */}
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
+                <Link2 className="h-5 w-5 text-amber" aria-hidden="true" />
+              </div>
+              <h2 className="text-xl font-bold text-navy">Sharing booking links</h2>
+            </div>
+            <div className="space-y-3 text-slate-600 leading-relaxed">
+              <p>
+                ReservKit supports both all-activity booking links and activity-specific booking links. Use the full
+                booking page when customers should browse everything you offer, or use a single-activity link when a
+                website button like &quot;Check availability&quot; should open one activity&apos;s availability first.
+              </p>
+              <p>
+                Settings can generate public booking links and iframe snippets for your website. Activity-specific
+                links use clean public slugs when available, while older links continue to resolve through the supported
+                compatibility path.
+              </p>
+              <p>
+                Dedicated calendar-only or activity-card-only embeds are future options. Today, the supported embed
+                path is the ReservKit booking flow for all activities or one selected activity.
               </p>
             </div>
           </section>
