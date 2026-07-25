@@ -23,6 +23,17 @@ Passed. No public marketing page was found making unsupported live claims for pu
   - `/early-access`
 - Live rendered mobile checks passed for the homepage, mobile menu, and early-access form empty-submit validation.
 
+## Follow-Up Rendered Verification
+
+After the latest app-side production/Sentry/customer-path evidence updates, a fresh live marketing gate was rerun on 2026-07-25:
+
+- `npm run check:content` passed.
+- `npm run lint` passed.
+- `npm run build` passed.
+- `npm run check:live` passed against `https://reservkit.com`.
+- A Playwright rendered pass loaded `/`, `/pricing`, `/early-access`, `/docs`, `/docs/bookings-availability`, `/docs/notifications`, `/docs/reports`, and `/roadmap` at desktop `1440px` and mobile `390px`.
+- The rendered pass found no console errors or warnings, no horizontal overflow, required launch-sensitive copy present, and stale/risky copy absent.
+
 ## Guardrail Added
 
 `scripts/check-content.mjs` now includes pattern-based checks for risky unsupported-live-claim language:
@@ -45,4 +56,3 @@ Future pages can still discuss these items when the surrounding copy clearly fra
 - Resources/variants and cart/multi-item checkout remain future product/design work.
 - Notifications docs correctly say ReservKit does not currently include a full operator-facing email or SMS template editor.
 - Staff docs keep staff/team tools Starter+ and do not expose staff tip self-service as a launch feature.
-
