@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PricingSection } from "../components/PricingSection";
 import { TrackedLink } from "../components/TrackedLink";
-import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -68,8 +68,8 @@ export default function PricingPage() {
             Tell us what you operate and how many bookings you handle today. We will help map the right setup path.
           </p>
           <TrackedLink
-            href={EARLY_ACCESS_URL}
-            event="early_access_cta_clicked"
+            href={PRIMARY_CTA_URL}
+            event={PRIMARY_CTA_EVENT}
             properties={{ location: "pricing_footer" }}
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy transition-colors hover:bg-amber-dark"
           >

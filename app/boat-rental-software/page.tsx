@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { EARLY_ACCESS_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Boat Rental Booking Software - Payments & Waivers Included",
@@ -75,8 +75,8 @@ export default function BoatRentalSoftware() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink
-                href={EARLY_ACCESS_URL}
-                event="early_access_cta_clicked"
+                href={PRIMARY_CTA_URL}
+                event={PRIMARY_CTA_EVENT}
                 properties={{ location: "boat_rental_hero" }}
                 className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
               >
@@ -140,8 +140,8 @@ export default function BoatRentalSoftware() {
               Share your current booking workflow and we will reply with guided onboarding next steps.
             </p>
             <TrackedLink
-              href={EARLY_ACCESS_URL}
-              event="early_access_cta_clicked"
+              href={PRIMARY_CTA_URL}
+              event={PRIMARY_CTA_EVENT}
               properties={{ location: "boat_rental_footer" }}
               className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
             >

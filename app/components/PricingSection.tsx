@@ -1,11 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
 import {
-  EARLY_ACCESS_URL,
+  PRIMARY_CTA_URL,
+  PRIMARY_CTA_EVENT,
   PRIMARY_CTA_LABEL,
-  earlyAccessPricingCallout,
   enterpriseTier,
   freePlanFootnote,
+  pricingAccessCallout,
+  pricingAccessCalloutTitle,
   pricingFinePrint,
   pricingTiers,
 } from "../lib/marketing";
@@ -59,8 +61,8 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
                 {tier.description}
               </p>
               <TrackedLink
-                href={EARLY_ACCESS_URL}
-                event="early_access_cta_clicked"
+                href={PRIMARY_CTA_URL}
+                event={PRIMARY_CTA_EVENT}
                 properties={{ location: `pricing_${tier.name.toLowerCase()}` }}
                 className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors ${
                   tier.highlight
@@ -80,8 +82,8 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
             <p className="mt-1 text-sm text-slate-500">{enterpriseTier.volume}</p>
             <p className="mt-5 min-h-12 text-sm leading-relaxed text-slate-600">{enterpriseTier.description}</p>
             <TrackedLink
-              href={EARLY_ACCESS_URL}
-              event="early_access_cta_clicked"
+              href={PRIMARY_CTA_URL}
+              event={PRIMARY_CTA_EVENT}
               properties={{ location: "pricing_enterprise" }}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-navy ring-1 ring-[var(--color-border)] transition-colors hover:ring-amber/50"
             >
@@ -93,12 +95,12 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
         <div className="mt-8 rounded-2xl border border-amber/30 bg-amber-light p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h3 className="text-lg font-bold text-navy">Pre-launch access is open.</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">{earlyAccessPricingCallout}</p>
+              <h3 className="text-lg font-bold text-navy">{pricingAccessCalloutTitle}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">{pricingAccessCallout}</p>
             </div>
             <TrackedLink
-              href={EARLY_ACCESS_URL}
-              event="early_access_cta_clicked"
+              href={PRIMARY_CTA_URL}
+              event={PRIMARY_CTA_EVENT}
               properties={{ location: "pricing_early_access_callout" }}
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy shadow-sm transition-colors hover:bg-amber-dark"
             >

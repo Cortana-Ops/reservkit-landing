@@ -16,7 +16,8 @@ import Nav from "./components/Nav";
 import { PricingSection } from "./components/PricingSection";
 import { TrackedLink } from "./components/TrackedLink";
 import {
-  EARLY_ACCESS_URL,
+  PRIMARY_CTA_URL,
+  PRIMARY_CTA_EVENT,
   POSITIONING_LINE,
   PRIMARY_CTA_LABEL,
   pricingSummary,
@@ -263,8 +264,8 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
-                  href={EARLY_ACCESS_URL}
-                  event="early_access_cta_clicked"
+                  href={PRIMARY_CTA_URL}
+                  event={PRIMARY_CTA_EVENT}
                   properties={{ location: "hero" }}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3.5 text-base font-bold text-navy shadow-lg shadow-amber/20 transition-colors hover:bg-amber-dark"
                 >
@@ -581,8 +582,8 @@ export default function Home() {
               We onboard operators personally: Stripe, one activity, waiver and refundable damage deposit setup, and one test booking before you share the link.
             </p>
             <TrackedLink
-              href={EARLY_ACCESS_URL}
-              event="early_access_cta_clicked"
+              href={PRIMARY_CTA_URL}
+              event={PRIMARY_CTA_EVENT}
               properties={{ location: "final_cta" }}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3.5 text-base font-bold text-navy transition-colors hover:bg-amber-dark"
             >

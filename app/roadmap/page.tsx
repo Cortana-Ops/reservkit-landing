@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { CheckCircle2, Zap, Clock, Lightbulb } from "lucide-react";
 import { TrackedLink } from "../components/TrackedLink";
-import { EARLY_ACCESS_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Product Roadmap",
@@ -130,8 +130,8 @@ export default function Roadmap() {
             Share your current booking workflow and we will reply with onboarding next steps.
           </p>
           <TrackedLink
-            href={EARLY_ACCESS_URL}
-            event="early_access_cta_clicked"
+            href={PRIMARY_CTA_URL}
+            event={PRIMARY_CTA_EVENT}
             properties={{ location: "roadmap_footer" }}
             className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
           >
