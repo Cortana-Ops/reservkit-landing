@@ -31,10 +31,10 @@ const articles = [
     intro:
       "The first setup session focuses on one working booking link. Here is what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
-      POSITIONING_LINE + " Guided access keeps onboarding hands-on while operators set up the first booking flow.",
+      POSITIONING_LINE + " Free-first signup lets operators build the first booking flow before choosing a paid plan.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit applies the plan's booking fee behind the scenes.",
       "Public plan pricing is documented plainly: " + pricingSummary,
-      "If you are evaluating ReservKit, the best next step is to request early access with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
+      "If you want help evaluating ReservKit, request guided setup with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },
@@ -71,7 +71,7 @@ const articles = [
     content: [
       "Before switching tools, confirm the practical details: how activities map over, how availability is rebuilt, where customer records live, what happens to historical bookings, and how payment disputes or refunds are handled in the old system.",
       "ReservKit includes a Migration Center V1 for structured imports. It is designed to make the first migration pass easier, while still leaving room for hands-on review before operators go live.",
-      "If you currently use another booking platform, include that in your early access request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
+      "If you currently use another booking platform, include that in your guided setup request. The first ReservKit setup should solve a real workflow problem without asking the operator to gamble with active bookings.",
     ],
     relatedLinks: [
       { href: "/docs/getting-started", label: "Getting started guide" },

@@ -26,7 +26,7 @@ import {
 const faqItems = [
   {
     q: "Is ReservKit available now?",
-    a: "ReservKit is available through limited pre-launch early access for selected rental, tour, and experience operators before public launch.",
+    a: "Yes. ReservKit is available through public Free-first signup for rental, tour, and experience operators. Operators can start on Free, build the first booking flow, and upgrade from Billing when they need more volume or staff tools.",
   },
   {
     q: "Can I switch from FareHarbor, Peek, Checkfront, Rezdy, or another booking platform?",
@@ -41,7 +41,7 @@ const faqItems = [
     a: "No. Customers can book, pay, sign required waivers, and receive their confirmation without creating a ReservKit account.",
   },
   {
-    q: "What happens after guided access?",
+    q: "What happens after I start free?",
     a: pricingSummary,
   },
 ];
@@ -163,7 +163,7 @@ const setupSteps = [
 const operatorProof = [
   {
     title: "Real product, not mockup-only marketing",
-    body: "The homepage uses real ReservKit screens from configured public booking and operator workflows, with public captures reviewed before wider marketing.",
+    body: "The homepage uses real ReservKit screens from configured public booking and operator workflows, with captures reviewed before broader marketing.",
   },
   {
     title: "Stripe Connect from the start",
@@ -171,7 +171,7 @@ const operatorProof = [
   },
   {
     title: "Built around operator setup",
-    body: "Guided onboarding focuses on one working booking flow before asking you to move real traffic.",
+    body: "Start with one working booking flow, run a test booking, then decide when to move real traffic.",
   },
 ];
 
@@ -254,7 +254,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
             <div>
               <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-                Pre-launch early access
+                Public signup is open
               </div>
               <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-navy sm:text-6xl">
                 Booking software that keeps operators in control of bookings, payments, and the day of work.

@@ -38,7 +38,7 @@ const faqSchema = {
       name: "Is ReservKit accepting kayak rental operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected kayak, paddleboard, and watersports rental operators through pre-launch early access.",
+        text: "Yes. Kayak, paddleboard, and watersports rental operators can start on Free and build their first direct booking flow.",
       },
     },
     {
@@ -122,7 +122,7 @@ export default function KayakRentalSoftware() {
                 with a focused setup path for the first activity you want customers to book online.
               </p>
               <p>
-                Early-access operators get hands-on setup for the first live booking flow.
+                Operators can start on Free and request guided setup help for the first live booking flow.
                 Public pricing is documented here: {pricingSummary}
               </p>
             </div>

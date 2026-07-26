@@ -2,7 +2,7 @@
 
 Marketing website for ReservKit at `reservkit.com`.
 
-This site is positioned as working booking software with limited pre-launch early access. Public marketing CTAs should route to `/early-access`; direct app login links are for existing users only until the coordinated public-signup launch cutover.
+This site is positioned as working direct-booking software with public Free-first signup. Public marketing CTAs should route to the app signup URL. `/early-access` is retained as a guided setup/help request route for operators who want hands-on setup support.
 
 ## Local Development
 
@@ -23,23 +23,24 @@ npm run lint
 npm run build
 ```
 
-`check:content` blocks stale launch/pricing phrases and accidental open-signup claims that should not return before public launch.
+`check:content` blocks stale launch/pricing phrases and unsupported feature claims that should not appear in public marketing.
 
 ## Marketing Launch Mode
 
 Public CTAs are controlled from `app/lib/marketing.ts`.
 
-- Default / production-safe mode: `NEXT_PUBLIC_MARKETING_MODE` unset or any value other than `public_signup`.
+- Default / production mode: `NEXT_PUBLIC_MARKETING_MODE` unset or any value other than `prelaunch`.
+  - CTA label: `Start free`
+  - CTA destination: app signup route
+- Explicit fallback mode: `NEXT_PUBLIC_MARKETING_MODE=prelaunch`.
   - CTA label: `Get early access`
   - CTA destination: `/early-access`
-- Public-signup cutover mode: `NEXT_PUBLIC_MARKETING_MODE=public_signup` uses the `Start free` CTA.
-  - CTA destination: app signup route
 
-Do not enable `public_signup` on production marketing until the app production environment has `VITE_SELF_SERVE_SIGNUP_ENABLED=true`, the app signup verification checklist has passed, and the marketing route sweep has passed.
+Production marketing is now in public signup posture. Do not switch back to `prelaunch` unless the app signup path is deliberately rolled back.
 
-## Early Access Intake
+## Guided Setup Intake
 
-The early access request form posts to `POST /api/early-access-request` and sends an intake email with Resend.
+The guided setup request form posts to `POST /api/early-access-request` and sends an intake email with Resend. The route/function names still use `early-access` for link compatibility.
 
 Required environment variables:
 

@@ -4,9 +4,9 @@ import { ArrowLeft, CheckCircle2, ClipboardCheck, CreditCard, FileSignature, Lif
 import { EarlyAccessRequestForm } from "../components/EarlyAccessRequestForm";
 
 export const metadata: Metadata = {
-  title: "Request Early Access",
+  title: "Request Guided Setup",
   description:
-    "ReservKit is onboarding a limited number of operators before public launch. Tell us about your business and first booking flow.",
+    "Request ReservKit setup help for your first direct booking flow.",
   alternates: { canonical: "https://reservkit.com/early-access" },
 };
 
@@ -18,7 +18,7 @@ const included = [
   },
   {
     icon: WalletCards,
-    title: "Clear plan fit before launch",
+    title: "Clear plan fit before live traffic",
     body: "We review your booking volume, current platform, and operating needs before you move live traffic.",
   },
   {
@@ -73,13 +73,13 @@ export default function EarlyAccessPage() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(26rem,1fr)] lg:items-start">
           <section className="pt-4">
             <div className="inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-              Pre-launch early access
+              Guided setup request
             </div>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-              Get early access to a real ReservKit booking flow before public launch.
+              Want help setting up your first ReservKit booking flow?
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              We personally help qualified operators set up one activity, Stripe payments, availability, waiver evidence, refundable damage deposits, and a test booking before they send customers to ReservKit.
+              Start free whenever you are ready. If you want help, we can review your business and guide setup for one activity, Stripe payments, availability, waiver evidence, refundable damage deposits, and a test booking before you send customers to ReservKit.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
               Tell us what you operate and how bookings work today. We reply within one business day.
@@ -102,7 +102,7 @@ export default function EarlyAccessPage() {
             </div>
             <div className="mt-8 grid gap-5 lg:grid-cols-2">
               <section className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-sm">
-                <h2 className="font-bold text-navy">Good fit for early access</h2>
+                <h2 className="font-bold text-navy">Good fit for guided setup</h2>
                 <ul className="mt-4 space-y-3">
                   {goodFit.map((item) => (
                     <li key={item} className="flex gap-2 text-sm leading-relaxed text-slate-600">

@@ -2,9 +2,9 @@ export const APP_URL = "https://app.reservkit.com";
 export const LOGIN_URL = `${APP_URL}/login`;
 export const EARLY_ACCESS_URL = "/early-access";
 export const MARKETING_MODE =
-  process.env.NEXT_PUBLIC_MARKETING_MODE === "public_signup"
-    ? "public_signup"
-    : "prelaunch";
+  process.env.NEXT_PUBLIC_MARKETING_MODE === "prelaunch"
+    ? "prelaunch"
+    : "public_signup";
 export const PUBLIC_SIGNUP_URL = `${LOGIN_URL}?${new URLSearchParams({
   signup: "true",
 }).toString()}`;
@@ -17,7 +17,7 @@ export const PRIMARY_CTA_EVENT =
     ? "public_signup_cta_clicked"
     : "early_access_cta_clicked";
 export const EARLY_ACCESS_POSITIONING =
-  "Limited pre-launch onboarding for operators who want to switch to direct bookings before public launch.";
+  "Guided setup help for operators who want support moving their first direct booking flow into ReservKit.";
 export const POSITIONING_LINE =
   "ReservKit helps rental and experience operators take direct bookings, collect Stripe payments, manage waiver evidence, and run day-of operations from one workspace.";
 export const METADATA_DESCRIPTION =
@@ -71,7 +71,7 @@ export const enterpriseTier = {
 };
 
 export const earlyAccessPricingCallout =
-  "Early-access operators get a hands-on setup path before public launch. We help map the right plan before live traffic moves over.";
+  "Operators who want help can request guided setup for the first live booking flow. We help map the right plan before live traffic moves over.";
 
 export const publicSignupPricingCallout =
   "Start on Free, connect Stripe when you are ready to take paid bookings, and upgrade only when your operation needs more volume or staff tools.";
@@ -79,7 +79,7 @@ export const publicSignupPricingCallout =
 export const pricingAccessCalloutTitle =
   MARKETING_MODE === "public_signup"
     ? "Start free when you are ready."
-    : "Pre-launch access is open.";
+    : "Guided setup is available.";
 
 export const pricingAccessCallout =
   MARKETING_MODE === "public_signup"

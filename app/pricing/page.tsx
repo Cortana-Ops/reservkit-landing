@@ -30,8 +30,8 @@ const faqs = [
     a: "Yes. Monthly plans can be cancelled from the billing portal to prevent future renewals. Paid subscription charges are non-refundable except for billing errors, duplicate charges, fraud, or legally required refunds. Enterprise agreements follow the cancellation terms in the signed agreement.",
   },
   {
-    q: "What is early access?",
-    a: "Early access is limited pre-launch onboarding for operators who want help setting up the first real booking flow before ReservKit opens publicly.",
+    q: "Can I get help setting up?",
+    a: "Yes. You can start on Free and request guided setup help if you want ReservKit support mapping your first activity, Stripe setup, availability, waivers, and test booking.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function PricingPage() {
         <section className="mt-16 rounded-3xl bg-navy p-8 text-center">
           <h2 className="text-2xl font-bold text-white">Ready to price your first booking flow?</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
-            Tell us what you operate and how many bookings you handle today. We will help map the right setup path.
+            Start on Free, build your first booking flow, and upgrade only when your operation needs more volume or staff tools.
           </p>
           <TrackedLink
             href={PRIMARY_CTA_URL}
