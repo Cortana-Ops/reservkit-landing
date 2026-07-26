@@ -1,4 +1,11 @@
 const baseUrl = process.env.RESERVKIT_MARKETING_BASE_URL || "https://reservkit.com";
+const configuredMarketingMode =
+  process.env.NEXT_PUBLIC_MARKETING_MODE === "public_signup"
+    ? "public_signup"
+    : process.env.NEXT_PUBLIC_MARKETING_MODE
+      ? "prelaunch"
+      : null;
+let detectedMarketingMode = null;
 
 const routes = [
   "/",
@@ -21,9 +28,7 @@ const routes = [
   "/privacy",
 ];
 
-const requiredByRoute = {
-  "/": ["Get early access", "Pre-launch early access", "refundable damage deposits"],
-  "/pricing": ["Get early access", "Free", "Starter", "Growth"],
+const sharedRequiredByRoute = {
   "/early-access": ["Submit my application", "reply within one business day"],
   "/docs/payments": [
     "booking subtotal collected at checkout",
@@ -37,11 +42,10 @@ const requiredByRoute = {
   "/docs/bookings-availability": ["all-activity booking links and activity-specific booking links", "Dedicated calendar-only or activity-card-only embeds are future options"],
 };
 
-const forbidden = [
+const baseForbidden = [
   "Start free trial",
   "Start Free Trial",
   "14-day free trial",
-  "login?signup=true",
   "2.9% + 30",
   "2 business days after a charge",
   "pay only the deposit",
@@ -49,10 +53,37 @@ const forbidden = [
   "Waiver compliance at a glance",
 ];
 
+const forbidden =
+  (mode) => mode === "public_signup"
+    ? baseForbidden
+    : [...baseForbidden, "login?signup=true"];
+
 const failures = [];
 
 function routeUrl(route) {
   return new URL(route, baseUrl).toString();
+}
+
+function inferMarketingMode(text) {
+  return text.includes("Start free") ? "public_signup" : "prelaunch";
+}
+
+function requiredForRoute(route, mode) {
+  const launchRequiredByRoute =
+    mode === "public_signup"
+      ? {
+          "/": ["Start free", "refundable damage deposits"],
+          "/pricing": ["Start free", "Free", "Starter", "Growth"],
+        }
+      : {
+          "/": ["Get early access", "Pre-launch early access", "refundable damage deposits"],
+          "/pricing": ["Get early access", "Free", "Starter", "Growth"],
+        };
+
+  return [
+    ...(launchRequiredByRoute[route] ?? []),
+    ...(sharedRequiredByRoute[route] ?? []),
+  ];
 }
 
 for (const route of routes) {
@@ -72,17 +103,20 @@ for (const route of routes) {
   const elapsedMs = Date.now() - start;
   console.log(`${response.status} ${route} ${elapsedMs}ms ${text.length}b`);
 
+  const routeMode = configuredMarketingMode ?? detectedMarketingMode ?? inferMarketingMode(text);
+  if (route === "/") detectedMarketingMode = routeMode;
+
   if (response.status < 200 || response.status >= 400) {
     failures.push(`${route} returned HTTP ${response.status}`);
   }
 
-  for (const phrase of requiredByRoute[route] ?? []) {
+  for (const phrase of requiredForRoute(route, routeMode)) {
     if (!text.includes(phrase)) {
       failures.push(`${route} is missing required text: ${phrase}`);
     }
   }
 
-  for (const phrase of forbidden) {
+  for (const phrase of forbidden(routeMode)) {
     if (text.includes(phrase)) {
       failures.push(`${route} contains stale phrase: ${phrase}`);
     }
