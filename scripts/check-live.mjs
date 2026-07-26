@@ -1,10 +1,10 @@
 const baseUrl = process.env.RESERVKIT_MARKETING_BASE_URL || "https://reservkit.com";
 const configuredMarketingMode =
-  process.env.NEXT_PUBLIC_MARKETING_MODE === "public_signup"
-    ? "public_signup"
-    : process.env.NEXT_PUBLIC_MARKETING_MODE
+  process.env.NEXT_PUBLIC_MARKETING_MODE === "prelaunch"
       ? "prelaunch"
-      : null;
+      : process.env.NEXT_PUBLIC_MARKETING_MODE
+        ? "public_signup"
+        : null;
 let detectedMarketingMode = null;
 
 const routes = [
@@ -29,7 +29,7 @@ const routes = [
 ];
 
 const sharedRequiredByRoute = {
-  "/early-access": ["Submit my application", "reply within one business day"],
+  "/early-access": ["Request setup help", "reply within one business day"],
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "customer tips are not marked up",

@@ -74,7 +74,7 @@ export function EarlyAccessRequestForm() {
         throw new Error(result.error ?? "Please check the form and try again.");
       }
 
-      posthog.capture("early_access_request_submitted", {
+      posthog.capture("guided_setup_request_submitted", {
         business_type: form.businessType,
         monthly_booking_volume: form.monthlyBookingVolume,
         biggest_booking_problem: form.biggestBookingProblem,
@@ -82,7 +82,7 @@ export function EarlyAccessRequestForm() {
       setStatus("success");
       setForm(initialState);
     } catch (error) {
-      posthog.capture("early_access_request_failed", {
+      posthog.capture("guided_setup_request_failed", {
         reason: error instanceof Error ? error.message : "unknown",
       });
       setStatus("error");
@@ -94,7 +94,7 @@ export function EarlyAccessRequestForm() {
     return (
       <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-emerald-950">
         <CheckCircle2 className="h-8 w-8 text-emerald-600" aria-hidden="true" />
-        <h2 className="mt-4 text-xl font-bold">Early access request received</h2>
+        <h2 className="mt-4 text-xl font-bold">Guided setup request received</h2>
         <p className="mt-2 text-sm leading-relaxed text-emerald-800">
           Thanks. We will review your business, look at the booking problem you shared, and follow up by email with onboarding next steps.
         </p>
@@ -106,7 +106,7 @@ export function EarlyAccessRequestForm() {
     <form onSubmit={submit} className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-xl sm:p-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <h2 className="text-xl font-bold text-navy">Request early access</h2>
+          <h2 className="text-xl font-bold text-navy">Request guided setup</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             Share enough context for us to understand your first booking flow and whether ReservKit is a fit right now.
           </p>
@@ -239,7 +239,7 @@ export function EarlyAccessRequestForm() {
         className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-bold text-navy shadow-lg shadow-amber/20 transition-colors hover:bg-amber-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : null}
-        Submit my application
+        Request setup help
         {status !== "submitting" ? <ArrowRight className="h-4 w-4" aria-hidden="true" /> : null}
       </button>
       <p className="mt-3 text-center text-xs leading-relaxed text-slate-500">

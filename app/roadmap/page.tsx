@@ -24,7 +24,7 @@ const shipped = [
   { label: "Booking and checkout", items: ["Public booking pages for configured activities", "Stripe Checkout through the operator's connected Stripe account", "Guest details, selected-time review, and booking confirmation flow", "Call-to-book cutoff handling when online booking is not available"] },
   { label: "Waivers and customer records", items: ["Per-guest digital waiver signing", "Optional drawn signature fields when configured", "Signed waiver evidence display", "Customer booking lookup without requiring a customer account"] },
   { label: "Operator workflows", items: ["Activity setup, availability, booking detail, and operator dashboard workflows", "Staff-facing navigation and day-of workflow polish", "Reports views for revenue and booking review", "Migration Center V1 for structured imports"] },
-  { label: "Go-live readiness", items: ["Current public pricing tiers", "Early access request flow", "Pre-launch onboarding path for selected operators", "All-activity and single-activity booking links plus iframe snippets", "Public content guard for stale pricing and removed signup language"] },
+  { label: "Go-live readiness", items: ["Current public pricing tiers", "Free-first public signup", "Guided setup request path", "All-activity and single-activity booking links plus iframe snippets", "Public content guard for stale pricing and removed signup language"] },
 ];
 
 const inProgress = [
@@ -125,7 +125,7 @@ export default function Roadmap() {
 
         {/* CTA */}
         <div className="rounded-2xl bg-navy p-8 text-center">
-          <h2 className="text-xl font-bold text-white mb-2">Get early access</h2>
+          <h2 className="text-xl font-bold text-white mb-2">Start with a real booking flow</h2>
           <p className="text-slate-400 text-sm mb-5 max-w-md mx-auto">
             Share your current booking workflow and we will reply with onboarding next steps.
           </p>

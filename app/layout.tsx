@@ -82,8 +82,8 @@ const softwareApplicationSchema = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    availability: "https://schema.org/LimitedAvailability",
-    description: "Limited pre-launch early access for selected rental, tour, and experience operators.",
+    availability: "https://schema.org/InStock",
+    description: "Free-first public signup for rental, tour, and experience operators.",
   },
   url: "https://reservkit.com",
 };

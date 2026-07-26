@@ -23,10 +23,10 @@ const breadcrumbSchema = {
 const steps = [
   {
     number: "01",
-    title: "Request early access",
+    title: "Create your account",
     content: [
-      "Submit your business name, booking volume, current booking tool, and website or social link from the early access request page.",
-      "Approved operators receive guided onboarding to confirm the first production-ready setup steps.",
+      "Start from the public signup path and create your ReservKit account.",
+      "New public organizations start on Free so you can build the first booking flow before choosing a paid plan.",
       pricingSummary,
     ],
   },
@@ -87,15 +87,15 @@ export default function GettingStarted() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Getting Started with ReservKit</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Move from request access to a tested first booking flow. This guide walks through the setup sequence
-            operators review during guided onboarding.
+            Move from account creation to a tested first booking flow. This guide walks through the setup sequence
+            operators should review before sharing a booking link.
           </p>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Pre-launch early access</span>
+            <span>Free-first public signup</span>
             <span className="mx-2">·</span>
             <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Hands-on setup for selected operators</span>
+            <span>Guided setup available when needed</span>
           </div>
         </div>
 

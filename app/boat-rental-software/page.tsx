@@ -8,7 +8,7 @@ import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL
 export const metadata: Metadata = {
   title: "Boat Rental Booking Software - Payments & Waivers Included",
   description:
-    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and pre-launch onboarding.",
+    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and Free-first setup.",
   keywords: [
     "boat rental booking software",
     "boat rental reservation system",
@@ -39,7 +39,7 @@ const faqSchema = {
       name: "Is ReservKit available for boat rental businesses?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected boat rental and charter operators through pre-launch early access.",
+        text: "Yes. Boat rental and charter operators can start on Free and build their first direct booking flow.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function BoatRentalSoftware() {
                 one configured activity and a test booking before you widen usage.
               </p>
               <p>
-                Early-access operators get hands-on setup for the first live booking flow.
+                Operators can start on Free and request guided setup help for the first live booking flow.
                 Public pricing remains transparent:
                 {` ${pricingSummary}`}
               </p>

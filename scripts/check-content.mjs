@@ -9,6 +9,10 @@ const forbidden = [
   "14-day free trial",
   "Start Free Trial",
   "Start free trial",
+  "Pre-launch early access",
+  "pre-launch early access",
+  "before public launch",
+  "limited pre-launch",
   "50 bookings/month",
   "50 bookings/mo",
   "200 bookings/month",
@@ -20,7 +24,6 @@ const forbidden = [
   "$79/mo + 2.5%",
   "$249",
   "Settings → Payments",
-  "login?signup=true",
   "Game changer",
   "Trusted by rental operators and tour guides",
   "What the beta is proving",
@@ -128,11 +131,6 @@ const allowedByFile = {
 
 const unsupportedLiveClaimPatterns = [
   {
-    name: "open public signup",
-    pattern: /\b(start\s+(for\s+)?free|sign\s+up\s+now|public\s+signup\s+is\s+open|create\s+your\s+account\s+now)\b/i,
-    allowedContext: /early access|before public launch|public self-serve signup is.*future|public_signup/i,
-  },
-  {
     name: "cart or multi-item checkout",
     pattern: /\b(cart checkout|multi[-\s]?item checkout|multiple activities.*one checkout)\b/i,
     allowedContext: /future|coming next|roadmap|not currently/i,
@@ -165,14 +163,14 @@ const unsupportedLiveClaimPatterns = [
 ];
 
 const required = [
-  { file: "app/lib/marketing.ts", text: "Get early access" },
-  { file: "app/lib/marketing.ts", text: 'process.env.NEXT_PUBLIC_MARKETING_MODE === "public_signup"' },
-  { file: "app/lib/marketing.ts", text: '    : "prelaunch"' },
+  { file: "app/lib/marketing.ts", text: "Start free" },
+  { file: "app/lib/marketing.ts", text: 'process.env.NEXT_PUBLIC_MARKETING_MODE === "prelaunch"' },
+  { file: "app/lib/marketing.ts", text: '    : "public_signup"' },
   { file: "app/lib/marketing.ts", text: 'MARKETING_MODE === "public_signup" ? PUBLIC_SIGNUP_URL : EARLY_ACCESS_URL' },
   { file: "app/lib/marketing.ts", text: "new URLSearchParams" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_URL" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_EVENT" },
-  { file: "app/components/EarlyAccessRequestForm.tsx", text: "Submit my application" },
+  { file: "app/components/EarlyAccessRequestForm.tsx", text: "Request setup help" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="email"' },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'type="email"' },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'autoComplete="email"' },
@@ -184,7 +182,7 @@ const required = [
   { file: "app/lib/marketing.ts", text: "/early-access" },
   { file: "app/api/early-access-request/route.ts", text: "EARLY_ACCESS_REQUEST_TO_EMAIL" },
   { file: "app/api/early-access-request/route.ts", text: "biggestBookingProblem" },
-  { file: "app/early-access/page.tsx", text: "Get early access to a real ReservKit booking flow before public launch." },
+  { file: "app/early-access/page.tsx", text: "Want help setting up your first ReservKit booking flow?" },
   { file: "app/early-access/page.tsx", text: "waiver evidence" },
   { file: "app/early-access/page.tsx", text: "refundable damage deposits" },
   { file: "app/early-access/page.tsx", text: "reply within one business day" },
@@ -205,7 +203,7 @@ const required = [
   { file: "app/docs/notifications/page.tsx", text: "does not currently include a full operator-facing email or SMS template editor" },
   { file: "app/docs/notifications/page.tsx", text: "Test emails from Settings go only to the signed-in operator" },
   { file: "app/page.tsx", text: "real ReservKit screens from configured public booking and operator workflows" },
-  { file: "app/page.tsx", text: "public captures reviewed before wider marketing" },
+  { file: "app/page.tsx", text: "captures reviewed before broader marketing" },
   { file: "app/page.tsx", text: "representative screens show the operator workflows ReservKit is built around" },
 ];
 

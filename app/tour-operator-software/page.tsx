@@ -40,7 +40,7 @@ const faqSchema = {
       name: "Is ReservKit available for tour operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReservKit is available to selected tour, activity, and experience operators through pre-launch early access.",
+        text: "Yes. Tour, activity, and experience operators can start on Free and build their first direct booking flow.",
       },
     },
     {
@@ -124,7 +124,7 @@ export default function TourOperatorSoftware() {
                 mobile check-in in one operator workspace.
               </p>
               <p>
-                Early-access operators get hands-on setup for the first live booking flow.
+                Operators can start on Free and request guided setup help for the first live booking flow.
                 Public plan pricing is transparent for planning ahead: {pricingSummary}
               </p>
             </div>
