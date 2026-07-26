@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Rss } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { EARLY_ACCESS_URL, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
 
 export const metadata: Metadata = {
   title: "Blog — Rental Operator Guides",
@@ -177,8 +177,8 @@ export default function Blog() {
             Tell us what you run, how bookings work today, and what you need before going live.
           </p>
           <TrackedLink
-            href={EARLY_ACCESS_URL}
-            event="early_access_cta_clicked"
+            href={PRIMARY_CTA_URL}
+            event={PRIMARY_CTA_EVENT}
             properties={{ location: "blog_footer" }}
             className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-amber-dark"
           >

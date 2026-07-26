@@ -130,7 +130,7 @@ const unsupportedLiveClaimPatterns = [
   {
     name: "open public signup",
     pattern: /\b(start\s+(for\s+)?free|sign\s+up\s+now|public\s+signup\s+is\s+open|create\s+your\s+account\s+now)\b/i,
-    allowedContext: /early access|before public launch|public self-serve signup is.*future/i,
+    allowedContext: /early access|before public launch|public self-serve signup is.*future|public_signup/i,
   },
   {
     name: "cart or multi-item checkout",
@@ -166,6 +166,12 @@ const unsupportedLiveClaimPatterns = [
 
 const required = [
   { file: "app/lib/marketing.ts", text: "Get early access" },
+  { file: "app/lib/marketing.ts", text: 'process.env.NEXT_PUBLIC_MARKETING_MODE === "public_signup"' },
+  { file: "app/lib/marketing.ts", text: '    : "prelaunch"' },
+  { file: "app/lib/marketing.ts", text: 'MARKETING_MODE === "public_signup" ? PUBLIC_SIGNUP_URL : EARLY_ACCESS_URL' },
+  { file: "app/lib/marketing.ts", text: "new URLSearchParams" },
+  { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_URL" },
+  { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_EVENT" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "Submit my application" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="email"' },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'type="email"' },
@@ -245,6 +251,13 @@ for (const file of files) {
       const lineStart = source.lastIndexOf("\n", match.index) + 1;
       const lineEnd = source.indexOf("\n", match.index);
       const line = source.slice(lineStart, lineEnd === -1 ? source.length : lineEnd);
+      if (
+        name === "open public signup" &&
+        relativeFile === "app/lib/marketing.ts" &&
+        source.slice(Math.max(0, match.index - 160), match.index + 160).includes("MARKETING_MODE")
+      ) {
+        continue;
+      }
       if (!allowedContext.test(line)) {
         failures.push(`${relativeFile} may imply unsupported live ${name}: ${match[0]}`);
       }

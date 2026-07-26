@@ -48,6 +48,15 @@ After the latest app-side production/Sentry/customer-path evidence updates, a fr
 
 Future pages can still discuss these items when the surrounding copy clearly frames them as future, coming-next, roadmap, or not currently available.
 
+## Launch Mode Guardrail Added
+
+The marketing CTA source now has an explicit launch mode in `app/lib/marketing.ts`.
+
+- Default mode remains prelaunch and keeps public CTAs on `Get early access` -> `/early-access`.
+- `NEXT_PUBLIC_MARKETING_MODE=public_signup` prepares the public cutover CTA, `Start free` -> the app signup route.
+- `scripts/check-content.mjs` verifies the mode is opt-in and still blocks accidental open-signup claims in normal page copy.
+- This does not enable public signup by itself; the app production flag and full signup verification checklist remain required before production marketing can use public-signup mode.
+
 ## Product Boundaries Confirmed
 
 - Public CTAs remain `Get early access`.
