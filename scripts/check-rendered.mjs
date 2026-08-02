@@ -60,20 +60,6 @@ async function launchBrowser() {
 
 async function checkRoute(browser, route, viewport, attempt = 1) {
   const page = await browser.newPage({ viewport });
-  await page.route("**/*", (routeRequest) => {
-    const requestUrl = new URL(routeRequest.request().url());
-    const host = requestUrl.hostname;
-    if (
-      host.includes("posthog") ||
-      host.includes("sentry") ||
-      host.includes("vercel-insights") ||
-      host.includes("vercel-analytics")
-    ) {
-      routeRequest.abort();
-      return;
-    }
-    routeRequest.continue();
-  });
   const messages = [];
   page.on("console", (message) => {
     if (["error", "warning"].includes(message.type())) {
@@ -127,16 +113,115 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     }
 
     if (route === "/" && viewport.label === "mobile") {
-      const menuButton = page.getByRole("button", { name: /open menu/i });
-      await menuButton.waitFor({ state: "visible" });
-      const expanded = await menuButton.getAttribute("aria-expanded");
+      await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
+      await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
+      await page.waitForTimeout(3_000);
+      const mobileMenuState = await page.evaluate(() => {
+        const button = document.querySelector('header button[aria-label="Open menu"]');
+        if (!(button instanceof HTMLButtonElement)) return { found: false };
+        return {
+          found: true,
+          ariaLabel: button.getAttribute("aria-label"),
+          expanded: button.getAttribute("aria-expanded"),
+          visible: button.getBoundingClientRect().width > 0 && button.getBoundingClientRect().height > 0,
+        };
+      });
+      if (!mobileMenuState.found || !mobileMenuState.visible) {
+        failures.push(`${viewport.label} ${route} mobile menu button is not visible`);
+        return;
+      }
+      const expanded = mobileMenuState.expanded;
       if (expanded !== "false") {
         failures.push(`${viewport.label} ${route} mobile menu button has unexpected aria-expanded=${expanded}`);
+      }
+      await page.getByRole("button", { name: "Open menu", exact: true }).click({ timeout: 5_000 });
+      await page.waitForTimeout(100);
+      let openedMenuStateAfterRender = await page.evaluate(() => {
+        const activeButton = document.querySelector("header button");
+        return {
+          ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
+          expanded: activeButton?.getAttribute("aria-expanded") ?? null,
+        };
+      });
+      if (openedMenuStateAfterRender.expanded !== "true") {
+        const buttonCenter = await page.evaluate(() => {
+          const button = document.querySelector("header button");
+          if (!button) return null;
+          const rect = button.getBoundingClientRect();
+          return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+        });
+        if (buttonCenter) {
+          await page.mouse.click(buttonCenter.x, buttonCenter.y);
+          await page.waitForTimeout(100);
+          openedMenuStateAfterRender = await page.evaluate(() => {
+            const activeButton = document.querySelector("header button");
+            return {
+              ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
+              expanded: activeButton?.getAttribute("aria-expanded") ?? null,
+            };
+          });
+        }
+      }
+      const closeLabel = openedMenuStateAfterRender.ariaLabel;
+      const expandedAfterClick = openedMenuStateAfterRender.expanded;
+      if (closeLabel !== "Close menu" || expandedAfterClick !== "true") {
+        failures.push(
+          `${viewport.label} ${route} mobile menu did not open cleanly: aria-label=${closeLabel}, aria-expanded=${expandedAfterClick}`
+        );
+      }
+      const expectedMobileMenuLinks = [
+        { text: "Pricing", href: "/pricing" },
+        { text: "Docs", href: "/docs" },
+        { text: "Log in", href: "https://app.reservkit.com/login" },
+        { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+      ];
+      for (const expectedLink of expectedMobileMenuLinks) {
+        const visibleMenuLinkCount = await page.evaluate((link) => {
+          return Array.from(document.querySelectorAll("header a")).filter((anchor) => {
+            const rect = anchor.getBoundingClientRect();
+            const style = window.getComputedStyle(anchor);
+            return (
+              anchor.textContent?.trim() === link.text &&
+              anchor.getAttribute("href") === link.href &&
+              rect.width > 0 &&
+              rect.height > 0 &&
+              style.visibility !== "hidden" &&
+              style.display !== "none"
+            );
+          }).length;
+        }, expectedLink);
+        if (visibleMenuLinkCount !== 1) {
+          failures.push(
+            `${viewport.label} ${route} mobile menu expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleMenuLinkCount}`
+          );
+        }
+      }
+      const heroHeadingMetrics = await page.evaluate(() => {
+        const heading = document.querySelector("h1");
+        if (!heading) return null;
+        const rect = heading.getBoundingClientRect();
+        return {
+          left: rect.left,
+          right: rect.right,
+          width: rect.width,
+          viewportWidth: window.innerWidth,
+        };
+      });
+      if (
+        !heroHeadingMetrics ||
+        heroHeadingMetrics.left < -1 ||
+        heroHeadingMetrics.right > heroHeadingMetrics.viewportWidth + 1
+      ) {
+        failures.push(
+          `${viewport.label} ${route} hero heading clips horizontally: ${JSON.stringify(heroHeadingMetrics)}`
+        );
       }
     }
 
     if (route === "/early-access" && viewport.label === "mobile") {
+      await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
       await page.waitForLoadState("networkidle", { timeout: 30_000 });
+      await page.waitForTimeout(1_500);
       await page.getByRole("button", { name: /request setup help/i }).click();
       await page.locator("#early-access-name-error").waitFor({ state: "visible" });
       await page.locator("#early-access-email-error").waitFor({ state: "visible" });

@@ -252,8 +252,8 @@ export default function Home() {
       <Nav />
       <main>
         <section className="relative overflow-hidden bg-[var(--color-surface)] px-6 py-20 sm:py-28">
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
-            <div>
+          <div className="mx-auto grid max-w-6xl min-w-0 gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
+            <div className="min-w-0">
               <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
                 {HERO_STATUS_LABEL}
               </div>
@@ -288,7 +288,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
+            <div className="min-w-0 rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
               <Image
                 src="/product-public-booking-live.png"
                 alt="ReservKit public booking page screenshot"
