@@ -81,7 +81,7 @@ export async function POST(request: Request) {
   const from =
     process.env.EARLY_ACCESS_REQUEST_FROM_EMAIL ||
     process.env.BETA_REQUEST_FROM_EMAIL ||
-    "ReservKit Early Access <onboarding@resend.dev>";
+    "ReservKit Guided Setup <onboarding@resend.dev>";
 
   if (!apiKey || !to) {
     return NextResponse.json(

@@ -29,7 +29,7 @@ const shipped = [
 
 const inProgress = [
   { title: "Cleaner operator onboarding", description: "Continuing to reduce setup friction around Stripe, first activity configuration, availability, waivers, and test bookings." },
-  { title: "Better product captures", description: "Adding cleaner screenshots and examples from real configured workflows as early-access operators come online." },
+  { title: "Better product captures", description: "Adding cleaner screenshots and examples from controlled demo workflows and launch-ready operator setups." },
   { title: "Reporting polish", description: "Tightening the reports experience around the views operators use during live operations." },
 ];
 

@@ -10,6 +10,8 @@ const forbidden = [
   "Start Free Trial",
   "Start free trial",
   "Early-access onboarding",
+  "early-access operators come online",
+  "ReservKit Early Access <onboarding@resend.dev>",
   "Pre-launch early access",
   "pre-launch early access",
   "before public launch",
