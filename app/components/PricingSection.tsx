@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
 import {
   PRIMARY_CTA_URL,
@@ -25,7 +25,7 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
             Pricing you can read without booking a demo.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Every plan includes the core booking page, Stripe Connect payments, customer records, and email confirmations. Growth adds the deeper operator tools.
+            Free covers the core booking flow at low volume. Starter adds team access, and Growth unlocks the deeper operator tools.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
           {pricingTiers.map((tier) => (
             <article
               key={tier.name}
-              className={`relative rounded-2xl p-6 ${
+              className={`relative flex flex-col rounded-2xl p-6 ${
                 tier.highlight
                   ? "border-2 border-amber bg-navy text-white shadow-xl shadow-navy/15"
                   : "border border-[var(--color-border)] bg-[var(--color-surface)]"
@@ -60,6 +60,20 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
               <p className={`mt-5 min-h-12 text-sm leading-relaxed ${tier.highlight ? "text-slate-300" : "text-slate-600"}`}>
                 {tier.description}
               </p>
+              <ul className="mt-5 space-y-2 text-sm">
+                {tier.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className={`flex gap-2 leading-snug ${tier.highlight ? "text-slate-200" : "text-slate-600"}`}
+                  >
+                    <Check
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${tier.highlight ? "text-amber" : "text-amber-dark"}`}
+                      aria-hidden="true"
+                    />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
               <TrackedLink
                 href={PRIMARY_CTA_URL}
                 event={PRIMARY_CTA_EVENT}
@@ -75,12 +89,20 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
             </article>
           ))}
 
-          <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+          <article className="flex flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
             <h3 className="text-lg font-bold text-navy">{enterpriseTier.name}</h3>
             <div className="mt-4 text-4xl font-extrabold text-navy">{enterpriseTier.price}</div>
             <p className="mt-4 text-sm font-semibold text-amber-dark">{enterpriseTier.fee}</p>
             <p className="mt-1 text-sm text-slate-500">{enterpriseTier.volume}</p>
             <p className="mt-5 min-h-12 text-sm leading-relaxed text-slate-600">{enterpriseTier.description}</p>
+            <ul className="mt-5 space-y-2 text-sm text-slate-600">
+              {enterpriseTier.features.map((feature) => (
+                <li key={feature} className="flex gap-2 leading-snug">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-dark" aria-hidden="true" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
             <TrackedLink
               href={PRIMARY_CTA_URL}
               event={PRIMARY_CTA_EVENT}

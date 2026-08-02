@@ -35,6 +35,13 @@ export const pricingTiers = [
     fee: "4% booking fee",
     volume: "10 bookings/month",
     description: "For setup, testing, and first live bookings before you commit to a paid plan.",
+    features: [
+      "Core booking page",
+      "Stripe Connect payments",
+      "Customer records",
+      "Email confirmations",
+      "No staff/team access",
+    ],
     highlight: false,
   },
   {
@@ -44,6 +51,12 @@ export const pricingTiers = [
     fee: "3% booking fee",
     volume: "100 bookings/month",
     description: "For small operators who need the core direct-booking workflow.",
+    features: [
+      "Everything in Free",
+      "Basic team tools",
+      "Staff scheduling access",
+      "First growing-operator tier",
+    ],
     highlight: true,
   },
   {
@@ -53,6 +66,13 @@ export const pricingTiers = [
     fee: "2% booking fee",
     volume: "Unlimited bookings",
     description: "For growing teams that need unlimited bookings, waivers, broadcasts, reports, coupons, refundable damage deposits, and add-ons.",
+    features: [
+      "Everything in Starter",
+      "Reports and waiver tools",
+      "Broadcasts and coupon codes",
+      "Equipment and dynamic pricing",
+      "Damage deposits and add-ons",
+    ],
     highlight: false,
   },
   {
@@ -62,6 +82,12 @@ export const pricingTiers = [
     fee: "1.5% booking fee",
     volume: "Unlimited bookings",
     description: "For higher-volume teams needing deeper operational support.",
+    features: [
+      "Everything in Growth",
+      "Lowest self-serve booking fee",
+      "Higher-volume operations",
+      "Deeper support path",
+    ],
     highlight: false,
   },
 ];
@@ -72,6 +98,12 @@ export const enterpriseTier = {
   fee: "Custom booking fee",
   volume: "Custom volume",
   description: "For operators with larger rollout, migration, or support needs.",
+  features: [
+    "Manual/private plan",
+    "Custom terms and volume",
+    "Migration or rollout support",
+    "Signed agreement terms",
+  ],
 };
 
 export const earlyAccessPricingCallout =

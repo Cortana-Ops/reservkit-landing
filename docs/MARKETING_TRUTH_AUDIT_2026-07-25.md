@@ -102,3 +102,7 @@ A page-by-page rendered marketing sweep found the guided setup form relied on cl
 ## 2026-08-02 Live Marketing Verification Follow-Up
 
 Live `https://reservkit.com` verification confirmed the guided setup fallback release is deployed: `/early-access` contains the POST form action, hydrated invalid submission stays on `/early-access` with inline errors, invalid form-encoded API POST returns JSON validation errors, and the mobile menu opens at 390px with expected links. A live route/link crawl covered 292 links across current marketing routes, including 22 unique internal URLs/anchors, with no bad HTTP statuses or missing anchors.
+
+## 2026-08-02 Pricing Gate Clarity Follow-Up
+
+The public pricing page still matched the app-side prices, booking fees, and booking-volume limits, but the plan cards did not show enough of the actual feature gates. Pricing cards now include concise tier-specific feature bullets: Free is core low-volume booking with no staff/team access, Starter begins team tools, Growth unlocks deeper operator tools like reports, waivers, broadcasts, equipment, dynamic pricing, coupons, deposits, and add-ons, and Pro is the lower-fee higher-volume support tier. `scripts/check-content.mjs` now guards those plan-gate clarity claims so marketing copy does not drift toward “all plans include everything.”
