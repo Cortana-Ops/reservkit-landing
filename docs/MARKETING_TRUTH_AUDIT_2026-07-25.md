@@ -98,3 +98,7 @@ The production posture remains public signup, but `NEXT_PUBLIC_MARKETING_MODE=pr
 ## 2026-08-02 Guided Setup Form Fallback Follow-Up
 
 A page-by-page rendered marketing sweep found the guided setup form relied on client hydration to prevent the browser's default form behavior. The form now declares `method="post"` and `action="/api/early-access-request"`, and the API accepts both JSON and form-encoded payloads. Hydrated submissions still show inline validation without leaving `/early-access`; no-JS/fallback submissions post to the API instead of leaking operator-entered fields into the URL. Internal/API copy now says `Guided setup request` rather than `early access request`.
+
+## 2026-08-02 Live Marketing Verification Follow-Up
+
+Live `https://reservkit.com` verification confirmed the guided setup fallback release is deployed: `/early-access` contains the POST form action, hydrated invalid submission stays on `/early-access` with inline errors, invalid form-encoded API POST returns JSON validation errors, and the mobile menu opens at 390px with expected links. A live route/link crawl covered 292 links across current marketing routes, including 22 unique internal URLs/anchors, with no bad HTTP statuses or missing anchors.
