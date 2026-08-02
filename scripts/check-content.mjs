@@ -266,6 +266,8 @@ const required = [
   { file: "app/pricing/page.tsx", text: "Starter adds basic team tools" },
   { file: "app/pricing/page.tsx", text: "equipment, and dynamic pricing" },
   { file: "app/docs/staff/page.tsx", text: "Team and staff tools are available on Starter and higher plans" },
+  { file: "app/docs/staff/page.tsx", text: "booking status for each" },
+  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Staff schedule cards show assigned booking context and booking status" },
   { file: "app/docs/page.tsx", text: "staff scheduling on Starter and higher plans" },
   { file: "app/docs/page.tsx", text: "All-activity and single-activity links" },
   { file: "app/docs/page.tsx", text: "Website iframe snippets" },
@@ -357,6 +359,15 @@ for (const { file, text } of required) {
   } catch {
     failures.push(`${file} is missing`);
   }
+}
+
+try {
+  const staffDocs = readFileSync(join(root, "app/docs/staff/page.tsx"), "utf8");
+  if (staffDocs.includes("check-in status for each")) {
+    failures.push("app/docs/staff/page.tsx must describe Staff Schedule cards as booking-status, not check-in-status, cards");
+  }
+} catch {
+  failures.push("app/docs/staff/page.tsx is missing");
 }
 
 for (const file of removedRoutes) {

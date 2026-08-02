@@ -141,7 +141,7 @@ export default function Staff() {
                 Staff-facing schedule views help team members focus on assigned work without the noise of the full operator calendar.
               </p>
               <p>
-                The schedule view shows the activity name, time, customer party size, and check-in status for each
+                The schedule view shows the activity name, time, customer party size, and booking status for each
                 assigned booking. Schedule cards link back to Booking Detail for deeper booking actions when the team
                 member has the right access.
               </p>

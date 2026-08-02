@@ -174,6 +174,15 @@ dedicated calendar-only and activity-card-only embeds remain future options,
 not launch features. `scripts/check-content.mjs` and `scripts/check-live.mjs`
 now guard these claims.
 
+## 2026-08-02 Staff Schedule Status Copy Alignment
+
+The public Staff docs now describe the staff schedule card status as booking
+status, not check-in status. The current app Staff Schedule cards show assigned
+booking context and a booking status badge; attendance/check-in state remains
+part of day-of booking/check-in workflows, not a dedicated staff-schedule card
+field. `scripts/check-content.mjs` guards this wording so the docs do not imply
+a staff check-in-status feature on that view.
+
 ## 2026-08-02 Terms Enterprise Copy Alignment
 
 The public Terms pricing list no longer states that Enterprise has an annual

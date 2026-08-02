@@ -94,6 +94,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - Staff tip payout review is owner/admin facing.
 - Staff-facing My Tips/self-service tip visibility is not a public launch feature.
 - Staff members should not be marketed as having broad revenue-report access.
+- Staff schedule cards show assigned booking context and booking status, not a dedicated check-in/attendance status field.
 - Reports should be described as owner/admin operational and revenue visibility, not payroll or payout processing.
 
 ## Public Booking Links And Embeds
