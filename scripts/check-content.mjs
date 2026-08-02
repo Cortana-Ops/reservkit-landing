@@ -155,6 +155,7 @@ const forbidden = [
   "booking fee behind the scenes",
   "Tips are treated as operator revenue",
   "Enterprise: custom monthly pricing, custom volume, and annual minimum",
+  "We share data only with:",
 ];
 
 const allowedByFile = {
@@ -245,6 +246,11 @@ const required = [
   { file: "app/terms/page.tsx", text: "percentage of the eligible booking subtotal according to the active plan" },
   { file: "app/terms/page.tsx", text: "Last updated: August 2026" },
   { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, custom volume, and signed agreement terms" },
+  { file: "app/privacy/page.tsx", text: "Last updated: August 2026" },
+  { file: "app/privacy/page.tsx", text: "We do not sell your personal data. We share data with service providers needed to" },
+  { file: "app/privacy/page.tsx", text: "<strong>Twilio</strong> — for SMS reminders and broadcasts when SMS is enabled" },
+  { file: "app/privacy/page.tsx", text: "<strong>Vercel</strong> — for website and application hosting" },
+  { file: "app/privacy/page.tsx", text: "<strong>Sentry and PostHog</strong> — for error monitoring, diagnostics, and product analytics" },
   { file: "app/blog/page.tsx", text: "plan-based booking fee on eligible booking subtotal" },
   { file: "app/blog/page.tsx", text: "Customer tips are tracked separately from booking income" },
   { file: "app/lib/marketing.ts", text: "No staff/team access" },

@@ -12,7 +12,7 @@ export default function Privacy() {
     <PageShell>
       <main className="mx-auto max-w-3xl px-6 py-16">
         <h1 className="text-3xl font-bold text-navy mb-2">Privacy Policy</h1>
-        <p className="text-sm text-slate-500 mb-10">Last updated: April 2026</p>
+        <p className="text-sm text-slate-500 mb-10">Last updated: August 2026</p>
 
         <div className="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed">
           <section>
@@ -53,17 +53,27 @@ export default function Privacy() {
           <section>
             <h2 className="text-xl font-semibold text-navy mb-3">Data sharing</h2>
             <p>
-              We do not sell your personal data to third parties. We share data only with:
+              We do not sell your personal data. We share data with service providers needed to
+              operate, secure, monitor, and improve ReservKit:
             </p>
             <ul className="list-disc list-inside space-y-1.5 text-sm mt-2">
               <li>
                 <strong>Stripe</strong> — for payment processing
               </li>
               <li>
-                <strong>Supabase</strong> — for database hosting and authentication
+                <strong>Supabase</strong> — for database hosting, authentication, storage, and backend functions
               </li>
               <li>
                 <strong>Resend</strong> — for transactional email delivery
+              </li>
+              <li>
+                <strong>Twilio</strong> — for SMS reminders and broadcasts when SMS is enabled
+              </li>
+              <li>
+                <strong>Vercel</strong> — for website and application hosting
+              </li>
+              <li>
+                <strong>Sentry and PostHog</strong> — for error monitoring, diagnostics, and product analytics
               </li>
             </ul>
           </section>

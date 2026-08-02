@@ -76,6 +76,17 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - Custom Twilio requires Account SID, Auth Token, and From Number together.
 - The app does not currently include a full operator-facing email/SMS template editor.
 
+## Privacy And Service Providers
+
+- Stripe handles payment processing.
+- Supabase handles database hosting, authentication, storage, and backend functions.
+- Resend handles transactional email delivery.
+- Twilio handles SMS reminders and broadcasts when SMS is enabled.
+- Vercel hosts the website and app.
+- Sentry and PostHog support error monitoring, diagnostics, and product analytics.
+- Public privacy copy should not say data is shared only with Stripe, Supabase, and Resend because that omits live SMS, hosting, monitoring, and analytics providers.
+- Customer-facing product pages still should not expose provider plumbing during normal booking, waiver, or notification flows.
+
 ## Staff, Tips, Reports, And Operations
 
 - Staff/team tools begin on Starter.

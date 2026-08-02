@@ -174,3 +174,14 @@ Enterprise agreements may include annual minimums or custom cancellation terms
 when those are present in the signed agreement. `scripts/check-content.mjs`
 blocks the old definite annual-minimum phrase from returning. The visible Terms
 date was also advanced to August 2026 because the pricing/legal copy changed.
+
+## 2026-08-02 Privacy Provider Truth Alignment
+
+The public Privacy page no longer says ReservKit shares data only with Stripe,
+Supabase, and Resend. That omitted live provider categories used by the app and
+marketing docs: Twilio for SMS when enabled, Vercel for hosting, and
+Sentry/PostHog for monitoring, diagnostics, and analytics. The page now says
+ReservKit does not sell personal data and shares data with service providers
+needed to operate, secure, monitor, and improve the platform. Its visible
+revision date is August 2026, and `scripts/check-content.mjs` guards the current
+provider list plus blocks the old incomplete "We share data only with:" phrase.
