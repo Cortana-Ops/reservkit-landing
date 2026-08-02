@@ -84,3 +84,9 @@ After the app shipped Settings integration validation hardening, the public Noti
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
 
 Inner pages that use `PageShell` now render the shared `Nav` component instead of a separate simplified header. This gives docs, pricing, changelog, roadmap, blog, legal pages, and vertical landing pages the same desktop Log in / Start free links and mobile hamburger menu as the homepage. Local rendered Browser checks passed for `/changelog` desktop and 390px mobile menu, plus `/docs` desktop nav/link proof, with no console warnings/errors and no horizontal overflow.
+
+2026-08-02 public-launch copy readiness follow-up:
+
+- Homepage proof copy no longer uses defensive beta-era language like `not vaporware` or `mockup-only marketing`.
+- Final homepage CTA now keeps public signup first: operators can start on Free, build one working booking flow, and request guided setup help if they want review before sharing their link.
+- `scripts/check-content.mjs` now guards those stale defensive phrases and requires the live-booking/public-signup wording.

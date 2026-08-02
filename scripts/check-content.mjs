@@ -108,6 +108,9 @@ const forbidden = [
   "Watch the bookings come in",
   "live product screenshots",
   "current product screenshots",
+  "not vaporware",
+  "mockup-only marketing",
+  "We onboard operators personally",
   "Here is what the operator side looks like",
   "Staff and captain scheduling",
   "Staff assignment and guide scheduling",
@@ -214,6 +217,8 @@ const required = [
   { file: "app/page.tsx", text: "captures reviewed before broader marketing" },
   { file: "app/page.tsx", text: "representative screens show the operator workflows ReservKit is built around" },
   { file: "app/page.tsx", text: "Owners and admins keep revenue reporting separate." },
+  { file: "app/page.tsx", text: "ReservKit is live booking software" },
+  { file: "app/page.tsx", text: "Start on Free, build one working booking flow" },
 ];
 
 const removedRoutes = [

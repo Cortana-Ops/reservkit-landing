@@ -162,7 +162,7 @@ const setupSteps = [
 
 const operatorProof = [
   {
-    title: "Real product, not mockup-only marketing",
+    title: "Real product screens from working flows",
     body: "The homepage uses real ReservKit screens from configured public booking and operator workflows, with captures reviewed before broader marketing.",
   },
   {
@@ -535,7 +535,7 @@ export default function Home() {
                 Built by someone who has operated a rental business.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                ReservKit is early, but it is not vaporware. The product already covers the core path operators need to trust before switching: direct bookings, Stripe payments, waiver evidence, refundable damage deposits, check-in, staff context, reports, and guided setup.
+                ReservKit is live booking software for operators who need the core path before they switch traffic: direct bookings, Stripe payments, waiver evidence, refundable damage deposits, check-in, staff context, reports, and optional guided setup.
               </p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -579,7 +579,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-white">Ready to take direct bookings?</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-300">
-              We onboard operators personally: Stripe, one activity, waiver and refundable damage deposit setup, and one test booking before you share the link.
+              Start on Free, build one working booking flow, and request guided setup help when you want a second set of eyes before sharing your link.
             </p>
             <TrackedLink
               href={PRIMARY_CTA_URL}
