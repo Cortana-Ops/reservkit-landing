@@ -78,6 +78,7 @@ const baseForbidden = [
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",
   "Waiver compliance at a glance",
+  "We share data only with:",
 ];
 
 const forbidden =

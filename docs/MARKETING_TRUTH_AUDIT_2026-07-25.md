@@ -187,4 +187,5 @@ revision date is August 2026, and `scripts/check-content.mjs` guards the current
 provider list plus blocks the old incomplete "We share data only with:" phrase.
 `scripts/check-live.mjs` also verifies the live Privacy page keeps the August
 2026 date, no-sale statement, service-provider framing, and Twilio, Vercel, and
-Sentry/PostHog provider disclosures.
+Sentry/PostHog provider disclosures, and blocks the old incomplete "We share
+data only with:" phrase from passing on production.
