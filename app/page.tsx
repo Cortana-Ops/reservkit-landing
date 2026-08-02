@@ -353,7 +353,7 @@ export default function Home() {
                 Coming from FareHarbor, Peek, Checkfront, Rezdy, spreadsheets, or a custom form?
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                The risky part is not buying new software. It is changing your booking flow without breaking your season. Early-access onboarding is built around a tested switch: one working activity, one payment path, one waiver path, and one booking link before you move traffic.
+                The risky part is not buying new software. It is changing your booking flow without breaking your season. Guided setup is built around a tested switch: one working activity, one payment path, one waiver path, and one booking link before you move traffic.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {industryLinks.map((link) => (

@@ -9,6 +9,7 @@ const forbidden = [
   "14-day free trial",
   "Start Free Trial",
   "Start free trial",
+  "Early-access onboarding",
   "Pre-launch early access",
   "pre-launch early access",
   "before public launch",
