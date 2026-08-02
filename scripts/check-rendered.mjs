@@ -136,9 +136,18 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     }
 
     if (route === "/early-access" && viewport.label === "mobile") {
+      await page.waitForLoadState("networkidle", { timeout: 30_000 });
       await page.getByRole("button", { name: /request setup help/i }).click();
-      await page.getByText("Name is required.").waitFor({ state: "visible" });
-      await page.getByText("Enter a valid email address.").waitFor({ state: "visible" });
+      await page.locator("#early-access-name-error").waitFor({ state: "visible" });
+      await page.locator("#early-access-email-error").waitFor({ state: "visible" });
+      const nameError = await page.locator("#early-access-name-error").innerText();
+      const emailError = await page.locator("#early-access-email-error").innerText();
+      if (nameError !== "Name is required.") {
+        failures.push(`${viewport.label} ${route} rendered unexpected name validation: ${nameError}`);
+      }
+      if (emailError !== "Enter a valid email address.") {
+        failures.push(`${viewport.label} ${route} rendered unexpected email validation: ${emailError}`);
+      }
     }
   } catch (error) {
     if (attempt < 2) {
