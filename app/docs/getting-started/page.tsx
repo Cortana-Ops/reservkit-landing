@@ -55,7 +55,7 @@ const steps = [
     content: [
       "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account — ReservKit never holds your money.",
       "Once connected, your Stripe account status will show \"Connected.\" Your public booking page can accept paid bookings after your organization slug, published activity, pricing, and availability are also configured.",
-      "The booking fee is automatically deducted from each transaction at checkout based on your active plan.",
+      "ReservKit collects the plan-based booking fee on the booking subtotal where applicable. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.",
     ],
   },
   {

@@ -31,6 +31,7 @@ const routes = [
 
 const sharedRequiredByRoute = {
   "/early-access": ["Request setup help", "reply within one business day"],
+  "/docs/getting-started": ["Free-first public signup", "plan-based booking fee"],
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "plan-based booking fee",
@@ -49,6 +50,7 @@ const sharedRequiredByRoute = {
   "/docs/reports": ["Customer tips are shown separately from booking income"],
   "/docs/bookings-availability": ["all-activity booking links and activity-specific booking links", "Dedicated calendar-only or activity-card-only embeds are future options"],
   "/changelog": ["Public signup and launch truth pass", "Public Free-first signup", "Product proof and pricing alignment"],
+  "/terms": ["Paid ReservKit subscription charges are non-refundable", "eligible booking subtotal"],
 };
 
 const baseForbidden = [
@@ -60,6 +62,8 @@ const baseForbidden = [
   "pay only the deposit",
   "Deposit collection at booking",
   "deducts a small booking fee per transaction",
+  "automatically deducted from each transaction at checkout",
+  "each completed booking transaction according to the active plan",
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",
   "Waiver compliance at a glance",

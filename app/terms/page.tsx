@@ -40,8 +40,8 @@ export default function Terms() {
           <section>
             <h2 className="text-xl font-semibold text-navy mb-3">Payments and fees</h2>
             <p>
-              ReservKit uses Stripe for payment processing. Booking fees are charged as a
-              percentage of each completed booking transaction according to the active plan:
+              ReservKit uses Stripe for payment processing. ReservKit booking fees are charged as a
+              percentage of the eligible booking subtotal according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
               <li>Free ($0/month): 4% booking fee, 10 bookings per month</li>
@@ -84,9 +84,9 @@ export default function Terms() {
             <h2 className="text-xl font-semibold text-navy mb-3">Cancellation</h2>
             <p>
               Monthly plans can be canceled at any time and remain active through the end of the
-              current billing period. Unless required by law or agreed in writing, paid
-              subscription charges are not prorated or refunded except for billing errors,
-              duplicate charges, fraud, or refunds required by law. Enterprise plans may include
+              current billing period. Paid ReservKit subscription charges are non-refundable once
+              billed except for billing errors, duplicate charges, fraud, or refunds required by law.
+              Enterprise plans may include
               annual minimums, custom terms, or separate cancellation requirements in the signed
               agreement.
             </p>
