@@ -106,3 +106,7 @@ Live `https://reservkit.com` verification confirmed the guided setup fallback re
 ## 2026-08-02 Pricing Gate Clarity Follow-Up
 
 The public pricing page still matched the app-side prices, booking fees, and booking-volume limits, but the plan cards did not show enough of the actual feature gates. Pricing cards now include concise tier-specific feature bullets: Free is core low-volume booking with no staff/team access, Starter begins team tools, Growth unlocks deeper operator tools like reports, waivers, broadcasts, equipment, dynamic pricing, coupons, deposits, and add-ons, and Pro is the lower-fee higher-volume support tier. `scripts/check-content.mjs` now guards those plan-gate clarity claims so marketing copy does not drift toward “all plans include everything.”
+
+## 2026-08-02 Bookings Documentation Truth Follow-Up
+
+The public Bookings & Availability guide was tightened to match app behavior. It no longer says operators handle generic `booking requests`, no longer implies every staff member can create manual bookings, and no longer says checked-in bookings are excluded from cancellation flows. The guide now says operator-side bookings can be created by owners, admins, and permissioned team members, and that checked-in bookings should still use the Booking Detail cancellation flow when cancellation is needed. `scripts/check-content.mjs` guards the corrected wording.

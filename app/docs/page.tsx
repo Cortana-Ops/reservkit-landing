@@ -30,7 +30,7 @@ const sections = [
     icon: CalendarDays,
     title: "Bookings & Availability",
     href: "/docs/bookings-availability",
-    description: "Manage your availability calendar, handle booking requests, and process cancellations.",
+    description: "Manage your availability calendar, direct booking flow, and cancellation process.",
     topics: ["Setting availability windows", "Managing time slots", "Handling cancellations", "Booking status overview", "Check-in process"],
   },
   {

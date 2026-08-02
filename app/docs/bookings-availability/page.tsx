@@ -88,8 +88,9 @@ export default function BookingsAvailability() {
                 When a slot is fully booked, it&apos;s automatically removed from the public booking page — no overbooking is possible.
               </p>
               <p>
-                Staff can create bookings manually on behalf of customers through the Bookings page. Manual bookings bypass
-                the public payment flow and are useful for walk-in customers, phone reservations, or groups with custom pricing.
+                Owners, admins, and permissioned team members can create operator-side bookings from the Bookings page.
+                Operator-created bookings are useful for walk-in customers, phone reservations, or groups that need an
+                internal reservation before payment is collected or reconciled.
               </p>
             </div>
           </section>
@@ -161,8 +162,8 @@ export default function BookingsAvailability() {
               </p>
               <p>
                 To check in a guest, click the booking and mark it as &quot;Checked In.&quot; This updates the booking status and
-                gives your staff a clear visual of who has arrived vs. who is expected. Checked-in bookings are excluded
-                from cancellation flows.
+                gives your team a clear visual of who has arrived vs. who is expected. If a checked-in booking still needs
+                to be cancelled, use the Booking Detail cancellation flow so capacity, status, and customer messages stay aligned.
               </p>
               <p>
                 If a customer hasn&apos;t signed their waiver before arriving, staff can send the waiver link directly from the

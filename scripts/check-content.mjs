@@ -128,6 +128,10 @@ const forbidden = [
   "Deposit collection at booking",
   "deposit amount (collected at booking)",
   "not the full future balance",
+  "handle booking requests",
+  "Staff can create bookings manually",
+  "Manual bookings bypass the public payment flow",
+  "Checked-in bookings are excluded from cancellation flows",
 ];
 
 const allowedByFile = {
@@ -212,6 +216,9 @@ const required = [
   { file: "app/docs/bookings-availability/page.tsx", text: "all-activity booking links and activity-specific booking links" },
   { file: "app/docs/bookings-availability/page.tsx", text: "iframe snippets" },
   { file: "app/docs/bookings-availability/page.tsx", text: "Dedicated calendar-only or activity-card-only embeds are future options" },
+  { file: "app/docs/bookings-availability/page.tsx", text: "Owners, admins, and permissioned team members" },
+  { file: "app/docs/bookings-availability/page.tsx", text: "operator-side bookings" },
+  { file: "app/docs/bookings-availability/page.tsx", text: "If a checked-in booking still needs" },
   { file: "app/docs/page.tsx", text: "/docs/notifications" },
   { file: "app/docs/notifications/page.tsx", text: "ReservKit-managed email delivery" },
   { file: "app/docs/notifications/page.tsx", text: "Automated SMS reminders can use ReservKit-managed delivery" },

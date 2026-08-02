@@ -128,7 +128,7 @@ export default function GettingStarted() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Bookings & Availability →</p>
-              <p className="text-sm text-slate-500">Learn how to manage your calendar and handle booking requests.</p>
+              <p className="text-sm text-slate-500">Learn how to manage your calendar and direct booking flow.</p>
             </Link>
             <Link
               href="/docs/payments"
