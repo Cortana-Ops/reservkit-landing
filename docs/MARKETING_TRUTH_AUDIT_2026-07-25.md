@@ -145,4 +145,8 @@ Marketing now has a reusable rendered-page guard: `npm run check:rendered`. The 
 
 2026-08-02 follow-up: the guided setup validation probe now waits for mobile `/early-access` hydration/network idle before clicking submit, then asserts the field-specific `#early-access-name-error` and `#early-access-email-error` nodes and exact copy. The separate `npm run check:links` guard remains responsible for proving bad guided-setup API payloads return validation errors. This avoids treating a cold/hydrating production page as a rendered-page failure while still proving the visible inline validation path.
 
+## Enterprise CTA Alignment — 2026-08-02
+
+The public Pricing section now keeps self-serve plans on the primary `Start free` signup CTA, while the Enterprise card uses `Request setup help` and links to `/early-access`. This matches the app Billing model: Free, Starter, Growth, and Pro are self-serve; Enterprise is manual/private custom terms. `scripts/check-content.mjs` guards the Enterprise card so it does not drift back to implying Enterprise is a normal self-serve signup plan.
+
 The marketing dependency baseline was also refreshed for production audit health: `next` and `eslint-config-next` are `16.2.12`, `@sentry/nextjs` is `10.69.0`, `posthog-js` is `1.409.5`, and Next's production transitive `postcss` / `sharp` advisories are pinned through package overrides. Verification passed `npm audit --omit=dev`, `npm run check:content`, `npm run check:links`, `npm run check:live`, `npm run lint`, `npm run build`, `npm run check:rendered`, and `git diff --check`.

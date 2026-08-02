@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { TrackedLink } from "./TrackedLink";
 import {
+  EARLY_ACCESS_URL,
   PRIMARY_CTA_URL,
   PRIMARY_CTA_EVENT,
   PRIMARY_CTA_LABEL,
@@ -104,12 +105,12 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
               ))}
             </ul>
             <TrackedLink
-              href={PRIMARY_CTA_URL}
-              event={PRIMARY_CTA_EVENT}
+              href={EARLY_ACCESS_URL}
+              event="enterprise_setup_cta_clicked"
               properties={{ location: "pricing_enterprise" }}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-navy ring-1 ring-[var(--color-border)] transition-colors hover:ring-amber/50"
             >
-              {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+              Request setup help <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </TrackedLink>
           </article>
         </div>
