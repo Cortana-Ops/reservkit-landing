@@ -126,3 +126,7 @@ The Getting Started guide and Terms page now use the same booking-fee basis as t
 ## 2026-08-02 Blog Fee/Tips Follow-Up
 
 The public Blog page now uses the same fee/tip boundaries as Payments, Getting Started, Terms, and Reports. Setup copy no longer says ReservKit applies the plan fee `behind the scenes`; it says the plan-based booking fee is collected on eligible booking subtotal where applicable. The direct-booking-fees article no longer calls tips generic operator revenue; it says customer tips are tracked separately from booking income and are not marked up by ReservKit. Content and live guards now block those stale blog phrases.
+
+## 2026-08-02 Marketing Link/Form Guard Follow-Up
+
+Marketing behavior now has a dedicated `npm run check:links` guard in addition to copy/live checks. The guard crawls the public marketing route set, validates internal links and hash anchors, rejects empty/placeholder/javascript hrefs, enforces that app CTAs only point to the approved app login or signup URLs, verifies `/beta` remains an intentional redirect to `/early-access`, and checks that `POST /api/early-access-request` returns field validation for bad input. Local and live runs passed on 2026-08-02. Rendered Playwright proof also covered homepage desktop CTA/hash behavior, the 390px mobile menu with Log in / Start free links, and guided setup inline validation staying on `/early-access`.
