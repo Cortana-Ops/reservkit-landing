@@ -218,6 +218,66 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       }
     }
 
+    if (route === "/pricing") {
+      const pricingCards = await page.evaluate(() =>
+        Array.from(document.querySelectorAll("main article")).map((article) => ({
+          heading: article.querySelector("h3")?.textContent?.trim() ?? "",
+          text: article.textContent?.replace(/\s+/g, " ").trim() ?? "",
+          links: Array.from(article.querySelectorAll("a")).map((anchor) => ({
+            text: anchor.textContent?.replace(/\s+/g, " ").trim() ?? "",
+            href: anchor.getAttribute("href") ?? "",
+          })),
+        }))
+      );
+      const expectedSelfServePlans = [
+        { name: "Free", requiredText: ["$0", "4% booking fee", "10 bookings/month", "No staff/team access"] },
+        { name: "Starter", requiredText: ["$79", "3% booking fee", "100 bookings/month", "Basic team tools"] },
+        { name: "Growth", requiredText: ["$149", "2% booking fee", "Unlimited bookings", "Reports and waiver tools"] },
+        { name: "Pro", requiredText: ["$299", "1.5% booking fee", "Unlimited bookings", "Lowest self-serve booking fee"] },
+      ];
+      for (const expectedPlan of expectedSelfServePlans) {
+        const card = pricingCards.find((candidate) => candidate.heading === expectedPlan.name);
+        if (!card) {
+          failures.push(`${viewport.label} ${route} missing ${expectedPlan.name} pricing card`);
+          continue;
+        }
+        const signupLinks = card.links.filter(
+          (link) => link.text === "Start free" && link.href === "https://app.reservkit.com/login?signup=true"
+        );
+        if (signupLinks.length !== 1) {
+          failures.push(
+            `${viewport.label} ${route} expected ${expectedPlan.name} card to have one Start free signup link, found ${signupLinks.length}`
+          );
+        }
+        for (const requiredText of expectedPlan.requiredText) {
+          if (!card.text.includes(requiredText)) {
+            failures.push(`${viewport.label} ${route} ${expectedPlan.name} card missing text: ${requiredText}`);
+          }
+        }
+      }
+      const enterpriseCard = pricingCards.find((candidate) => candidate.heading === "Enterprise");
+      if (!enterpriseCard) {
+        failures.push(`${viewport.label} ${route} missing Enterprise pricing card`);
+      } else {
+        const enterpriseLinks = enterpriseCard.links.filter(
+          (link) => link.text === "Request setup help" && link.href === "/early-access"
+        );
+        if (enterpriseLinks.length !== 1) {
+          failures.push(
+            `${viewport.label} ${route} expected Enterprise card to have one Request setup help link to /early-access, found ${enterpriseLinks.length}`
+          );
+        }
+        for (const requiredText of ["Custom", "Custom booking fee", "Custom volume", "Manual/private plan"]) {
+          if (!enterpriseCard.text.includes(requiredText)) {
+            failures.push(`${viewport.label} ${route} Enterprise card missing text: ${requiredText}`);
+          }
+        }
+        if (enterpriseCard.links.some((link) => link.text === "Start free")) {
+          failures.push(`${viewport.label} ${route} Enterprise card must not use the self-serve Start free CTA`);
+        }
+      }
+    }
+
     if (route === "/early-access" && viewport.label === "mobile") {
       await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
       await page.waitForLoadState("networkidle", { timeout: 30_000 });
