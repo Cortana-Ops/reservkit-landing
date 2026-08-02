@@ -54,7 +54,8 @@ export default function Payments() {
           <h1 className="text-3xl font-bold text-navy mb-3">Payments</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
             ReservKit uses Stripe Connect to process payments. Money flows directly to your Stripe account —
-            ReservKit deducts a small booking fee per transaction. No monthly billing required on the free plan.
+            ReservKit collects the plan-based booking fee on the booking subtotal where applicable. No monthly
+            billing is required on the free plan.
           </p>
         </div>
 
@@ -74,8 +75,8 @@ export default function Payments() {
               </p>
               <p>
                 ReservKit uses Stripe Connect Standard. This means each business owner has their own Stripe account
-                and receives payouts directly. ReservKit collects the booking fee automatically at checkout — you
-                never need to manually split payments or transfer funds.
+                and receives payouts directly. ReservKit collects the plan-based booking fee automatically at checkout
+                where applicable — you never need to manually split payments or transfer funds.
               </p>
               <p>
                 Once connected, your Stripe dashboard will show a &quot;Connected account&quot; from ReservKit. You can
@@ -103,7 +104,8 @@ export default function Payments() {
               <p>
                 Set a base price per guest on each activity&apos;s Pricing tab. You can also configure a refundable
                 damage deposit that is collected alongside the booking payment as a separate Stripe Checkout line
-                item, then marked released or charged from Booking Detail after the activity.
+                item. Booking Detail lets operators mark deposit outcomes as released or charged for reconciliation;
+                released deposits still need the actual money movement handled in Stripe.
               </p>
               <p>
                 The booking fee is calculated on the booking subtotal collected at checkout, after coupon discounts
@@ -121,7 +123,7 @@ export default function Payments() {
             <h2 className="text-xl font-bold text-navy mb-4">Booking fee breakdown</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
               The booking fee is a percentage of the booking subtotal collected at checkout. It&apos;s automatically
-              deducted at checkout, and customer tips are not marked up.
+              collected at checkout where applicable, and customer tips are not marked up.
             </p>
             <div className="grid gap-3 md:hidden">
               {feeTable.map((row) => (
@@ -175,12 +177,13 @@ export default function Payments() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 Full and partial refunds are started from Booking Detail. Open the booking, click &quot;Refund,&quot;
-                and enter the amount to refund. ReservKit sends the refund request to Stripe, updates the
-                booking record, and releases capacity on full refunds when the booking can be cancelled safely.
+                and enter the amount to refund. ReservKit sends the refund request to Stripe and updates the
+                booking record. Use the cancellation flow when the booking also needs to be cancelled so customer
+                messages and reserved capacity stay aligned.
               </p>
               <p>
-                Partial refunds let you refund any amount up to the original charge. This is useful when you need
-                to keep part of a refundable damage deposit or apply a cancellation fee while returning the remainder.
+                Partial refunds can return less than the original charge when your policy calls for keeping part of
+                a payment or deposit. The dashboard limits the amount so it cannot exceed the booking total.
               </p>
               <p>
                 Booking-fee refund handling depends on the Stripe payment path for that charge. Stripe&apos;s own processing
@@ -205,9 +208,10 @@ export default function Payments() {
                 to specific activities.
               </p>
               <p>
-                Customers enter the coupon code on the checkout page. The discount is applied to the total before
-                the booking fee is calculated. Coupon redemptions are tracked in the Coupons dashboard so you can
-                see usage at a glance.
+                Customers enter the coupon code on the checkout page. The discount applies to the eligible booking
+                subtotal before the ReservKit booking fee calculation; tips, taxes, operator service fees, and
+                refundable damage deposits are not marked up. Coupon redemptions are tracked in the Coupons dashboard
+                so you can see usage at a glance.
               </p>
             </div>
           </section>

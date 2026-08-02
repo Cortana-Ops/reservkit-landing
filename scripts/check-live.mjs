@@ -33,6 +33,8 @@ const sharedRequiredByRoute = {
   "/early-access": ["Request setup help", "reply within one business day"],
   "/docs/payments": [
     "booking subtotal collected at checkout",
+    "plan-based booking fee",
+    "Use the cancellation flow",
     "customer tips are not marked up",
     "Stripe",
   ],
@@ -57,6 +59,9 @@ const baseForbidden = [
   "2 business days after a charge",
   "pay only the deposit",
   "Deposit collection at booking",
+  "deducts a small booking fee per transaction",
+  "then marked released or charged from Booking Detail after the activity",
+  "releases capacity on full refunds",
   "Waiver compliance at a glance",
 ];
 
