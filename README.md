@@ -58,3 +58,5 @@ Do not commit secrets or paste live credentials into docs, issues, PRs, or chat.
 ## Shared Marketing Copy
 
 Pricing and CTA constants live in `app/lib/marketing.ts`. Use those constants when editing pages so the website stays aligned with the app.
+
+Before changing public claims, read `docs/MARKETING_PRODUCT_FACTS.md`. That file is the marketing truth source for current launch posture, plan gates, booking-flow claims, waiver/payment boundaries, unsupported future features, and product-media rules.

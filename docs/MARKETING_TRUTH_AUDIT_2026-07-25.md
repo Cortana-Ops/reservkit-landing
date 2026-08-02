@@ -149,4 +149,8 @@ Marketing now has a reusable rendered-page guard: `npm run check:rendered`. The 
 
 The public Pricing section now keeps self-serve plans on the primary `Start free` signup CTA, while the Enterprise card uses `Request setup help` and links to `/early-access`. This matches the app Billing model: Free, Starter, Growth, and Pro are self-serve; Enterprise is manual/private custom terms. `scripts/check-content.mjs` guards the Enterprise card so it does not drift back to implying Enterprise is a normal self-serve signup plan.
 
+## 2026-08-02 Marketing Product Facts Source
+
+The app handoff now has a matching marketing-side source of truth at `docs/MARKETING_PRODUCT_FACTS.md`. It records current public posture, public/private plan boundaries, feature gates, verified customer booking revenue-path proof, waiver/payment/offline-payment boundaries, messaging constraints, staff-tip/reporting boundaries, supported booking links/embeds, unsupported future scope, and product-media rules. `README.md` points future editors to that file, and `scripts/check-content.mjs` requires representative facts so the file cannot silently disappear or drift away from the current launch posture.
+
 The marketing dependency baseline was also refreshed for production audit health: `next` and `eslint-config-next` are `16.2.12`, `@sentry/nextjs` is `10.69.0`, `posthog-js` is `1.409.5`, and Next's production transitive `postcss` / `sharp` advisories are pinned through package overrides. Verification passed `npm audit --omit=dev`, `npm run check:content`, `npm run check:links`, `npm run check:live`, `npm run lint`, `npm run build`, `npm run check:rendered`, and `git diff --check`.
