@@ -149,6 +149,8 @@ const forbidden = [
   "releases capacity on full refunds",
   "apply a cancellation fee while returning the remainder",
   "The discount is applied to the total before the booking fee is calculated",
+  "booking fee behind the scenes",
+  "Tips are treated as operator revenue",
 ];
 
 const allowedByFile = {
@@ -229,6 +231,8 @@ const required = [
   { file: "app/lib/marketing.ts", text: "refundable damage deposits are not marked up" },
   { file: "app/docs/getting-started/page.tsx", text: "ReservKit collects the plan-based booking fee on the booking subtotal where applicable" },
   { file: "app/terms/page.tsx", text: "percentage of the eligible booking subtotal according to the active plan" },
+  { file: "app/blog/page.tsx", text: "plan-based booking fee on eligible booking subtotal" },
+  { file: "app/blog/page.tsx", text: "Customer tips are tracked separately from booking income" },
   { file: "app/lib/marketing.ts", text: "No staff/team access" },
   { file: "app/lib/marketing.ts", text: "Basic team tools" },
   { file: "app/lib/marketing.ts", text: "Equipment and dynamic pricing" },

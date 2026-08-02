@@ -50,6 +50,7 @@ const sharedRequiredByRoute = {
   "/docs/reports": ["Customer tips are shown separately from booking income"],
   "/docs/bookings-availability": ["all-activity booking links and activity-specific booking links", "Dedicated calendar-only or activity-card-only embeds are future options"],
   "/changelog": ["Public signup and launch truth pass", "Public Free-first signup", "Product proof and pricing alignment"],
+  "/blog": ["plan-based booking fee on eligible booking subtotal", "Customer tips are tracked separately from booking income"],
   "/terms": ["Paid ReservKit subscription charges are non-refundable", "eligible booking subtotal"],
 };
 
@@ -64,6 +65,8 @@ const baseForbidden = [
   "deducts a small booking fee per transaction",
   "automatically deducted from each transaction at checkout",
   "each completed booking transaction according to the active plan",
+  "booking fee behind the scenes",
+  "Tips are treated as operator revenue",
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",
   "Waiver compliance at a glance",

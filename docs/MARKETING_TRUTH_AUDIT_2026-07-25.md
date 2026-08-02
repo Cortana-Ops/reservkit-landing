@@ -122,3 +122,7 @@ The public Payments guide was tightened against the current app behavior. Bookin
 ## 2026-08-02 Adjacent Fee-Basis Follow-Up
 
 The Getting Started guide and Terms page now use the same booking-fee basis as the Payments guide. Getting Started no longer says the booking fee is deducted from each transaction; it says ReservKit collects the plan-based booking fee on booking subtotal where applicable and does not mark up tips, taxes, operator service fees, or refundable damage deposits. Terms no longer says booking fees are charged on each completed booking transaction; it says fees are charged as a percentage of the eligible booking subtotal according to the active plan. Content and live guards now block those stale phrases and require the corrected setup/legal wording.
+
+## 2026-08-02 Blog Fee/Tips Follow-Up
+
+The public Blog page now uses the same fee/tip boundaries as Payments, Getting Started, Terms, and Reports. Setup copy no longer says ReservKit applies the plan fee `behind the scenes`; it says the plan-based booking fee is collected on eligible booking subtotal where applicable. The direct-booking-fees article no longer calls tips generic operator revenue; it says customer tips are tracked separately from booking income and are not marked up by ReservKit. Content and live guards now block those stale blog phrases.
