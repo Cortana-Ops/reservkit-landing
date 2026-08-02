@@ -30,8 +30,8 @@ const sections = [
     icon: CalendarDays,
     title: "Bookings & Availability",
     href: "/docs/bookings-availability",
-    description: "Manage your availability calendar, direct booking flow, and cancellation process.",
-    topics: ["Setting availability windows", "Managing time slots", "Handling cancellations", "Booking status overview", "Check-in process"],
+    description: "Manage your availability calendar, direct booking links, website iframe snippets, and cancellation process.",
+    topics: ["Setting availability windows", "Managing time slots", "All-activity and single-activity links", "Website iframe snippets", "Check-in process"],
   },
   {
     icon: CreditCard,

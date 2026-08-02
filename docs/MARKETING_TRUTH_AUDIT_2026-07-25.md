@@ -163,6 +163,17 @@ The marketing dependency baseline was also refreshed for production audit health
 
 The rendered-page guard now verifies the public Pricing page cards at both desktop and 390px mobile widths. It asserts Free, Starter, Growth, and Pro each keep the `Start free` CTA pointed at the approved app signup URL, Enterprise keeps `Request setup help` pointed at `/early-access`, and the visible plan-card copy includes the current price, booking fee, volume, and representative feature-gate text. This gives the marketing site a rendered proof for the public/private plan boundary, not only a source-text content check.
 
+## 2026-08-02 Booking Link And Embed Docs Alignment
+
+The docs index and Getting Started guide now make the live Settings -> Booking
+Widget controls easier to find: all-activity booking links, activity-specific
+booking links, and website iframe snippets. The Getting Started guide also
+keeps the product boundary explicit: current iframe snippets embed the
+ReservKit booking flow for all activities or one selected activity, while
+dedicated calendar-only and activity-card-only embeds remain future options,
+not launch features. `scripts/check-content.mjs` and `scripts/check-live.mjs`
+now guard these claims.
+
 ## 2026-08-02 Terms Enterprise Copy Alignment
 
 The public Terms pricing list no longer states that Enterprise has an annual

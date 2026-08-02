@@ -31,7 +31,12 @@ const routes = [
 
 const sharedRequiredByRoute = {
   "/early-access": ["Request setup help", "reply within one business day"],
-  "/docs/getting-started": ["Free-first public signup", "plan-based booking fee"],
+  "/docs/getting-started": [
+    "Free-first public signup",
+    "plan-based booking fee",
+    "Settings -&gt; Booking Widget",
+    "Dedicated calendar-only or activity-card-only embeds are future options",
+  ],
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "plan-based booking fee",
