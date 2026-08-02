@@ -168,6 +168,8 @@ const required = [
   { file: "app/lib/marketing.ts", text: '    : "public_signup"' },
   { file: "app/lib/marketing.ts", text: 'MARKETING_MODE === "public_signup" ? PUBLIC_SIGNUP_URL : EARLY_ACCESS_URL' },
   { file: "app/lib/marketing.ts", text: "new URLSearchParams" },
+  { file: "docs/MARKETING_TRUTH_AUDIT_2026-07-25.md", text: "Default / production mode is public signup" },
+  { file: "docs/MARKETING_TRUTH_AUDIT_2026-07-25.md", text: "Public signup is live through Free-first signup" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_URL" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_EVENT" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "Request setup help" },

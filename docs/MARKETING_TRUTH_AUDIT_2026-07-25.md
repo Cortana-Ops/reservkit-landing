@@ -10,7 +10,7 @@ Passed. No public marketing page was found making unsupported live claims for pu
 
 - `npm run check:content` passed.
 - `npm run check:live` passed against `https://reservkit.com`.
-- A focused source scan across `app/` and `docs/` found zero unsupported future-feature claims.
+- A focused source scan across public app source found zero unsupported future-feature claims.
 - Live rendered Browser checks passed on desktop routes:
   - `/`
   - `/pricing`
@@ -48,20 +48,25 @@ After the latest app-side production/Sentry/customer-path evidence updates, a fr
 
 Future pages can still discuss these items when the surrounding copy clearly frames them as future, coming-next, roadmap, or not currently available.
 
-## Launch Mode Guardrail Added
+## Launch Mode Guardrail Updated
 
-The marketing CTA source now has an explicit launch mode in `app/lib/marketing.ts`.
+The marketing CTA source has an explicit launch mode in `app/lib/marketing.ts`.
 
-- Default mode remains prelaunch and keeps public CTAs on `Get early access` -> `/early-access`.
-- `NEXT_PUBLIC_MARKETING_MODE=public_signup` prepares the public cutover CTA, `Start free` -> the app signup route.
-- `scripts/check-content.mjs` verifies the mode is opt-in and still blocks accidental open-signup claims in normal page copy.
-- This does not enable public signup by itself; the app production flag and full signup verification checklist remain required before production marketing can use public-signup mode.
+- Default / production mode is public signup and keeps public CTAs on `Start free` -> the app signup route.
+- `NEXT_PUBLIC_MARKETING_MODE=prelaunch` is the explicit rollback mode for `Get early access` -> `/early-access`.
+- `scripts/check-content.mjs` verifies this posture and blocks stale prelaunch/pricing phrases.
+- Public signup is live through the app Free-first path; `/early-access` remains as guided setup/help intake, not the primary public CTA.
 
 ## Product Boundaries Confirmed
 
-- Public CTAs remain `Get early access`.
-- Public signup remains intentionally disabled until the owner approves the launch path.
+- Public CTAs are `Start free`.
+- Public signup is live through Free-first signup.
+- Guided setup remains available through `/early-access`.
 - Dedicated calendar-only/card-only embeds remain future options.
 - Resources/variants and cart/multi-item checkout remain future product/design work.
 - Notifications docs correctly say ReservKit does not currently include a full operator-facing email or SMS template editor.
 - Staff docs keep staff/team tools Starter+ and do not expose staff tip self-service as a launch feature.
+
+## 2026-08-02 Truth Sync
+
+After the public signup launch closeout, this audit was updated so future marketing work does not accidentally restore the old prelaunch interpretation. `README.md` and `app/lib/marketing.ts` are the current source of truth: production marketing is in public signup posture unless `NEXT_PUBLIC_MARKETING_MODE=prelaunch` is deliberately set as a rollback.
