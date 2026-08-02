@@ -122,14 +122,14 @@ export async function POST(request: Request) {
     });
   } catch {
     return NextResponse.json(
-      { error: "Could not send early access request right now." },
+      { error: "Could not send guided setup request right now." },
       { status: 502 }
     );
   }
 
   if (!response.ok) {
     return NextResponse.json(
-      { error: "Could not send early access request right now." },
+      { error: "Could not send guided setup request right now." },
       { status: 502 }
     );
   }

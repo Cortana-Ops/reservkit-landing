@@ -134,3 +134,7 @@ Marketing behavior now has a dedicated `npm run check:links` guard in addition t
 ## 2026-08-02 Roadmap Guided-Setup Label Follow-Up
 
 The public Roadmap no longer says cleaner product captures depend on `early-access operators`; it now frames the screenshot work around controlled demo workflows and launch-ready operator setups. The guided setup API's default Resend sender label now says `ReservKit Guided Setup` instead of `ReservKit Early Access`, while the `/early-access` route and env var names remain for compatibility. `scripts/check-content.mjs` now blocks those stale early-access product-capture and sender-label phrases from returning.
+
+## 2026-08-02 Guided-Setup Error-Copy Follow-Up
+
+The guided setup API's delivery-failure response now says `Could not send guided setup request right now.` instead of the stale `early access request` wording. The missing-email-configuration response already used `Guided setup request email is not configured.` and remains unchanged. `scripts/check-content.mjs` now blocks the old delivery-failure phrase.
