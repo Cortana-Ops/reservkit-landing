@@ -138,3 +138,9 @@ The public Roadmap no longer says cleaner product captures depend on `early-acce
 ## 2026-08-02 Guided-Setup Error-Copy Follow-Up
 
 The guided setup API's delivery-failure response now says `Could not send guided setup request right now.` instead of the stale `early access request` wording. The missing-email-configuration response already used `Guided setup request email is not configured.` and remains unchanged. `scripts/check-content.mjs` now blocks the old delivery-failure phrase.
+
+## 2026-08-02 Rendered Audit And Dependency Follow-Up
+
+Marketing now has a reusable rendered-page guard: `npm run check:rendered`. The guard loads the public route set at desktop `1440px` and mobile `390px`, checks HTTP status, rendered body content, framework/error overlays, horizontal overflow, broken images, console/page errors, the mobile homepage menu button state, and guided setup inline validation on `/early-access`.
+
+The marketing dependency baseline was also refreshed for production audit health: `next` and `eslint-config-next` are `16.2.12`, `@sentry/nextjs` is `10.69.0`, `posthog-js` is `1.409.5`, and Next's production transitive `postcss` / `sharp` advisories are pinned through package overrides. Verification passed `npm audit --omit=dev`, `npm run check:content`, `npm run check:links`, `npm run check:live`, `npm run lint`, `npm run build`, `npm run check:rendered`, and `git diff --check`.
