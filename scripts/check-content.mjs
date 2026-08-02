@@ -243,6 +243,7 @@ const required = [
   { file: "app/lib/marketing.ts", text: "refundable damage deposits are not marked up" },
   { file: "app/docs/getting-started/page.tsx", text: "ReservKit collects the plan-based booking fee on the booking subtotal where applicable" },
   { file: "app/terms/page.tsx", text: "percentage of the eligible booking subtotal according to the active plan" },
+  { file: "app/terms/page.tsx", text: "Last updated: August 2026" },
   { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, custom volume, and signed agreement terms" },
   { file: "app/blog/page.tsx", text: "plan-based booking fee on eligible booking subtotal" },
   { file: "app/blog/page.tsx", text: "Customer tips are tracked separately from booking income" },

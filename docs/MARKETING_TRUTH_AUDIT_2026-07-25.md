@@ -172,4 +172,5 @@ source of truth that Enterprise is manual/private custom terms rather than a
 normal self-serve checkout plan. The cancellation section can still say
 Enterprise agreements may include annual minimums or custom cancellation terms
 when those are present in the signed agreement. `scripts/check-content.mjs`
-blocks the old definite annual-minimum phrase from returning.
+blocks the old definite annual-minimum phrase from returning. The visible Terms
+date was also advanced to August 2026 because the pricing/legal copy changed.
