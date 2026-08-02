@@ -27,13 +27,33 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "Public signup and launch truth pass",
+    date: "August 2026",
+    items: [
+      { tag: "Added", text: "Public Free-first signup is now the default path, with Start free CTAs routing operators to the app signup flow." },
+      { tag: "Changed", text: "Refreshed notification setup documentation for ReservKit-managed delivery plus optional complete-set Resend and Twilio credentials." },
+      { tag: "Changed", text: "Aligned staff visibility copy so standard staff workflows stay operational while owner/admin revenue reporting remains separate." },
+      { tag: "Fixed", text: "Expanded public content checks to block stale trial, pre-launch, unsupported template-editor, cart, resource-variant, and fee claims." },
+    ],
+  },
+  {
+    version: "Product proof and pricing alignment",
+    date: "July 2026",
+    items: [
+      { tag: "Added", text: "Added reviewed product media for public booking, activities, bookings, check-in, waivers, and reports." },
+      { tag: "Changed", text: "Clarified that screenshots are representative ReservKit workflows and should be reviewed before broader paid marketing use." },
+      { tag: "Changed", text: "Updated pricing language around Free, Starter, Growth, Pro, Enterprise, booking fees, and refundable damage deposits." },
+      { tag: "Fixed", text: "Removed stale early-access-first positioning from the production marketing mode while keeping guided setup available for operators who want help." },
+    ],
+  },
+  {
     version: "Production readiness",
     date: "May 2026",
     items: [
       { tag: "Changed", text: "Updated public pricing to Starter, Growth, Pro, Enterprise, and Free." },
       { tag: "Changed", text: "Repositioned the public site around direct bookings, operator-owned Stripe payments, waivers, and day-of operations." },
       { tag: "Fixed", text: "Removed competitor comparison pages and redirected those URLs to the homepage." },
-      { tag: "Fixed", text: "Added content checks that block stale pricing, open-signup CTAs, and removed comparison-page copy." },
+      { tag: "Fixed", text: "Added content checks that block stale pricing, removed comparison-page copy, and unsupported public feature claims." },
     ],
   },
   {

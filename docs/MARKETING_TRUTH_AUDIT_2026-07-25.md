@@ -78,3 +78,9 @@ The homepage day-of operations copy was tightened so it no longer implies normal
 ## 2026-08-02 Notifications Provider Setup Follow-Up
 
 After the app shipped Settings integration validation hardening, the public Notifications guide was updated to match: custom Resend requires both a Resend API key and verified From Email, and custom Twilio requires Account SID, Auth Token, and From Number together. The page still frames both as optional advanced setup and keeps ReservKit-managed delivery as the default launch posture. `scripts/check-content.mjs` and `scripts/check-live.mjs` now guard those provider-completeness claims.
+
+## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
+
+The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
+
+Inner pages that use `PageShell` now render the shared `Nav` component instead of a separate simplified header. This gives docs, pricing, changelog, roadmap, blog, legal pages, and vertical landing pages the same desktop Log in / Start free links and mobile hamburger menu as the homepage. Local rendered Browser checks passed for `/changelog` desktop and 390px mobile menu, plus `/docs` desktop nav/link proof, with no console warnings/errors and no horizontal overflow.

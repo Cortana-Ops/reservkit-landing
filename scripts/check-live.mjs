@@ -20,6 +20,7 @@ const routes = [
   "/docs/reports",
   "/docs/bookings-availability",
   "/roadmap",
+  "/changelog",
   "/blog",
   "/boat-rental-software",
   "/kayak-rental-software",
@@ -45,6 +46,7 @@ const sharedRequiredByRoute = {
   ],
   "/docs/reports": ["Customer tips are shown separately from booking income"],
   "/docs/bookings-availability": ["all-activity booking links and activity-specific booking links", "Dedicated calendar-only or activity-card-only embeds are future options"],
+  "/changelog": ["Public signup and launch truth pass", "Public Free-first signup", "Product proof and pricing alignment"],
 };
 
 const baseForbidden = [

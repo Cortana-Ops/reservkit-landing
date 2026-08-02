@@ -1,57 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { TrackedLink } from "./TrackedLink";
-import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import Nav from "./Nav";
 
 interface PageShellProps {
   children: React.ReactNode;
 }
 
-const shellLinks = [
-  { href: "/#features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/docs", label: "Docs" },
-  { href: "/blog", label: "Blog" },
-];
-
 export function PageShell({ children }: PageShellProps) {
   return (
     <>
-      {/* Simple static nav for inner pages */}
-      <header className="border-b border-[var(--color-border)] bg-white px-6 py-4">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/logo.png"
-              alt="ReservKit"
-              width={28}
-              height={28}
-              priority
-            />
-            <span className="text-sm font-bold text-navy">ReservKit</span>
-          </Link>
-          <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            {shellLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-navy">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <TrackedLink
-            href={PRIMARY_CTA_URL}
-            event={PRIMARY_CTA_EVENT}
-            properties={{ location: 'page_shell' }}
-            className="inline-flex items-center gap-1.5 rounded-full bg-amber px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
-          >
-            {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </TrackedLink>
-        </div>
-      </header>
+      <Nav />
       {children}
-      {/* Simple footer */}
       <footer className="border-t border-[var(--color-border)] bg-white px-6 py-8 mt-auto">
         <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <Link href="/" className="hover:text-slate-700 transition-colors">

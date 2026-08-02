@@ -174,6 +174,8 @@ const required = [
   { file: "docs/MARKETING_TRUTH_AUDIT_2026-07-25.md", text: "Public signup is live through Free-first signup" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_URL" },
   { file: "app/components/Nav.tsx", text: "PRIMARY_CTA_EVENT" },
+  { file: "app/components/PageShell.tsx", text: "import Nav from \"./Nav\"" },
+  { file: "app/components/PageShell.tsx", text: "<Nav />" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "Request setup help" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'name="email"' },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: 'type="email"' },
