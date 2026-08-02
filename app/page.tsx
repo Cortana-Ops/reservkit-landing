@@ -147,8 +147,8 @@ const workflowSteps = [
     icon: Users,
     label: "Day-of operations",
     heading: "Give staff the live view they need",
-    body: "Your team can see who is arriving, who paid, who signed, and what needs attention before the group shows up.",
-    bullets: ["Check-in manifest", "Staff schedule and assignments", "Task management", "Revenue reports"],
+    body: "Your team can see arrival readiness, assignments, waiver status, and operational notes before the group shows up. Owners and admins keep revenue reporting separate.",
+    bullets: ["Check-in manifest", "Staff schedule and assignments", "Task management", "Booking readiness"],
   },
 ];
 

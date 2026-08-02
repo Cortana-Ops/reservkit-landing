@@ -70,3 +70,7 @@ The marketing CTA source has an explicit launch mode in `app/lib/marketing.ts`.
 ## 2026-08-02 Truth Sync
 
 After the public signup launch closeout, this audit was updated so future marketing work does not accidentally restore the old prelaunch interpretation. `README.md` and `app/lib/marketing.ts` are the current source of truth: production marketing is in public signup posture unless `NEXT_PUBLIC_MARKETING_MODE=prelaunch` is deliberately set as a rollback.
+
+## 2026-08-02 Staff Visibility Follow-Up
+
+The homepage day-of operations copy was tightened so it no longer implies normal staff members receive revenue-report access. Staff-facing language now focuses on arrival readiness, assignments, waiver status, operational notes, and booking readiness. Owner/admin revenue reporting remains described separately, and `scripts/check-content.mjs` now guards against restoring the old `Revenue reports` staff bullet.

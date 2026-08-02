@@ -42,6 +42,7 @@ const forbidden = [
   "all plans include the full product",
   "Every plan includes bookings, payments, waivers, and staff access",
   "All plans include the booking page, Stripe Connect payments, digital waivers, staff portal, check-in manifest, and revenue reports",
+  'bullets: ["Check-in manifest", "Staff schedule and assignments", "Task management", "Revenue reports"]',
   "No long-term contract",
   "Cancel anytime",
   "30-60",
@@ -208,6 +209,7 @@ const required = [
   { file: "app/page.tsx", text: "real ReservKit screens from configured public booking and operator workflows" },
   { file: "app/page.tsx", text: "captures reviewed before broader marketing" },
   { file: "app/page.tsx", text: "representative screens show the operator workflows ReservKit is built around" },
+  { file: "app/page.tsx", text: "Owners and admins keep revenue reporting separate." },
 ];
 
 const removedRoutes = [
