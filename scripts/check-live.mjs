@@ -52,6 +52,14 @@ const sharedRequiredByRoute = {
   "/changelog": ["Public signup and launch truth pass", "Public Free-first signup", "Product proof and pricing alignment"],
   "/blog": ["plan-based booking fee on eligible booking subtotal", "Customer tips are tracked separately from booking income"],
   "/terms": ["Paid ReservKit subscription charges are non-refundable", "eligible booking subtotal"],
+  "/privacy": [
+    "Last updated: August 2026",
+    "We do not sell your personal data",
+    "service providers needed to operate, secure, monitor, and improve ReservKit",
+    "Twilio",
+    "Vercel",
+    "Sentry and PostHog",
+  ],
 };
 
 const baseForbidden = [

@@ -185,3 +185,6 @@ ReservKit does not sell personal data and shares data with service providers
 needed to operate, secure, monitor, and improve the platform. Its visible
 revision date is August 2026, and `scripts/check-content.mjs` guards the current
 provider list plus blocks the old incomplete "We share data only with:" phrase.
+`scripts/check-live.mjs` also verifies the live Privacy page keeps the August
+2026 date, no-sale statement, service-provider framing, and Twilio, Vercel, and
+Sentry/PostHog provider disclosures.
