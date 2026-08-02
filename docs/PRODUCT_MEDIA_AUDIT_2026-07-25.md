@@ -8,12 +8,14 @@ Purpose: keep the public marketing site honest about product screenshots before 
 - The public booking, Activities, Bookings, Check-In, Waivers, and Reports captures are usable as representative product proof, but they should not be described as always-current live screenshots.
 - Homepage copy now says the screenshots are real ReservKit screens from configured workflows and representative operator screens.
 - `public/product-reports.png` was replaced on 2026-07-25 with a current cropped Reports workspace capture that removes support-only navigation and avoids customer-identifying table data.
+- `public/product-bookings-dashboard.png` and `public/product-checkin-manifest.png` were privacy-polished on 2026-08-02 after a batch review found realistic-looking customer names, emails, and phone numbers in the old captures. The visible rows now use demo guest/contact text only.
 
 ## Findings
 
 - `public/product-public-booking-live.png` shows a real public booking flow with configured activities. It is acceptable as a representative customer-flow screenshot.
-- `public/product-activities.png`, `public/product-bookings-dashboard.png`, `public/product-checkin-manifest.png`, and `public/product-waiver-status.png` show real operator UI and are acceptable for the current pre-launch site.
+- `public/product-activities.png`, `public/product-bookings-dashboard.png`, `public/product-checkin-manifest.png`, and `public/product-waiver-status.png` show real operator UI and are acceptable for the current public-signup site. Bookings and Check-In are privacy-polished with demo guest/contact values.
 - `public/product-reports.png` now shows the current Reports Overview tab, customer-tip separation, booking-fee language, activity-date window copy, and booking-income chart without exposing the support-only sidebar.
+- A fresh production Safari check against `ReservKit Test Org` confirmed the current Activities route is materially newer than the May Activities capture, but the live Test Org screen is too QA-fixture-heavy for public marketing. Keep the existing Activities capture until a clean controlled demo organization is available, then recapture Activities as a batch with public booking media.
 
 ## Replacement Standard
 
@@ -27,4 +29,4 @@ Future public screenshots should be captured from a controlled demo organization
 
 ## Next Media Slice
 
-Recommended next product-media task: review the remaining homepage product-tour images as a batch only if future app UI changes make them visibly stale. Do not capture from private owner/customer accounts.
+Recommended next product-media task: create or designate a clean controlled demo organization, then recapture the homepage product-tour images as a batch. Do not capture from private owner/customer accounts, and do not use QA-heavy Test Lab screens as public marketing assets unless the visible copy is intentionally demo-safe.
