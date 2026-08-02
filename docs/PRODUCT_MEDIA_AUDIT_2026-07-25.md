@@ -9,13 +9,15 @@ Purpose: keep the public marketing site honest about product screenshots before 
 - Homepage copy now says the screenshots are real ReservKit screens from configured workflows and representative operator screens.
 - `public/product-reports.png` was replaced on 2026-07-25 with a current cropped Reports workspace capture that removes support-only navigation and avoids customer-identifying table data.
 - `public/product-bookings-dashboard.png` and `public/product-checkin-manifest.png` were privacy-polished on 2026-08-02 after a batch review found realistic-looking customer names, emails, and phone numbers in the old captures. The visible rows now use demo guest/contact text only.
+- `public/product-operator-login.png` was removed on 2026-08-02 because it was unused by the marketing site and would otherwise become stale public media.
 
 ## Findings
 
 - `public/product-public-booking-live.png` shows a real public booking flow with configured activities. It is acceptable as a representative customer-flow screenshot.
 - `public/product-activities.png`, `public/product-bookings-dashboard.png`, `public/product-checkin-manifest.png`, and `public/product-waiver-status.png` show real operator UI and are acceptable for the current public-signup site. Bookings and Check-In are privacy-polished with demo guest/contact values.
 - `public/product-reports.png` now shows the current Reports Overview tab, customer-tip separation, booking-fee language, activity-date window copy, and booking-income chart without exposing the support-only sidebar.
-- A fresh production Safari check against `ReservKit Test Org` confirmed the current Activities route is materially newer than the May Activities capture, but the live Test Org screen is too QA-fixture-heavy for public marketing. Keep the existing Activities capture until a clean controlled demo organization is available, then recapture Activities as a batch with public booking media.
+- A fresh production route check against `ReservKit Test Org` confirmed the current Activities route is materially newer than the May Activities capture, but the live Test Org screen is too QA-fixture-heavy for public marketing. Keep the existing Activities capture until a clean controlled demo organization is available, then recapture Activities as a batch with public booking media.
+- A fresh Waiver Templates route check confirmed the current app still uses the visible `Create liability waivers...` operator copy shown in `public/product-waiver-status.png`, so the waiver screenshot is not stale because of that phrase.
 
 ## Replacement Standard
 
