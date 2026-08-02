@@ -44,7 +44,7 @@ const sections = [
     icon: FileSignature,
     title: "Waivers",
     href: "/docs/waivers",
-    description: "Create liability waiver templates and configure per-guest signing requirements.",
+    description: "Create digital waiver templates and configure per-guest signing requirements.",
     topics: ["Creating waiver templates", "Configuring required fields", "Guest signing flow", "Tracking waiver status", "Printing evidence packets"],
   },
   {

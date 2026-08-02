@@ -167,7 +167,7 @@ export default function BookingsAvailability() {
               </p>
               <p>
                 If a customer hasn&apos;t signed their waiver before arriving, staff can send the waiver link directly from the
-                booking detail view. The guest can sign on their phone in seconds — no paper required.
+                booking detail view. The guest can sign on their phone before the activity begins.
               </p>
             </div>
           </section>
@@ -188,7 +188,7 @@ export default function BookingsAvailability() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Waivers →</p>
-              <p className="text-sm text-slate-500">Create digital liability waivers and manage per-guest signing.</p>
+              <p className="text-sm text-slate-500">Create digital waiver templates and manage per-guest signing.</p>
             </Link>
           </div>
           <div className="mt-6">

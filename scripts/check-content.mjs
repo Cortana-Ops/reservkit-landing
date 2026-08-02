@@ -132,6 +132,14 @@ const forbidden = [
   "Staff can create bookings manually",
   "Manual bookings bypass the public payment flow",
   "Checked-in bookings are excluded from cancellation flows",
+  "Collect digital liability waivers from every guest",
+  "Digital liability waivers for every guest",
+  "Create digital liability waivers",
+  "Create liability waiver templates",
+  "liability waiver template if required",
+  "sign on their phone in seconds",
+  "name and signature is often sufficient",
+  "have an attorney draft one",
 ];
 
 const allowedByFile = {
@@ -226,6 +234,10 @@ const required = [
   { file: "app/docs/notifications/page.tsx", text: "Custom Twilio setup requires Account SID, Auth Token, and From Number together" },
   { file: "app/docs/notifications/page.tsx", text: "does not currently include a full operator-facing email or SMS template editor" },
   { file: "app/docs/notifications/page.tsx", text: "Test emails from Settings go only to the signed-in operator" },
+  { file: "app/docs/waivers/page.tsx", text: "Collect digital waivers for activities that require them" },
+  { file: "app/docs/waivers/page.tsx", text: "waiver language reviewed for your business" },
+  { file: "app/docs/waivers/page.tsx", text: "counsel, insurer, and operating requirements" },
+  { file: "app/docs/payments/page.tsx", text: "Collect digital waivers for activities that require them" },
   { file: "app/page.tsx", text: "real ReservKit screens from configured public booking and operator workflows" },
   { file: "app/page.tsx", text: "captures reviewed before broader marketing" },
   { file: "app/page.tsx", text: "representative screens show the operator workflows ReservKit is built around" },

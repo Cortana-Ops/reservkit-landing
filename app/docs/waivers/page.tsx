@@ -5,7 +5,7 @@ import { FileSignature, Settings, UserCheck, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Waivers",
-  description: "Create digital liability waiver templates, configure per-guest signer fields, manage guest signing, and track waiver status in ReservKit.",
+  description: "Create digital waiver templates, configure per-guest signer fields, manage guest signing, and track waiver status in ReservKit.",
   alternates: { canonical: "https://reservkit.com/docs/waivers" },
 };
 
@@ -36,8 +36,8 @@ export default function Waivers() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Waivers</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Collect digital liability waivers from every guest — signed on their phone
-            after booking, no paper or clipboards required.
+            Collect digital waivers for activities that require them. Guests can sign on their phone
+            after booking, so your team can review waiver progress before arrival.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function Waivers() {
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
                 Go to Waivers and click &quot;New template.&quot; Give the template a name (e.g., &quot;Standard Water Sports Liability Waiver&quot;)
-                and paste or type the full waiver text. You can use your existing waiver language or have an attorney draft one specific to your activities.
+                and paste or type the full waiver text. Use waiver language reviewed for your business, activities, location, and insurance requirements.
               </p>
               <p>
                 Once a template is saved, you can attach it to one or more activities from the activity&apos;s Waivers tab. A single booking
@@ -88,8 +88,8 @@ export default function Waivers() {
                 <li>Initials (for inline acknowledgment checkpoints)</li>
               </ul>
               <p className="mt-3">
-                Configure the fields to match your insurance requirements. For adventure activities, many operators require signature,
-                initials at key clauses, and emergency contact. For lower-risk rentals, name and signature is often sufficient.
+                Configure signer fields to match your counsel, insurer, and operating requirements. ReservKit stores the signer inputs you require,
+                but the waiver language and required fields should still be reviewed for your business.
               </p>
             </div>
           </section>
@@ -133,7 +133,7 @@ export default function Waivers() {
               </p>
               <p>
                 From the booking detail view, staff can send a reminder waiver link to any guest who hasn&apos;t signed yet. This is
-                especially useful when guests arrive without having signed — they can sign on their phone in seconds before
+                especially useful when guests arrive without having signed — they can sign on their phone before
                 the activity begins.
               </p>
               <p>

@@ -228,7 +228,7 @@ export default function Payments() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Waivers →</p>
-              <p className="text-sm text-slate-500">Collect digital liability waivers from every guest.</p>
+              <p className="text-sm text-slate-500">Collect digital waivers for activities that require them.</p>
             </Link>
           </div>
           <div className="mt-6">

@@ -161,7 +161,7 @@ export default function Staff() {
               className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
             >
               <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">← Waivers</p>
-              <p className="text-sm text-slate-500">Digital liability waivers for every guest, signed on their phone.</p>
+              <p className="text-sm text-slate-500">Digital waivers for required activities, signed on the guest&apos;s phone.</p>
             </Link>
             <Link
               href="/docs/reports"

@@ -46,7 +46,7 @@ const steps = [
       "Go to Activities and click \"New activity.\" Give it a name, description, and duration. Activities are the bookable products your customers see on your booking page — examples include \"2-Hour Kayak Rental,\" \"Sunset Paddleboard Tour,\" or \"Half-Day Boat Charter.\"",
       "Under the Availability tab, set the days and time windows when this activity can be booked. You can create recurring weekly schedules and manual slots for special cases.",
       "Under the Pricing tab, set your base price per guest. You can add a refundable damage deposit, configure group pricing tiers, and create add-ons (e.g., wetsuits, life jackets, photography packages).",
-      "Under the Waivers tab, attach a liability waiver template if required for your activity. Guests sign digitally after payment — no paper required.",
+      "Under the Waivers tab, attach a digital waiver template if required for your activity. Guests sign digitally after payment.",
     ],
   },
   {
