@@ -103,7 +103,12 @@ export function EarlyAccessRequestForm() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-xl sm:p-6">
+    <form
+      action="/api/early-access-request"
+      method="post"
+      onSubmit={submit}
+      className="rounded-2xl border border-[var(--color-border)] bg-white p-5 shadow-xl sm:p-6"
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <h2 className="text-xl font-bold text-navy">Request guided setup</h2>

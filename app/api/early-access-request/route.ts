@@ -48,12 +48,27 @@ function validate(payload: EarlyAccessRequestPayload) {
   return { fields, errors };
 }
 
+async function parsePayload(request: Request): Promise<EarlyAccessRequestPayload> {
+  const contentType = request.headers.get("content-type") ?? "";
+  if (contentType.includes("application/json")) {
+    return request.json();
+  }
+  if (
+    contentType.includes("application/x-www-form-urlencoded") ||
+    contentType.includes("multipart/form-data")
+  ) {
+    const formData = await request.formData();
+    return Object.fromEntries(formData.entries()) as EarlyAccessRequestPayload;
+  }
+  return {};
+}
+
 export async function POST(request: Request) {
   let body: EarlyAccessRequestPayload;
   try {
-    body = await request.json();
+    body = await parsePayload(request);
   } catch {
-    return NextResponse.json({ error: "Invalid JSON." }, { status: 400 });
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
   const { fields, errors } = validate(body);
@@ -70,7 +85,7 @@ export async function POST(request: Request) {
 
   if (!apiKey || !to) {
     return NextResponse.json(
-      { error: "Early access request email is not configured." },
+      { error: "Guided setup request email is not configured." },
       { status: 500 }
     );
   }
@@ -101,7 +116,7 @@ export async function POST(request: Request) {
         from,
         to,
         reply_to: fields.email,
-        subject: `ReservKit early access request: ${fields.businessName}`,
+        subject: `ReservKit guided setup request: ${fields.businessName}`,
         text: lines.join("\n"),
       }),
     });

@@ -94,3 +94,7 @@ Inner pages that use `PageShell` now render the shared `Nav` component instead o
 ## 2026-08-02 Prelaunch Rollback Check Follow-Up
 
 The production posture remains public signup, but `NEXT_PUBLIC_MARKETING_MODE=prelaunch` is still the explicit rollback path. A local prelaunch-mode live-check rehearsal found `scripts/check-live.mjs` still expected the old `Pre-launch early access` homepage phrase. The homepage badge is now mode-aware: public mode says `Public signup is open`, while rollback mode says `Guided setup is available`. The live checker now requires `Get early access` plus that rollback badge in prelaunch mode without restoring stale beta/prelaunch language.
+
+## 2026-08-02 Guided Setup Form Fallback Follow-Up
+
+A page-by-page rendered marketing sweep found the guided setup form relied on client hydration to prevent the browser's default form behavior. The form now declares `method="post"` and `action="/api/early-access-request"`, and the API accepts both JSON and form-encoded payloads. Hydrated submissions still show inline validation without leaving `/early-access`; no-JS/fallback submissions post to the API instead of leaking operator-entered fields into the URL. Internal/API copy now says `Guided setup request` rather than `early access request`.
