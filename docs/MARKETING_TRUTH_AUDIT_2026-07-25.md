@@ -90,3 +90,7 @@ Inner pages that use `PageShell` now render the shared `Nav` component instead o
 - Homepage proof copy no longer uses defensive beta-era language like `not vaporware` or `mockup-only marketing`.
 - Final homepage CTA now keeps public signup first: operators can start on Free, build one working booking flow, and request guided setup help if they want review before sharing their link.
 - `scripts/check-content.mjs` now guards those stale defensive phrases and requires the live-booking/public-signup wording.
+
+## 2026-08-02 Prelaunch Rollback Check Follow-Up
+
+The production posture remains public signup, but `NEXT_PUBLIC_MARKETING_MODE=prelaunch` is still the explicit rollback path. A local prelaunch-mode live-check rehearsal found `scripts/check-live.mjs` still expected the old `Pre-launch early access` homepage phrase. The homepage badge is now mode-aware: public mode says `Public signup is open`, while rollback mode says `Guided setup is available`. The live checker now requires `Get early access` plus that rollback badge in prelaunch mode without restoring stale beta/prelaunch language.

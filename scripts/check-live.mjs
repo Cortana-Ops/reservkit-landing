@@ -83,7 +83,7 @@ function requiredForRoute(route, mode) {
           "/pricing": ["Start free", "Free", "Starter", "Growth"],
         }
       : {
-          "/": ["Get early access", "Pre-launch early access", "refundable damage deposits"],
+          "/": ["Get early access", "Guided setup is available", "refundable damage deposits"],
           "/pricing": ["Get early access", "Free", "Starter", "Growth"],
         };
 

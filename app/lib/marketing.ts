@@ -16,6 +16,10 @@ export const PRIMARY_CTA_EVENT =
   MARKETING_MODE === "public_signup"
     ? "public_signup_cta_clicked"
     : "early_access_cta_clicked";
+export const HERO_STATUS_LABEL =
+  MARKETING_MODE === "public_signup"
+    ? "Public signup is open"
+    : "Guided setup is available";
 export const EARLY_ACCESS_POSITIONING =
   "Guided setup help for operators who want support moving their first direct booking flow into ReservKit.";
 export const POSITIONING_LINE =

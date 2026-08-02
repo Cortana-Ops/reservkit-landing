@@ -18,6 +18,7 @@ import { TrackedLink } from "./components/TrackedLink";
 import {
   PRIMARY_CTA_URL,
   PRIMARY_CTA_EVENT,
+  HERO_STATUS_LABEL,
   POSITIONING_LINE,
   PRIMARY_CTA_LABEL,
   pricingSummary,
@@ -254,7 +255,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
             <div>
               <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
-                Public signup is open
+                {HERO_STATUS_LABEL}
               </div>
               <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-navy sm:text-6xl">
                 Booking software that keeps operators in control of bookings, payments, and the day of work.
