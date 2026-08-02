@@ -162,3 +162,14 @@ The marketing dependency baseline was also refreshed for production audit health
 ## 2026-08-02 Pricing Render Guard Follow-Up
 
 The rendered-page guard now verifies the public Pricing page cards at both desktop and 390px mobile widths. It asserts Free, Starter, Growth, and Pro each keep the `Start free` CTA pointed at the approved app signup URL, Enterprise keeps `Request setup help` pointed at `/early-access`, and the visible plan-card copy includes the current price, booking fee, volume, and representative feature-gate text. This gives the marketing site a rendered proof for the public/private plan boundary, not only a source-text content check.
+
+## 2026-08-02 Terms Enterprise Copy Alignment
+
+The public Terms pricing list no longer states that Enterprise has an annual
+minimum as a definite public plan term. It now says Enterprise uses custom
+pricing, custom volume, and signed agreement terms, which matches the app-side
+source of truth that Enterprise is manual/private custom terms rather than a
+normal self-serve checkout plan. The cancellation section can still say
+Enterprise agreements may include annual minimums or custom cancellation terms
+when those are present in the signed agreement. `scripts/check-content.mjs`
+blocks the old definite annual-minimum phrase from returning.

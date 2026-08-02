@@ -48,7 +48,7 @@ export default function Terms() {
               <li>Starter ($79/month): 3% booking fee, 100 bookings per month</li>
               <li>Growth ($149/month): 2% booking fee, unlimited bookings</li>
               <li>Pro ($299/month): 1.5% booking fee, unlimited bookings</li>
-              <li>Enterprise: custom monthly pricing, custom volume, and annual minimum</li>
+              <li>Enterprise: custom pricing, custom volume, and signed agreement terms</li>
             </ul>
             <p>Subscription fees for paid plans are billed monthly unless otherwise agreed in writing.</p>
             <p className="mt-3">
