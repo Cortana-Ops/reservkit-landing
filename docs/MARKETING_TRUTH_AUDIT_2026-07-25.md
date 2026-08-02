@@ -74,3 +74,7 @@ After the public signup launch closeout, this audit was updated so future market
 ## 2026-08-02 Staff Visibility Follow-Up
 
 The homepage day-of operations copy was tightened so it no longer implies normal staff members receive revenue-report access. Staff-facing language now focuses on arrival readiness, assignments, waiver status, operational notes, and booking readiness. Owner/admin revenue reporting remains described separately, and `scripts/check-content.mjs` now guards against restoring the old `Revenue reports` staff bullet.
+
+## 2026-08-02 Notifications Provider Setup Follow-Up
+
+After the app shipped Settings integration validation hardening, the public Notifications guide was updated to match: custom Resend requires both a Resend API key and verified From Email, and custom Twilio requires Account SID, Auth Token, and From Number together. The page still frames both as optional advanced setup and keeps ReservKit-managed delivery as the default launch posture. `scripts/check-content.mjs` and `scripts/check-live.mjs` now guard those provider-completeness claims.

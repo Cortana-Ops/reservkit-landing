@@ -204,6 +204,8 @@ const required = [
   { file: "app/docs/page.tsx", text: "/docs/notifications" },
   { file: "app/docs/notifications/page.tsx", text: "ReservKit-managed email delivery" },
   { file: "app/docs/notifications/page.tsx", text: "Automated SMS reminders can use ReservKit-managed delivery" },
+  { file: "app/docs/notifications/page.tsx", text: "Custom Resend setup requires both a Resend API key and a verified From Email" },
+  { file: "app/docs/notifications/page.tsx", text: "Custom Twilio setup requires Account SID, Auth Token, and From Number together" },
   { file: "app/docs/notifications/page.tsx", text: "does not currently include a full operator-facing email or SMS template editor" },
   { file: "app/docs/notifications/page.tsx", text: "Test emails from Settings go only to the signed-in operator" },
   { file: "app/page.tsx", text: "real ReservKit screens from configured public booking and operator workflows" },

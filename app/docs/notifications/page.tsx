@@ -118,6 +118,10 @@ export default function Notifications() {
                 If you want customer emails sent from your own verified domain, Settings includes optional Custom Email
                 setup for Resend. That is an advanced sender-domain option, not a launch requirement.
               </p>
+              <p>
+                Custom Resend setup requires both a Resend API key and a verified From Email. Leave both fields blank
+                when you want to keep using ReservKit-managed email delivery.
+              </p>
             </div>
           </section>
 
@@ -136,6 +140,10 @@ export default function Notifications() {
               <p>
                 Broadcast SMS depends on verified SMS readiness before sending. If SMS is important to your launch, test it
                 during onboarding before relying on it for customer operations.
+              </p>
+              <p>
+                Custom Twilio setup requires Account SID, Auth Token, and From Number together. Leave all three fields
+                blank when you want to keep using ReservKit-managed SMS reminders.
               </p>
             </div>
           </section>
