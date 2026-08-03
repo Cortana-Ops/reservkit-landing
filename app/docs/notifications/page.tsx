@@ -6,7 +6,7 @@ import { createMarketingMetadata } from "../../lib/metadata";
 export const metadata = createMarketingMetadata({
   title: "Notifications",
   description:
-    "Understand ReservKit booking emails, SMS reminders, review requests, and optional custom sender setup.",
+    "Understand ReservKit booking emails, SMS reminders, broadcasts, review requests, and optional custom sender setup.",
   path: "/docs/notifications",
 });
 
@@ -134,8 +134,9 @@ export default function Notifications() {
             </div>
             <div className="space-y-3 leading-relaxed text-slate-600">
               <p>
-                Automated SMS reminders can use ReservKit-managed delivery when platform SMS is configured. Operators can
-                also connect their own Twilio account if they want messages from their own number or stronger SMS control.
+                Automated SMS reminders and broadcast SMS can use ReservKit-managed delivery when platform SMS is configured.
+                Operators can also connect their own Twilio account if they want messages from their own number or stronger
+                SMS control.
               </p>
               <p>
                 Broadcast SMS depends on verified SMS readiness before sending. If SMS is important to your launch, test it
@@ -143,7 +144,7 @@ export default function Notifications() {
               </p>
               <p>
                 Custom Twilio setup requires Account SID, Auth Token, and From Number together. Leave all three fields
-                blank when you want to keep using ReservKit-managed SMS reminders.
+                blank when you want to keep using ReservKit-managed SMS reminders and broadcasts.
               </p>
             </div>
           </section>

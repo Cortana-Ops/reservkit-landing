@@ -55,7 +55,7 @@ export const EXPECTED_METADATA_BY_ROUTE = {
   },
   "/docs/notifications": {
     title: "Notifications — ReservKit",
-    description: "Understand ReservKit booking emails, SMS reminders, review requests, and optional custom sender setup.",
+    description: "Understand ReservKit booking emails, SMS reminders, broadcasts, review requests, and optional custom sender setup.",
     canonical: "https://reservkit.com/docs/notifications",
     socialTitle: "Notifications — ReservKit",
   },

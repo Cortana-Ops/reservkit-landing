@@ -30,6 +30,7 @@ const sharedRequiredByRoute = {
   "/docs/waivers": ["Each guest verifies their email once", "signed waiver evidence"],
   "/docs/notifications": [
     "ReservKit-managed email delivery",
+    "Automated SMS reminders and broadcast SMS can use ReservKit-managed delivery",
     "Custom Resend setup requires both a Resend API key and a verified From Email",
     "Custom Twilio setup requires Account SID, Auth Token, and From Number together",
     "does not currently include a full operator-facing email or SMS template editor",
