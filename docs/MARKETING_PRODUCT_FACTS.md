@@ -1,6 +1,6 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-08-02
+**Last updated:** 2026-08-03
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
@@ -74,6 +74,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - ReservKit-managed email delivery is the default launch posture.
 - Custom Resend requires both a Resend API key and verified From Email.
 - Custom Twilio requires Account SID, Auth Token, and From Number together.
+- SMS reminders and broadcasts can use complete org-owned Twilio credentials or ReservKit-managed platform Twilio configuration when enabled.
 - The app does not currently include a full operator-facing email/SMS template editor.
 
 ## Privacy And Service Providers
