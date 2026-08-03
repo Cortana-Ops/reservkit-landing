@@ -97,6 +97,29 @@ docs and release evidence only; no public page copy, pricing, signup, app
 runtime, templates, recipients, SMS delivery behavior, booking, or payment flow
 changed.
 
+## 2026-08-03 Notifications SMS Broadcast Copy Source Update
+
+Marketing source commit `33811c4` (`Align notification docs SMS delivery facts`)
+updates `/docs/notifications` so the public Notifications guide explicitly says
+automated SMS reminders and broadcast SMS can use ReservKit-managed delivery when
+platform SMS is configured. `scripts/check-content.mjs`, `scripts/check-live.mjs`,
+and rendered metadata expectations now guard that broadcast managed-delivery fact.
+
+Verification passed locally: `npm run check:content`, `npm run check:metadata`,
+`npm run check:routes`, `npm run check:indexing`, `npm run lint`,
+`npm run build`, `npm run check:links`, `git diff --check`, and
+`RESERVKIT_MARKETING_BASE_URL=http://localhost:4329 RENDERED_CHECK_ROUTES=/docs/notifications npm run check:rendered`
+against a local production server at desktop and 390px mobile.
+
+Production caveat: Vercel did not auto-deploy the pushed source during the
+polling window, and manual `vercel deploy --prod --scope cortana-ops-projects`
+failed with the Vercel daily API deployment quota
+`api-deployments-free-per-day`. Live `https://reservkit.com/docs/notifications`
+therefore remains on the previous production deployment until the quota resets or
+an owner uses another deploy path. Do not claim live production proof for this
+copy until `npm run check:live` and live `npm run check:rendered` pass after a
+new production deployment.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
