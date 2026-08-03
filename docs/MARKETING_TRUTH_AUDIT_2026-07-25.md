@@ -21,8 +21,8 @@ were needed: the source still frames unsupported surfaces as future scope or
 omits them, and the current claims for service fees, balance payments, waiver
 evidence, team/staff gates, SMS reminders/broadcasts, and provider disclosures
 are corroborated by the app feature inventory and source. `npm run
-check:content` passed. Production caveat remains unchanged: source is still
-ahead of live production until Vercel can deploy the pending Notifications copy
+check:content` passed. Follow-up live deployment evidence below now closes the
+earlier Vercel quota caveat; live production contains the Notifications copy
 updates.
 
 ## Evidence
@@ -130,14 +130,11 @@ Verification passed locally: `npm run check:content`, `npm run check:metadata`,
 `RESERVKIT_MARKETING_BASE_URL=http://localhost:4329 RENDERED_CHECK_ROUTES=/docs/notifications npm run check:rendered`
 against a local production server at desktop and 390px mobile.
 
-Production caveat: Vercel did not auto-deploy the pushed source during the
-polling window, and manual `vercel deploy --prod --scope cortana-ops-projects`
-failed with the Vercel daily API deployment quota
-`api-deployments-free-per-day`. Live `https://reservkit.com/docs/notifications`
-therefore remains on the previous production deployment until the quota resets or
-an owner uses another deploy path. Do not claim live production proof for this
-copy until `npm run check:live` and live `npm run check:rendered` pass after a
-new production deployment.
+Initial production caveat: Vercel did not auto-deploy the pushed source during
+the first polling window, and manual `vercel deploy --prod --scope
+cortana-ops-projects` failed with the Vercel daily API deployment quota
+`api-deployments-free-per-day`. That caveat is now resolved by the live
+deployment closeout below.
 
 Follow-up 2026-08-03 UTC retry evidence: the full local marketing pre-deploy
 guard stack (`check:content`, `check:metadata`, `check:routes`,
@@ -146,7 +143,22 @@ manual `vercel deploy --prod --scope cortana-ops-projects` still failed with
 `api-deployments-free-per-day`. `vercel inspect https://reservkit.com --scope
 cortana-ops-projects --json` still reports production deployment
 `dpl_BpbSaocxrHG5k88rMcMsTwHfXPaD`, aliased to `reservkit.com`, and live
-`/docs/notifications` still contains the old reminder-only managed SMS copy.
+`/docs/notifications` at that time contained the old reminder-only managed SMS
+copy.
+
+Follow-up 2026-08-03 UTC live deployment closeout: `vercel inspect
+https://reservkit.com --scope cortana-ops-projects --json` now reports
+production deployment `dpl_CoRSZBg9N98F1RM2c6XqBqB5SWcn` as Ready. Live
+`https://reservkit.com/docs/notifications` contains the managed SMS reminders
+and broadcast SMS copy, including the guidance that automated SMS reminders and
+broadcast SMS can use ReservKit-managed delivery when platform SMS is configured.
+The marketing repo is clean on `main` at `88d5726` (`Record marketing deploy
+quota retry`). Verification passed `npm run check:content`, `npm run
+check:metadata`, `npm run check:routes`, `npm run check:indexing`, `npm run
+check:links`, `npm run check:live` across 19 routes,
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:rendered`
+across desktop and 390px mobile, `npm run lint`, `npm run build`, and
+`git diff --check`.
 
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
