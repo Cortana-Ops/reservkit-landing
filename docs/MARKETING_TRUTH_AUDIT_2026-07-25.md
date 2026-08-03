@@ -139,6 +139,15 @@ an owner uses another deploy path. Do not claim live production proof for this
 copy until `npm run check:live` and live `npm run check:rendered` pass after a
 new production deployment.
 
+Follow-up 2026-08-03 UTC retry evidence: the full local marketing pre-deploy
+guard stack (`check:content`, `check:metadata`, `check:routes`,
+`check:indexing`, `lint`, `build`, and `check:links`) passed again, but a second
+manual `vercel deploy --prod --scope cortana-ops-projects` still failed with
+`api-deployments-free-per-day`. `vercel inspect https://reservkit.com --scope
+cortana-ops-projects --json` still reports production deployment
+`dpl_BpbSaocxrHG5k88rMcMsTwHfXPaD`, aliased to `reservkit.com`, and live
+`/docs/notifications` still contains the old reminder-only managed SMS copy.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
