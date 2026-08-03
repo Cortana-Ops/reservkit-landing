@@ -9,6 +9,7 @@
     "lint": "eslint",
     "check:routes": "node scripts/check-route-manifest.mjs",
     "check:metadata": "node scripts/check-metadata-manifest.mjs",
+    "check:indexing": "node scripts/check-indexing.mjs",
     "check:content": "node scripts/check-content.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:live": "node scripts/check-live.mjs",

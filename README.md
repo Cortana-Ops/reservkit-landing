@@ -21,6 +21,7 @@ Run these before opening or merging a PR:
 npm run check:content
 npm run check:routes
 npm run check:metadata
+npm run check:indexing
 npm run check:links
 npm run lint
 npm run build
@@ -29,6 +30,7 @@ npm run build
 `check:content` blocks stale launch/pricing phrases and unsupported feature claims that should not appear in public marketing.
 `check:routes` compares the shared marketing route manifest against actual `app/**/page.tsx` routes so new pages cannot skip live/link/rendered checks.
 `check:metadata` compares route metadata expectations against the shared route manifest and guards titles, descriptions, canonical URLs, and social titles before the rendered browser check runs.
+`check:indexing` compares the sitemap against the shared route manifest, keeps redirect routes out of indexing, and verifies robots advertises the production host and sitemap.
 `check:links` crawls the current public marketing route set, verifies internal links and same-page anchors, validates approved app login/signup CTA targets, confirms `/beta` redirects to `/early-access`, and checks that the guided setup API returns field validation for bad input.
 
 ## Marketing Launch Mode

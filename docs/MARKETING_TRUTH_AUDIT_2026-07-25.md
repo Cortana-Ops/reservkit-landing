@@ -210,6 +210,17 @@ Scope boundary: metadata QA scripts and docs only; no rendered metadata values,
 public page copy, CTA target, redirect behavior, app runtime, pricing, signup,
 payment, booking, or provider behavior changed.
 
+## 2026-08-03 Marketing Indexing Manifest Guard Follow-Up
+
+The sitemap now includes `/early-access`, matching the current guided-setup
+route that is already covered by page, metadata, live, link, and rendered
+checks. A new `npm run check:indexing` command compares `app/sitemap.ts`
+against `scripts/marketing-routes.mjs`, keeps redirect routes such as `/beta`
+out of the sitemap, and verifies `app/robots.ts` advertises the production host
+and sitemap URL. Scope boundary: sitemap/robots QA and docs only; no public
+page copy, metadata values, CTA target, redirect behavior, app runtime, pricing,
+signup, payment, booking, or provider behavior changed.
+
 ## 2026-08-02 Booking Link And Embed Docs Alignment
 
 The docs index and Getting Started guide now make the live Settings -> Booking
