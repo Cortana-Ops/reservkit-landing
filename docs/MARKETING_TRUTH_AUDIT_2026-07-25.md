@@ -6,6 +6,25 @@ Purpose: keep `reservkit.com` aligned with current app behavior before broader m
 
 Passed. No public marketing page was found making unsupported live claims for public self-serve signup, cart or multi-item checkout, resources/variants, multi-day bookings, staff tip self-service, full email/SMS template editing, or dedicated calendar/card embeds.
 
+## 2026-08-03 Source Claim Re-Audit After Notifications SMS Update
+
+Marketing source was re-audited against the current app feature inventory and
+external-services messaging facts after the `/docs/notifications` broadcast SMS
+copy update. The scan covered the current public route set, shared marketing
+constants, pricing, docs, vertical pages, privacy, terms, roadmap, changelog,
+blog, and content/live guard scripts for stale or overbroad claims around
+cart/multi-item checkout, resource variants, multi-day bookings, staff tip
+self-service, template editing, public cash/pay-later checkout, dedicated
+calendar/card embeds, waiver legal guarantees, exact reminder timing, pricing,
+Enterprise self-serve semantics, and provider disclosure. No page copy changes
+were needed: the source still frames unsupported surfaces as future scope or
+omits them, and the current claims for service fees, balance payments, waiver
+evidence, team/staff gates, SMS reminders/broadcasts, and provider disclosures
+are corroborated by the app feature inventory and source. `npm run
+check:content` passed. Production caveat remains unchanged: source is still
+ahead of live production until Vercel can deploy the pending Notifications copy
+updates.
+
 ## Evidence
 
 - `npm run check:content` passed.
