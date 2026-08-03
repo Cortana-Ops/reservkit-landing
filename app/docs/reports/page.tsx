@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { BarChart3, TrendingUp, Filter, Download } from "lucide-react";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Reports & Analytics",
   description: "Track booking income, customer tips, booking volume, and guest counts in ReservKit. Filter by date range and export CSVs for review.",
-  alternates: { canonical: "https://reservkit.com/docs/reports" },
-};
+  path: "/docs/reports",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

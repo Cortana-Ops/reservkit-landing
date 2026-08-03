@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, ClipboardCheck, CreditCard, FileSignature, LifeBuoy, Route, WalletCards } from "lucide-react";
 import { EarlyAccessRequestForm } from "../components/EarlyAccessRequestForm";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Request Guided Setup",
   description:
     "Request ReservKit setup help for your first direct booking flow.",
-  alternates: { canonical: "https://reservkit.com/early-access" },
-};
+  path: "/early-access",
+});
 
 const included = [
   {

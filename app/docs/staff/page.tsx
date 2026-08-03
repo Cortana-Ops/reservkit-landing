@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { UserPlus, Shield, ClipboardList, CalendarDays } from "lucide-react";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Staff",
   description: "Invite team members, configure roles and permissions, assign staff to bookings, and manage your team schedule in ReservKit.",
-  alternates: { canonical: "https://reservkit.com/docs/staff" },
-};
+  path: "/docs/staff",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

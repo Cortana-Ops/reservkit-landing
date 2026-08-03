@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Boat Rental Booking Software - Payments & Waivers Included",
   description:
     "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and Free-first setup.",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     "charter booking software",
     "pontoon rental software",
   ],
-  alternates: { canonical: "https://reservkit.com/boat-rental-software" },
-};
+  path: "/boat-rental-software",
+});
 
 const features = [
   "Online booking page for rentals and charters",

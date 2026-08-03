@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { PageShell } from "../components/PageShell";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Terms of Service",
   description: "Terms and conditions for using the ReservKit booking platform.",
-  alternates: { canonical: "https://reservkit.com/terms" },
-};
+  path: "/terms",
+});
 
 export default function Terms() {
   return (

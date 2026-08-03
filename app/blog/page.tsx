@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, Rss } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Blog — Rental Operator Guides",
   description:
     "Practical notes for rental operators and experience businesses evaluating direct booking, Stripe payments, waivers, and day-of workflows.",
-  alternates: { canonical: "https://reservkit.com/blog" },
-};
+  path: "/blog",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

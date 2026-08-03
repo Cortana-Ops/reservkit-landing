@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { Bell, Mail, MessageSquare, Reply, ShieldCheck } from "lucide-react";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Notifications",
   description:
     "Understand ReservKit booking emails, SMS reminders, review requests, and optional custom sender setup.",
-  alternates: { canonical: "https://reservkit.com/docs/notifications" },
-};
+  path: "/docs/notifications",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

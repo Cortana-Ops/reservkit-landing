@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CheckCircle2 } from "lucide-react";
 import { pricingSummary } from "../../lib/marketing";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Getting Started Guide",
   description: "Set up ReservKit, create your first activity, connect Stripe, configure waivers, and run a test booking before sharing your booking link.",
-  alternates: { canonical: "https://reservkit.com/docs/getting-started" },
-};
+  path: "/docs/getting-started",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

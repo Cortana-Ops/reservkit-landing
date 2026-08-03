@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CreditCard, RefreshCcw, DollarSign, Tag } from "lucide-react";
 import { enterpriseTier, pricingTiers } from "../../lib/marketing";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Payments",
   description:
     "Connect Stripe, set pricing and refundable damage deposits, issue refunds, and understand ReservKit's current booking fee structure.",
-  alternates: { canonical: "https://reservkit.com/docs/payments" },
-};
+  path: "/docs/payments",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

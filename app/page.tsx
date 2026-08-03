@@ -23,6 +23,7 @@ import {
   PRIMARY_CTA_LABEL,
   pricingSummary,
 } from "./lib/marketing";
+import { createMarketingMetadata } from "./lib/metadata";
 
 const faqItems = [
   {
@@ -236,11 +237,12 @@ const operatorFeatures = [
   },
 ];
 
-export const metadata = {
+export const metadata = createMarketingMetadata({
   title: "ReservKit — Booking software for rental, tour, and experience operators",
   description:
     "Switch to direct booking software with Stripe payments, waiver evidence, refundable damage deposits, day-of operations, and transparent pricing for rental, tour, and experience operators.",
-};
+  path: "/",
+});
 
 export default function Home() {
   return (

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Tour Operator Booking Software - Waivers, Payments, Staff",
   description:
     "ReservKit helps tour and activity operators accept online bookings, collect Stripe payments, manage waivers, and coordinate staff.",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     "activity booking software",
     "guided tour reservation software",
   ],
-  alternates: { canonical: "https://reservkit.com/tour-operator-software" },
-};
+  path: "/tour-operator-software",
+});
 
 const features = [
   "Public booking page for each activity",

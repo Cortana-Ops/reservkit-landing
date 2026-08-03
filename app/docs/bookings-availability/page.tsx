@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CalendarDays, Clock, Link2, X, CheckSquare } from "lucide-react";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Bookings & Availability",
   description: "Manage your availability calendar, time slots, cancellations, and check-in process in ReservKit.",
-  alternates: { canonical: "https://reservkit.com/docs/bookings-availability" },
-};
+  path: "/docs/bookings-availability",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

@@ -167,6 +167,10 @@ The rendered-page guard now verifies the public Pricing page cards at both deskt
 
 The rendered-page guard now fails loudly when `RENDERED_CHECK_ROUTES` contains an unknown route or resolves to an empty route set. This prevents partial marketing QA runs from silently skipping a typoed page during page-by-page launch checks. The default rendered check still covers the current public sitemap route set across desktop and 390px mobile viewports, while `/beta` remains covered by the link/form guard as an intentional redirect to `/early-access`.
 
+## 2026-08-03 Route Metadata And Social Preview Follow-Up
+
+Public route metadata now uses a shared helper so each route keeps its browser title, meta description, canonical URL, Open Graph title/description/URL, and Twitter title/description aligned. Before this pass, non-home pages had unique browser titles and descriptions but inherited homepage Open Graph/Twitter preview metadata. `npm run check:rendered` now verifies the rendered metadata for every public route at desktop and 390px mobile widths, so future route or layout edits fail if a page loses route-specific head tags.
+
 ## 2026-08-02 Booking Link And Embed Docs Alignment
 
 The docs index and Getting Started guide now make the live Settings -> Booking

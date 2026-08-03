@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PricingSection } from "../components/PricingSection";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Pricing",
   description:
     "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $299/month.",
-  alternates: { canonical: "https://reservkit.com/pricing" },
-};
+  path: "/pricing",
+});
 
 const faqs = [
   {

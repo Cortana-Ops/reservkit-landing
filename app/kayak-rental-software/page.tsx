@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Kayak Rental Booking Software - Online Reservations & Waivers",
   description:
     "ReservKit helps kayak and paddleboard rental operators take online reservations, collect Stripe payments, and manage digital waivers.",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     "online kayak rental booking",
     "kayak rental management software",
   ],
-  alternates: { canonical: "https://reservkit.com/kayak-rental-software" },
-};
+  path: "/kayak-rental-software",
+});
 
 const features = [
   "Public booking page for rentals and tours",

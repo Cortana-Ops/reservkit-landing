@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { FileSignature, Settings, UserCheck, ShieldCheck } from "lucide-react";
+import { createMarketingMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Waivers",
   description: "Create digital waiver templates, configure per-guest signer fields, manage guest signing, and track waiver status in ReservKit.",
-  alternates: { canonical: "https://reservkit.com/docs/waivers" },
-};
+  path: "/docs/waivers",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

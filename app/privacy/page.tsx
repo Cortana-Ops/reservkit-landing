@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { PageShell } from "../components/PageShell";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Privacy Policy",
   description: "How ReservKit collects, uses, and protects your data.",
-  alternates: { canonical: "https://reservkit.com/privacy" },
-};
+  path: "/privacy",
+});
 
 export default function Privacy() {
   return (

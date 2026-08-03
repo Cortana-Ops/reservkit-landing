@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { CheckCircle2, Zap, Clock, Lightbulb } from "lucide-react";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Product Roadmap",
   description: "See what we've shipped, what's in progress, and what's coming next for ReservKit — the booking platform for rental operators and experience businesses.",
-  alternates: { canonical: "https://reservkit.com/roadmap" },
-};
+  path: "/roadmap",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

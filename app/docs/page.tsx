@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
 import { ArrowRight, Bell, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Documentation & Guides",
   description: "ReservKit guides for direct bookings, Stripe payments, waivers, staff scheduling, and reports.",
-  alternates: { canonical: "https://reservkit.com/docs" },
-};
+  path: "/docs",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

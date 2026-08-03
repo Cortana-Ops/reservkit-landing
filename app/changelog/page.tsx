@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
+import { createMarketingMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMarketingMetadata({
   title: "Product Updates",
   description: "Recent ReservKit product updates for booking, payments, waivers, and operator workflows.",
-  alternates: { canonical: "https://reservkit.com/changelog" },
-};
+  path: "/changelog",
+});
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
