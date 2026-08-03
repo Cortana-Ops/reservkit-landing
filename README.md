@@ -23,8 +23,15 @@ npm run check:routes
 npm run check:metadata
 npm run check:indexing
 npm run check:links
+npm run check:rendered
 npm run lint
 npm run build
+```
+
+Or run the consolidated gate:
+
+```bash
+npm run verify
 ```
 
 `check:content` blocks stale launch/pricing phrases and unsupported feature claims that should not appear in public marketing.
@@ -32,6 +39,7 @@ npm run build
 `check:metadata` compares route metadata expectations against the shared route manifest and guards titles, descriptions, canonical URLs, and social titles before the rendered browser check runs.
 `check:indexing` compares the sitemap against the shared route manifest, keeps redirect routes out of indexing, and verifies robots advertises the production host and sitemap.
 `check:links` crawls the current public marketing route set, verifies internal links and same-page anchors, validates approved app login/signup CTA targets, confirms `/beta` redirects to `/early-access`, and checks that the guided setup API returns field validation for bad input.
+`check:rendered` loads the public route set at desktop and 390px mobile widths, verifies route-specific metadata, checks for framework overlays, broken images, horizontal overflow, and proves the shared desktop/mobile navigation on every shared-header page.
 
 ## Marketing Launch Mode
 

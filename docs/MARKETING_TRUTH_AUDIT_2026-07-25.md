@@ -270,6 +270,17 @@ check:live`, `npm run lint`, `npm run build`, and `git diff --check`. Scope
 boundary: marketing QA guard/docs only; no public copy, CTA target, pricing,
 app runtime, signup, booking, payment, SMS/email, or Supabase behavior changed.
 
+## 2026-08-03 Marketing Verify Script Follow-Up
+
+Marketing now has a consolidated `npm run verify` gate that runs the current
+source/content/route/metadata/indexing checks, lint, production build,
+link/form crawl, and rendered desktop/mobile route proof. The README quality
+gate list now includes `npm run check:rendered` and points future editors to the
+single verify command so the strongest browser proof is not skipped during
+launch copy or route changes. Scope boundary: marketing QA script/docs only; no
+public copy, CTA target, pricing, app runtime, signup, booking, payment,
+SMS/email, or provider behavior changed.
+
 ## 2026-08-03 Vertical Page Feature-Gate Follow-Up
 
 The boat, kayak, and tour-operator landing pages now include the same concise

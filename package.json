@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "verify": "npm run check:content && npm run check:routes && npm run check:metadata && npm run check:indexing && npm run lint && npm run build && npm run check:links && npm run check:rendered",
     "lint": "eslint",
     "check:routes": "node scripts/check-route-manifest.mjs",
     "check:metadata": "node scripts/check-metadata-manifest.mjs",
