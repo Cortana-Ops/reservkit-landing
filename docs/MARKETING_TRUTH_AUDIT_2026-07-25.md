@@ -79,6 +79,24 @@ The homepage day-of operations copy was tightened so it no longer implies normal
 
 After the app shipped Settings integration validation hardening, the public Notifications guide was updated to match: custom Resend requires both a Resend API key and verified From Email, and custom Twilio requires Account SID, Auth Token, and From Number together. The page still frames both as optional advanced setup and keeps ReservKit-managed delivery as the default launch posture. `scripts/check-content.mjs` and `scripts/check-live.mjs` now guard those provider-completeness claims.
 
+## 2026-08-03 SMS Delivery Facts Closeout
+
+After the app shipped broadcast SMS readiness for either complete org-owned
+Twilio credentials or complete ReservKit-managed platform Twilio configuration,
+the marketing product-facts source of truth was updated in commit `82a51bb`
+(`Align marketing SMS delivery facts`). Vercel production deployment
+`dpl_6MVtyCYzESQComVt5mS5qqjRpMX7` reached Ready and is aliased to
+`https://reservkit.com`.
+
+Verification passed: `npm run check:routes`, `npm run check:metadata`,
+`npm run check:indexing`, `npm run check:content`, `npm run lint`,
+`npm run build`, `npm run check:links`, live `npm run check:live`, and live
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:rendered`
+across 19 routes at desktop and 390px mobile. Scope boundary: marketing facts
+docs and release evidence only; no public page copy, pricing, signup, app
+runtime, templates, recipients, SMS delivery behavior, booking, or payment flow
+changed.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
