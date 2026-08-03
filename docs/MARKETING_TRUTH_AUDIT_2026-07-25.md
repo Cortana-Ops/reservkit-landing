@@ -182,6 +182,21 @@ feature gates while preserving the Free-first primary CTA. `scripts/check-conten
 guards the shared note so future vertical-page edits do not imply that every
 listed capability is included on Free.
 
+## 2026-08-03 Marketing Route Manifest Guard Follow-Up
+
+The marketing QA route inventory now lives in `scripts/marketing-routes.mjs`
+and is shared by `check:live`, `check:links`, and `check:rendered` instead of
+being duplicated separately in each guard. A new `npm run check:routes` command
+compares that manifest against actual `app/**/page.tsx` routes, excluding API
+routes and keeping `/beta` as an intentional redirect route covered by the
+link/form guard. This prevents future public pages from silently skipping live,
+link, or rendered-route verification during launch audits. Verification passed
+`npm run check:routes`, `npm run check:content`, `npm run lint`, `npm run
+build`, `npm run check:links`, focused `RENDERED_CHECK_ROUTES=/,/pricing npm
+run check:rendered`, and `npm run check:live`. Scope boundary: route QA scripts
+and docs only; no public page copy, metadata, CTA target, redirect behavior, app
+runtime, pricing, signup, payment, booking, or provider behavior changed.
+
 ## 2026-08-02 Booking Link And Embed Docs Alignment
 
 The docs index and Getting Started guide now make the live Settings -> Booking

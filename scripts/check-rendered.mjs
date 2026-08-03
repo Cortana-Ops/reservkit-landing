@@ -1,30 +1,11 @@
 import { existsSync } from "node:fs";
 import { chromium } from "playwright";
+import { MARKETING_ROUTES } from "./marketing-routes.mjs";
 
 const baseUrl = process.env.RESERVKIT_MARKETING_BASE_URL || "https://reservkit.com";
 const chromeExecutable = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
-const routes = [
-  "/",
-  "/pricing",
-  "/early-access",
-  "/docs",
-  "/docs/getting-started",
-  "/docs/payments",
-  "/docs/staff",
-  "/docs/waivers",
-  "/docs/notifications",
-  "/docs/reports",
-  "/docs/bookings-availability",
-  "/roadmap",
-  "/changelog",
-  "/blog",
-  "/boat-rental-software",
-  "/kayak-rental-software",
-  "/tour-operator-software",
-  "/terms",
-  "/privacy",
-];
+const routes = MARKETING_ROUTES;
 
 const expectedMetadataByRoute = {
   "/": {

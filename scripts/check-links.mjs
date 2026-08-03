@@ -1,33 +1,11 @@
+import { EXPECTED_REDIRECTS, MARKETING_REDIRECT_ROUTES, MARKETING_ROUTES } from "./marketing-routes.mjs";
+
 const baseUrl = process.env.RESERVKIT_MARKETING_BASE_URL || "https://reservkit.com";
 const baseOrigin = new URL(baseUrl).origin;
 const appOrigin = "https://app.reservkit.com";
 
-const seedRoutes = [
-  "/",
-  "/beta",
-  "/pricing",
-  "/early-access",
-  "/docs",
-  "/docs/getting-started",
-  "/docs/payments",
-  "/docs/staff",
-  "/docs/waivers",
-  "/docs/notifications",
-  "/docs/reports",
-  "/docs/bookings-availability",
-  "/roadmap",
-  "/changelog",
-  "/blog",
-  "/boat-rental-software",
-  "/kayak-rental-software",
-  "/tour-operator-software",
-  "/terms",
-  "/privacy",
-];
-
-const expectedRedirects = {
-  "/beta": "/early-access",
-};
+const seedRoutes = [...MARKETING_ROUTES, ...MARKETING_REDIRECT_ROUTES];
+const expectedRedirects = EXPECTED_REDIRECTS;
 
 const failures = [];
 const htmlCache = new Map();

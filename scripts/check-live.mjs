@@ -1,3 +1,5 @@
+import { MARKETING_ROUTES } from "./marketing-routes.mjs";
+
 const baseUrl = process.env.RESERVKIT_MARKETING_BASE_URL || "https://reservkit.com";
 const configuredMarketingMode =
   process.env.NEXT_PUBLIC_MARKETING_MODE === "prelaunch"
@@ -7,27 +9,7 @@ const configuredMarketingMode =
         : null;
 let detectedMarketingMode = null;
 
-const routes = [
-  "/",
-  "/pricing",
-  "/early-access",
-  "/docs",
-  "/docs/getting-started",
-  "/docs/payments",
-  "/docs/staff",
-  "/docs/waivers",
-  "/docs/notifications",
-  "/docs/reports",
-  "/docs/bookings-availability",
-  "/roadmap",
-  "/changelog",
-  "/blog",
-  "/boat-rental-software",
-  "/kayak-rental-software",
-  "/tour-operator-software",
-  "/terms",
-  "/privacy",
-];
+const routes = MARKETING_ROUTES;
 
 const sharedRequiredByRoute = {
   "/early-access": ["Request setup help", "reply within one business day"],
