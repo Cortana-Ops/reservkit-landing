@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
-import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary } from "../lib/marketing";
+import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary, verticalFeatureGateNote } from "../lib/marketing";
 import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
@@ -109,6 +109,9 @@ export default function TourOperatorSoftware() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 rounded-xl border border-amber/20 bg-amber/5 p-4 text-sm leading-relaxed text-slate-600">
+              {verticalFeatureGateNote}
+            </p>
           </div>
         </section>
 

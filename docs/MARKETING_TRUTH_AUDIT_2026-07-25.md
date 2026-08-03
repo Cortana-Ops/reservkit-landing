@@ -171,6 +171,17 @@ The rendered-page guard now fails loudly when `RENDERED_CHECK_ROUTES` contains a
 
 Public route metadata now uses a shared helper so each route keeps its browser title, meta description, canonical URL, Open Graph title/description/URL, and Twitter title/description aligned. Before this pass, non-home pages had unique browser titles and descriptions but inherited homepage Open Graph/Twitter preview metadata. `npm run check:rendered` now verifies the rendered metadata for every public route at desktop and 390px mobile widths, so future route or layout edits fail if a page loses route-specific head tags.
 
+## 2026-08-03 Vertical Page Feature-Gate Follow-Up
+
+The boat, kayak, and tour-operator landing pages now include the same concise
+feature-availability note below their capability lists: Free covers the first
+low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers,
+reports, broadcasts, equipment, dynamic pricing, deposits, coupons, and add-ons.
+This keeps vertical SEO pages aligned with the public Pricing page and app-side
+feature gates while preserving the Free-first primary CTA. `scripts/check-content.mjs`
+guards the shared note so future vertical-page edits do not imply that every
+listed capability is included on Free.
+
 ## 2026-08-02 Booking Link And Embed Docs Alignment
 
 The docs index and Getting Started guide now make the live Settings -> Booking
