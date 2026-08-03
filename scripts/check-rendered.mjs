@@ -25,9 +25,32 @@ const routes = [
   "/terms",
   "/privacy",
 ];
-const selectedRoutes = process.env.RENDERED_CHECK_ROUTES
-  ? routes.filter((route) => process.env.RENDERED_CHECK_ROUTES.split(",").includes(route))
-  : routes;
+
+function parseSelectedRoutes() {
+  if (!process.env.RENDERED_CHECK_ROUTES) return routes;
+
+  const requestedRoutes = process.env.RENDERED_CHECK_ROUTES
+    .split(",")
+    .map((route) => route.trim())
+    .filter(Boolean);
+  const unknownRoutes = requestedRoutes.filter((route) => !routes.includes(route));
+
+  if (unknownRoutes.length > 0) {
+    throw new Error(
+      `RENDERED_CHECK_ROUTES includes unknown route(s): ${unknownRoutes.join(", ")}. ` +
+        `Known routes: ${routes.join(", ")}`
+    );
+  }
+
+  const selected = [...new Set(requestedRoutes)];
+  if (selected.length === 0) {
+    throw new Error("RENDERED_CHECK_ROUTES did not include any valid routes.");
+  }
+
+  return selected;
+}
+
+const selectedRoutes = parseSelectedRoutes();
 
 const viewports = [
   { label: "desktop", width: 1440, height: 1000 },
