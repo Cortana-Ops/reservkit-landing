@@ -252,6 +252,24 @@ The rendered-page guard now fails loudly when `RENDERED_CHECK_ROUTES` contains a
 
 Public route metadata now uses a shared helper so each route keeps its browser title, meta description, canonical URL, Open Graph title/description/URL, and Twitter title/description aligned. Before this pass, non-home pages had unique browser titles and descriptions but inherited homepage Open Graph/Twitter preview metadata. `npm run check:rendered` now verifies the rendered metadata for every public route at desktop and 390px mobile widths, so future route or layout edits fail if a page loses route-specific head tags.
 
+## 2026-08-03 Shared Navigation Render Guard Follow-Up
+
+The rendered-page guard now proves shared marketing navigation across the route
+set instead of only checking the homepage mobile menu. For every public page
+that uses the shared header, `npm run check:rendered` verifies the desktop
+header exposes exactly one visible `ReservKit`, `Pricing`, `Docs`, `Log in`,
+and `Start free` link with the approved destinations; at 390px mobile it opens
+the hamburger menu and verifies `Pricing`, `Docs`, `Log in`, and `Start free`
+are visible and pointed at the approved routes. `/early-access` intentionally
+keeps its focused guided-setup layout and is guarded for a visible `Back to
+ReservKit` link plus the existing inline validation path. Live rendered proof
+passed across all 19 public routes at desktop and 390px mobile. Verification
+also passed `npm run check:content`, `npm run check:routes`, `npm run
+check:metadata`, `npm run check:indexing`, `npm run check:links`, `npm run
+check:live`, `npm run lint`, `npm run build`, and `git diff --check`. Scope
+boundary: marketing QA guard/docs only; no public copy, CTA target, pricing,
+app runtime, signup, booking, payment, SMS/email, or Supabase behavior changed.
+
 ## 2026-08-03 Vertical Page Feature-Gate Follow-Up
 
 The boat, kayak, and tour-operator landing pages now include the same concise

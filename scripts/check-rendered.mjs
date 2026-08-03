@@ -41,6 +41,22 @@ const viewports = [
 
 const failures = [];
 const maxConcurrency = Number(process.env.RENDERED_CHECK_CONCURRENCY || 4);
+const routesWithSharedHeader = routes.filter((route) => route !== "/early-access");
+
+const desktopHeaderLinks = [
+  { text: "ReservKit", href: "/" },
+  { text: "Pricing", href: "/pricing" },
+  { text: "Docs", href: "/docs" },
+  { text: "Log in", href: "https://app.reservkit.com/login" },
+  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+];
+
+const mobileMenuLinks = [
+  { text: "Pricing", href: "/pricing" },
+  { text: "Docs", href: "/docs" },
+  { text: "Log in", href: "https://app.reservkit.com/login" },
+  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+];
 
 function routeUrl(route) {
   return new URL(route, baseUrl).toString();
@@ -60,6 +76,105 @@ async function launchBrowser() {
       );
     }
     throw error;
+  }
+}
+
+async function countVisibleHeaderLinks(page, expectedLink) {
+  return page.evaluate((link) => {
+    return Array.from(document.querySelectorAll("header a")).filter((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const style = window.getComputedStyle(anchor);
+      return (
+        anchor.textContent?.trim() === link.text &&
+        anchor.getAttribute("href") === link.href &&
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.visibility !== "hidden" &&
+        style.display !== "none"
+      );
+    }).length;
+  }, expectedLink);
+}
+
+async function checkDesktopHeaderLinks(page, route, viewport) {
+  if (viewport.label !== "desktop" || !routesWithSharedHeader.includes(route)) return;
+
+  for (const expectedLink of desktopHeaderLinks) {
+    const visibleLinkCount = await countVisibleHeaderLinks(page, expectedLink);
+    if (visibleLinkCount !== 1) {
+      failures.push(
+        `${viewport.label} ${route} header expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleLinkCount}`
+      );
+    }
+  }
+}
+
+async function checkMobileHeaderMenu(page, route, viewport) {
+  if (viewport.label !== "mobile" || !routesWithSharedHeader.includes(route)) return;
+
+  await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
+  await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
+  await page.waitForTimeout(750);
+  const mobileMenuState = await page.evaluate(() => {
+    const button = document.querySelector('header button[aria-label="Open menu"]');
+    if (!(button instanceof HTMLButtonElement)) return { found: false };
+    return {
+      found: true,
+      ariaLabel: button.getAttribute("aria-label"),
+      expanded: button.getAttribute("aria-expanded"),
+      visible: button.getBoundingClientRect().width > 0 && button.getBoundingClientRect().height > 0,
+    };
+  });
+  if (!mobileMenuState.found || !mobileMenuState.visible) {
+    failures.push(`${viewport.label} ${route} mobile menu button is not visible`);
+    return;
+  }
+  if (mobileMenuState.expanded !== "false") {
+    failures.push(`${viewport.label} ${route} mobile menu button has unexpected aria-expanded=${mobileMenuState.expanded}`);
+  }
+  await page.getByRole("button", { name: "Open menu", exact: true }).click({ timeout: 5_000 });
+  await page.waitForTimeout(100);
+  let openedMenuStateAfterRender = await page.evaluate(() => {
+    const activeButton = document.querySelector("header button");
+    return {
+      ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
+      expanded: activeButton?.getAttribute("aria-expanded") ?? null,
+    };
+  });
+  if (openedMenuStateAfterRender.expanded !== "true") {
+    const buttonCenter = await page.evaluate(() => {
+      const button = document.querySelector("header button");
+      if (!button) return null;
+      const rect = button.getBoundingClientRect();
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    });
+    if (buttonCenter) {
+      await page.mouse.click(buttonCenter.x, buttonCenter.y);
+      await page.waitForTimeout(100);
+      openedMenuStateAfterRender = await page.evaluate(() => {
+        const activeButton = document.querySelector("header button");
+        return {
+          ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
+          expanded: activeButton?.getAttribute("aria-expanded") ?? null,
+        };
+      });
+    }
+  }
+  const closeLabel = openedMenuStateAfterRender.ariaLabel;
+  const expandedAfterClick = openedMenuStateAfterRender.expanded;
+  if (closeLabel !== "Close menu" || expandedAfterClick !== "true") {
+    failures.push(
+      `${viewport.label} ${route} mobile menu did not open cleanly: aria-label=${closeLabel}, aria-expanded=${expandedAfterClick}`
+    );
+  }
+
+  for (const expectedLink of mobileMenuLinks) {
+    const visibleMenuLinkCount = await countVisibleHeaderLinks(page, expectedLink);
+    if (visibleMenuLinkCount !== 1) {
+      failures.push(
+        `${viewport.label} ${route} mobile menu expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleMenuLinkCount}`
+      );
+    }
   }
 }
 
@@ -127,6 +242,9 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       failures.push(`${viewport.label} ${route} console issues: ${messages.join(" | ")}`);
     }
 
+    await checkDesktopHeaderLinks(page, route, viewport);
+    await checkMobileHeaderMenu(page, route, viewport);
+
     const expectedMetadata = EXPECTED_METADATA_BY_ROUTE[route];
     if (!expectedMetadata) {
       failures.push(`${viewport.label} ${route} is missing rendered metadata expectations`);
@@ -151,89 +269,6 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     }
 
     if (route === "/" && viewport.label === "mobile") {
-      await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
-      await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
-      await page.waitForTimeout(3_000);
-      const mobileMenuState = await page.evaluate(() => {
-        const button = document.querySelector('header button[aria-label="Open menu"]');
-        if (!(button instanceof HTMLButtonElement)) return { found: false };
-        return {
-          found: true,
-          ariaLabel: button.getAttribute("aria-label"),
-          expanded: button.getAttribute("aria-expanded"),
-          visible: button.getBoundingClientRect().width > 0 && button.getBoundingClientRect().height > 0,
-        };
-      });
-      if (!mobileMenuState.found || !mobileMenuState.visible) {
-        failures.push(`${viewport.label} ${route} mobile menu button is not visible`);
-        return;
-      }
-      const expanded = mobileMenuState.expanded;
-      if (expanded !== "false") {
-        failures.push(`${viewport.label} ${route} mobile menu button has unexpected aria-expanded=${expanded}`);
-      }
-      await page.getByRole("button", { name: "Open menu", exact: true }).click({ timeout: 5_000 });
-      await page.waitForTimeout(100);
-      let openedMenuStateAfterRender = await page.evaluate(() => {
-        const activeButton = document.querySelector("header button");
-        return {
-          ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
-          expanded: activeButton?.getAttribute("aria-expanded") ?? null,
-        };
-      });
-      if (openedMenuStateAfterRender.expanded !== "true") {
-        const buttonCenter = await page.evaluate(() => {
-          const button = document.querySelector("header button");
-          if (!button) return null;
-          const rect = button.getBoundingClientRect();
-          return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
-        });
-        if (buttonCenter) {
-          await page.mouse.click(buttonCenter.x, buttonCenter.y);
-          await page.waitForTimeout(100);
-          openedMenuStateAfterRender = await page.evaluate(() => {
-            const activeButton = document.querySelector("header button");
-            return {
-              ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
-              expanded: activeButton?.getAttribute("aria-expanded") ?? null,
-            };
-          });
-        }
-      }
-      const closeLabel = openedMenuStateAfterRender.ariaLabel;
-      const expandedAfterClick = openedMenuStateAfterRender.expanded;
-      if (closeLabel !== "Close menu" || expandedAfterClick !== "true") {
-        failures.push(
-          `${viewport.label} ${route} mobile menu did not open cleanly: aria-label=${closeLabel}, aria-expanded=${expandedAfterClick}`
-        );
-      }
-      const expectedMobileMenuLinks = [
-        { text: "Pricing", href: "/pricing" },
-        { text: "Docs", href: "/docs" },
-        { text: "Log in", href: "https://app.reservkit.com/login" },
-        { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
-      ];
-      for (const expectedLink of expectedMobileMenuLinks) {
-        const visibleMenuLinkCount = await page.evaluate((link) => {
-          return Array.from(document.querySelectorAll("header a")).filter((anchor) => {
-            const rect = anchor.getBoundingClientRect();
-            const style = window.getComputedStyle(anchor);
-            return (
-              anchor.textContent?.trim() === link.text &&
-              anchor.getAttribute("href") === link.href &&
-              rect.width > 0 &&
-              rect.height > 0 &&
-              style.visibility !== "hidden" &&
-              style.display !== "none"
-            );
-          }).length;
-        }, expectedLink);
-        if (visibleMenuLinkCount !== 1) {
-          failures.push(
-            `${viewport.label} ${route} mobile menu expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleMenuLinkCount}`
-          );
-        }
-      }
       const heroHeadingMetrics = await page.evaluate(() => {
         const heading = document.querySelector("h1");
         if (!heading) return null;
@@ -253,6 +288,23 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
         failures.push(
           `${viewport.label} ${route} hero heading clips horizontally: ${JSON.stringify(heroHeadingMetrics)}`
         );
+      }
+    }
+
+    if (route === "/early-access") {
+      const backLinkCount = await page.evaluate(() => {
+        return Array.from(document.querySelectorAll("a")).filter((anchor) => {
+          const rect = anchor.getBoundingClientRect();
+          return (
+            anchor.textContent?.replace(/\s+/g, " ").trim() === "Back to ReservKit" &&
+            anchor.getAttribute("href") === "/" &&
+            rect.width > 0 &&
+            rect.height > 0
+          );
+        }).length;
+      });
+      if (backLinkCount !== 1) {
+        failures.push(`${viewport.label} ${route} expected one visible Back to ReservKit link, found ${backLinkCount}`);
       }
     }
 
