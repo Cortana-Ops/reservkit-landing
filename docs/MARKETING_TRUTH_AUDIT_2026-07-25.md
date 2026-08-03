@@ -197,6 +197,19 @@ run check:rendered`, and `npm run check:live`. Scope boundary: route QA scripts
 and docs only; no public page copy, metadata, CTA target, redirect behavior, app
 runtime, pricing, signup, payment, booking, or provider behavior changed.
 
+## 2026-08-03 Marketing Metadata Manifest Guard Follow-Up
+
+Rendered route metadata expectations now live in
+`scripts/marketing-metadata.mjs` and are imported by `check:rendered` instead
+of being embedded directly in the browser checker. A new `npm run
+check:metadata` command compares those expectations against
+`scripts/marketing-routes.mjs`, keeps redirect routes such as `/beta` out of
+page metadata, and guards non-empty titles, descriptions, canonical URLs, and
+social titles before the more expensive desktop/mobile rendered pass runs.
+Scope boundary: metadata QA scripts and docs only; no rendered metadata values,
+public page copy, CTA target, redirect behavior, app runtime, pricing, signup,
+payment, booking, or provider behavior changed.
+
 ## 2026-08-02 Booking Link And Embed Docs Alignment
 
 The docs index and Getting Started guide now make the live Settings -> Booking
