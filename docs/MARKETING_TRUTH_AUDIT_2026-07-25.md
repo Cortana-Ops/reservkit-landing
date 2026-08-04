@@ -21,11 +21,10 @@ desktop/mobile checks across all 19 public routes, plus focused local live
 checks against `/docs/notifications` and the 19-route local live crawl.
 Production is now updated: direct fetch of
 `https://reservkit.com/docs/notifications` confirmed both prerequisite strings,
-and `vercel inspect https://reservkit.com` reports production deployment
-`dpl_59QLj1BDngyGgPHzELAjQbUuoUae` Ready and aliased to
-`https://reservkit.com`. The first manual `vercel deploy --prod -y` attempt
-failed with Vercel quota `api-deployments-free-per-day`, but the later
-production deployment caught up.
+and `vercel inspect https://reservkit.com` reports a Ready production
+deployment aliased to `https://reservkit.com`. The first manual
+`vercel deploy --prod -y` attempt failed with Vercel quota
+`api-deployments-free-per-day`, but the later production deployment caught up.
 Scope boundary: public notification docs and marketing guardrails only; no app
 runtime, provider/env/function/schema/template/scheduling/customer-send
 behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
