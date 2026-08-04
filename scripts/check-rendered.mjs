@@ -63,6 +63,23 @@ const homepageHeroLinks = [
   { text: "See how it works", href: "#workflow" },
 ];
 
+const homepageFooterLinks = [
+  { text: "Docs", href: "/docs" },
+  { text: "Roadmap", href: "/roadmap" },
+  { text: "Blog", href: "/blog" },
+  { text: "Pricing", href: "/pricing" },
+  { text: "Privacy", href: "/privacy" },
+  { text: "Terms", href: "/terms" },
+  { text: "Contact", href: "mailto:hello@reservkit.com" },
+];
+
+const pageShellFooterLinks = [
+  { text: "← Back to ReservKit", href: "/" },
+  { text: "Privacy", href: "/privacy" },
+  { text: "Terms", href: "/terms" },
+  { text: "Contact", href: "mailto:hello@reservkit.com" },
+];
+
 function routeUrl(route) {
   return new URL(route, baseUrl).toString();
 }
@@ -245,6 +262,46 @@ async function checkMobileHeaderMenu(page, route, viewport) {
   }
 }
 
+async function checkFooterLinks(page, route, viewport) {
+  if (route === "/early-access") return;
+
+  const expectedLinks = route === "/" ? homepageFooterLinks : pageShellFooterLinks;
+  const renderedFooterLinks = await page.evaluate(() => {
+    const footer = Array.from(document.querySelectorAll("footer")).at(-1);
+    if (!footer) return [];
+
+    return Array.from(footer.querySelectorAll("a")).map((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const style = window.getComputedStyle(anchor);
+      return {
+        text: anchor.textContent?.replace(/\s+/g, " ").trim() ?? "",
+        href: anchor.getAttribute("href") ?? "",
+        visible:
+          rect.width > 0 &&
+          rect.height > 0 &&
+          style.visibility !== "hidden" &&
+          style.display !== "none",
+      };
+    });
+  });
+
+  if (renderedFooterLinks.length === 0) {
+    failures.push(`${viewport.label} ${route} footer rendered no links`);
+    return;
+  }
+
+  for (const expectedLink of expectedLinks) {
+    const visibleLinkCount = renderedFooterLinks.filter(
+      (link) => link.text === expectedLink.text && link.href === expectedLink.href && link.visible
+    ).length;
+    if (visibleLinkCount !== 1) {
+      failures.push(
+        `${viewport.label} ${route} footer expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleLinkCount}`
+      );
+    }
+  }
+}
+
 async function checkRoute(browser, route, viewport, attempt = 1) {
   const page = await browser.newPage({ viewport });
   const messages = [];
@@ -312,6 +369,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     await checkHomepageHeroActions(page, route, viewport);
     await checkDesktopHeaderLinks(page, route, viewport);
     await checkMobileHeaderMenu(page, route, viewport);
+    await checkFooterLinks(page, route, viewport);
 
     const expectedMetadata = EXPECTED_METADATA_BY_ROUTE[route];
     if (!expectedMetadata) {
