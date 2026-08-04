@@ -29,6 +29,19 @@ runtime, provider/env/function/schema/template/scheduling/customer-send
 behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
 changed.
 
+## 2026-08-04 Guided Setup Form Contract Guard
+
+A follow-up rendered-page audit tightened the `/early-access` guided setup form
+contract. The exported `earlyAccessRequestFields` list now includes
+`biggestBookingProblem`, matching the live form and API validation contract, and
+the marketing guards now prove the empty-form validation path on both desktop
+and mobile for name, email, business name, business type, and the booking-problem
+textarea. The link/API guard also requires invalid guided setup API payloads to
+return all key field validation errors, including `biggestBookingProblem`.
+Scope boundary: marketing form contract and verification only; no public signup
+posture, pricing, CTA destinations, app runtime, Resend delivery behavior,
+booking, payment, Supabase, or customer/operator workflow changed.
+
 ## 2026-08-04 Notifications Test Prerequisite Alignment
 
 After the app shipped Settings notification preview prerequisite guards, the

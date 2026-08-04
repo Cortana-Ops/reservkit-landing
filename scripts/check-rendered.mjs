@@ -614,20 +614,35 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       }
     }
 
-    if (route === "/early-access" && viewport.label === "mobile") {
+    if (route === "/early-access") {
       await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
       await page.waitForLoadState("networkidle", { timeout: 30_000 });
       await page.waitForTimeout(1_500);
       await page.getByRole("button", { name: /request setup help/i }).click();
       await page.locator("#early-access-name-error").waitFor({ state: "visible" });
       await page.locator("#early-access-email-error").waitFor({ state: "visible" });
+      await page.locator("#early-access-business-name-error").waitFor({ state: "visible" });
+      await page.locator("#early-access-business-type-error").waitFor({ state: "visible" });
+      await page.locator("#early-access-biggest-booking-problem-error").waitFor({ state: "visible" });
       const nameError = await page.locator("#early-access-name-error").innerText();
       const emailError = await page.locator("#early-access-email-error").innerText();
+      const businessNameError = await page.locator("#early-access-business-name-error").innerText();
+      const businessTypeError = await page.locator("#early-access-business-type-error").innerText();
+      const bookingProblemError = await page.locator("#early-access-biggest-booking-problem-error").innerText();
       if (nameError !== "Name is required.") {
         failures.push(`${viewport.label} ${route} rendered unexpected name validation: ${nameError}`);
       }
       if (emailError !== "Enter a valid email address.") {
         failures.push(`${viewport.label} ${route} rendered unexpected email validation: ${emailError}`);
+      }
+      if (businessNameError !== "Business name is required.") {
+        failures.push(`${viewport.label} ${route} rendered unexpected business name validation: ${businessNameError}`);
+      }
+      if (businessTypeError !== "Business type is required.") {
+        failures.push(`${viewport.label} ${route} rendered unexpected business type validation: ${businessTypeError}`);
+      }
+      if (bookingProblemError !== "Tell us the main booking problem you want fixed.") {
+        failures.push(`${viewport.label} ${route} rendered unexpected booking-problem validation: ${bookingProblemError}`);
       }
     }
   } catch (error) {

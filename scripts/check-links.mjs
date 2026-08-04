@@ -201,8 +201,11 @@ async function checkInvalidSetupPost() {
   if (response.status !== 400) {
     failures.push(`/api/early-access-request invalid payload returned HTTP ${response.status} instead of 400`);
   }
-  if (!text.includes("errors") || !text.includes("email")) {
-    failures.push("/api/early-access-request invalid payload response did not include field validation errors");
+  const requiredErrorFields = ["name", "email", "businessName", "businessType", "biggestBookingProblem"];
+  for (const field of requiredErrorFields) {
+    if (!text.includes(field)) {
+      failures.push(`/api/early-access-request invalid payload response did not include ${field} validation`);
+    }
   }
 }
 

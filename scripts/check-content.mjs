@@ -271,6 +271,7 @@ const required = [
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "aria-describedby" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "biggestBookingProblem" },
   { file: "app/components/EarlyAccessRequestForm.tsx", text: "What is the biggest thing you need ReservKit to fix?" },
+  { file: "app/lib/marketing.ts", text: '"biggestBookingProblem"' },
   { file: "app/lib/marketing.ts", text: "/early-access" },
   { file: "app/api/early-access-request/route.ts", text: "EARLY_ACCESS_REQUEST_TO_EMAIL" },
   { file: "app/api/early-access-request/route.ts", text: "biggestBookingProblem" },

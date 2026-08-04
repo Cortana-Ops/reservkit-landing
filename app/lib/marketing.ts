@@ -141,6 +141,7 @@ export const earlyAccessRequestFields = [
   "businessType",
   "currentBookingTool",
   "monthlyBookingVolume",
+  "biggestBookingProblem",
   "website",
   "notes",
 ] as const;
