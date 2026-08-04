@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     q: "How do customer payments work?",
-    a: "Customers pay through Stripe Checkout. ReservKit uses Stripe Connect so booking payments route to the operator's connected Stripe account.",
+    a: "Customers pay through Stripe Checkout. ReservKit uses Stripe Connect to create the checkout flow and route the connected-account payment through Stripe.",
   },
   {
     q: "Do customers need an account to book?",
@@ -65,7 +65,7 @@ const painCards = [
   },
   {
     title: "Payments should belong to your business",
-    body: "ReservKit uses Stripe Connect so customer payments route through your connected Stripe account instead of a platform-owned payment relationship.",
+    body: "ReservKit uses Stripe Connect so customer payments route through Stripe instead of a platform-owned payment relationship.",
   },
   {
     title: "Waivers should create usable evidence",
@@ -84,7 +84,7 @@ const whyReservKit = [
   },
   {
     title: "Keep payments tied to your business",
-    body: "Stripe Connect lets operators use their own Stripe account, payout schedule, customer payment records, and checkout branding.",
+    body: "Stripe Connect lets operators use their own Stripe account while Stripe controls payout timing, processing fees, and connected-account money movement.",
   },
   {
     title: "Collect the messy operational pieces together",
@@ -111,7 +111,7 @@ const revenuePoints = [
   "Published monthly plans and booking fees",
   "Lower booking fee percentage on higher-volume plans",
   "Operator-controlled customer-facing service fees",
-  "Stripe payments routed to your connected account",
+  "Stripe Connect checkout through Stripe",
 ];
 
 const controlPoints = [
@@ -263,7 +263,7 @@ export default function Home() {
                 Booking software that keeps operators in control of bookings, payments, and the day of work.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-                ReservKit helps rental, tour, and experience businesses take direct bookings, collect payments through their own Stripe account, gather waiver evidence, handle refundable damage deposits, and give staff a clear day-of view.
+                ReservKit helps rental, tour, and experience businesses take direct bookings, collect payments through Stripe Connect, gather waiver evidence, handle refundable damage deposits, and give staff a clear day-of view.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink

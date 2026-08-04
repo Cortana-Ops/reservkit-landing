@@ -32,7 +32,7 @@ const articles = [
       "The first setup session focuses on one working booking link. Here is what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
       POSITIONING_LINE + " Free-first signup lets operators build the first booking flow before choosing a paid plan.",
-      "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. Payments go through the operator's connected Stripe account, while ReservKit collects the plan-based booking fee on eligible booking subtotal where applicable.",
+      "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. ReservKit creates the Stripe Connect checkout flow and routes the connected-account payment through Stripe, while collecting the plan-based booking fee on eligible booking subtotal where applicable.",
       "Public plan pricing is documented plainly: " + pricingSummary,
       "If you want help evaluating ReservKit, request guided setup with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
     ],
