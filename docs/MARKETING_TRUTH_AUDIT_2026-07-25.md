@@ -295,11 +295,12 @@ Source verification passed `npm run verify`, focused local
 `RESERVKIT_MARKETING_BASE_URL=http://127.0.0.1:3011 npm run check:live`,
 focused rendered desktop/mobile checks for `/`, `/pricing`, and
 `/docs/getting-started`, `npm run check:content`, `npm run lint`, and
-`git diff --check`. Production deploy from commit `099a45b` was blocked by the
-current Vercel quota response `api-deployments-free-per-day`, so live
-`https://reservkit.com` still points at prior deployment
-`dpl_Av4QsB5cU3Dyp1okPjLXJaXkG1ow` and production `check:live` correctly fails
-on the old confirmation-email phrases until the deployment is retried.
+`git diff --check`. The first explicit production deploy attempt from commit
+`099a45b` was blocked by Vercel quota `api-deployments-free-per-day`, but the
+later production deployment `dpl_5wGGZFTRgvSjgJHTMAhKBerSN6tn` is Ready and
+aliased to `https://reservkit.com`. Post-deploy
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live` passed
+across 19 routes with the stricter confirmation-email guards.
 
 ## 2026-08-03 Rendered Route Selection Guard Follow-Up
 
