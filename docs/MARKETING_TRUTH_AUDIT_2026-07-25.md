@@ -192,6 +192,10 @@ The public pricing page still matched the app-side prices, booking fees, and boo
 
 The public Bookings & Availability guide was tightened to match app behavior. It no longer says operators handle generic `booking requests`, no longer implies every staff member can create manual bookings, and no longer says checked-in bookings are excluded from cancellation flows. The guide now says operator-side bookings can be created by owners, admins, and permissioned team members, and that checked-in bookings should still use the Booking Detail cancellation flow when cancellation is needed. `scripts/check-content.mjs` guards the corrected wording.
 
+## 2026-08-04 Capacity Claim Truth Follow-Up
+
+The public Bookings & Availability guide no longer makes an absolute `no overbooking is possible` promise. It now says fully booked slots stop appearing as bookable online and checkout still checks capacity before creating a paid booking. `docs/MARKETING_PRODUCT_FACTS.md`, `scripts/check-content.mjs`, and `scripts/check-live.mjs` guard this safer capacity wording so future marketing copy describes the shipped controls instead of making an impossible-sounding guarantee.
+
 ## 2026-08-02 Waiver Documentation Truth Follow-Up
 
 The public waiver docs and cross-links were tightened to avoid broad legal/compliance promises. Public copy now says digital waivers are for activities that require them, avoids blanket `from every guest` language, removes casual `in seconds` signing promises, and avoids prescribing which signer fields are sufficient. The guide now tells operators to use waiver language and required fields reviewed for their business, activities, location, counsel, insurer, and operating requirements. `scripts/check-content.mjs` guards those safer waiver-doc boundaries.

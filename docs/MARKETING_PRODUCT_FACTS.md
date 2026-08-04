@@ -1,6 +1,6 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-08-03
+**Last updated:** 2026-08-04
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
@@ -41,6 +41,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - Activity-specific public links can open a single activity booking page.
 - The all-activity booking page remains available for browsing every published activity.
 - Public booking supports selecting availability, guest count, customer details, optional promo code, optional tip, and Stripe Checkout.
+- Public booking hides fully booked slots from online booking and checks capacity again before creating a paid booking.
 - A real Stripe sandbox Checkout completed for a one-guest `$45.00` Test Lab booking and redirected to `payment-success`.
 - Payment success showed the confirmed booking reference, manage-booking link, receipt link, and waiver link.
 - Receipt showed paid booking details and total.
@@ -118,6 +119,7 @@ Do not market the following as live:
 - Payroll, payout ledger, time clock, or tax handling.
 - Public cash/pay-later checkout.
 - Split tenders or partial offline payments.
+- Absolute capacity guarantees such as `no overbooking is possible`; describe the actual slot visibility and checkout capacity checks instead.
 
 ## Product Media Rules
 

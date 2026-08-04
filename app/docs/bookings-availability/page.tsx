@@ -85,7 +85,8 @@ export default function BookingsAvailability() {
               </p>
               <p>
                 Each slot has a capacity limit. Set the maximum number of guests allowed per slot on the activity&apos;s Pricing tab.
-                When a slot is fully booked, it&apos;s automatically removed from the public booking page — no overbooking is possible.
+                When a slot is fully booked, it stops appearing as bookable online, and checkout still checks capacity
+                before creating a paid booking.
               </p>
               <p>
                 Owners, admins, and permissioned team members can create operator-side bookings from the Bookings page.
