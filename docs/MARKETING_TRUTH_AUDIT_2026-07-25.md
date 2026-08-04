@@ -16,6 +16,12 @@ with the app-side Settings UI and the server-side requirements in
 `send-review-request` and `send-sms-reminders`. `scripts/check-content.mjs`,
 `scripts/check-live.mjs`, and `docs/MARKETING_PRODUCT_FACTS.md` now guard those
 test-message prerequisites alongside the existing no-customer-send boundary.
+Verification passed full marketing `npm run verify`, including rendered
+desktop/mobile checks across all 19 public routes, plus focused local live
+checks against `/docs/notifications` and the 19-route local live crawl.
+Production is not updated yet: `reservkit.com` remains on deployment
+`dpl_FdZKuY6vjV4Nxcb8Ny7he2euiJTn`, and a manual `vercel deploy --prod -y`
+attempt failed with Vercel quota `api-deployments-free-per-day`.
 Scope boundary: public notification docs and marketing guardrails only; no app
 runtime, provider/env/function/schema/template/scheduling/customer-send
 behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
