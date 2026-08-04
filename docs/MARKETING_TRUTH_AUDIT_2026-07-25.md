@@ -22,7 +22,7 @@ checks against `/docs/notifications` and the 19-route local live crawl.
 Production is now updated: direct fetch of
 `https://reservkit.com/docs/notifications` confirmed both prerequisite strings,
 and `vercel inspect https://reservkit.com` reports production deployment
-`dpl_J6Cx399ruFVt4AggpBn5LTBq8Hxf` Ready and aliased to
+`dpl_59QLj1BDngyGgPHzELAjQbUuoUae` Ready and aliased to
 `https://reservkit.com`. The first manual `vercel deploy --prod -y` attempt
 failed with Vercel quota `api-deployments-free-per-day`, but the later
 production deployment caught up.
