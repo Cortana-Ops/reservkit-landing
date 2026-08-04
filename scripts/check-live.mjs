@@ -16,6 +16,7 @@ const sharedRequiredByRoute = {
   "/docs/getting-started": [
     "Free-first public signup",
     "plan-based booking fee",
+    "Stripe controls payout timing",
     "Settings -&gt; Booking Widget",
     "Dedicated calendar-only or activity-card-only embeds are future options",
   ],
@@ -69,6 +70,8 @@ const baseForbidden = [
   "booking fee behind the scenes",
   "Tips are treated as operator revenue",
   "you never need to manually split payments or transfer funds",
+  "ReservKit never holds your money",
+  "payments go directly to your Stripe account",
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",
   "Waiver compliance at a glance",

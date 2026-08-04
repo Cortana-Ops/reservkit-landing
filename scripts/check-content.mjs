@@ -156,6 +156,8 @@ const forbidden = [
   "booking fee behind the scenes",
   "Tips are treated as operator revenue",
   "you never need to manually split payments or transfer funds",
+  "ReservKit never holds your money",
+  "payments go directly to your Stripe account",
   "Enterprise: custom monthly pricing, custom volume, and annual minimum",
   "We share data only with:",
 ];

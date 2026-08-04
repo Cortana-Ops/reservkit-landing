@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Do I need my own Stripe account?",
-    a: "Yes. ReservKit uses Stripe Connect, which means payments go directly to your Stripe account. You control your payout schedule and customer relationship.",
+    a: "Yes. ReservKit uses Stripe Connect to create the customer checkout flow, collect the plan-based booking fee where applicable, and route the connected-account payment through Stripe. Stripe controls payout timing, processing fees, and connected-account money movement.",
   },
   {
     q: "Can I cancel?",
