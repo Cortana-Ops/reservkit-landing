@@ -155,6 +155,7 @@ const forbidden = [
   "The discount is applied to the total before the booking fee is calculated",
   "booking fee behind the scenes",
   "Tips are treated as operator revenue",
+  "you never need to manually split payments or transfer funds",
   "Enterprise: custom monthly pricing, custom volume, and annual minimum",
   "We share data only with:",
 ];
@@ -240,6 +241,7 @@ const required = [
   { file: "app/docs/payments/page.tsx", text: "plan-based booking fee" },
   { file: "app/docs/payments/page.tsx", text: "customer tips are not marked up" },
   { file: "app/docs/payments/page.tsx", text: "Stripe&apos;s published processing fees" },
+  { file: "app/docs/payments/page.tsx", text: "Stripe controls payout timing" },
   { file: "app/lib/marketing.ts", text: "Stripe’s published processing fees apply separately" },
   { file: "app/docs/payments/page.tsx", text: "refundable damage deposit" },
   { file: "app/docs/payments/page.tsx", text: "released deposits still need the actual money movement handled in Stripe" },

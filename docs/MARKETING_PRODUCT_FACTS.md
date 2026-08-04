@@ -63,6 +63,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 
 - ReservKit uses Stripe Connect Standard for public paid bookings.
 - Operators receive payouts through their own connected Stripe account.
+- ReservKit creates the connected-account checkout flow and collects the plan-based booking fee where applicable; Stripe controls payout timing, processing fees, and connected-account money movement.
 - Refunds are started from Booking Detail and sent to Stripe.
 - If a booking also needs cancellation, operators should use the cancellation flow so status, capacity, and customer messages stay aligned.
 - Refundable damage deposits are collected as separate Stripe Checkout line items.

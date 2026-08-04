@@ -22,6 +22,7 @@ const sharedRequiredByRoute = {
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "plan-based booking fee",
+    "Stripe controls payout timing",
     "Use the cancellation flow",
     "customer tips are not marked up",
     "Stripe",
@@ -67,6 +68,7 @@ const baseForbidden = [
   "each completed booking transaction according to the active plan",
   "booking fee behind the scenes",
   "Tips are treated as operator revenue",
+  "you never need to manually split payments or transfer funds",
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",
   "Waiver compliance at a glance",

@@ -75,8 +75,9 @@ export default function Payments() {
               </p>
               <p>
                 ReservKit uses Stripe Connect Standard. This means each business owner has their own Stripe account
-                and receives payouts directly. ReservKit collects the plan-based booking fee automatically at checkout
-                where applicable — you never need to manually split payments or transfer funds.
+                and receives payouts directly. ReservKit creates the connected-account checkout flow and collects the
+                plan-based booking fee automatically where applicable, while Stripe controls payout timing,
+                processing fees, and the connected account&apos;s money movement.
               </p>
               <p>
                 Once connected, your Stripe dashboard will show a &quot;Connected account&quot; from ReservKit. You can
