@@ -320,6 +320,19 @@ The rendered-page guard now fails loudly when `RENDERED_CHECK_ROUTES` contains a
 
 Public route metadata now uses a shared helper so each route keeps its browser title, meta description, canonical URL, Open Graph title/description/URL, and Twitter title/description aligned. Before this pass, non-home pages had unique browser titles and descriptions but inherited homepage Open Graph/Twitter preview metadata. `npm run check:rendered` now verifies the rendered metadata for every public route at desktop and 390px mobile widths, so future route or layout edits fail if a page loses route-specific head tags.
 
+## 2026-08-04 Homepage Hero CTA Render Guard Follow-Up
+
+The rendered-page guard now proves the homepage hero CTAs directly instead of
+relying only on shared navigation checks or one-off browser proof. For `/` at
+desktop and 390px mobile widths, `npm run check:rendered` verifies the hero
+section exposes exactly one visible `Start free` link to
+`https://app.reservkit.com/login?signup=true`, exactly one visible `See how it
+works` link to `#workflow`, one rendered `#workflow` target, and that clicking
+the workflow link updates the hash and scrolls the workflow section into view.
+Scope boundary: marketing QA guard/docs only; no public copy, CTA target,
+pricing, app runtime, signup, booking, payment, SMS/email, or Supabase behavior
+changed.
+
 ## 2026-08-03 Shared Navigation Render Guard Follow-Up
 
 The rendered-page guard now proves shared marketing navigation across the route

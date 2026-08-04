@@ -58,6 +58,11 @@ const mobileMenuLinks = [
   { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
 ];
 
+const homepageHeroLinks = [
+  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+  { text: "See how it works", href: "#workflow" },
+];
+
 function routeUrl(route) {
   return new URL(route, baseUrl).toString();
 }
@@ -94,6 +99,68 @@ async function countVisibleHeaderLinks(page, expectedLink) {
       );
     }).length;
   }, expectedLink);
+}
+
+async function countVisibleHomepageHeroLinks(page, expectedLink) {
+  return page.evaluate((link) => {
+    const hero = document.querySelector("main section:first-of-type");
+    if (!hero) return 0;
+    return Array.from(hero.querySelectorAll("a")).filter((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const style = window.getComputedStyle(anchor);
+      return (
+        anchor.textContent?.replace(/\s+/g, " ").trim() === link.text &&
+        anchor.getAttribute("href") === link.href &&
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.visibility !== "hidden" &&
+        style.display !== "none"
+      );
+    }).length;
+  }, expectedLink);
+}
+
+async function checkHomepageHeroActions(page, route, viewport) {
+  if (route !== "/") return;
+
+  for (const expectedLink of homepageHeroLinks) {
+    const visibleLinkCount = await countVisibleHomepageHeroLinks(page, expectedLink);
+    if (visibleLinkCount !== 1) {
+      failures.push(
+        `${viewport.label} ${route} hero expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleLinkCount}`
+      );
+    }
+  }
+
+  const workflowTargetExists = await page.locator("#workflow").count();
+  if (workflowTargetExists !== 1) {
+    failures.push(`${viewport.label} ${route} expected one #workflow anchor target, found ${workflowTargetExists}`);
+    return;
+  }
+
+  const workflowLink = page
+    .locator('main section:first-of-type a[href="#workflow"]')
+    .filter({ hasText: "See how it works" })
+    .first();
+  await workflowLink.click({ timeout: 5_000 });
+  await page.waitForFunction(() => window.location.hash === "#workflow", { timeout: 5_000 });
+  const workflowPosition = await page.locator("#workflow").evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    return { top: rect.top, bottom: rect.bottom, viewportHeight: window.innerHeight };
+  });
+  if (
+    workflowPosition.bottom <= 0 ||
+    workflowPosition.top >= workflowPosition.viewportHeight
+  ) {
+    failures.push(
+      `${viewport.label} ${route} workflow anchor click did not scroll target into view: ${JSON.stringify(workflowPosition)}`
+    );
+  }
+  await page.evaluate(() => {
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    window.scrollTo(0, 0);
+  });
+  await page.waitForTimeout(100);
 }
 
 async function checkDesktopHeaderLinks(page, route, viewport) {
@@ -242,6 +309,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       failures.push(`${viewport.label} ${route} console issues: ${messages.join(" | ")}`);
     }
 
+    await checkHomepageHeroActions(page, route, viewport);
     await checkDesktopHeaderLinks(page, route, viewport);
     await checkMobileHeaderMenu(page, route, viewport);
 
