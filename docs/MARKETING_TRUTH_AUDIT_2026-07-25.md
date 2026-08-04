@@ -42,6 +42,14 @@ Scope boundary: marketing form contract and verification only; no public signup
 posture, pricing, CTA destinations, app runtime, Resend delivery behavior,
 booking, payment, Supabase, or customer/operator workflow changed.
 
+Marketing commit `49587b3` (`Harden guided setup form verification`) is
+deployed on Vercel production deployment `dpl_6pY3jknHbSDxNKv3Wf5nPBwZX2vT`,
+Ready and aliased to `https://reservkit.com`. Verification passed focused
+`check:content`, `check:links`, and rendered `/early-access` checks across
+desktop/mobile, full marketing `npm run verify`, production
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`, and
+production rendered `/early-access` checks across desktop/mobile.
+
 ## 2026-08-04 Notifications Test Prerequisite Alignment
 
 After the app shipped Settings notification preview prerequisite guards, the
