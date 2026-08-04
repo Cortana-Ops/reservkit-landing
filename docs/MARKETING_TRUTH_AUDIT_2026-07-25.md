@@ -6,6 +6,21 @@ Purpose: keep `reservkit.com` aligned with current app behavior before broader m
 
 Passed. No public marketing page was found making unsupported live claims for public self-serve signup, cart or multi-item checkout, resources/variants, multi-day bookings, staff tip self-service, full email/SMS template editing, dedicated calendar/card embeds, payroll/time-clock workflows, generated waiver PDF export, waiver magic-link/SMS OTP signing, marketplace/channel-manager distribution, or resource scanning/maintenance workflows.
 
+## 2026-08-04 Notifications Test Prerequisite Alignment
+
+After the app shipped Settings notification preview prerequisite guards, the
+public Notifications guide now says review-request tests require a saved Google
+Review Link and SMS reminder tests require a saved business phone before the
+test-send controls become available. This keeps `/docs/notifications` aligned
+with the app-side Settings UI and the server-side requirements in
+`send-review-request` and `send-sms-reminders`. `scripts/check-content.mjs`,
+`scripts/check-live.mjs`, and `docs/MARKETING_PRODUCT_FACTS.md` now guard those
+test-message prerequisites alongside the existing no-customer-send boundary.
+Scope boundary: public notification docs and marketing guardrails only; no app
+runtime, provider/env/function/schema/template/scheduling/customer-send
+behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
+changed.
+
 ## 2026-08-04 Future-Feature Guardrail Expansion
 
 Marketing source was re-audited against the current app feature inventory after

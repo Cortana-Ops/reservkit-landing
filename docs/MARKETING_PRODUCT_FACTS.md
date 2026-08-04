@@ -79,7 +79,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - Custom Resend requires both a Resend API key and verified From Email.
 - Custom Twilio requires Account SID, Auth Token, and From Number together.
 - SMS reminders and broadcasts can use complete org-owned Twilio credentials or ReservKit-managed platform Twilio configuration when enabled.
-- Settings test emails go only to the signed-in operator; the SMS reminder test sends only to the saved business phone; test messages do not message customers, run reminder jobs, or accept arbitrary recipients.
+- Settings test emails go only to the signed-in operator; the SMS reminder test sends only to the saved business phone; review-request tests require a saved Google Review Link; SMS reminder tests require a saved business phone; test messages do not message customers, run reminder jobs, or accept arbitrary recipients.
 - The app does not currently include a full operator-facing email/SMS template editor.
 
 ## Privacy And Service Providers

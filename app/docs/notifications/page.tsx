@@ -167,7 +167,9 @@ export default function Notifications() {
               </p>
               <p>
                 Test emails from Settings go only to the signed-in operator. The SMS reminder test sends only to the saved
-                business phone. Test messages do not message customers, run reminder jobs, or accept arbitrary recipients.
+                business phone. Review-request tests require a saved Google Review Link, and SMS reminder tests require
+                a saved business phone before the test-send controls become available. Test messages do not message
+                customers, run reminder jobs, or accept arbitrary recipients.
               </p>
             </div>
           </section>

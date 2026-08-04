@@ -38,6 +38,8 @@ const sharedRequiredByRoute = {
     "Custom Twilio setup requires Account SID, Auth Token, and From Number together",
     "does not currently include a full operator-facing email or SMS template editor",
     "The SMS reminder test sends only to the saved business phone",
+    "Review-request tests require a saved Google Review Link",
+    "SMS reminder tests require",
     "Test messages do not message customers, run reminder jobs, or accept arbitrary recipients",
     "Abandoned booking recovery",
   ],
