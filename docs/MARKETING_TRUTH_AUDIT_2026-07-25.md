@@ -4,7 +4,19 @@ Purpose: keep `reservkit.com` aligned with current app behavior before broader m
 
 ## Result
 
-Passed. No public marketing page was found making unsupported live claims for public self-serve signup, cart or multi-item checkout, resources/variants, multi-day bookings, staff tip self-service, full email/SMS template editing, or dedicated calendar/card embeds.
+Passed. No public marketing page was found making unsupported live claims for public self-serve signup, cart or multi-item checkout, resources/variants, multi-day bookings, staff tip self-service, full email/SMS template editing, dedicated calendar/card embeds, payroll/time-clock workflows, generated waiver PDF export, waiver magic-link/SMS OTP signing, marketplace/channel-manager distribution, or resource scanning/maintenance workflows.
+
+## 2026-08-04 Future-Feature Guardrail Expansion
+
+Marketing source was re-audited against the current app feature inventory after
+the latest production/Sentry/backend evidence updates. No public page copy
+needed to change: current public copy does not present future product surfaces
+as live. `scripts/check-content.mjs` now blocks additional unsupported live
+claims for payroll or time clocks, resource scanning or maintenance workflows,
+one-click/generated waiver PDF downloads, waiver magic-link or SMS OTP signing,
+and marketplace/channel-manager distribution unless the surrounding copy clearly
+frames those ideas as future, not currently available, intentionally not built,
+or otherwise outside launch scope.
 
 ## 2026-08-03 Source Claim Re-Audit After Notifications SMS Update
 
@@ -64,6 +76,11 @@ After the latest app-side production/Sentry/customer-path evidence updates, a fr
 - template editor
 - staff tip self-service
 - dedicated embed layouts
+- payroll or time clock
+- resource scanning or maintenance
+- generated waiver PDF export
+- waiver magic-link or SMS OTP signing
+- marketplace or channel manager
 
 Future pages can still discuss these items when the surrounding copy clearly frames them as future, coming-next, roadmap, or not currently available.
 

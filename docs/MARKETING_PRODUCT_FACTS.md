@@ -121,6 +121,10 @@ Do not market the following as live:
 - Full operator-facing email/SMS template editor.
 - Dedicated calendar-only or card-only embed layouts.
 - Payroll, payout ledger, time clock, or tax handling.
+- Resource scanning, barcode scanning, inventory ledger, repairs, or maintenance workflows.
+- One-click/generated waiver PDF downloads; current waiver evidence is printable/save-as-PDF through the browser packet flow.
+- Waiver magic-link signing, SMS OTP verification, or text-message verification.
+- Public marketplace, channel manager, OTA distribution, or third-party channel sync.
 - Public cash/pay-later checkout.
 - Split tenders or partial offline payments.
 - Absolute capacity guarantees such as `no overbooking is possible`; describe the actual slot visibility and checkout capacity checks instead.

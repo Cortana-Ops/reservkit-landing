@@ -211,6 +211,31 @@ const unsupportedLiveClaimPatterns = [
     pattern: /\b(calendar-only embed|card-only embed|activity-card-only embed)\b/i,
     allowedContext: /future options|future work|coming next|roadmap|beyond the current booking links/i,
   },
+  {
+    name: "payroll or time clock",
+    pattern: /\b(payroll processing|payroll exports|payout ledger|time clock|clock[-\s]?in|clock[-\s]?out|hourly pay tracking)\b/i,
+    allowedContext: /future|not built|not currently|not payroll|not a payroll|roadmap|intentionally not built/i,
+  },
+  {
+    name: "resource scanning or maintenance",
+    pattern: /\b(barcode scanning|inventory ledger|gear scanning|equipment scanning|repairs\/maintenance|repairs and maintenance|maintenance workflow)\b/i,
+    allowedContext: /future|not built|not currently|roadmap|intentionally not built/i,
+  },
+  {
+    name: "generated waiver PDF export",
+    pattern: /\b(generated pdf|one[-\s]?click pdf|direct pdf download|download signed waivers|downloadable signed waivers)\b/i,
+    allowedContext: /future|not built|not currently|print\/save-as-pdf|print\/save as pdf|browser print|roadmap/i,
+  },
+  {
+    name: "waiver magic link or SMS OTP",
+    pattern: /\b(magic[-\s]?link signing|waiver magic[-\s]?link|sms otp|sms verification|text message verification)\b/i,
+    allowedContext: /future|not built|not currently|only if legal|roadmap|must not claim/i,
+  },
+  {
+    name: "marketplace or channel manager",
+    pattern: /\b(public marketplace|operator marketplace|channel manager|ota distribution|third[-\s]?party channel sync)\b/i,
+    allowedContext: /future|not built|not currently|roadmap|intentionally not built/i,
+  },
 ];
 
 const required = [
