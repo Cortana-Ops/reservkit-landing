@@ -72,11 +72,12 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 
 ## Messaging
 
-- ReservKit sends standard booking confirmation, reminder, cancellation/change, waiver-link, and booking-link recovery messages where configured.
+- ReservKit sends standard booking confirmation, reminder, cancellation/change, waiver-link, abandoned-booking recovery, and booking-link recovery messages where configured.
 - ReservKit-managed email delivery is the default launch posture.
 - Custom Resend requires both a Resend API key and verified From Email.
 - Custom Twilio requires Account SID, Auth Token, and From Number together.
 - SMS reminders and broadcasts can use complete org-owned Twilio credentials or ReservKit-managed platform Twilio configuration when enabled.
+- Settings test emails go only to the signed-in operator; the SMS reminder test sends only to the saved business phone; test messages do not message customers, run reminder jobs, or accept arbitrary recipients.
 - The app does not currently include a full operator-facing email/SMS template editor.
 
 ## Privacy And Service Providers

@@ -38,6 +38,10 @@ const messageTypes = [
     body: "Sent after a completed booking only when review requests are enabled and a Google Review Link is configured.",
   },
   {
+    title: "Abandoned booking recovery",
+    body: "Sent only for recoverable unpaid pending bookings when the recovery job finds an eligible hold.",
+  },
+  {
     title: "Booking-link recovery",
     body: "Sent only after a customer asks for help finding a booking. The browser response stays generic so customer records are not exposed.",
   },
@@ -162,8 +166,8 @@ export default function Notifications() {
                 cover notification toggles, business identity, Google review links, and optional custom provider credentials.
               </p>
               <p>
-                Test emails from Settings go only to the signed-in operator. They do not message customers, run reminder jobs,
-                or send SMS.
+                Test emails from Settings go only to the signed-in operator. The SMS reminder test sends only to the saved
+                business phone. Test messages do not message customers, run reminder jobs, or accept arbitrary recipients.
               </p>
             </div>
           </section>

@@ -160,6 +160,17 @@ check:links`, `npm run check:live` across 19 routes,
 across desktop and 390px mobile, `npm run lint`, `npm run build`, and
 `git diff --check`.
 
+## 2026-08-04 Notifications Test-Message Copy Follow-Up
+
+After the app shipped the SMS reminder safe test-send path, `/docs/notifications`
+was updated so the public guide no longer says Settings test emails never send
+SMS. The page now says test emails go only to the signed-in operator, the SMS
+reminder test sends only to the saved business phone, and test messages do not
+message customers, run reminder jobs, or accept arbitrary recipients. The same
+guide now lists abandoned booking recovery alongside the other supported
+standard customer messages. `scripts/check-content.mjs` and
+`scripts/check-live.mjs` guard this public-copy boundary.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
