@@ -12,6 +12,7 @@ let detectedMarketingMode = null;
 const routes = MARKETING_ROUTES;
 
 const sharedRequiredByRoute = {
+  "/": ["Stripe controls payout timing", "Confirmation emails where enabled"],
   "/early-access": ["Request setup help", "reply within one business day"],
   "/docs/getting-started": [
     "Free-first public signup",
@@ -78,8 +79,10 @@ const baseForbidden = [
   "Money flows directly to your Stripe account",
   "Tips go directly to your Stripe account",
   "receives payouts directly",
+  "You control payout timing",
   "receive an automatic email confirmation",
   "Email confirmations on booking",
+  "Customer confirmation emails</li>",
   "email confirmations at low volume",
   "then marked released or charged from Booking Detail after the activity",
   "releases capacity on full refunds",

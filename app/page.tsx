@@ -135,7 +135,7 @@ const workflowSteps = [
     icon: CreditCard,
     label: "Stripe payments",
     heading: "Get paid through your Stripe account",
-    body: "Payments go through your Stripe account. You control payout timing. Customers see your business at checkout.",
+    body: "ReservKit creates the Stripe Connect checkout flow and routes the connected-account payment through Stripe. Stripe controls payout timing, processing fees, and connected-account money movement.",
     bullets: ["Stripe Connect", "Refundable damage deposits", "Balance payments", "Coupon codes"],
   },
   {

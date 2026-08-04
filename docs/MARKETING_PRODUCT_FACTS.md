@@ -64,6 +64,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 - ReservKit uses Stripe Connect Standard for public paid bookings.
 - Operators receive payouts through their own connected Stripe account.
 - ReservKit creates the connected-account checkout flow and collects the plan-based booking fee where applicable; Stripe controls payout timing, processing fees, and connected-account money movement.
+- Marketing should not say operators control payout timing; say Stripe controls payout timing and connected-account money movement.
 - Refunds are started from Booking Detail and sent to Stripe.
 - If a booking also needs cancellation, operators should use the cancellation flow so status, capacity, and customer messages stay aligned.
 - Refundable damage deposits are collected as separate Stripe Checkout line items.
@@ -73,6 +74,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 ## Messaging
 
 - ReservKit sends standard booking confirmation, reminder, cancellation/change, waiver-link, abandoned-booking recovery, and booking-link recovery messages where configured.
+- Public pages should qualify confirmation emails as where enabled/configured instead of listing unconditional confirmation emails.
 - ReservKit-managed email delivery is the default launch posture.
 - Custom Resend requires both a Resend API key and verified From Email.
 - Custom Twilio requires Account SID, Auth Token, and From Number together.

@@ -25,7 +25,7 @@ const features = [
   "Availability windows and booking cutoffs",
   "Duration-based rental pricing",
   "Staff scheduling and roster visibility",
-  "Customer confirmation emails",
+  "Customer confirmation emails where enabled",
   "Mobile check-in and guest tracking",
 ];
 

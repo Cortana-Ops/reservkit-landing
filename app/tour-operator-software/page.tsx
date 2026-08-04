@@ -25,7 +25,7 @@ const features = [
   "Per-guest digital waiver signing",
   "Availability windows and booking cutoffs",
   "Staff assignment and schedule visibility",
-  "Confirmation emails",
+  "Confirmation emails where enabled",
   "Check-in with guest list and waiver status",
   "Customer booking lookup",
   "Revenue reports by tour and date range",

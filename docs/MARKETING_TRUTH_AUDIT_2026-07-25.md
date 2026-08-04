@@ -229,6 +229,10 @@ The public Bookings & Availability guide was tightened to match app behavior. It
 
 The public Bookings & Availability guide no longer makes an absolute `no overbooking is possible` promise. It now says fully booked slots stop appearing as bookable online and checkout still checks capacity before creating a paid booking. `docs/MARKETING_PRODUCT_FACTS.md`, `scripts/check-content.mjs`, and `scripts/check-live.mjs` guard this safer capacity wording so future marketing copy describes the shipped controls instead of making an impossible-sounding guarantee.
 
+## 2026-08-04 Homepage Stripe Timing And Vertical Confirmation Follow-Up
+
+The homepage Stripe workflow copy no longer says operators control payout timing. It now uses the same launch boundary as the Payments and Getting Started guides: ReservKit creates the Stripe Connect checkout flow and routes the connected-account payment through Stripe, while Stripe controls payout timing, processing fees, and connected-account money movement. The kayak and tour vertical pages also no longer list unconditional confirmation emails; they qualify confirmation emails as available where enabled. `docs/MARKETING_PRODUCT_FACTS.md`, `scripts/check-content.mjs`, and `scripts/check-live.mjs` guard against restoring the old payout-timing and unqualified confirmation-email phrases.
+
 ## 2026-08-02 Waiver Documentation Truth Follow-Up
 
 The public waiver docs and cross-links were tightened to avoid broad legal/compliance promises. Public copy now says digital waivers are for activities that require them, avoids blanket `from every guest` language, removes casual `in seconds` signing promises, and avoids prescribing which signer fields are sufficient. The guide now tells operators to use waiver language and required fields reviewed for their business, activities, location, counsel, insurer, and operating requirements. `scripts/check-content.mjs` guards those safer waiver-doc boundaries.
