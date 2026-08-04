@@ -166,6 +166,11 @@ export default function Notifications() {
                 cover notification toggles, business identity, Google review links, and optional custom provider credentials.
               </p>
               <p>
+                Settings also includes a read-only delivery log for recent notification events. It shows safe delivery facts
+                like message type, channel, trigger, status, provider label, failure code when present, and timestamp without
+                exposing customer email addresses, phone numbers, message bodies, recovery links, OTPs, or provider secrets.
+              </p>
+              <p>
                 Test emails from Settings go only to the signed-in operator. The SMS reminder test sends only to the saved
                 business phone. Review-request tests require a saved Google Review Link, and SMS reminder tests require
                 a saved business phone before the test-send controls become available. Test messages do not message

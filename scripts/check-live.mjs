@@ -37,6 +37,8 @@ const sharedRequiredByRoute = {
     "Custom Resend setup requires both a Resend API key and a verified From Email",
     "Custom Twilio setup requires Account SID, Auth Token, and From Number together",
     "does not currently include a full operator-facing email or SMS template editor",
+    "read-only delivery log",
+    "without exposing customer email addresses, phone numbers, message bodies, recovery links, OTPs, or provider secrets",
     "The SMS reminder test sends only to the saved business phone",
     "Review-request tests require a saved Google Review Link",
     "SMS reminder tests require",
