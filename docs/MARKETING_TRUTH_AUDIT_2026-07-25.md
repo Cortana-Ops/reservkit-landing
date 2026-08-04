@@ -6,6 +6,29 @@ Purpose: keep `reservkit.com` aligned with current app behavior before broader m
 
 Passed. No public marketing page was found making unsupported live claims for public self-serve signup, cart or multi-item checkout, resources/variants, multi-day bookings, staff tip self-service, full email/SMS template editing, dedicated calendar/card embeds, payroll/time-clock workflows, generated waiver PDF export, waiver magic-link/SMS OTP signing, marketplace/channel-manager distribution, or resource scanning/maintenance workflows.
 
+## 2026-08-04 Notification Delivery Log Alignment
+
+After the app shipped the read-only Settings -> Notifications Delivery log,
+the public Notifications guide now says Settings includes a read-only delivery
+log for recent notification events. The copy describes safe delivery facts only:
+message type, channel, trigger, status, provider label, failure code when
+present, and timestamp. It also says the log does not expose customer email
+addresses, phone numbers, message bodies, recovery links, OTPs, or provider
+secrets. This keeps `/docs/notifications` aligned with the app-side
+`notification_delivery_events` UI without implying customer-send controls or a
+template editor.
+
+Marketing commit `63d48be` (`Document notification delivery log`) is deployed
+on Vercel production deployment `dpl_Ataz4eFU6ajFgcwDWYEbMnzStVxp`, Ready and
+aliased to `https://reservkit.com`. Verification passed full marketing
+`npm run verify`, focused rendered checks for `/docs/notifications` across
+desktop and mobile, production `npm run check:live`, production rendered
+`/docs/notifications` checks, and a direct production fetch confirming the new
+delivery-log strings. Scope boundary: marketing docs/guardrails only; no app
+runtime, provider/env/function/schema/template/scheduling/customer-send
+behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
+changed.
+
 ## 2026-08-04 Notifications Test Prerequisite Alignment
 
 After the app shipped Settings notification preview prerequisite guards, the
