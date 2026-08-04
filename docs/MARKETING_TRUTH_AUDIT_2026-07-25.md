@@ -347,6 +347,16 @@ Scope boundary: marketing QA guard/docs only; no public copy, CTA target,
 pricing, route structure, app runtime, signup, booking, payment, SMS/email,
 Supabase, or provider behavior changed.
 
+Source commit `675c52a` (`Guard marketing route body links`) is pushed to
+`main`. Verification passed full local `npm run verify`, `git diff --check`,
+focused rendered proof for the newly guarded route set, live
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live` across
+19 routes, and live
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:rendered`
+across 19 routes at desktop and 390px mobile. Vercel production deployment
+`dpl_8S2n9w9vbboSpR96sisTyEViKTWJ` is Ready and aliased to
+`https://reservkit.com`.
+
 ## 2026-08-03 Shared Navigation Render Guard Follow-Up
 
 The rendered-page guard now proves shared marketing navigation across the route
