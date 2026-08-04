@@ -53,9 +53,9 @@ export default function Payments() {
         <div className="mb-12">
           <h1 className="text-3xl font-bold text-navy mb-3">Payments</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            ReservKit uses Stripe Connect to process payments. Money flows directly to your Stripe account —
-            ReservKit collects the plan-based booking fee on the booking subtotal where applicable. No monthly
-            billing is required on the free plan.
+            ReservKit uses Stripe Connect to create the customer checkout flow, route the connected-account
+            payment through Stripe, and collect the plan-based booking fee on the booking subtotal where
+            applicable. No monthly billing is required on the free plan.
           </p>
         </div>
 
@@ -74,10 +74,10 @@ export default function Payments() {
                 flow where you can create a new Stripe account or connect an existing one.
               </p>
               <p>
-                ReservKit uses Stripe Connect Standard. This means each business owner has their own Stripe account
-                and receives payouts directly. ReservKit creates the connected-account checkout flow and collects the
-                plan-based booking fee automatically where applicable, while Stripe controls payout timing,
-                processing fees, and the connected account&apos;s money movement.
+                ReservKit uses Stripe Connect Standard. This means each business owner has their own connected Stripe
+                account. ReservKit creates the connected-account checkout flow and collects the plan-based booking fee
+                automatically where applicable, while Stripe controls payout timing, processing fees, and the connected
+                account&apos;s money movement.
               </p>
               <p>
                 Once connected, your Stripe dashboard will show a &quot;Connected account&quot; from ReservKit. You can
@@ -113,8 +113,8 @@ export default function Payments() {
                 and before customer tips, taxes, operator service fees, or refundable damage deposits.
               </p>
               <p>
-                Tip: customers can also tip your business at checkout. Tips go directly to your Stripe account and
-                are not subject to the booking fee.
+                Tip: customers can also tip your business at checkout. Tips are routed through the connected Stripe
+                account and are not subject to the booking fee.
               </p>
             </div>
           </section>
