@@ -171,6 +171,17 @@ guide now lists abandoned booking recovery alongside the other supported
 standard customer messages. `scripts/check-content.mjs` and
 `scripts/check-live.mjs` guard this public-copy boundary.
 
+Source commit `d05b828` (`Align notification test message copy`) is pushed to
+`main`, and local verification passed `check:content`, `check:routes`,
+`check:metadata`, `check:indexing`, `lint`, `build`, `check:links`,
+`git diff --check`, and focused desktop/mobile rendered proof for
+`/docs/notifications`. Production is not updated yet: repeated manual
+`vercel deploy --prod --yes --scope cortana-ops-projects` attempts hit Vercel
+`api-deployments-free-per-day`, and live `https://reservkit.com` still points at
+deployment `dpl_9vuDz7KnRHj1gaJcuYr8McZ4Gp2i`. Until quota/autodeploy catches
+up, `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`
+is expected to fail only on the three new Notifications phrases.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
