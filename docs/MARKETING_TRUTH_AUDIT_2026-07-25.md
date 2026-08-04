@@ -18,6 +18,11 @@ and marketplace/channel-manager distribution unless the surrounding copy clearly
 frames those ideas as future, not currently available, intentionally not built,
 or otherwise outside launch scope.
 
+Vercel production deployment `dpl_FdZKuY6vjV4Nxcb8Ny7he2euiJTn` is Ready and
+aliased to `https://reservkit.com`, so the future-feature source guard is now
+deployed. No public page copy, CTA target, pricing, signup, app runtime,
+booking, payment, SMS/email, Supabase, or provider behavior changed.
+
 ## 2026-08-03 Source Claim Re-Audit After Notifications SMS Update
 
 Marketing source was re-audited against the current app feature inventory and
