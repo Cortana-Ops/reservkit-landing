@@ -80,6 +80,82 @@ const pageShellFooterLinks = [
   { text: "Contact", href: "mailto:hello@reservkit.com" },
 ];
 
+const primarySignupHref = "https://app.reservkit.com/login?signup=true";
+
+const verticalMainLinks = [
+  { text: "Start free", href: primarySignupHref, min: 2 },
+  { text: "View pricing", href: "/pricing", min: 1 },
+];
+
+const routeMainLinkExpectations = {
+  "/docs": [
+    { text: "Getting Started", href: "/docs/getting-started", min: 1 },
+    { text: "Bookings & Availability", href: "/docs/bookings-availability", min: 1 },
+    { text: "Payments", href: "/docs/payments", min: 1 },
+    { text: "Waivers", href: "/docs/waivers", min: 1 },
+    { text: "Notifications", href: "/docs/notifications", min: 1 },
+    { text: "Staff", href: "/docs/staff", min: 1 },
+    { text: "Reports & Analytics", href: "/docs/reports", min: 1 },
+    { text: "Contact support", href: "mailto:hello@reservkit.com", min: 1 },
+  ],
+  "/docs/getting-started": [
+    { text: "Bookings & Availability", href: "/docs/bookings-availability", min: 1 },
+    { text: "Payments & Fees", href: "/docs/payments", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/payments": [
+    { text: "Getting Started", href: "/docs/getting-started", min: 1 },
+    { text: "Waivers", href: "/docs/waivers", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/staff": [
+    { text: "Waivers", href: "/docs/waivers", min: 1 },
+    { text: "Reports & Analytics", href: "/docs/reports", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/waivers": [
+    { text: "Bookings & Availability", href: "/docs/bookings-availability", min: 1 },
+    { text: "Staff", href: "/docs/staff", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/notifications": [
+    { text: "Getting Started", href: "/docs/getting-started", min: 1 },
+    { text: "Waivers", href: "/docs/waivers", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/reports": [
+    { text: "Staff", href: "/docs/staff", min: 1 },
+    { text: "Getting Started", href: "/docs/getting-started", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/docs/bookings-availability": [
+    { text: "Payments guide", href: "/docs/payments", min: 1 },
+    { text: "Payments & Fees", href: "/docs/payments", min: 1 },
+    { text: "Waivers", href: "/docs/waivers", min: 1 },
+    { text: "Back to all documentation", href: "/docs", min: 1 },
+  ],
+  "/roadmap": [
+    { text: "Start free", href: primarySignupHref, min: 1 },
+    { text: "View full changelog", href: "/changelog", min: 1 },
+    { text: "Explore the docs", href: "/docs", min: 1 },
+    { text: "Read the blog", href: "/blog", min: 1 },
+  ],
+  "/changelog": [
+    { text: "View Roadmap", href: "/roadmap", min: 1 },
+    { text: "Read the Blog", href: "/blog", min: 1 },
+    { text: "Documentation", href: "/docs", min: 1 },
+    { text: "Back to ReservKit", href: "/", min: 1 },
+  ],
+  "/blog": [
+    { text: "Start free", href: primarySignupHref, min: 1 },
+    { text: "Changelog", href: "/changelog", min: 1 },
+    { text: "Roadmap", href: "/roadmap", min: 1 },
+  ],
+  "/boat-rental-software": verticalMainLinks,
+  "/kayak-rental-software": verticalMainLinks,
+  "/tour-operator-software": verticalMainLinks,
+};
+
 function routeUrl(route) {
   return new URL(route, baseUrl).toString();
 }
@@ -302,6 +378,49 @@ async function checkFooterLinks(page, route, viewport) {
   }
 }
 
+async function checkRouteMainLinks(page, route, viewport) {
+  const expectedLinks = routeMainLinkExpectations[route];
+  if (!expectedLinks) return;
+
+  const renderedMainLinks = await page.evaluate(() => {
+    const main = document.querySelector("main");
+    if (!main) return [];
+
+    return Array.from(main.querySelectorAll("a")).map((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const style = window.getComputedStyle(anchor);
+      return {
+        text: anchor.textContent?.replace(/\s+/g, " ").trim() ?? "",
+        href: anchor.getAttribute("href") ?? "",
+        visible:
+          rect.width > 0 &&
+          rect.height > 0 &&
+          style.visibility !== "hidden" &&
+          style.display !== "none",
+      };
+    });
+  });
+
+  if (renderedMainLinks.length === 0) {
+    failures.push(`${viewport.label} ${route} main content rendered no links`);
+    return;
+  }
+
+  for (const expectedLink of expectedLinks) {
+    const visibleLinkCount = renderedMainLinks.filter(
+      (link) =>
+        link.visible &&
+        link.href === expectedLink.href &&
+        link.text.includes(expectedLink.text)
+    ).length;
+    if (visibleLinkCount < expectedLink.min) {
+      failures.push(
+        `${viewport.label} ${route} main expected at least ${expectedLink.min} visible ${expectedLink.text} link(s) to ${expectedLink.href}, found ${visibleLinkCount}`
+      );
+    }
+  }
+}
+
 async function checkRoute(browser, route, viewport, attempt = 1) {
   const page = await browser.newPage({ viewport });
   const messages = [];
@@ -370,6 +489,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     await checkDesktopHeaderLinks(page, route, viewport);
     await checkMobileHeaderMenu(page, route, viewport);
     await checkFooterLinks(page, route, viewport);
+    await checkRouteMainLinks(page, route, viewport);
 
     const expectedMetadata = EXPECTED_METADATA_BY_ROUTE[route];
     if (!expectedMetadata) {

@@ -333,6 +333,20 @@ Scope boundary: marketing QA guard/docs only; no public copy, CTA target,
 pricing, app runtime, signup, booking, payment, SMS/email, or Supabase behavior
 changed.
 
+## 2026-08-04 Route Main Link Render Guard Follow-Up
+
+The rendered-page guard now proves route-specific main-content links instead of
+only global navigation, homepage hero CTAs, pricing cards, and footers. At
+desktop and 390px mobile widths, `npm run check:rendered` verifies visible
+main-content CTA or next-step links for the docs hub, all docs guide pages,
+Roadmap, Changelog, Blog, and the boat/kayak/tour vertical pages. This catches
+page-local CTA drift, missing docs next-step cards, and broken visible body
+links during marketing page-by-page checks.
+
+Scope boundary: marketing QA guard/docs only; no public copy, CTA target,
+pricing, route structure, app runtime, signup, booking, payment, SMS/email,
+Supabase, or provider behavior changed.
+
 ## 2026-08-03 Shared Navigation Render Guard Follow-Up
 
 The rendered-page guard now proves shared marketing navigation across the route
