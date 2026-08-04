@@ -15,7 +15,7 @@ export const metadata = createMarketingMetadata({
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "Free includes the core booking page, Stripe Connect payments, customer records, and email confirmations at low volume. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, refundable damage deposits, priced add-ons, equipment, and dynamic pricing. Pro adds the lowest self-serve booking fee and a deeper support path for higher-volume teams.",
+    a: "Free includes the core booking page, Stripe Connect payments, customer records, and booking confirmation emails where enabled at low volume. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, refundable damage deposits, priced add-ons, equipment, and dynamic pricing. Pro adds the lowest self-serve booking fee and a deeper support path for higher-volume teams.",
   },
   {
     q: "What does booking fee mean?",

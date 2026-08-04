@@ -65,7 +65,7 @@ const steps = [
     content: [
       "Every organization with a public slug has a booking link at app.reservkit.com/book/[your-slug]. Settings -> Booking Widget can generate the all-activity public booking link, activity-specific booking links, and website iframe snippets when you want to send customers to one activity instead of the full catalog.",
       "The current iframe snippets embed the ReservKit booking flow for all activities or one selected activity. Dedicated calendar-only or activity-card-only embeds are future options, not launch features.",
-      "The booking page shows all your published activities, available times, and handles the full checkout flow — guests pick a time, add guests, pay, and receive an automatic email confirmation.",
+      "The booking page shows all your published activities, available times, and handles the full checkout flow — guests pick a time, add guests, pay, and receive a booking confirmation email when confirmations are enabled.",
       "Add your booking link to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
     ],
   },

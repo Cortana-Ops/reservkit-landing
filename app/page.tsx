@@ -129,7 +129,7 @@ const workflowSteps = [
     label: "Booking page",
     heading: "Publish a clean, direct booking flow",
     body: "Customers choose an activity, review availability, enter guest details, and move toward checkout without phone tag.",
-    bullets: ["Activity pages with real availability", "Guest detail collection", "Cutoff rules and guest limits", "Email confirmations on booking"],
+    bullets: ["Activity pages with real availability", "Guest detail collection", "Cutoff rules and guest limits", "Confirmation emails where enabled"],
   },
   {
     icon: CreditCard,

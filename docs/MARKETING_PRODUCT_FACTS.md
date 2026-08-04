@@ -26,7 +26,7 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 
 ## Current Feature Gates
 
-- Free includes the core public booking page, Stripe Connect payments, customer records, and email confirmations at low volume.
+- Free includes the core public booking page, Stripe Connect payments, customer records, and booking confirmation emails where enabled at low volume.
 - Free does not include staff/team access.
 - Starter adds basic team tools and staff scheduling access.
 - Growth adds unlimited bookings, reports, waiver tools, broadcasts, coupon codes, refundable damage deposits, priced add-ons, equipment, and dynamic pricing.

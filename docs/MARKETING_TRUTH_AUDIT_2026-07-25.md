@@ -287,6 +287,10 @@ The marketing dependency baseline was also refreshed for production audit health
 
 The rendered-page guard now verifies the public Pricing page cards at both desktop and 390px mobile widths. It asserts Free, Starter, Growth, and Pro each keep the `Start free` CTA pointed at the approved app signup URL, Enterprise keeps `Request setup help` pointed at `/early-access`, and the visible plan-card copy includes the current price, booking fee, volume, and representative feature-gate text. This gives the marketing site a rendered proof for the public/private plan boundary, not only a source-text content check.
 
+## 2026-08-04 Confirmation Email Wording Follow-Up
+
+Marketing copy now describes booking confirmation emails as available when enabled/configured instead of promising every completed booking always receives an automatic email confirmation. This matches the app-side notification model where confirmation emails are supported transactional messages but remain controlled by organization notification settings and provider delivery state. The homepage workflow bullet, Getting Started guide, Pricing FAQ, pricing-card feature text, and product facts were updated, while `scripts/check-content.mjs` and `scripts/check-live.mjs` now block the old absolute confirmation-email phrases.
+
 ## 2026-08-03 Rendered Route Selection Guard Follow-Up
 
 The rendered-page guard now fails loudly when `RENDERED_CHECK_ROUTES` contains an unknown route or resolves to an empty route set. This prevents partial marketing QA runs from silently skipping a typoed page during page-by-page launch checks. The default rendered check still covers the current public sitemap route set across desktop and 390px mobile viewports, while `/beta` remains covered by the link/form guard as an intentional redirect to `/early-access`.

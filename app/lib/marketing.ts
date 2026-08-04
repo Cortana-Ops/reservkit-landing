@@ -39,7 +39,7 @@ export const pricingTiers = [
       "Core booking page",
       "Stripe Connect payments",
       "Customer records",
-      "Email confirmations",
+      "Confirmation emails where enabled",
       "No staff/team access",
     ],
     highlight: false,
