@@ -19,9 +19,13 @@ test-message prerequisites alongside the existing no-customer-send boundary.
 Verification passed full marketing `npm run verify`, including rendered
 desktop/mobile checks across all 19 public routes, plus focused local live
 checks against `/docs/notifications` and the 19-route local live crawl.
-Production is not updated yet: `reservkit.com` remains on deployment
-`dpl_FdZKuY6vjV4Nxcb8Ny7he2euiJTn`, and a manual `vercel deploy --prod -y`
-attempt failed with Vercel quota `api-deployments-free-per-day`.
+Production is now updated: direct fetch of
+`https://reservkit.com/docs/notifications` confirmed both prerequisite strings,
+and `vercel inspect https://reservkit.com` reports production deployment
+`dpl_J6Cx399ruFVt4AggpBn5LTBq8Hxf` Ready and aliased to
+`https://reservkit.com`. The first manual `vercel deploy --prod -y` attempt
+failed with Vercel quota `api-deployments-free-per-day`, but the later
+production deployment caught up.
 Scope boundary: public notification docs and marketing guardrails only; no app
 runtime, provider/env/function/schema/template/scheduling/customer-send
 behavior, booking, payment, pricing, Supabase, or marketing CTA behavior
@@ -218,12 +222,11 @@ Source commit `d05b828` (`Align notification test message copy`) is pushed to
 `main`, and local verification passed `check:content`, `check:routes`,
 `check:metadata`, `check:indexing`, `lint`, `build`, `check:links`,
 `git diff --check`, and focused desktop/mobile rendered proof for
-`/docs/notifications`. Production is not updated yet: repeated manual
+`/docs/notifications`. The first repeated manual
 `vercel deploy --prod --yes --scope cortana-ops-projects` attempts hit Vercel
-`api-deployments-free-per-day`, and live `https://reservkit.com` still points at
-deployment `dpl_9vuDz7KnRHj1gaJcuYr8McZ4Gp2i`. Until quota/autodeploy catches
-up, `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`
-is expected to fail only on the three new Notifications phrases.
+`api-deployments-free-per-day`, but later production deployments caught up;
+the current live Notifications guide includes the prerequisite/test-message
+copy guarded by `scripts/check-live.mjs`.
 
 Follow-up 2026-08-04 live retry evidence: `vercel inspect
 https://reservkit.com --scope cortana-ops-projects --json` still reports Ready
