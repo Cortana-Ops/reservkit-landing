@@ -182,6 +182,17 @@ deployment `dpl_9vuDz7KnRHj1gaJcuYr8McZ4Gp2i`. Until quota/autodeploy catches
 up, `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`
 is expected to fail only on the three new Notifications phrases.
 
+Follow-up 2026-08-04 live retry evidence: `vercel inspect
+https://reservkit.com --scope cortana-ops-projects --json` still reports Ready
+production deployment `dpl_9vuDz7KnRHj1gaJcuYr8McZ4Gp2i`, aliased to
+`reservkit.com`. `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run
+check:live` still fails only on the three guarded Notifications copy updates:
+`The SMS reminder test sends only to the saved business phone`, `Test messages
+do not message customers, run reminder jobs, or accept arbitrary recipients`,
+and `Abandoned booking recovery`. A fresh manual `vercel deploy --prod --yes
+--scope cortana-ops-projects` attempt failed with the same Vercel daily API
+deployment quota, `api-deployments-free-per-day`.
+
 ## 2026-08-02 Inner-Page Navigation And Changelog Follow-Up
 
 The public `/changelog` page is in the sitemap and now reflects the current public-signup launch posture instead of leaving May 2026 as the latest entry. It includes the public Free-first signup launch, notification setup truth sync, staff visibility copy alignment, pricing/media updates, and the removed early-access-first posture. `scripts/check-live.mjs` now includes `/changelog` with required launch/current-product text.
