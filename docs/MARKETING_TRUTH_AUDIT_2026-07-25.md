@@ -478,9 +478,14 @@ pricing, roadmap, blog, docs, and vertical landing pages.
 
 Verification passed full local `npm run verify`, focused live
 `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`, and
-`git diff --check`. Scope boundary: marketing QA guard/docs only; no public page
-copy, CTA destination, app runtime, signup, booking, payment, pricing,
-Supabase, or customer/operator workflow changed.
+`git diff --check`. Source commit `eabd664` (`Guard app CTA target
+reachability`) is deployed on Vercel production deployment
+`dpl_HhJEHh6Be8gCQQ6w5iXgbKMGHTAJ`, Ready and aliased to `https://reservkit.com`;
+post-deploy live `RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run
+check:live` passed across 19 public routes plus the approved app login/signup
+CTA targets. Scope boundary: marketing QA guard/docs only; no public page copy,
+CTA destination, app runtime, signup, booking, payment, pricing, Supabase, or
+customer/operator workflow changed.
 
 ## 2026-08-03 Marketing Verify Script Follow-Up
 
