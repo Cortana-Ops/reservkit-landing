@@ -39,6 +39,7 @@ npm run verify
 `check:metadata` compares route metadata expectations against the shared route manifest and guards titles, descriptions, canonical URLs, and social titles before the rendered browser check runs.
 `check:indexing` compares the sitemap against the shared route manifest, keeps redirect routes out of indexing, and verifies robots advertises the production host and sitemap.
 `check:links` crawls the current public marketing route set, verifies internal links and same-page anchors, validates approved app login/signup CTA targets, confirms `/beta` redirects to `/early-access`, and checks that the guided setup API returns field validation for bad input.
+`check:live` fetches every public marketing route for launch-sensitive copy and stale-claim checks, and verifies the approved app login/signup CTA targets are reachable.
 `check:rendered` loads the public route set at desktop and 390px mobile widths, verifies route-specific metadata, checks for framework overlays, broken images, horizontal overflow, and proves shared desktop/mobile navigation, route-specific main-content CTA/next-step links, plus visible footer links on every route with a footer.
 
 ## Marketing Launch Mode

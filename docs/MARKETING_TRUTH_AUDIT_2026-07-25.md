@@ -464,6 +464,24 @@ check:live`, `npm run lint`, `npm run build`, and `git diff --check`. Scope
 boundary: marketing QA guard/docs only; no public copy, CTA target, pricing,
 app runtime, signup, booking, payment, SMS/email, or Supabase behavior changed.
 
+## 2026-08-04 App CTA Target Reachability Guard
+
+The live marketing guard now verifies that the approved app CTA destinations are
+reachable, not only that public pages point to the approved hrefs. In addition
+to fetching every public marketing route for launch-sensitive copy and
+stale-claim checks, `npm run check:live` fetches
+`https://app.reservkit.com/login` and
+`https://app.reservkit.com/login?signup=true` with manual redirects and fails if
+either target returns a non-2xx/3xx response. This covers the public `Log in`
+and `Start free` CTA destinations used by the marketing header, homepage,
+pricing, roadmap, blog, docs, and vertical landing pages.
+
+Verification passed full local `npm run verify`, focused live
+`RESERVKIT_MARKETING_BASE_URL=https://reservkit.com npm run check:live`, and
+`git diff --check`. Scope boundary: marketing QA guard/docs only; no public page
+copy, CTA destination, app runtime, signup, booking, payment, pricing,
+Supabase, or customer/operator workflow changed.
+
 ## 2026-08-03 Marketing Verify Script Follow-Up
 
 Marketing now has a consolidated `npm run verify` gate that runs the current

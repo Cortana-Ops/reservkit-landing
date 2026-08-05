@@ -10,6 +10,10 @@ const configuredMarketingMode =
 let detectedMarketingMode = null;
 
 const routes = MARKETING_ROUTES;
+const appCtaTargets = [
+  "https://app.reservkit.com/login",
+  "https://app.reservkit.com/login?signup=true",
+];
 
 const sharedRequiredByRoute = {
   "/": ["Stripe controls payout timing", "Confirmation emails where enabled"],
@@ -167,6 +171,24 @@ for (const route of routes) {
     if (text.includes(phrase)) {
       failures.push(`${route} contains stale phrase: ${phrase}`);
     }
+  }
+}
+
+for (const appUrl of appCtaTargets) {
+  const start = Date.now();
+  let response;
+  try {
+    response = await fetch(appUrl, { redirect: "manual" });
+  } catch (error) {
+    failures.push(`approved app CTA target ${appUrl} failed to fetch: ${error.message}`);
+    continue;
+  }
+
+  const elapsedMs = Date.now() - start;
+  console.log(`${response.status} app CTA ${appUrl} ${elapsedMs}ms`);
+
+  if (response.status < 200 || response.status >= 400) {
+    failures.push(`approved app CTA target ${appUrl} returned HTTP ${response.status}`);
   }
 }
 
