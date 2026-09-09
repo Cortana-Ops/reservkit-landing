@@ -125,3 +125,9 @@ Keep existing customers supported while promotion is paused. Rollback decisions 
 - Run focused local tests during iteration, then one full local verification before the push.
 - Do not create PRs or empty documentation commits solely to obtain another CI run.
 - Record production evidence after the deployment without triggering a second pipeline unless launch-critical code changed.
+
+## Support Automation Boundary
+
+Guided-setup intake is being connected to a private Launch Ops queue. Contact details and free-form messages belong in the service-role support store, not PostHog. Replies and activation nudges begin as idempotent drafts with human review. Security, legal, refund/dispute, billing/pricing, and account-access threads always escalate. Root `reservkit.com` mail remains on Google Workspace; inbound automation should use a separate Resend receiving subdomain and must not change root MX records.
+
+As of September 9, guided-setup storage and weekday activation drafting are live in production, but no Launch Ops draft is automatically sent. Inbound mailbox capture remains disabled until the receiving subdomain, signed webhook, and Google Workspace route are explicitly enabled and verified.

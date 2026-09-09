@@ -77,13 +77,12 @@ export function EarlyAccessRequestForm() {
       posthog.capture("guided_setup_request_submitted", {
         business_type: form.businessType,
         monthly_booking_volume: form.monthlyBookingVolume,
-        biggest_booking_problem: form.biggestBookingProblem,
       });
       setStatus("success");
       setForm(initialState);
     } catch (error) {
       posthog.capture("guided_setup_request_failed", {
-        reason: error instanceof Error ? error.message : "unknown",
+        failure_area: "guided_setup_form",
       });
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");

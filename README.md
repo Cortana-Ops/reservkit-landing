@@ -63,6 +63,8 @@ Required environment variables:
 
 - `RESEND_API_KEY`
 - `EARLY_ACCESS_REQUEST_TO_EMAIL`
+- `LAUNCH_OPS_INGEST_URL`
+- `LAUNCH_OPS_INGEST_SECRET`
 
 Optional environment variable:
 

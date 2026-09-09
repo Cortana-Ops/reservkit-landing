@@ -76,6 +76,43 @@ export async function POST(request: Request) {
     return NextResponse.json({ errors }, { status: 400 });
   }
 
+  const launchOpsUrl = process.env.LAUNCH_OPS_INGEST_URL;
+  const launchOpsSecret = process.env.LAUNCH_OPS_INGEST_SECRET;
+  if (!launchOpsUrl || !launchOpsSecret) {
+    return NextResponse.json(
+      { error: "Guided setup request storage is not configured." },
+      { status: 500 }
+    );
+  }
+
+  let ingestResponse: Response;
+  try {
+    ingestResponse = await fetch(launchOpsUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-launch-ops-secret": launchOpsSecret,
+      },
+      body: JSON.stringify({
+        type: "guided_setup_request",
+        requestId: crypto.randomUUID(),
+        ...fields,
+      }),
+    });
+  } catch {
+    return NextResponse.json(
+      { error: "Could not store guided setup request right now." },
+      { status: 502 }
+    );
+  }
+
+  if (!ingestResponse.ok) {
+    return NextResponse.json(
+      { error: "Could not store guided setup request right now." },
+      { status: 502 }
+    );
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.EARLY_ACCESS_REQUEST_TO_EMAIL || process.env.BETA_REQUEST_TO_EMAIL;
   const from =
