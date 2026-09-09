@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePostHog } from "posthog-js/react";
 import type { ComponentProps } from "react";
+import { buildAttributedAppUrl, getCampaignAttribution } from "../lib/campaignAttribution";
 
 interface TrackedLinkProps extends ComponentProps<typeof Link> {
   event: string;
@@ -13,7 +14,17 @@ export function TrackedLink({ event, properties, onClick, ...props }: TrackedLin
   const ph = usePostHog();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    ph?.capture(event, properties);
+    const campaign = getCampaignAttribution(window.location.search, window.location.pathname);
+    const ctaLocation = typeof properties?.location === "string" ? properties.location : undefined;
+    const href = e.currentTarget.href;
+
+    e.currentTarget.href = buildAttributedAppUrl(
+      href,
+      window.location.search,
+      window.location.pathname,
+      ctaLocation,
+    );
+    ph?.capture(event, { ...properties, ...campaign });
     onClick?.(e);
   };
 

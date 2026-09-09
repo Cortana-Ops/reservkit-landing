@@ -74,4 +74,4 @@ Do not commit secrets or paste live credentials into docs, issues, PRs, or chat.
 
 Pricing and CTA constants live in `app/lib/marketing.ts`. Use those constants when editing pages so the website stays aligned with the app.
 
-Before changing public claims, read `docs/MARKETING_PRODUCT_FACTS.md`. That file is the marketing truth source for current launch posture, plan gates, booking-flow claims, waiver/payment boundaries, unsupported future features, and product-media rules.
+Before changing public claims, read `docs/MARKETING_PRODUCT_FACTS.md`. That file is the marketing truth source for current launch posture, plan gates, booking-flow claims, waiver/payment boundaries, unsupported future features, and product-media rules. Use `docs/LAUNCH_OPERATING_PLAN_2026-09-08.md` for the current launch funnel, gates, schedule, and channel plan.

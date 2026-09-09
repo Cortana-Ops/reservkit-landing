@@ -1,6 +1,6 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-08-04
+**Last updated:** 2026-09-08
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
@@ -11,6 +11,7 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 - `/early-access` remains guided setup/help intake for operators who want support setting up the first booking flow.
 - Public self-serve plans are Free, Starter, Growth, and Pro.
 - Enterprise is manual/private setup help, not a normal self-serve checkout plan.
+- Launch campaign CTAs carry only whitelisted campaign fields, landing path, and CTA location into the app so acquisition and onboarding can be measured without operator PII.
 
 ## Pricing And Fees
 

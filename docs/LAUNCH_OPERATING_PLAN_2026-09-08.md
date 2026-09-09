@@ -1,0 +1,127 @@
+# ReservKit Launch Operating Plan
+
+**Prepared:** 2026-09-08  
+**Recommended public announcement target:** Tuesday, 2026-09-22  
+**Decision status:** Owner confirms the date at the 2026-09-18 go/no-go review.
+
+ReservKit is already open for public Free-first signup. This plan is for the public announcement and founder-led acquisition push, not for enabling access. Until the activation baseline is stronger, the launch goal is to create successful operators rather than maximize raw traffic.
+
+## Baseline
+
+Privacy-safe production aggregates read on 2026-09-08:
+
+| Measure | Current baseline |
+| --- | ---: |
+| Standard non-test signups, last 30 days | 2 |
+| Standard non-test signups, last 14 days | 0 |
+| Standard non-test signups with active activity | 1 |
+| Standard non-test signups with future open slots | 0 |
+| Standard non-test signups with active Stripe Connect | 0 |
+| Standard non-test signups with any booking | 0 |
+| Standard non-test signups on a paid plan | 0 |
+
+No customer or operator PII is part of this baseline.
+
+## Launch Funnel
+
+1. Qualified visitor reaches a ReservKit page.
+2. Visitor clicks `Start free`.
+3. Operator requests signup confirmation.
+4. Operator confirms email, signs in, and creates an organization.
+5. Operator creates an active activity.
+6. Operator creates future availability.
+7. Operator completes Stripe Connect.
+8. Operator completes a controlled end-to-end booking test.
+9. Operator receives a real booking and later converts to a paid plan when volume or feature needs justify it.
+
+The primary activation outcome is the **first bookable flow**: organization created, active activity configured, future availability present, Stripe Connect active, and a controlled booking test completed. Signup count alone is not activation.
+
+## Go/No-Go Gates
+
+All gates should be true by Friday, 2026-09-18:
+
+- At least 3 qualified operators complete the first bookable flow with founder-guided setup.
+- At least 5 qualified operators have entered onboarding, giving enough evidence to identify repeated setup friction.
+- No unresolved current-release P0 issue affects authentication, organization creation, availability, Stripe Connect, checkout, booking creation, or refunds.
+- Production app smoke, marketing live checks, and the single batched release CI run are green.
+- A fresh production Sentry review has no current-release launch blocker. Keep RK-12 closed unless real non-test evidence appears.
+- `hello@reservkit.com` has a named owner and is checked throughout each launch business day.
+- The owner can explain and demonstrate the setup order: business, activity, availability, Stripe Connect, booking page, controlled booking test.
+
+If fewer than 3 operators activate, postpone the broad announcement and continue guided onboarding. Do not compensate with more traffic.
+
+## Two-Week Schedule
+
+### September 8-11: Measurement and launch materials
+
+- Ship campaign attribution from marketing CTA through signup and onboarding.
+- Establish the funnel event names and privacy rules.
+- Prepare a list of 25 handpicked rental or experience operators.
+- Prepare one short outreach email and one guided setup call outline.
+- Rehearse the complete setup and refund path using controlled accounts.
+
+### September 14-18: Activation sprint
+
+- Contact the 25 qualified operators directly in small daily batches.
+- Offer guided setup through the existing help path; do not promise discounts or custom terms.
+- Onboard 3-5 operators personally and record only repeated product friction.
+- Fix launch-blocking defects in one batched release. Defer cosmetic and speculative scope.
+- Hold the owner go/no-go review on September 18.
+
+### September 22-October 2: Announcement and support
+
+- Publish the announcement only if the gates pass.
+- Use founder channels, direct outreach, helpful operator-community posts, and existing SEO pages.
+- Review signup, organization creation, activation, errors, and support requests every business day.
+- Respond to setup requests the same business day.
+- Request a factual customer quote only after a real successful workflow; never manufacture proof.
+
+## Channel Priorities
+
+1. Founder outreach to 25 carefully selected operators with a relevant reason for contacting each one.
+2. Guided setup for current and new signups, including the operators who already requested help.
+3. Helpful posts in relevant operator communities that show a concrete workflow or answer a real problem.
+4. Existing boat, kayak, and tour landing pages plus product documentation as trust and search support.
+5. Paid acquisition only after the first-bookable-flow conversion rate is proven and support capacity is known.
+
+## Daily Scorecard
+
+Track these as aggregate counts and rates, split by `utm_source`, `utm_campaign`, landing path, and CTA location where volume permits:
+
+- Qualified outreach sent and replies.
+- `Start free` clicks.
+- Signup confirmation requests.
+- Organizations created.
+- First activities created or skipped.
+- Future availability configured.
+- Stripe Connect activated.
+- Controlled booking tests completed.
+- Real bookings and paid-plan conversions.
+- Open current-release Sentry issues and support requests.
+
+Do not put emails, names, business names, free-form form content, raw errors, or secrets into PostHog campaign events.
+
+## Stop Conditions
+
+Pause active promotion when any of these occurs:
+
+- Repeated sign-in, confirmation, organization creation, payment, booking, or refund failure affects real users.
+- A P0 current-release production issue appears in Sentry or support.
+- Support cannot respond during the stated window.
+- Product messaging no longer matches production pricing or behavior.
+
+Keep existing customers supported while promotion is paused. Rollback decisions should follow the public signup and production support runbooks.
+
+## Owner Decisions And Actions
+
+- Confirm or change the recommended September 22 announcement date by September 18.
+- Own `hello@reservkit.com` during launch week or name the person who does.
+- Approve the first 25 prospects and send founder outreach from a real ReservKit identity.
+- Do not create a launch discount by default. Free already provides a low-risk entry; any credit, discount, or custom offer requires an explicit pricing decision.
+
+## Release Discipline
+
+- Batch app changes into one verified push when feasible; a push to `main` triggers the expensive full pipeline.
+- Run focused local tests during iteration, then one full local verification before the push.
+- Do not create PRs or empty documentation commits solely to obtain another CI run.
+- Record production evidence after the deployment without triggering a second pipeline unless launch-critical code changed.
