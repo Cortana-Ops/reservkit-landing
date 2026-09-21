@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ReservKit — Direct booking software for rental and experience operators",
     description: METADATA_DESCRIPTION,
-    images: ["https://reservkit.com/opengraph-image.png"],
+    images: ["https://reservkit.com/opengraph-image"],
   },
   verification: {
     google: "h40_sJX1Bf3VAdnC_XZ1ReQJpJjvavm59de2vbwLFFI",

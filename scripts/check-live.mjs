@@ -14,6 +14,7 @@ const appCtaTargets = [
   "https://app.reservkit.com/login",
   "https://app.reservkit.com/login?signup=true",
 ];
+const socialPreviewUrl = new URL("/opengraph-image", baseUrl).toString();
 
 const sharedRequiredByRoute = {
   "/": ["Stripe controls payout timing", "Confirmation emails where enabled"],
@@ -190,6 +191,18 @@ for (const appUrl of appCtaTargets) {
   if (response.status < 200 || response.status >= 400) {
     failures.push(`approved app CTA target ${appUrl} returned HTTP ${response.status}`);
   }
+}
+
+try {
+  const response = await fetch(socialPreviewUrl, { redirect: "manual" });
+  console.log(`${response.status} social preview ${socialPreviewUrl}`);
+  if (!response.ok || !response.headers.get("content-type")?.startsWith("image/")) {
+    failures.push(
+      `social preview ${socialPreviewUrl} must return a successful image response`
+    );
+  }
+} catch (error) {
+  failures.push(`social preview ${socialPreviewUrl} failed to fetch: ${error.message}`);
 }
 
 if (failures.length) {

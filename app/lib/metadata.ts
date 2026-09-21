@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const siteUrl = "https://reservkit.com";
 const siteName = "ReservKit";
-const twitterImage = `${siteUrl}/opengraph-image.png`;
+const twitterImage = `${siteUrl}/opengraph-image`;
 
 interface MarketingMetadataInput {
   title: string;

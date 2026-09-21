@@ -1,24 +1,29 @@
 # ReservKit Launch Operating Plan
 
-**Prepared:** 2026-09-08  
-**Recommended public announcement target:** Tuesday, 2026-09-22  
-**Decision status:** Owner confirms the date at the 2026-09-18 go/no-go review.
+**Prepared:** 2026-09-08
+
+**Last reviewed:** 2026-09-21
+
+**Public announcement target:** Postponed; no replacement date until the gates pass.
+
+**Decision status:** No-go for broad promotion and paid acquisition. Continue founder-guided onboarding.
 
 ReservKit is already open for public Free-first signup. This plan is for the public announcement and founder-led acquisition push, not for enabling access. Until the activation baseline is stronger, the launch goal is to create successful operators rather than maximize raw traffic.
 
 ## Baseline
 
-Privacy-safe production aggregates read on 2026-09-08:
+Privacy-safe production aggregates re-read on 2026-09-21 UTC:
 
 | Measure | Current baseline |
 | --- | ---: |
-| Standard non-test signups, last 30 days | 2 |
+| Standard non-test signups, last 30 days | 0 |
 | Standard non-test signups, last 14 days | 0 |
-| Standard non-test signups with active activity | 1 |
+| Standard non-test organizations, all time | 9 |
+| Standard non-test organizations with active activity | 2 |
 | Standard non-test signups with future open slots | 0 |
 | Standard non-test signups with active Stripe Connect | 0 |
 | Standard non-test signups with any booking | 0 |
-| Standard non-test signups on a paid plan | 0 |
+| Standard non-test organizations with complete first-bookable flow | 0 |
 
 No customer or operator PII is part of this baseline.
 
@@ -38,7 +43,7 @@ The primary activation outcome is the **first bookable flow**: organization crea
 
 ## Go/No-Go Gates
 
-All gates should be true by Friday, 2026-09-18:
+All gates must be true at the next go/no-go review:
 
 - At least 3 qualified operators complete the first bookable flow with founder-guided setup.
 - At least 5 qualified operators have entered onboarding, giving enough evidence to identify repeated setup friction.
@@ -47,6 +52,11 @@ All gates should be true by Friday, 2026-09-18:
 - A fresh production Sentry review has no current-release launch blocker. Keep RK-12 closed unless real non-test evidence appears.
 - `hello@reservkit.com` has a named owner and is checked throughout each launch business day.
 - The owner can explain and demonstrate the setup order: business, activity, availability, Stripe Connect, booking page, controlled booking test.
+- Authenticated Billing package claims match the product and the support service
+  ReservKit can actually provide.
+- One current-release, non-test live Connect booking, cancellation, and refund
+  has completed under explicit owner control of the money.
+- Critical Sentry/provider alerts reach a named launch support owner.
 
 If fewer than 3 operators activate, postpone the broad announcement and continue guided onboarding. Do not compensate with more traffic.
 
@@ -54,21 +64,32 @@ If fewer than 3 operators activate, postpone the broad announcement and continue
 
 ### September 8-11: Measurement and launch materials
 
-- Ship campaign attribution from marketing CTA through signup and onboarding.
-- Establish the funnel event names and privacy rules.
-- Prepare a list of 25 handpicked rental or experience operators.
-- Prepare one short outreach email and one guided setup call outline.
-- Rehearse the complete setup and refund path using controlled accounts.
+- [x] Ship campaign attribution from marketing CTA through signup and onboarding.
+- [x] Establish the funnel event names and privacy rules.
+- [x] Prepare a list of 25 handpicked rental or experience operators.
+- [x] Prepare one short outreach email and one guided setup call outline.
+- [x] Rehearse the complete setup and refund path using controlled accounts.
+- [x] Prepare LinkedIn, Facebook, and Instagram profiles, an organic content
+  sequence, and a gated Meta campaign draft.
 
-### September 14-18: Activation sprint
+The prospect tracker, founder email, follow-up, guided setup call, evidence
+fields, and five-batch cadence are in
+`docs/LAUNCH_OUTREACH_SPRINT_2026-09.md` and
+`docs/launch_prospects_2026-09.csv`. Social profile fields, tracked links,
+organic posts, and the paid campaign guardrails are in
+`docs/SOCIAL_LAUNCH_PLAN_2026-09.md`.
 
-- Contact the 25 qualified operators directly in small daily batches.
+### Current phase: Activation sprint
+
+- Contact qualified operators directly in small daily batches through channels
+  that do not require a commercial-email postal footer.
 - Offer guided setup through the existing help path; do not promise discounts or custom terms.
 - Onboard 3-5 operators personally and record only repeated product friction.
 - Fix launch-blocking defects in one batched release. Defer cosmetic and speculative scope.
-- Hold the owner go/no-go review on September 18.
+- Hold the next owner go/no-go review only after three operators complete the
+  first-bookable flow.
 
-### September 22-October 2: Announcement and support
+### After gates pass: Announcement and support
 
 - Publish the announcement only if the gates pass.
 - Use founder channels, direct outreach, helpful operator-community posts, and existing SEO pages.
@@ -116,6 +137,8 @@ Keep existing customers supported while promotion is paused. Rollback decisions 
 
 - Confirm or change the recommended September 22 announcement date by September 18.
 - Own `hello@reservkit.com` during launch week or name the person who does.
+- Confirm ReservKit's valid physical mailing address for the commercial-email
+  footer before founder outreach begins.
 - Approve the first 25 prospects and send founder outreach from a real ReservKit identity.
 - Do not create a launch discount by default. Free already provides a low-risk entry; any credit, discount, or custom offer requires an explicit pricing decision.
 
@@ -130,4 +153,10 @@ Keep existing customers supported while promotion is paused. Rollback decisions 
 
 Guided-setup intake is being connected to a private Launch Ops queue. Contact details and free-form messages belong in the service-role support store, not PostHog. Replies and activation nudges begin as idempotent drafts with human review. Security, legal, refund/dispute, billing/pricing, and account-access threads always escalate. Root `reservkit.com` mail remains on Google Workspace; inbound automation should use a separate Resend receiving subdomain and must not change root MX records.
 
-As of September 9, guided-setup storage and weekday activation drafting are live in production, but no Launch Ops draft is automatically sent. Inbound mailbox capture remains disabled until the receiving subdomain, signed webhook, and Google Workspace route are explicitly enabled and verified.
+As of September 9, guided-setup storage, weekday activation drafting, signed
+inbound mailbox capture, automated-message filtering, and manual sent-state
+reconciliation are live in production. Two existing activation drafts were
+reconciled after the owner confirmed they had already been sent; no duplicate
+email was sent. Launch Ops drafts are still human-reviewed and are not
+automatically delivered. Security, legal, refund/dispute, billing/pricing, and
+account-access messages remain mandatory escalations.

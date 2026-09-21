@@ -59,6 +59,13 @@ Production marketing is now in public signup posture. Do not switch back to `pre
 
 The guided setup request form posts to `POST /api/early-access-request` and sends an intake email with Resend. The route/function names still use `early-access` for link compatibility.
 
+Launch execution is tracked in
+[`docs/LAUNCH_OPERATING_PLAN_2026-09-08.md`](docs/LAUNCH_OPERATING_PLAN_2026-09-08.md)
+and the current founder outreach sprint is defined in
+[`docs/LAUNCH_OUTREACH_SPRINT_2026-09.md`](docs/LAUNCH_OUTREACH_SPRINT_2026-09.md).
+Social profile copy, organic launch posts, and the gated Meta campaign draft are
+in [`docs/SOCIAL_LAUNCH_PLAN_2026-09.md`](docs/SOCIAL_LAUNCH_PLAN_2026-09.md).
+
 Required environment variables:
 
 - `RESEND_API_KEY`

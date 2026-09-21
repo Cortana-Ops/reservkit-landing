@@ -462,6 +462,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       openGraphUrl: document.querySelector('meta[property="og:url"]')?.getAttribute("content") ?? "",
       twitterTitle: document.querySelector('meta[name="twitter:title"]')?.getAttribute("content") ?? "",
       twitterDescription: document.querySelector('meta[name="twitter:description"]')?.getAttribute("content") ?? "",
+      twitterImage: document.querySelector('meta[name="twitter:image"]')?.getAttribute("content") ?? "",
     }));
 
     console.log(`${status} ${viewport.label} ${route} ${bodyText.length} chars`);
@@ -504,6 +505,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
         openGraphUrl: expectedMetadata.canonical,
         twitterTitle: expectedMetadata.socialTitle,
         twitterDescription: expectedMetadata.description,
+        twitterImage: "https://reservkit.com/opengraph-image",
       };
       for (const [field, expectedValue] of Object.entries(expectedFields)) {
         if (renderedMetadata[field] !== expectedValue) {
