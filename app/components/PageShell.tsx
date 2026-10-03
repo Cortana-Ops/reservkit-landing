@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Nav from "./Nav";
+import { SeoFooterLinks } from "./SeoFooterLinks";
 
 interface PageShellProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ export function PageShell({ children }: PageShellProps) {
       <Nav />
       {children}
       <footer className="border-t border-[var(--color-border)] bg-white px-6 py-8 mt-auto">
+        <SeoFooterLinks />
         <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <Link href="/" className="hover:text-slate-700 transition-colors">
             ← Back to ReservKit

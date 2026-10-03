@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { industryLinks } from "../lib/seoNavigation";
 import { TrackedLink } from "./TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, LOGIN_URL, PRIMARY_CTA_LABEL } from "../lib/marketing";
 
@@ -16,6 +17,28 @@ const navLinks = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const industryMenu = useRef<HTMLDivElement>(null);
+  const industryButton = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      if (!industryMenu.current?.contains(event.target as Node)) setIndustriesOpen(false);
+    };
+    const closeEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        if (industriesOpen) industryButton.current?.focus();
+        setIndustriesOpen(false);
+        setOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeEscape);
+    };
+  }, [industriesOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/95 backdrop-blur-sm">
@@ -35,8 +58,20 @@ export default function Nav() {
         {/* Desktop nav */}
         <nav
           aria-label="Main navigation"
-          className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600"
+          className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600"
         >
+          <div ref={industryMenu} className="relative" onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setIndustriesOpen(false);
+          }}>
+            <button ref={industryButton} type="button" aria-expanded={industriesOpen} aria-controls="industries-navigation" onClick={() => setIndustriesOpen(!industriesOpen)} className="flex items-center gap-1.5 py-2 hover:text-navy">
+              Industries <ChevronDown className="h-4 w-4" aria-hidden="true" />
+            </button>
+            {industriesOpen && (
+              <ul id="industries-navigation" className="absolute left-0 top-full w-56 rounded-lg border border-slate-200 bg-white p-2 shadow-lg">
+                {industryLinks.map((link) => <li key={link.href}><Link href={link.href} onClick={() => setIndustriesOpen(false)} className="block rounded px-3 py-2 hover:bg-slate-50 focus-visible:bg-slate-50">{link.label}</Link></li>)}
+              </ul>
+            )}
+          </div>
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -49,7 +84,7 @@ export default function Nav() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <TrackedLink
             href={LOGIN_URL}
             event="login_clicked"
@@ -70,10 +105,11 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+          className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -81,7 +117,10 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-[var(--color-border)] bg-white px-6 py-4 space-y-1">
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="lg:hidden max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-[var(--color-border)] bg-white px-6 py-4 space-y-1">
+          <p className="pt-2 text-xs font-semibold uppercase text-slate-500">Industries</p>
+          {industryLinks.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="block py-2.5 text-sm font-medium text-slate-700 hover:text-navy">{link.label}</Link>)}
+          <div className="border-t border-slate-200 pt-2" />
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -112,7 +151,7 @@ export default function Nav() {
               {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
             </TrackedLink>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

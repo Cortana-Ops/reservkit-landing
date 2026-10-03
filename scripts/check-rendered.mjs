@@ -51,7 +51,22 @@ const desktopHeaderLinks = [
   { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
 ];
 
+const industryLinks = [
+  { text: "Watersports rentals", href: "/watersports-rental-software" },
+  { text: "Boat rentals", href: "/boat-rental-software" },
+  { text: "Jet ski rentals", href: "/jet-ski-rental-software" },
+  { text: "Kayak rentals", href: "/kayak-rental-software" },
+  { text: "Tour operators", href: "/tour-operator-software" },
+];
+const solutionLinks = [
+  { text: "Digital waivers", href: "/rental-booking-software-with-waivers" },
+  { text: "Damage deposits", href: "/rental-booking-software-with-damage-deposits" },
+  { text: "Stripe payments", href: "/stripe-booking-software-for-rentals" },
+  { text: "Switch booking systems", href: "/switch-rental-booking-software" },
+];
+
 const mobileMenuLinks = [
+  ...industryLinks,
   { text: "Pricing", href: "/pricing" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
@@ -271,6 +286,14 @@ async function checkHomepageHeroActions(page, route, viewport) {
 async function checkDesktopHeaderLinks(page, route, viewport) {
   if (viewport.label !== "desktop" || !routesWithSharedHeader.includes(route)) return;
 
+  const industries = page.getByRole("button", { name: "Industries", exact: true });
+  await industries.click();
+  for (const link of industryLinks) {
+    if (await countVisibleHeaderLinks(page, link) !== 1) failures.push(`${route} missing industry menu link: ${link.href}`);
+  }
+  await page.keyboard.press("Escape");
+  if (await industries.getAttribute("aria-expanded") !== "false") failures.push(`${route} industry menu did not close with Escape`);
+
   for (const expectedLink of desktopHeaderLinks) {
     const visibleLinkCount = await countVisibleHeaderLinks(page, expectedLink);
     if (visibleLinkCount !== 1) {
@@ -307,7 +330,7 @@ async function checkMobileHeaderMenu(page, route, viewport) {
   await page.getByRole("button", { name: "Open menu", exact: true }).click({ timeout: 5_000 });
   await page.waitForTimeout(100);
   let openedMenuStateAfterRender = await page.evaluate(() => {
-    const activeButton = document.querySelector("header button");
+    const activeButton = document.querySelector('header button[aria-controls="mobile-navigation"]');
     return {
       ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
       expanded: activeButton?.getAttribute("aria-expanded") ?? null,
@@ -315,7 +338,7 @@ async function checkMobileHeaderMenu(page, route, viewport) {
   });
   if (openedMenuStateAfterRender.expanded !== "true") {
     const buttonCenter = await page.evaluate(() => {
-      const button = document.querySelector("header button");
+      const button = document.querySelector('header button[aria-controls="mobile-navigation"]');
       if (!button) return null;
       const rect = button.getBoundingClientRect();
       return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
@@ -324,7 +347,7 @@ async function checkMobileHeaderMenu(page, route, viewport) {
       await page.mouse.click(buttonCenter.x, buttonCenter.y);
       await page.waitForTimeout(100);
       openedMenuStateAfterRender = await page.evaluate(() => {
-        const activeButton = document.querySelector("header button");
+        const activeButton = document.querySelector('header button[aria-controls="mobile-navigation"]');
         return {
           ariaLabel: activeButton?.getAttribute("aria-label") ?? null,
           expanded: activeButton?.getAttribute("aria-expanded") ?? null,
@@ -353,7 +376,7 @@ async function checkMobileHeaderMenu(page, route, viewport) {
 async function checkFooterLinks(page, route, viewport) {
   if (route === "/early-access") return;
 
-  const expectedLinks = route === "/" ? homepageFooterLinks : pageShellFooterLinks;
+  const expectedLinks = [...(route === "/" ? homepageFooterLinks : pageShellFooterLinks), ...industryLinks, ...solutionLinks];
   const renderedFooterLinks = await page.evaluate(() => {
     const footer = Array.from(document.querySelectorAll("footer")).at(-1);
     if (!footer) return [];

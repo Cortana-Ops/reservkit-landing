@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SeoFooterLinks } from "./components/SeoFooterLinks";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -179,9 +180,9 @@ const industryLinks = [
 
 const operatorFeatures = [
   {
-    src: "/product-activities.png",
-    width: 1440,
-    height: 900,
+    src: "/product-clearwake-light-activities.png",
+    width: 1600,
+    height: 882,
     alt: "ReservKit activities page showing five configured bookable activities",
     label: "Activities",
     heading: "Build the catalog customers actually book",
@@ -189,9 +190,9 @@ const operatorFeatures = [
     bullets: ["Photos and descriptions", "Pricing, duration, and capacity", "Locations and categories", "Waiver-ready activity setup"],
   },
   {
-    src: "/product-bookings-dashboard.png",
-    width: 1440,
-    height: 900,
+    src: "/product-clearwake-light-bookings-dashboard.png",
+    width: 1600,
+    height: 882,
     alt: "ReservKit Bookings list showing demo reservations, dates, guests, amounts, payment status and reservation status",
     label: "Bookings",
     heading: "Every booking in one place",
@@ -199,9 +200,9 @@ const operatorFeatures = [
     bullets: ["Customer and activity", "Date and guest count", "Payment state and amount", "Reservation status"],
   },
   {
-    src: "/product-checkin-manifest.png",
-    width: 1440,
-    height: 900,
+    src: "/product-clearwake-light-checkin-manifest.png",
+    width: 1600,
+    height: 882,
     alt: "ReservKit check-in manifest showing day-of bookings",
     label: "Day-of operations",
     heading: "Your staff knows who is arriving before they show up",
@@ -209,9 +210,9 @@ const operatorFeatures = [
     bullets: ["Ready vs. attention split", "Booking waiver readiness", "Check-in actions", "Printable and CSV-ready"],
   },
   {
-    src: "/product-waiver-status.png",
-    width: 1440,
-    height: 900,
+    src: "/product-clearwake-light-waiver-status.png",
+    width: 1600,
+    height: 882,
     alt: "ReservKit Waiver Templates settings showing default signer fields and a demo waiver template",
     label: "Waivers",
     heading: "Configure the waivers your activities require",
@@ -219,9 +220,9 @@ const operatorFeatures = [
     bullets: ["Waiver templates", "Default signer fields", "Optional drawn signatures", "Activity-specific requirements"],
   },
   {
-    src: "/product-reports.png",
-    width: 1440,
-    height: 900,
+    src: "/product-clearwake-light-reports.png",
+    width: 1600,
+    height: 882,
     alt: "ReservKit revenue and booking reports dashboard",
     label: "Reports",
     heading: "Know your numbers by activity and date range",
@@ -286,16 +287,16 @@ export default function Home() {
             <figure className="min-w-0">
               <div className="rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
               <Image
-                src="/product-bookings-dashboard.png"
+                src="/product-clearwake-light-bookings-dashboard.png"
                 alt="ReservKit operator Bookings screen showing sample reservations with dates, guest counts, payments, and reservation status"
-                width={1440}
-                height={900}
+                width={1600}
+                height={882}
                 priority
                 sizes="(max-width: 1023px) 100vw, 600px"
                 className="h-auto w-full rounded-2xl"
               />
               </div>
-              <figcaption className="mt-4 text-center text-sm leading-relaxed text-slate-600">Operator Bookings workspace. Representative screen with demo data.</figcaption>
+              <figcaption className="mt-4 text-center text-sm leading-relaxed text-slate-600">Operator Bookings workspace. Representative screen with demo data from Clearwake Watersports Demo.</figcaption>
             </figure>
           </div>
         </section>
@@ -463,7 +464,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Inside the operator workspace</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                ReservKit connects bookings, payments, waivers, and staff in one place. These representative screens use demo activities, customer records, and amounts. Feature access depends on your plan.
+                ReservKit connects bookings, payments, waivers, and staff in one place. These representative screens use demo activities, customer records, and amounts from Clearwake Watersports Demo, not real customer results. Activity photos are AI-generated illustrations. Feature access depends on your plan.
               </p>
             </div>
             <div className="mt-12 space-y-16">
@@ -599,6 +600,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-navy-light px-6 py-10 text-slate-300">
+        <SeoFooterLinks />
         <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-[1fr_auto_auto]">
           <div>
             <div className="flex items-center gap-2">

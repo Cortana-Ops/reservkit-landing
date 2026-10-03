@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Boat rental software",
   title: "Boat rental booking software built for the dock, not just checkout",
   intro: "Take direct reservations, route checkout through Stripe, collect refundable damage deposits and waiver evidence, and give the dock team one clear view of the day.",
-  image: { src: "/product-checkin-manifest.png", alt: "ReservKit check-in manifest showing one sample activity booking and arrival readiness" },
+  image: { src: "/product-clearwake-light-checkin-manifest.png", alt: "Clearwake demo check-in manifest showing watersports bookings and arrival readiness" },
   bestFitTitle: "A practical fit for operators who",
   bestFit: ["Rent pontoons, ski boats, fishing boats, or personal watercraft", "Need guest counts, arrival details, and waiver status before departure", "Use refundable damage deposits for eligible bookings", "Want a direct booking link instead of managing every reservation by phone"],
   problemTitle: "A reservation is only the start of a boat rental workflow",

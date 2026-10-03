@@ -73,9 +73,9 @@ export function SeoProductPage({ config }: { config: SeoProductPageConfig }) {
             </div>
             <figure className="min-w-0">
               <a href={config.image.src} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge: ${config.image.alt}`}>
-                <Image src={config.image.src} alt={config.image.alt} width={1440} height={900} sizes="(max-width: 1023px) 100vw, 640px" priority className="h-auto w-full rounded-lg border border-[var(--color-border)] bg-white shadow-xl shadow-navy/10" />
+                <Image src={config.image.src} alt={config.image.alt} width={1600} height={config.image.src === "/product-clearwake-light-public-booking-live.png" ? 1533 : 882} sizes="(max-width: 1023px) 100vw, 640px" priority className="h-auto w-full rounded-lg border border-[var(--color-border)] bg-white shadow-xl shadow-navy/10" />
               </a>
-              <figcaption className="mt-3 text-sm leading-relaxed text-slate-600">Representative ReservKit screen with demo data. Activities and amounts are examples.</figcaption>
+              <figcaption className="mt-3 text-sm leading-relaxed text-slate-600">Representative ReservKit screen with demo data from Clearwake Watersports Demo. Customers and amounts are fictional; activity photos are AI-generated illustrations.</figcaption>
             </figure>
           </div>
         </section>

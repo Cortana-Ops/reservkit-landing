@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Watersports rental software",
   title: "One booking workspace for watersports rentals and day-of operations",
   intro: "Sell boat, jet ski, kayak, paddleboard, and other bookable activities through direct links while keeping payments, waiver evidence, deposits, guests, and staff context with each booking.",
-  image: { src: "/product-bookings-dashboard.png", alt: "ReservKit operator Bookings list with sample activities and payment states" },
+  image: { src: "/product-clearwake-light-public-booking-live.png", alt: "Clearwake demo public booking catalog with pontoon, jet ski, paddleboard, cruise and kayak activities" },
   bestFitTitle: "Built for operators who need to coordinate",
   bestFit: ["Several watersports activities with different prices and durations", "Capacity, availability, and cutoff rules by activity", "Guest waivers and refundable damage deposits", "A seasonal team working from phones and a shared dashboard"],
   problemTitle: "Mixed rental operations outgrow disconnected tools quickly",

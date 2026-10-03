@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Jet ski rental software",
   title: "Jet ski rental booking software for payments, waivers, and launch readiness",
   intro: "Give customers a direct reservation path while your team keeps rider details, payment status, refundable damage deposits, waiver evidence, and arrival readiness connected to the booking.",
-  image: { src: "/product-waiver-status.png", alt: "ReservKit Waiver Templates settings with configurable signer fields" },
+  image: { src: "/product-clearwake-light-activities.png", alt: "Clearwake demo activity catalog including a one-hour jet ski rental with pricing and capacity" },
   bestFitTitle: "Useful for jet ski operators managing",
   bestFit: ["Fixed start times or duration-based rental choices", "Rider and guest information before arrival", "Required digital waiver evidence", "Refundable damage deposits and payment status"],
   problemTitle: "A paid reservation can still be unready for launch",

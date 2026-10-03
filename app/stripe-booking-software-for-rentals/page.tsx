@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Rental bookings with Stripe",
   title: "Rental booking software with Stripe Connect checkout",
   intro: "Connect the operator's Stripe account, let ReservKit create the checkout flow, and keep payment status connected to the customer booking and day-of workflow.",
-  image: { src: "/product-bookings-dashboard.png", alt: "ReservKit operator Bookings list showing sample payment states; Stripe Checkout is a separate step" },
+  image: { src: "/product-clearwake-light-bookings-dashboard.png", alt: "ReservKit operator Bookings list showing sample payment states; Stripe Checkout is a separate step" },
   bestFitTitle: "A clear payment setup for operators who want",
   bestFit: ["A direct booking page connected to Stripe", "Published ReservKit plan and booking fees", "Payment and balance context with each booking", "Refund and deposit workflows tied to the operator record"],
   problemTitle: "Online booking and payment operations should share one record",

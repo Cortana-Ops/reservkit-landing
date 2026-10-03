@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Switch rental booking systems",
   title: "Switch rental booking software one tested flow at a time",
   intro: "Avoid a risky all-at-once migration. Rebuild one real activity, connect the payment and waiver paths, complete a customer test booking, and only then replace the links sending traffic to your old system.",
-  image: { src: "/product-bookings-dashboard.png", alt: "ReservKit operator bookings dashboard used to verify a migrated booking flow" },
+  image: { src: "/product-clearwake-light-bookings-dashboard.png", alt: "ReservKit operator bookings dashboard used to verify a migrated booking flow" },
   bestFitTitle: "This migration path works best when you can",
   bestFit: ["Choose one representative activity to move first", "Document current price, duration, capacity, and availability rules", "Complete Stripe onboarding and waiver setup", "Run a booking as a customer before changing live links"],
   problemTitle: "The risk is not creating an account. It is moving live traffic too soon.",

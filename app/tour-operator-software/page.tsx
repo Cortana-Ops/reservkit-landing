@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { TrackedLink } from "../components/TrackedLink";
@@ -95,6 +96,12 @@ export default function TourOperatorSoftware() {
 
         <section className="bg-white px-6 py-16" aria-label="Features for tour operators">
           <div className="mx-auto max-w-4xl">
+            <figure className="mb-12">
+              <a href="/product-clearwake-light-checkin-manifest.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Clearwake demo check-in manifest">
+                <Image src="/product-clearwake-light-checkin-manifest.png" alt="Clearwake Watersports Demo check-in manifest showing boat and paddlesports reservations" width={1600} height={882} loading="eager" className="h-auto w-full rounded-lg border border-slate-200" sizes="(max-width: 1024px) 100vw, 896px" />
+              </a>
+              <figcaption className="mt-3 text-sm text-slate-600">Real ReservKit screen from Clearwake Watersports Demo. Customer records are fictional.</figcaption>
+            </figure>
             <h2 className="mb-8 text-center text-2xl font-bold text-navy">
               Built for direct booking operations
             </h2>

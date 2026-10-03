@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Refundable damage deposits",
   title: "Rental booking software with refundable damage deposits at checkout",
   intro: "Collect an eligible refundable damage deposit as a separate charge line at checkout, keep its status with the booking, and refund the appropriate amount through Stripe after the rental. This is not a card authorization hold.",
-  image: { src: "/product-bookings-dashboard.png", alt: "ReservKit bookings dashboard with customer, payment, and booking details" },
+  image: { src: "/product-clearwake-light-bookings-dashboard.png", alt: "ReservKit bookings dashboard with customer, payment, and booking details" },
   bestFitTitle: "Useful for rental businesses that need",
   bestFit: ["A deposit amount configured for eligible activities", "Checkout records connected to the reservation", "A clear operator status after the activity", "Stripe as the system handling the underlying money movement"],
   problemTitle: "Damage deposits need an operational follow-through",

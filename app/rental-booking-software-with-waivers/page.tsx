@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Bookings with digital waivers",
   title: "Rental booking software that keeps waiver evidence with the booking",
   intro: "Assign required waiver templates by activity, collect guest signer evidence, and give staff a clear view of which bookings are ready before customers arrive.",
-  image: { src: "/product-waiver-status.png", alt: "ReservKit Waiver Templates settings with configurable signer fields" },
+  image: { src: "/product-clearwake-light-waiver-status.png", alt: "ReservKit Waiver Templates settings with configurable signer fields" },
   bestFitTitle: "A fit when your operation needs",
   bestFit: ["One or more required waiver templates by activity", "Signer records for individual guests", "Verification and signature evidence tied to the booking", "Day-of visibility into missing waiver steps"],
   problemTitle: "A separate waiver tool leaves staff reconciling two lists",
