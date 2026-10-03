@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
-import { ArrowRight, Bell, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays } from "lucide-react";
+import { ArrowRight, Bell, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays, PackageCheck } from "lucide-react";
 import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
@@ -32,6 +32,13 @@ const sections = [
     href: "/docs/bookings-availability",
     description: "Manage your availability calendar, direct booking links, website iframe snippets, and cancellation process.",
     topics: ["Setting availability windows", "Managing time slots", "All-activity and single-activity links", "Website iframe snippets", "Check-in process"],
+  },
+  {
+    icon: PackageCheck,
+    title: "Equipment",
+    href: "/docs/equipment",
+    description: "Configure operating equipment and named units for Growth and higher plans when your operation needs specific gear held for a booking.",
+    topics: ["Optional equipment setup", "Named unit blocking", "Growth+ availability", "Customer booking behavior", "Day-of equipment visibility"],
   },
   {
     icon: CreditCard,

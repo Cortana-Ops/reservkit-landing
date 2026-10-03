@@ -72,6 +72,13 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     canonical: "https://reservkit.com/docs/bookings-availability",
     socialTitle: "Bookings & Availability — ReservKit",
   },
+  "/docs/equipment": {
+    title: "Equipment — ReservKit",
+    description:
+      "Configure optional equipment records and named unit blocking in ReservKit for Growth and higher rental operators.",
+    canonical: "https://reservkit.com/docs/equipment",
+    socialTitle: "Equipment — ReservKit",
+  },
   "/roadmap": {
     title: "Product Roadmap — ReservKit",
     description:

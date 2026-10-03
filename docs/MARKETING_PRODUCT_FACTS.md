@@ -1,6 +1,6 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-10-02
+**Last updated:** 2026-10-03
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
@@ -37,7 +37,7 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 - Free includes the core public booking page, Stripe Connect payments, customer records, and booking confirmation emails where enabled at low volume.
 - Free does not include staff/team access.
 - Starter adds basic team tools and staff scheduling access.
-- Growth adds unlimited bookings, reports, waiver tools, broadcasts, coupon codes, refundable damage deposits, priced add-ons, equipment, and dynamic pricing.
+- Growth adds unlimited bookings, reports, waiver tools, broadcasts, coupon codes, refundable damage deposits, priced add-ons, equipment, named equipment-unit blocking, and dynamic pricing.
 - Pro includes Growth features with the lowest self-serve booking fee and a deeper support path for higher-volume operations.
 - Admin/support accounts are internal ReservKit operations accounts and should not be described as public plans.
 - Owner/custom/private accounts are private account types and should not be promoted as public plans.
@@ -124,7 +124,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 Do not market the following as live:
 
 - Cart or multi-item checkout.
-- Resource variants, customer-selectable resources, physical unit assignment, and inventory blocking.
+- Customer-selectable equipment resources or variants. Operators can configure equipment records and named units on Growth and higher plans, but customers do not choose a specific unit during checkout.
 - Multi-day/overnight bookings.
 - Staff tip self-service.
 - Full operator-facing email/SMS template editor.

@@ -10,6 +10,7 @@ export const MARKETING_ROUTES = [
   "/docs/notifications",
   "/docs/reports",
   "/docs/bookings-availability",
+  "/docs/equipment",
   "/roadmap",
   "/changelog",
   "/blog",

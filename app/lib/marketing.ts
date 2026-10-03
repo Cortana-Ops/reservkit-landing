@@ -65,12 +65,13 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2% booking fee",
     volume: "Unlimited bookings",
-    description: "For growing teams that need unlimited bookings, waivers, broadcasts, reports, coupons, refundable damage deposits, and add-ons.",
+    description: "For growing teams that need unlimited bookings, waivers, reports, coupons, refundable damage deposits, add-ons, and named equipment-unit blocking.",
     features: [
       "Everything in Starter",
       "Reports and waiver tools",
       "Broadcasts and coupon codes",
       "Equipment and dynamic pricing",
+      "Named equipment-unit blocking",
       "Damage deposits and add-ons",
     ],
     highlight: false,
@@ -132,7 +133,7 @@ export const pricingSummary =
   "Public plans are Free ($0/mo + 4%, 10 bookings/month), Starter ($79/mo + 3%, 100 bookings/month), Growth ($149/mo + 2%, unlimited), Pro ($299/mo + 1.5%, unlimited), and Enterprise custom.";
 
 export const verticalFeatureGateNote =
-  "Feature availability follows the pricing tiers: Free covers the first low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers, reports, broadcasts, equipment, dynamic pricing, deposits, coupons, and add-ons.";
+  "Feature availability follows the pricing tiers: Free covers the first low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers, reports, broadcasts, equipment, named unit blocking, dynamic pricing, deposits, coupons, and add-ons.";
 
 export const earlyAccessRequestFields = [
   "name",
