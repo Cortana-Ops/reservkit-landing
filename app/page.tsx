@@ -178,10 +178,12 @@ const operatorProof = [
 ];
 
 const industryLinks = [
+  { href: "/watersports-rental-software", label: "Watersports rental software" },
   { href: "/boat-rental-software", label: "Boat rental software" },
+  { href: "/jet-ski-rental-software", label: "Jet ski rental software" },
   { href: "/kayak-rental-software", label: "Kayak rental software" },
-  { href: "/tour-operator-software", label: "Tour operator software" },
-  { href: "/pricing", label: "Transparent pricing" },
+  { href: "/switch-rental-booking-software", label: "Switch booking systems" },
+  { href: "/rental-booking-software-with-waivers", label: "Digital waiver workflows" },
 ];
 
 const operatorFeatures = [
@@ -238,9 +240,9 @@ const operatorFeatures = [
 ];
 
 export const metadata = createMarketingMetadata({
-  title: "ReservKit — Booking software for rental, tour, and experience operators",
+  title: "ReservKit — Boat & watersports rental booking software",
   description:
-    "Switch to direct booking software with Stripe payments, waiver evidence, refundable damage deposits, day-of operations, and transparent pricing for rental, tour, and experience operators.",
+    "Direct booking software for boat and watersports rentals with Stripe payments, waiver evidence, refundable damage deposits, and day-of operations.",
   path: "/",
 });
 
@@ -260,10 +262,10 @@ export default function Home() {
                 {HERO_STATUS_LABEL}
               </div>
               <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-navy sm:text-6xl">
-                Booking software that keeps operators in control of bookings, payments, and the day of work.
+                Boat and watersports rental software for bookings, payments, waivers, and the day of work.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
-                ReservKit helps rental, tour, and experience businesses take direct bookings, collect payments through Stripe Connect, gather waiver evidence, handle refundable damage deposits, and give staff a clear day-of view.
+                ReservKit helps boat and watersports rental businesses take direct bookings, collect payments through Stripe Connect, gather waiver evidence, handle refundable damage deposits, and give staff a clear day-of view. Tour and experience operators can use the same core workflow.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink

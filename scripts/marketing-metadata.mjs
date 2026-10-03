@@ -1,10 +1,10 @@
 export const EXPECTED_METADATA_BY_ROUTE = {
   "/": {
-    title: "ReservKit — Booking software for rental, tour, and experience operators",
+    title: "ReservKit — Boat & watersports rental booking software",
     description:
-      "Switch to direct booking software with Stripe payments, waiver evidence, refundable damage deposits, day-of operations, and transparent pricing for rental, tour, and experience operators.",
+      "Direct booking software for boat and watersports rentals with Stripe payments, waiver evidence, refundable damage deposits, and day-of operations.",
     canonical: "https://reservkit.com",
-    socialTitle: "ReservKit — Booking software for rental, tour, and experience operators",
+    socialTitle: "ReservKit — Boat & watersports rental booking software",
   },
   "/pricing": {
     title: "Pricing — ReservKit",
@@ -93,18 +93,54 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     socialTitle: "Blog — Rental Operator Guides — ReservKit",
   },
   "/boat-rental-software": {
-    title: "Boat Rental Booking Software - Payments & Waivers Included — ReservKit",
+    title: "Boat Rental Booking Software - Payments, Deposits & Waivers — ReservKit",
     description:
-      "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and Free-first setup.",
+      "Boat rental booking software for direct reservations, Stripe payments, refundable damage deposits, digital waivers, staff visibility, and dockside check-in.",
     canonical: "https://reservkit.com/boat-rental-software",
-    socialTitle: "Boat Rental Booking Software - Payments & Waivers Included — ReservKit",
+    socialTitle: "Boat Rental Booking Software - Payments, Deposits & Waivers — ReservKit",
   },
   "/kayak-rental-software": {
-    title: "Kayak Rental Booking Software - Online Reservations & Waivers — ReservKit",
+    title: "Kayak Rental Booking Software - Reservations & Waivers — ReservKit",
     description:
-      "ReservKit helps kayak and paddleboard rental operators take online reservations, collect Stripe payments, and manage digital waivers.",
+      "Kayak and paddleboard rental booking software for online reservations, Stripe payments, digital waivers, availability, and mobile check-in.",
     canonical: "https://reservkit.com/kayak-rental-software",
-    socialTitle: "Kayak Rental Booking Software - Online Reservations & Waivers — ReservKit",
+    socialTitle: "Kayak Rental Booking Software - Reservations & Waivers — ReservKit",
+  },
+  "/watersports-rental-software": {
+    title: "Watersports Rental Software - Bookings, Payments & Waivers — ReservKit",
+    description: "Watersports rental software for direct bookings, Stripe payments, digital waivers, deposits, staff coordination, and day-of check-in.",
+    canonical: "https://reservkit.com/watersports-rental-software",
+    socialTitle: "Watersports Rental Software - Bookings, Payments & Waivers — ReservKit",
+  },
+  "/jet-ski-rental-software": {
+    title: "Jet Ski Rental Software - Online Booking & Waivers — ReservKit",
+    description: "Jet ski rental booking software for online reservations, Stripe payments, refundable damage deposits, guest waivers, and launch-site check-in.",
+    canonical: "https://reservkit.com/jet-ski-rental-software",
+    socialTitle: "Jet Ski Rental Software - Online Booking & Waivers — ReservKit",
+  },
+  "/rental-booking-software-with-waivers": {
+    title: "Rental Booking Software with Digital Waivers — ReservKit",
+    description: "Rental booking software that connects required digital waiver evidence, guest signer status, Stripe checkout, and day-of check-in to each booking.",
+    canonical: "https://reservkit.com/rental-booking-software-with-waivers",
+    socialTitle: "Rental Booking Software with Digital Waivers — ReservKit",
+  },
+  "/rental-booking-software-with-damage-deposits": {
+    title: "Rental Booking Software with Damage Deposits — ReservKit",
+    description: "Rental booking software with Stripe checkout, refundable damage deposits, booking records, waivers, and operator follow-up tools.",
+    canonical: "https://reservkit.com/rental-booking-software-with-damage-deposits",
+    socialTitle: "Rental Booking Software with Damage Deposits — ReservKit",
+  },
+  "/stripe-booking-software-for-rentals": {
+    title: "Stripe Booking Software for Rental Businesses — ReservKit",
+    description: "Rental booking software using Stripe Connect for customer checkout, booking payments, refunds, deposits, and operator payment visibility.",
+    canonical: "https://reservkit.com/stripe-booking-software-for-rentals",
+    socialTitle: "Stripe Booking Software for Rental Businesses — ReservKit",
+  },
+  "/switch-rental-booking-software": {
+    title: "Switch Rental Booking Software without Breaking Your Live Flow — ReservKit",
+    description: "A practical migration path for rental operators switching booking software: map one activity, connect Stripe, configure waivers, test, then move traffic.",
+    canonical: "https://reservkit.com/switch-rental-booking-software",
+    socialTitle: "Switch Rental Booking Software without Breaking Your Live Flow — ReservKit",
   },
   "/tour-operator-software": {
     title: "Tour Operator Booking Software - Waivers, Payments, Staff — ReservKit",

@@ -2,13 +2,27 @@
 
 **Prepared:** 2026-09-08
 
-**Last reviewed:** 2026-09-21
+**Last reviewed:** 2026-10-02
 
 **Public announcement target:** Postponed; no replacement date until the gates pass.
 
 **Decision status:** No-go for broad promotion and paid acquisition. Continue founder-guided onboarding.
 
 ReservKit is already open for public Free-first signup. This plan is for the public announcement and founder-led acquisition push, not for enabling access. Until the activation baseline is stronger, the launch goal is to create successful operators rather than maximize raw traffic.
+
+## Initial Market Wedge
+
+The first acquisition focus is **boat and watersports rental operators**. This
+is narrower than the product's full supported market and gives outreach, SEO,
+demos, and onboarding one concrete operating workflow. The primary offer is a
+guided migration of one first-bookable flow, not a promise to replace an
+operator's entire system on day one.
+
+For the first 90 days, judge the wedge by activation and use rather than raw
+traffic: 5 qualified onboarding starts, 3 completed first-bookable flows, and
+evidence that at least one operator can continue normal booking operations
+without founder intervention. Expand positioning only after those outcomes are
+repeatable.
 
 ## Baseline
 
@@ -102,7 +116,7 @@ organic posts, and the paid campaign guardrails are in
 1. Founder outreach to 25 carefully selected operators with a relevant reason for contacting each one.
 2. Guided setup for current and new signups, including the operators who already requested help.
 3. Helpful posts in relevant operator communities that show a concrete workflow or answer a real problem.
-4. Existing boat, kayak, and tour landing pages plus product documentation as trust and search support.
+4. Boat and watersports SEO pages, high-intent workflow pages, and product documentation as trust and search support.
 5. Paid acquisition only after the first-bookable-flow conversion rate is proven and support capacity is known.
 
 ## Daily Scorecard

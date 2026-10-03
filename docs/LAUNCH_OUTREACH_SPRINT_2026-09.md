@@ -1,6 +1,7 @@
 # ReservKit Founder Outreach Sprint
 
 **Prepared:** 2026-09-09
+**Last aligned:** 2026-10-02
 **Outreach window:** 2026-09-14 through 2026-09-18
 **Announcement decision:** 2026-09-18
 **Recommended announcement:** 2026-09-22, only if the launch gates pass
@@ -12,8 +13,10 @@ This sprint is designed to produce successful operator setups, not raw signup
 volume. The prospect tracker is in
 `docs/launch_prospects_2026-09.csv`. The CSV is a prospect seed list, not a
 store for replies or personal contact details. It contains public business
-information only and starts with 25 Central Texas rental and experience operators whose
-inventory, capacity, waiver, time-slot, or payment workflows fit ReservKit.
+information only. Prioritize boat and watersports rental operators whose
+inventory, capacity, waiver, time-slot, deposit, or payment workflows fit the
+initial launch wedge. Keep adjacent rental and experience operators as a
+secondary pool rather than broadening the first campaign message.
 
 ## Sprint Target
 
@@ -60,11 +63,11 @@ Hi [Business] team,
 
 [One sentence based on the relevant reason in the tracker.]
 
-I am building ReservKit for rental and tour operators, and I am looking for a
-small group of Central Texas businesses to run a real booking setup with me
+I am building ReservKit for boat and watersports rental operators, and I am
+looking for a small group of businesses to run a real booking setup with me
 before our public announcement. ReservKit has a Free plan, and I will personally
-help configure one activity, availability, Stripe Connect, and the booking page,
-then run and refund a controlled test booking.
+help configure one activity, availability, Stripe Connect, waivers, and the
+booking page, then run and refund a controlled test booking.
 
 Would a 30-minute setup session be useful? You can also request guided setup at
 https://reservkit.com/early-access.

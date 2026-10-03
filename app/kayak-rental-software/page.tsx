@@ -1,156 +1,46 @@
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { PageShell } from "../components/PageShell";
-import { TrackedLink } from "../components/TrackedLink";
-import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary, verticalFeatureGateNote } from "../lib/marketing";
+import { SeoProductPage, type SeoProductPageConfig } from "../components/SeoProductPage";
 import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
-  title: "Kayak Rental Booking Software - Online Reservations & Waivers",
-  description:
-    "ReservKit helps kayak and paddleboard rental operators take online reservations, collect Stripe payments, and manage digital waivers.",
-  keywords: [
-    "kayak rental booking software",
-    "kayak rental reservation system",
-    "online kayak rental booking",
-    "kayak rental management software",
-  ],
+  title: "Kayak Rental Booking Software - Reservations & Waivers",
+  description: "Kayak and paddleboard rental booking software for online reservations, Stripe payments, digital waivers, availability, and mobile check-in.",
+  keywords: ["kayak rental booking software", "paddleboard rental software", "kayak reservation system"],
   path: "/kayak-rental-software",
 });
 
-const features = [
-  "Public booking page for rentals and tours",
-  "Stripe payments and refundable damage deposits",
-  "Per-guest digital liability waiver signing",
-  "Availability windows and booking cutoffs",
-  "Duration-based rental pricing",
-  "Staff scheduling and roster visibility",
-  "Customer confirmation emails where enabled",
-  "Mobile check-in and guest tracking",
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is ReservKit accepting kayak rental operators?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Kayak, paddleboard, and watersports rental operators can start on Free and build their first direct booking flow.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can ReservKit collect damage deposits and waivers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Operators can collect booking payments and refundable damage deposits through Stripe and require per-guest digital waivers after booking.",
-      },
-    },
+const config: SeoProductPageConfig = {
+  eventKey: "kayak_rental",
+  eyebrow: "Kayak and paddleboard rentals",
+  title: "Kayak rental booking software for busy launch sites",
+  intro: "Let guests reserve online, pay through Stripe, complete required waivers, and arrive with the details your launch team needs already attached to the booking.",
+  image: { src: "/product-public-booking-live.png", alt: "ReservKit public activity booking page with dates and available times" },
+  bestFitTitle: "Designed for rental teams managing",
+  bestFit: ["Kayaks, canoes, paddleboards, or mixed paddle fleets", "Hourly or fixed-duration rental options", "Per-guest waiver requirements", "Seasonal staff who need a simple arrival list"],
+  problemTitle: "Reduce the line before guests reach the water",
+  problemBody: "Phone reservations, paper waivers, and separate payment notes create work at the busiest point of the day. A direct booking flow gives customers a clear path while the operator keeps availability, payment, waiver, and guest details together.",
+  workflowTitle: "A simpler path from reservation to launch",
+  workflow: [
+    { title: "Choose the rental", body: "Customers see the activity description, available date and time options, duration, and guest limits you configured." },
+    { title: "Book and prepare", body: "Checkout runs through Stripe, and required waiver signing can be completed before the customer arrives." },
+    { title: "Check in", body: "The team sees who is arriving, the guest count, and which bookings still need attention." },
   ],
+  featureTitle: "Kayak rental workflows in one workspace",
+  features: ["Public activity booking links", "Availability windows and booking cutoffs", "Duration-based pricing", "Stripe Connect checkout", "Digital waiver evidence per guest", "Customer and booking records", "Staff schedules and assignments", "Mobile-friendly check-in workflow"],
+  proofTitle: "Use a real rental activity for setup",
+  proofBody: "Create the first kayak or paddleboard activity with its actual duration, capacity, price, and waiver requirements. Then make a test booking before sharing the link with customers.",
+  faqs: [
+    { title: "Does ReservKit work for both kayaks and paddleboards?", body: "Yes. Each offering can be configured as its own activity with its own description, price, duration, capacity, availability, and waiver requirements." },
+    { title: "Can guests sign before arriving?", body: "Yes. Required waiver templates can be attached to the activity, and signer status remains associated with the booking." },
+    { title: "Can I set a booking cutoff?", body: "Yes. Booking rules can limit how close to a start time a customer can complete an online booking." },
+    { title: "Can seasonal staff use the system?", body: "Paid plans provide team tools for invited staff, including assigned work and day-of booking context according to their role." },
+  ],
+  related: [
+    { href: "/watersports-rental-software", label: "Watersports rental software", description: "A broader workflow for mixed rental operations." },
+    { href: "/rental-booking-software-with-waivers", label: "Booking software with waivers", description: "See how waiver evidence stays tied to each booking." },
+    { href: "/stripe-booking-software-for-rentals", label: "Stripe booking software", description: "See how connected-account checkout works." },
+  ],
+  ctaTitle: "Put your first kayak rental online",
+  ctaBody: "Start on Free, configure one activity, and test the customer path before sharing it.",
 };
 
-export default function KayakRentalSoftware() {
-  return (
-    <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <main>
-        <section className="bg-gradient-to-b from-slate-50 to-white px-6 py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
-              Kayak Rental Software
-            </span>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
-              Kayak rental booking software for{" "}
-              <span className="text-amber">reservations, payments, and waivers</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              {POSITIONING_LINE} Kayak and paddleboard rental operators can move from phone calls, spreadsheets, and paper waivers into a cleaner online booking flow.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <TrackedLink
-                href={PRIMARY_CTA_URL}
-                event={PRIMARY_CTA_EVENT}
-                properties={{ location: "kayak_rental_hero" }}
-                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
-              >
-                {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </TrackedLink>
-              <Link
-                href="/pricing"
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-navy"
-              >
-                View pricing ↓
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white px-6 py-16" aria-label="Features for kayak rentals">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-8 text-center text-2xl font-bold text-navy">
-              Built for watersports rental workflows
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {features.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-start gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"
-                >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-slate-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 rounded-xl border border-amber/20 bg-amber/5 p-4 text-sm leading-relaxed text-slate-600">
-              {verticalFeatureGateNote}
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-2xl font-bold text-navy">
-              Online booking for seasonal rental teams
-            </h2>
-            <div className="space-y-4 text-slate-700">
-              <p>
-                Rental operators need simple availability, clear customer details, signed waivers,
-                and payment records that match what happened at the launch site. ReservKit starts
-                with a focused setup path for the first activity you want customers to book online.
-              </p>
-              <p>
-                Operators can start on Free and request guided setup help for the first live booking flow.
-                Public pricing is documented here: {pricingSummary}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-navy px-6 py-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-white">
-              Ready to use ReservKit for kayak rentals?
-            </h2>
-            <p className="mb-8 text-slate-400">
-              Tell us about your rental volume, seasonality, and current booking tool.
-            </p>
-            <TrackedLink
-              href={PRIMARY_CTA_URL}
-              event={PRIMARY_CTA_EVENT}
-              properties={{ location: "kayak_rental_footer" }}
-              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
-            >
-              {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </TrackedLink>
-          </div>
-        </section>
-      </main>
-    </PageShell>
-  );
-}
+export default function KayakRentalSoftware() { return <SeoProductPage config={config} />; }

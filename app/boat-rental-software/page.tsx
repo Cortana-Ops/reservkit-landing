@@ -1,158 +1,46 @@
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { PageShell } from "../components/PageShell";
-import { TrackedLink } from "../components/TrackedLink";
-import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, POSITIONING_LINE, PRIMARY_CTA_LABEL, pricingSummary, verticalFeatureGateNote } from "../lib/marketing";
+import { SeoProductPage, type SeoProductPageConfig } from "../components/SeoProductPage";
 import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
-  title: "Boat Rental Booking Software - Payments & Waivers Included",
-  description:
-    "Boat rental booking software for direct reservations, Stripe payments, digital waivers, staff visibility, and Free-first setup.",
-  keywords: [
-    "boat rental booking software",
-    "boat rental reservation system",
-    "charter booking software",
-    "pontoon rental software",
-  ],
+  title: "Boat Rental Booking Software - Payments, Deposits & Waivers",
+  description: "Boat rental booking software for direct reservations, Stripe payments, refundable damage deposits, digital waivers, staff visibility, and dockside check-in.",
+  keywords: ["boat rental booking software", "boat rental reservation system", "pontoon rental software"],
   path: "/boat-rental-software",
 });
 
-const features = [
-  "Online booking page for rentals and charters",
-  "Stripe Connect payments to the operator account",
-  "Refundable damage deposits at checkout",
-  "Per-guest digital liability waivers",
-  "Activity and time-slot capacity controls",
-  "Duration-based pricing for hourly, half-day, or full-day rentals",
-  "Staff assignment and schedule visibility",
-  "Check-in management and guest tracking",
-  "Revenue and booking reports",
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is ReservKit available for boat rental businesses?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Boat rental and charter operators can start on Free and build their first direct booking flow.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does ReservKit support damage deposits and digital waivers for boat rentals?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Operators can collect refundable damage deposits at checkout and attach digital waiver requirements so guests sign before arrival.",
-      },
-    },
+const config: SeoProductPageConfig = {
+  eventKey: "boat_rental",
+  eyebrow: "Boat rental software",
+  title: "Boat rental booking software built for the dock, not just checkout",
+  intro: "Take direct reservations, route checkout through Stripe, collect refundable damage deposits and waiver evidence, and give the dock team one clear view of the day.",
+  image: { src: "/product-checkin-manifest.png", alt: "ReservKit check-in manifest for day-of boat rental operations" },
+  bestFitTitle: "A practical fit for operators who",
+  bestFit: ["Rent pontoons, ski boats, fishing boats, or personal watercraft", "Need guest counts, arrival details, and waiver status before departure", "Use refundable damage deposits for eligible bookings", "Want a direct booking link instead of managing every reservation by phone"],
+  problemTitle: "A reservation is only the start of a boat rental workflow",
+  problemBody: "The booking has to stay connected to payment status, guest details, signed waiver evidence, deposit records, staff assignments, and check-in. ReservKit keeps those operational details with the booking instead of splitting them across forms and spreadsheets.",
+  workflowTitle: "From available time slot to ready-to-launch booking",
+  workflow: [
+    { title: "Publish availability", body: "Configure the activity, duration, capacity, pricing, booking window, and available time slots customers can choose." },
+    { title: "Collect the booking", body: "Customers enter guest details and complete a Stripe Checkout flow that can include a refundable damage deposit." },
+    { title: "Prepare the dock", body: "Staff review waiver status, payment status, guest count, notes, and check-in readiness from the operator workspace." },
   ],
+  featureTitle: "Boat rental tools available in ReservKit",
+  features: ["Public booking pages with activity availability", "Stripe Connect checkout", "Refundable damage deposits", "Per-guest digital waiver evidence", "Duration pricing and capacity controls", "Staff assignments and schedule visibility", "Check-in manifest and guest tracking", "Booking income and activity reports"],
+  proofTitle: "Start with one vessel type and one tested booking path",
+  proofBody: "Guided setup focuses on making one boat rental activity bookable end to end before you move customer traffic. Configure the activity, connect Stripe, attach the waiver requirements, and run your own test booking.",
+  faqs: [
+    { title: "Can ReservKit collect a refundable boat damage deposit?", body: "Yes. Eligible plans can add a refundable damage deposit at checkout. Deposit status is tracked in ReservKit, while actual money movement is handled through Stripe." },
+    { title: "Can every guest sign a waiver?", body: "An activity can require one or more waiver templates. Guest signer records, verification timestamps, signature evidence, and audit details remain tied to the booking." },
+    { title: "Can I control boat rental capacity and duration?", body: "Yes. Activities support guest limits, availability windows, time slots, and duration-based pricing for the booking options you configure." },
+    { title: "Do I have to move every activity at once?", body: "No. The safer switch is one configured activity and a completed test booking before you replace existing customer links." },
+  ],
+  related: [
+    { href: "/watersports-rental-software", label: "Watersports rental software", description: "Run mixed fleets and seasonal watersports activities." },
+    { href: "/rental-booking-software-with-damage-deposits", label: "Damage deposit booking software", description: "Understand the deposit workflow and operator responsibilities." },
+    { href: "/switch-rental-booking-software", label: "Switch booking systems", description: "Move one tested booking flow at a time." },
+  ],
+  ctaTitle: "Build your first boat rental booking flow",
+  ctaBody: "Start on Free or request guided setup for the activity you want customers to book first.",
 };
 
-export default function BoatRentalSoftware() {
-  return (
-    <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <main>
-        <section className="bg-gradient-to-b from-slate-50 to-white px-6 py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-amber-light px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-dark">
-              Boat Rental Software
-            </span>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">
-              Boat rental booking software with{" "}
-              <span className="text-amber">Stripe payments and waivers</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
-              {POSITIONING_LINE} Boat rental teams can manage reservations, refundable damage deposits, guest waivers, staff assignments, and check-in without stitching together separate tools.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <TrackedLink
-                href={PRIMARY_CTA_URL}
-                event={PRIMARY_CTA_EVENT}
-                properties={{ location: "boat_rental_hero" }}
-                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy shadow-lg transition-colors hover:bg-amber-dark"
-              >
-                {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </TrackedLink>
-              <Link
-                href="/pricing"
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-navy"
-              >
-                View pricing ↓
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white px-6 py-16" aria-label="Features for boat rentals">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-8 text-center text-2xl font-bold text-navy">
-              Built for boat rental and charter workflows
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {features.map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-start gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"
-                >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
-                  <span className="text-sm text-slate-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 rounded-xl border border-amber/20 bg-amber/5 p-4 text-sm leading-relaxed text-slate-600">
-              {verticalFeatureGateNote}
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-[var(--color-surface)] px-6 py-16" aria-label="Why choose ReservKit">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-2xl font-bold text-navy">
-              Go live with a first boat rental flow
-            </h2>
-            <div className="space-y-4 text-slate-700">
-              <p>
-                Boat rental operations depend on accurate capacity, clear refundable damage deposits, signed waivers,
-                and staff who know what is leaving the dock next. ReservKit onboarding starts with
-                one configured activity and a test booking before you widen usage.
-              </p>
-              <p>
-                Operators can start on Free and request guided setup help for the first live booking flow.
-                Public pricing remains transparent:
-                {` ${pricingSummary}`}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-navy px-6 py-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-2xl font-bold text-white">
-              Want ReservKit for boat rentals?
-            </h2>
-            <p className="mb-8 text-slate-400">
-              Share your current booking workflow and we will reply with guided onboarding next steps.
-            </p>
-            <TrackedLink
-              href={PRIMARY_CTA_URL}
-              event={PRIMARY_CTA_EVENT}
-              properties={{ location: "boat_rental_footer" }}
-              className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-4 text-base font-semibold text-navy transition-colors hover:bg-amber-dark"
-            >
-              {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </TrackedLink>
-          </div>
-        </section>
-      </main>
-    </PageShell>
-  );
-}
+export default function BoatRentalSoftware() { return <SeoProductPage config={config} />; }

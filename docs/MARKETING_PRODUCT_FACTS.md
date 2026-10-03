@@ -1,6 +1,6 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-09-08
+**Last updated:** 2026-10-02
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
@@ -8,6 +8,13 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 
 - ReservKit is live direct-booking software, not a beta waitlist.
 - Public signup is open through the Free-first app signup path.
+- The primary launch wedge is boat and watersports rental operators. Tour,
+  activity, and adjacent rental businesses remain supported, but acquisition
+  copy should lead with the narrower wedge until activation evidence supports
+  broadening it.
+- The primary offer is a guided first-bookable-flow migration: configure one
+  real activity, connect Stripe, attach required waivers, run a controlled
+  customer booking, and verify the operator record before moving traffic.
 - `/early-access` remains guided setup/help intake for operators who want support setting up the first booking flow.
 - Public self-serve plans are Free, Starter, Growth, and Pro.
 - Enterprise is manual/private setup help, not a normal self-serve checkout plan.

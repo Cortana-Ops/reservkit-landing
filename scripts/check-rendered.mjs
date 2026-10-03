@@ -82,9 +82,15 @@ const pageShellFooterLinks = [
 
 const primarySignupHref = "https://app.reservkit.com/login?signup=true";
 
-const verticalMainLinks = [
+const legacyVerticalMainLinks = [
   { text: "Start free", href: primarySignupHref, min: 2 },
   { text: "View pricing", href: "/pricing", min: 1 },
+];
+
+const seoProductMainLinks = [
+  { text: "Start free", href: primarySignupHref, min: 2 },
+  { text: "See pricing", href: "/pricing", min: 1 },
+  { text: "Review the setup guide", href: "/docs/getting-started", min: 1 },
 ];
 
 const routeMainLinkExpectations = {
@@ -151,9 +157,15 @@ const routeMainLinkExpectations = {
     { text: "Changelog", href: "/changelog", min: 1 },
     { text: "Roadmap", href: "/roadmap", min: 1 },
   ],
-  "/boat-rental-software": verticalMainLinks,
-  "/kayak-rental-software": verticalMainLinks,
-  "/tour-operator-software": verticalMainLinks,
+  "/boat-rental-software": seoProductMainLinks,
+  "/kayak-rental-software": seoProductMainLinks,
+  "/watersports-rental-software": seoProductMainLinks,
+  "/jet-ski-rental-software": seoProductMainLinks,
+  "/rental-booking-software-with-waivers": seoProductMainLinks,
+  "/rental-booking-software-with-damage-deposits": seoProductMainLinks,
+  "/stripe-booking-software-for-rentals": seoProductMainLinks,
+  "/switch-rental-booking-software": seoProductMainLinks,
+  "/tour-operator-software": legacyVerticalMainLinks,
 };
 
 function routeUrl(route) {
