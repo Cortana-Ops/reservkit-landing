@@ -8,7 +8,9 @@ Purpose: keep the public marketing site honest about product screenshots before 
   catalog from the hero because it suggested an experience marketplace next
   to the boat/watersports software positioning. The first product preview now
   shows the operator Bookings workspace, explicitly labeled as a representative
-  screen with sample data. This is not a fresh production capture or evidence
+  screen with sample data. Owner feedback restored the original side-by-side
+  hero layout while retaining the operator screenshot and demo-data caption.
+  This is not a fresh production capture or evidence
   of customer volume. Removed the unsupported single-session setup promise.
 
 - Homepage product media uses real ReservKit UI captures from configured demo/operator workflows.

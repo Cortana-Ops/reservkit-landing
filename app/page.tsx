@@ -246,19 +246,19 @@ export default function Home() {
       />
       <Nav />
       <main>
-        <section className="bg-[var(--color-surface)] px-6 py-10 sm:py-14">
-          <div className="mx-auto max-w-4xl min-w-0 text-center">
+        <section className="relative overflow-hidden bg-[var(--color-surface)] px-6 py-20 sm:py-28">
+          <div className="mx-auto grid max-w-6xl min-w-0 gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1fr)] lg:items-center">
             <div className="min-w-0">
-              <div className="mb-4 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
+              <div className="mb-6 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
                 {HERO_STATUS_LABEL}
               </div>
-              <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-normal text-navy sm:text-5xl">
-                ReservKit: boat and watersports rental software
+              <h1 className="max-w-3xl text-4xl font-extrabold tracking-normal text-navy sm:text-6xl">
+                Boat and watersports rental software for bookings, payments, waivers, and the day of work.
               </h1>
-              <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
                 Run your rental business from one workspace. Take direct bookings, collect payments through Stripe Connect, and manage guest waivers, refundable damage deposits, and check-in.
               </p>
-              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
                   href={PRIMARY_CTA_URL}
                   event={PRIMARY_CTA_EVENT}
@@ -274,24 +274,28 @@ export default function Home() {
                   See how it works <ArrowRight className="h-4 w-4 rotate-90" aria-hidden="true" />
                 </Link>
               </div>
+              <div className="mt-6 grid gap-2 text-sm leading-relaxed text-slate-600 sm:grid-cols-2">
+                {["Direct booking page for your activities", "Stripe Connect payments", "Signed waiver evidence", "Refundable damage deposits at checkout"].map((point) => (
+                  <div key={point} className="flex gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="bg-white px-6 py-8 sm:py-12" aria-labelledby="operator-preview-title">
-          <div className="mx-auto max-w-6xl">
-            <h2 id="operator-preview-title" className="text-2xl font-bold text-navy">Your operator workspace</h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">Representative ReservKit screen with demo bookings. Customer names, activities, and amounts are sample data.</p>
-            <figure className="mt-6">
+            <figure className="min-w-0">
+              <div className="rounded-3xl border border-[var(--color-border)] bg-white p-3 shadow-2xl shadow-navy/10">
               <Image
                 src="/product-bookings-dashboard.png"
                 alt="ReservKit operator Bookings screen showing sample reservations with dates, guest counts, payments, and reservation status"
                 width={1440}
                 height={900}
                 priority
-                sizes="(max-width: 1200px) 100vw, 1152px"
-                className="h-auto w-full rounded-lg border border-[var(--color-border)]"
+                sizes="(max-width: 1023px) 100vw, 600px"
+                className="h-auto w-full rounded-2xl"
               />
+              </div>
+              <figcaption className="mt-4 text-center text-sm leading-relaxed text-slate-600">Operator Bookings workspace. Representative screen with demo data.</figcaption>
             </figure>
           </div>
         </section>
