@@ -286,8 +286,21 @@ async function checkHomepageHeroActions(page, route, viewport) {
 async function checkDesktopHeaderLinks(page, route, viewport) {
   if (viewport.label !== "desktop" || !routesWithSharedHeader.includes(route)) return;
 
+  await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
+  await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
+  await page.waitForTimeout(500);
   const industries = page.getByRole("button", { name: "Industries", exact: true });
   await industries.click();
+  await page.waitForFunction((links) => {
+    const visibleHeaderLinks = Array.from(document.querySelectorAll("header a")).filter((anchor) => {
+      const rect = anchor.getBoundingClientRect();
+      const style = window.getComputedStyle(anchor);
+      return rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && style.display !== "none";
+    });
+    return links.every((link) => visibleHeaderLinks.some((anchor) => {
+      return anchor.textContent?.trim() === link.text && anchor.getAttribute("href") === link.href;
+    }));
+  }, industryLinks, { timeout: 15_000 });
   for (const link of industryLinks) {
     if (await countVisibleHeaderLinks(page, link) !== 1) failures.push(`${route} missing industry menu link: ${link.href}`);
   }
