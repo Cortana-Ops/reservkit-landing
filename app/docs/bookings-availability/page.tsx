@@ -57,14 +57,15 @@ export default function BookingsAvailability() {
                 for special events.
               </p>
               <p>
-                The availability window defines the outer bounds of when bookings can start. Within that window, ReservKit
-                automatically generates time slots based on your activity duration and the buffer time you configure between
-                sessions. A 2-hour activity with a 30-minute buffer in a 9 AM–5 PM window will show slots at 9:00, 11:30,
-                2:00, and 4:30 — with the last slot ending at or before 5 PM.
+                The recurring schedule defines an opening window and the interval between start times. For a fixed
+                2-hour activity with starts every 120 minutes in a 9 AM–5 PM window, openings are 9–11 AM,
+                11 AM–1 PM, 1–3 PM, and 3–5 PM. A booking must fit inside the window.
+                For activities with duration choices, the selected duration must fit before closing.
               </p>
               <p>
-                You can adjust generated slots and create manual slots for special cases without rebuilding the whole activity.
-                Public availability reflects the slots that are actually bookable.
+                Use Recurring schedule for the repeating pattern, Refresh Future Times to update future openings,
+                and Add One-Time Opening for an exception. Check the dated openings and public booking page after changes.
+                Do not assume that the start-time interval adds a separate setup or cleanup buffer.
               </p>
             </div>
           </section>

@@ -89,6 +89,10 @@ async function checkMarketingUrl(url, sourceRoute) {
         }
       } else if (response.status < 200 || response.status >= 400) {
         failures.push(`${sourceRoute} links to ${routeKey(urlWithoutHash)}, which returned HTTP ${response.status}`);
+      } else if (/\.(png|jpe?g|webp|avif|svg)$/i.test(urlWithoutHash.pathname)) {
+        if (!response.headers.get("content-type")?.startsWith("image/")) {
+          failures.push(`${sourceRoute} links to ${routeKey(urlWithoutHash)}, which did not return an image`);
+        }
       } else if (!text.includes("<html")) {
         failures.push(`${sourceRoute} links to ${routeKey(urlWithoutHash)}, which did not return an HTML page`);
       }
@@ -138,7 +142,7 @@ async function checkAnchor(sourceRoute, href) {
   const url = new URL(href, currentUrl);
 
   if (url.origin === baseOrigin) {
-    discoveredRoutes.add(routeKey(url));
+    if (!/\.(png|jpe?g|webp|avif|svg)$/i.test(url.pathname)) discoveredRoutes.add(routeKey(url));
     await checkMarketingUrl(url, sourceRoute);
     return;
   }

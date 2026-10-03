@@ -13,7 +13,7 @@ const config: SeoProductPageConfig = {
   eyebrow: "Kayak and paddleboard rentals",
   title: "Kayak rental booking software for busy launch sites",
   intro: "Let guests reserve online, pay through Stripe, complete required waivers, and arrive with the details your launch team needs already attached to the booking.",
-  image: { src: "/product-public-booking-live.png", alt: "ReservKit public activity booking page with dates and available times" },
+  image: { src: "/product-bookings-dashboard.png", alt: "ReservKit operator Bookings list with sample activities and payment states" },
   bestFitTitle: "Designed for rental teams managing",
   bestFit: ["Kayaks, canoes, paddleboards, or mixed paddle fleets", "Hourly or fixed-duration rental options", "Per-guest waiver requirements", "Seasonal staff who need a simple arrival list"],
   problemTitle: "Reduce the line before guests reach the water",

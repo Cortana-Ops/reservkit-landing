@@ -52,7 +52,7 @@ export default function Waivers() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Waivers and click &quot;New template.&quot; Give the template a name (e.g., &quot;Standard Water Sports Liability Waiver&quot;)
+                Go to Waivers and click &quot;New Waiver.&quot; Give the template a name (e.g., &quot;Standard Water Sports Liability Waiver&quot;)
                 and paste or type the full waiver text. Use waiver language reviewed for your business, activities, location, and insurance requirements.
               </p>
               <p>
@@ -76,16 +76,14 @@ export default function Waivers() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Each waiver template lets you toggle which fields each signer must complete. You can require any combination of:
+                Name, email, and consent are collected in the signing flow. Each waiver template can additionally require:
               </p>
               <ul className="list-disc list-inside space-y-1 ml-2">
-                <li>Full name</li>
                 <li>Phone number</li>
                 <li>Date of birth</li>
                 <li>Mailing address</li>
                 <li>Emergency contact name and phone</li>
-                <li>Signature (drawn or typed)</li>
-                <li>Initials (for inline acknowledgment checkpoints)</li>
+                <li>Drawn signature</li>
               </ul>
               <p className="mt-3">
                 Configure signer fields to match your counsel, insurer, and operating requirements. ReservKit stores the signer inputs you require,
@@ -109,7 +107,8 @@ export default function Waivers() {
               </p>
               <p>
                 Each guest verifies their email once for that signing session, then signs each required waiver in order. Guests sign directly
-                on their phone — no app download required. Signatures are captured either by drawing on the screen or typing their name.
+                on their phone — no app download required. Guests enter their name and confirm consent; a drawn signature is
+                also required when enabled on the template.
               </p>
               <p>
                 After signing, the guest sees a confirmation screen. The signed waiver evidence stays attached to the booking in ReservKit
@@ -132,7 +131,8 @@ export default function Waivers() {
                 signed, which templates are still pending, and where staff need to follow up before arrival.
               </p>
               <p>
-                From the booking detail view, staff can send a reminder waiver link to any guest who hasn&apos;t signed yet. This is
+                From booking detail, staff can copy an individual guest&apos;s pending waiver link to share, or open an email
+                to the booking&apos;s primary customer with the booking waiver link. This is
                 especially useful when guests arrive without having signed — they can sign on their phone before
                 the activity begins.
               </p>

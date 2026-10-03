@@ -192,11 +192,11 @@ const operatorFeatures = [
     src: "/product-bookings-dashboard.png",
     width: 1440,
     height: 900,
-    alt: "ReservKit bookings dashboard showing payment and waiver status",
+    alt: "ReservKit Bookings list showing demo reservations, dates, guests, amounts, payment status and reservation status",
     label: "Bookings",
     heading: "Every booking in one place",
-    body: "The bookings list ties together the guest, activity, time slot, payment status, waiver status, assigned staff, and any operator notes — all in a single view.",
-    bullets: ["Payment and balance status", "Waiver status at a glance", "Assigned staff", "Guest count and notes"],
+    body: "Scan reservations by customer, activity, date, guest count, amount, and payment state. Open Booking Detail for waiver progress, staff assignments, balances, and operator notes.",
+    bullets: ["Customer and activity", "Date and guest count", "Payment state and amount", "Reservation status"],
   },
   {
     src: "/product-checkin-manifest.png",
@@ -206,17 +206,17 @@ const operatorFeatures = [
     label: "Day-of operations",
     heading: "Your staff knows who is arriving before they show up",
     body: "The check-in manifest separates ready bookings from the ones that need attention. Staff can mark arrivals, verify waivers, and track the day without a group text.",
-    bullets: ["Ready vs. attention split", "Waiver status per guest", "One-tap check-in", "Printable and CSV-ready"],
+    bullets: ["Ready vs. attention split", "Booking waiver readiness", "Check-in actions", "Printable and CSV-ready"],
   },
   {
     src: "/product-waiver-status.png",
     width: 1440,
     height: 900,
-    alt: "ReservKit waiver status view showing guest signing status",
+    alt: "ReservKit Waiver Templates settings showing default signer fields and a demo waiver template",
     label: "Waivers",
-    heading: "Waiver evidence collected before arrival",
-    body: "Required waivers attach to activities. Guests can open the waiver hub after booking, verify by email, and sign each required waiver. Signed records stay tied to the booking with verification timestamps, IP/device context, signature evidence, and the exact waiver text accepted.",
-    bullets: ["Per-guest signer status", "Shareable waiver hub", "Audit-ready evidence", "Printable evidence packets"],
+    heading: "Configure the waivers your activities require",
+    body: "Create waiver templates and choose the signer details your business needs. Attach templates to activities, then review completed signer evidence from the booking after guests verify their email and sign.",
+    bullets: ["Waiver templates", "Default signer fields", "Optional drawn signatures", "Activity-specific requirements"],
   },
   {
     src: "/product-reports.png",
@@ -438,7 +438,7 @@ export default function Home() {
             </div>
             <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
               <div className="rounded-2xl bg-white p-6 shadow-sm">
-                <p className="text-sm font-bold uppercase tracking-widest text-amber-dark">Example pressure</p>
+                <p className="text-sm font-bold uppercase tracking-widest text-amber-dark">Illustrative fee calculation</p>
                 <p className="mt-3 text-4xl font-extrabold text-navy">$60k/mo</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   At that volume, a 1 percentage point fee difference is about $600/month before processing fees. Operators should be able to see the math before committing to a platform.
@@ -463,7 +463,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Inside the operator workspace</h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                ReservKit connects bookings, payments, waivers, and staff in one place. These representative screens show the operator workflows ReservKit is built around.
+                ReservKit connects bookings, payments, waivers, and staff in one place. These representative screens use demo activities, customer records, and amounts. Feature access depends on your plan.
               </p>
             </div>
             <div className="mt-12 space-y-16">
@@ -485,16 +485,20 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                  <div className={`overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-xl shadow-navy/10 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                    <Image
-                      src={feature.src}
-                      alt={feature.alt}
-                      width={feature.width}
-                      height={feature.height}
-                      loading="lazy"
-                      className="w-full object-cover object-top"
-                    />
-                  </div>
+                  <figure className={`min-w-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <a href={feature.src} target="_blank" rel="noopener noreferrer" aria-label={`Enlarge: ${feature.alt}`}>
+                      <Image
+                        src={feature.src}
+                        alt={feature.alt}
+                        width={feature.width}
+                        height={feature.height}
+                        loading="lazy"
+                        sizes="(max-width: 1023px) 100vw, 576px"
+                        className="h-auto w-full rounded-2xl border border-[var(--color-border)] bg-white shadow-xl shadow-navy/10"
+                      />
+                    </a>
+                    <figcaption className="mt-3 text-sm text-slate-600">{feature.label} · Representative demo screen</figcaption>
+                  </figure>
                 </article>
               ))}
             </div>

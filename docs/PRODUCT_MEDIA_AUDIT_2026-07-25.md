@@ -4,6 +4,8 @@ Purpose: keep the public marketing site honest about product screenshots before 
 
 ## Current State
 
+- October 3 follow-up: see `CUSTOMER_FACING_AUDIT_2026-10-03.md` for current coverage and limitations. The waiver image is **Waiver Templates**, not guest signing status. The public-booking image is an activity catalog, not availability or checkout proof. Homepage and SEO image descriptions now match the visible screens, include demo labels, and offer full-size image links. The existing mixed demo captures still need replacement with a coherent watersports demo batch; no screenshots were fabricated or digitally modified in this follow-up.
+
 - Homepage clarification, 2026-10-02: removed the mixed-activity customer
   catalog from the hero because it suggested an experience marketplace next
   to the boat/watersports software positioning. The first product preview now
