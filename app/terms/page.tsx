@@ -45,12 +45,15 @@ export default function Terms() {
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
               <li>Free ($0/month): 5% booking fee, 10 bookings per month</li>
-              <li>Starter ($99/month): 3.5% booking fee, 75 bookings per month</li>
-              <li>Growth ($179/month): 2.5% booking fee, unlimited bookings</li>
-              <li>Pro ($349/month): 2% booking fee, unlimited bookings</li>
-              <li>Enterprise: custom pricing, custom volume, and signed agreement terms</li>
+              <li>Starter ($99/month): 3.5% booking fee, 75 bookings per month, 14-day free trial</li>
+              <li>Growth ($179/month): 2.5% booking fee, unlimited bookings, 14-day free trial</li>
+              <li>Pro ($349/month): 2% booking fee, unlimited bookings, 14-day free trial</li>
+              <li>Enterprise: custom pricing, a booking fee typically starting at 1.5%, custom volume, and signed agreement terms</li>
             </ul>
-            <p>Subscription fees for paid plans are billed monthly unless otherwise agreed in writing.</p>
+            <p>
+              New self-serve paid subscriptions begin with a 14-day free trial. Subscription fees are billed monthly
+              after the trial unless canceled before the first charge or otherwise agreed in writing.
+            </p>
             <p className="mt-3">
               You are responsible for any taxes applicable to your bookings. ReservKit is not
               responsible for chargebacks, refund disputes, or payment failures between operators

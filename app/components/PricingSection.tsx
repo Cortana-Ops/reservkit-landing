@@ -58,6 +58,11 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
               <p className={`mt-1 text-sm ${tier.highlight ? "text-slate-300" : "text-slate-500"}`}>
                 {tier.volume}
               </p>
+              {tier.trial ? (
+                <p className={`mt-1 text-xs font-semibold ${tier.highlight ? "text-slate-200" : "text-slate-600"}`}>
+                  {tier.trial}
+                </p>
+              ) : null}
               <p className={`mt-5 min-h-12 text-sm leading-relaxed ${tier.highlight ? "text-slate-300" : "text-slate-600"}`}>
                 {tier.description}
               </p>

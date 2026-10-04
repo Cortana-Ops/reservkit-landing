@@ -617,9 +617,9 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
       );
       const expectedSelfServePlans = [
         { name: "Free", requiredText: ["$0", "5% booking fee", "10 bookings/month", "No staff/team access"] },
-        { name: "Starter", requiredText: ["$99", "3.5% booking fee", "75 bookings/month", "Basic team tools"] },
-        { name: "Growth", requiredText: ["$179", "2.5% booking fee", "Unlimited bookings", "Reports and waiver tools"] },
-        { name: "Pro", requiredText: ["$349", "2% booking fee", "Unlimited bookings", "Lowest self-serve booking fee"] },
+        { name: "Starter", requiredText: ["$99", "3.5% booking fee", "75 bookings/month", "14-day free trial", "Basic team tools"] },
+        { name: "Growth", requiredText: ["$179", "2.5% booking fee", "Unlimited bookings", "14-day free trial", "Reports and waiver tools"] },
+        { name: "Pro", requiredText: ["$349", "2% booking fee", "Unlimited bookings", "14-day free trial", "Lowest self-serve booking fee"] },
       ];
       for (const expectedPlan of expectedSelfServePlans) {
         const card = pricingCards.find((candidate) => candidate.heading === expectedPlan.name);
@@ -653,7 +653,7 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
             `${viewport.label} ${route} expected Enterprise card to have one Request setup help link to /early-access, found ${enterpriseLinks.length}`
           );
         }
-        for (const requiredText of ["Custom", "Custom booking fee", "Custom volume", "Manual/private plan"]) {
+        for (const requiredText of ["Custom", "Typically 1.5%+ booking fee", "Custom volume", "Manual/private plan"]) {
           if (!enterpriseCard.text.includes(requiredText)) {
             failures.push(`${viewport.label} ${route} Enterprise card missing text: ${requiredText}`);
           }

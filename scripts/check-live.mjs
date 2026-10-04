@@ -72,7 +72,6 @@ const sharedRequiredByRoute = {
 const baseForbidden = [
   "Start free trial",
   "Start Free Trial",
-  "14-day free trial",
   "2.9% + 30",
   "2 business days after a charge",
   "pay only the deposit",
@@ -125,7 +124,17 @@ function requiredForRoute(route, mode) {
     mode === "public_signup"
       ? {
           "/": ["Start free", "refundable damage deposits"],
-          "/pricing": ["Start free", "Free", "Starter", "Growth"],
+          "/pricing": [
+            "Start free",
+            "$99",
+            "3.5% booking fee",
+            "$179",
+            "2.5% booking fee",
+            "$349",
+            "2% booking fee",
+            "14-day free trial",
+            "Typically 1.5%+ booking fee",
+          ],
         }
       : {
           "/": ["Get early access", "Guided setup is available", "refundable damage deposits"],

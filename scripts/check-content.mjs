@@ -6,7 +6,6 @@ const scanDirs = ["app", "README.md"];
 
 const forbidden = [
   "14-day Growth trial",
-  "14-day free trial",
   "Start Free Trial",
   "Start free trial",
   "Early-access onboarding",
@@ -314,7 +313,8 @@ const required = [
   { file: "app/docs/getting-started/page.tsx", text: "Dedicated calendar-only or activity-card-only embeds are future options, not launch features" },
   { file: "app/terms/page.tsx", text: "percentage of the eligible booking subtotal according to the active plan" },
   { file: "app/terms/page.tsx", text: "Last updated: August 2026" },
-  { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, custom volume, and signed agreement terms" },
+  { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, a booking fee typically starting at 1.5%, custom volume, and signed agreement terms" },
+  { file: "app/pricing/page.tsx", text: "New Starter, Growth, and Pro subscriptions begin with a 14-day free trial" },
   { file: "app/privacy/page.tsx", text: "Last updated: August 2026" },
   { file: "app/privacy/page.tsx", text: "We do not sell your personal data. We share data with service providers needed to" },
   { file: "app/privacy/page.tsx", text: "<strong>Twilio</strong> — for SMS reminders and broadcasts when SMS is enabled" },

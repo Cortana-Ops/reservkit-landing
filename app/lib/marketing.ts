@@ -34,6 +34,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "5% booking fee",
     volume: "10 bookings/month",
+    trial: null,
     description: "For setup, testing, and first live bookings before you commit to a paid plan.",
     features: [
       "Core booking page",
@@ -50,6 +51,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "3.5% booking fee",
     volume: "75 bookings/month",
+    trial: "14-day free trial",
     description: "For small operators who need the core direct-booking workflow.",
     features: [
       "Everything in Free",
@@ -65,6 +67,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2.5% booking fee",
     volume: "Unlimited bookings",
+    trial: "14-day free trial",
     description: "For growing teams that need unlimited bookings, waivers, reports, coupons, refundable damage deposits, add-ons, and named equipment-unit blocking.",
     features: [
       "Everything in Starter",
@@ -82,6 +85,7 @@ export const pricingTiers = [
     period: "/mo",
     fee: "2% booking fee",
     volume: "Unlimited bookings",
+    trial: "14-day free trial",
     description: "For higher-volume teams needing deeper operational support.",
     features: [
       "Everything in Growth",
@@ -96,7 +100,7 @@ export const pricingTiers = [
 export const enterpriseTier = {
   name: "Enterprise",
   price: "Custom",
-  fee: "Custom booking fee",
+  fee: "Typically 1.5%+ booking fee",
   volume: "Custom volume",
   description: "For operators with larger rollout, migration, or support needs.",
   features: [
@@ -130,7 +134,7 @@ export const pricingFinePrint =
   "Stripe’s published processing fees apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.";
 
 export const pricingSummary =
-  "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
+  "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom with booking fees typically starting at 1.5%. Paid self-serve plans include a 14-day free trial.";
 
 export const paymentPageFreeBookingVolume = "5–10 bookings/month";
 

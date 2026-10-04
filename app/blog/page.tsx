@@ -51,7 +51,7 @@ const articles = [
       "Monthly subscription, booking fee, Stripe processing, and volume limits all hit differently depending on how many bookings you take. Run the actual math before you commit.",
     content: [
       "The cleanest way to compare booking tools is to write down the monthly subscription, the booking fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
-      "ReservKit's public pricing is intentionally direct. Free is $0/mo + 5% with 10 bookings/month. Starter is $99/mo + 3.5% with 75 bookings/month. Growth is $179/mo + 2.5% with unlimited bookings. Pro is $349/mo + 2% with unlimited bookings. Enterprise is custom.",
+      "ReservKit's public pricing is intentionally direct. Free is $0/mo + 5% with 10 bookings/month. Starter is $99/mo + 3.5% with 75 bookings/month. Growth is $179/mo + 2.5% with unlimited bookings. Pro is $349/mo + 2% with unlimited bookings. Starter, Growth, and Pro begin with a 14-day free trial. Enterprise is custom, with booking fees typically starting at 1.5%.",
       "Stripe processing is separate from ReservKit's booking fee. Customer tips are tracked separately from booking income and are not marked up by ReservKit. Refundable damage deposits are separate checkout line items and are not marked up by ReservKit.",
       "The most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
     ],

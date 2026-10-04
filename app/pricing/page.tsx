@@ -22,6 +22,10 @@ const faqs = [
     a: "ReservKit charges a percentage on each booking subtotal. This is separate from Stripe processing fees. At higher plan tiers, the ReservKit booking fee decreases.",
   },
   {
+    q: "Do paid plans include a trial?",
+    a: "Yes. New Starter, Growth, and Pro subscriptions begin with a 14-day free trial. Cancel before the trial ends to prevent the first monthly subscription charge.",
+  },
+  {
     q: "Do I need my own Stripe account?",
     a: "Yes. ReservKit uses Stripe Connect to create the customer checkout flow, collect the plan-based booking fee where applicable, and route the connected-account payment through Stripe. Stripe controls payout timing, processing fees, and connected-account money movement.",
   },
