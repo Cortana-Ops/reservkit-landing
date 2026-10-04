@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageShell } from "./PageShell";
 import { TrackedLink } from "./TrackedLink";
+import { UnverifiedCheckoutNote } from "./UnverifiedCheckoutNote";
 import {
   PRIMARY_CTA_EVENT,
   PRIMARY_CTA_LABEL,
@@ -34,6 +35,8 @@ export type SeoProductPageConfig = {
   related: RelatedLink[];
   ctaTitle: string;
   ctaBody: string;
+  pricingSummaryText?: string;
+  showUnverifiedCheckoutNote?: boolean;
 };
 
 export function SeoProductPage({ config }: { config: SeoProductPageConfig }) {
@@ -57,6 +60,11 @@ export function SeoProductPage({ config }: { config: SeoProductPageConfig }) {
               <p className="text-sm font-bold uppercase text-amber-dark">{config.eyebrow}</p>
               <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-navy sm:text-5xl">{config.title}</h1>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">{config.intro}</p>
+              {config.showUnverifiedCheckoutNote ? (
+                <div className="mt-6 max-w-2xl">
+                  <UnverifiedCheckoutNote />
+                </div>
+              ) : null}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <TrackedLink
                   href={PRIMARY_CTA_URL}
@@ -132,7 +140,7 @@ export function SeoProductPage({ config }: { config: SeoProductPageConfig }) {
             <aside className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
               <h2 className="text-2xl font-bold text-navy">{config.proofTitle}</h2>
               <p className="mt-4 leading-relaxed text-slate-600">{config.proofBody}</p>
-              <p className="mt-5 text-sm leading-relaxed text-slate-600">{pricingSummary}</p>
+              <p className="mt-5 text-sm leading-relaxed text-slate-600">{config.pricingSummaryText ?? pricingSummary}</p>
               <Link href="/docs/getting-started" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-amber-dark">
                 Review the setup guide <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>

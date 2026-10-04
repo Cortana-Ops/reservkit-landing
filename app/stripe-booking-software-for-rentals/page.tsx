@@ -1,5 +1,6 @@
 import { SeoProductPage, type SeoProductPageConfig } from "../components/SeoProductPage";
 import { createMarketingMetadata } from "../lib/metadata";
+import { paymentPagePricingSummary } from "../lib/marketing";
 
 export const metadata = createMarketingMetadata({
   title: "Stripe Booking Software for Rental Businesses",
@@ -41,6 +42,8 @@ const config: SeoProductPageConfig = {
   ],
   ctaTitle: "Connect and test your first paid booking flow",
   ctaBody: "Start on Free, configure an activity, and verify Stripe readiness before taking customer payments.",
+  pricingSummaryText: paymentPagePricingSummary,
+  showUnverifiedCheckoutNote: true,
 };
 
 export default function StripeBookingSoftwareForRentals() { return <SeoProductPage config={config} />; }

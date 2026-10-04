@@ -37,8 +37,8 @@ const sections = [
     icon: PackageCheck,
     title: "Equipment",
     href: "/docs/equipment",
-    description: "Configure operating equipment and named units for Growth and higher plans when your operation needs specific gear held for a booking.",
-    topics: ["Optional equipment setup", "Named unit blocking", "Growth+ availability", "Customer booking behavior", "Day-of equipment visibility"],
+    description: "Configure equipment records, assign that gear to an activity, and hold named units on Growth and higher plans.",
+    topics: ["Assign equipment to an activity", "Optional equipment setup", "Named unit blocking", "Growth+ availability", "Customer booking behavior"],
   },
   {
     icon: CreditCard,

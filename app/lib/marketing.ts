@@ -132,6 +132,11 @@ export const pricingFinePrint =
 export const pricingSummary =
   "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
 
+export const paymentPageFreeBookingVolume = "5–10 bookings/month";
+
+export const paymentPagePricingSummary =
+  "Public plans are Free ($0/mo + 5%, 5–10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
+
 export const verticalFeatureGateNote =
   "Feature availability follows the pricing tiers: Free covers the first low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers, reports, broadcasts, equipment, named unit blocking, dynamic pricing, deposits, coupons, and add-ons.";
 
