@@ -616,10 +616,10 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
         }))
       );
       const expectedSelfServePlans = [
-        { name: "Free", requiredText: ["$0", "4% booking fee", "10 bookings/month", "No staff/team access"] },
-        { name: "Starter", requiredText: ["$79", "3% booking fee", "100 bookings/month", "Basic team tools"] },
-        { name: "Growth", requiredText: ["$149", "2% booking fee", "Unlimited bookings", "Reports and waiver tools"] },
-        { name: "Pro", requiredText: ["$299", "1.5% booking fee", "Unlimited bookings", "Lowest self-serve booking fee"] },
+        { name: "Free", requiredText: ["$0", "5% booking fee", "10 bookings/month", "No staff/team access"] },
+        { name: "Starter", requiredText: ["$99", "3.5% booking fee", "75 bookings/month", "Basic team tools"] },
+        { name: "Growth", requiredText: ["$179", "2.5% booking fee", "Unlimited bookings", "Reports and waiver tools"] },
+        { name: "Pro", requiredText: ["$349", "2% booking fee", "Unlimited bookings", "Lowest self-serve booking fee"] },
       ];
       for (const expectedPlan of expectedSelfServePlans) {
         const card = pricingCards.find((candidate) => candidate.heading === expectedPlan.name);

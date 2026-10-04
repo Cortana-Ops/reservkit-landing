@@ -22,10 +22,10 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 
 ## Pricing And Fees
 
-- Free: `$0/mo`, `4% booking fee`, `10 bookings/month`.
-- Starter: `$79/mo`, `3% booking fee`, `100 bookings/month`.
-- Growth: `$149/mo`, `2% booking fee`, unlimited bookings.
-- Pro: `$299/mo`, `1.5% booking fee`, unlimited bookings.
+- Free: `$0/mo`, `5% booking fee`, `10 bookings/month`.
+- Starter: `$99/mo`, `3.5% booking fee`, `75 bookings/month`.
+- Growth: `$179/mo`, `2.5% booking fee`, unlimited bookings.
+- Pro: `$349/mo`, `2% booking fee`, unlimited bookings.
 - Enterprise: custom terms and custom booking fee.
 - ReservKit booking fees are charged on eligible booking subtotal where applicable.
 - Tips, taxes, operator service fees, and refundable damage deposits are not marked up by ReservKit.

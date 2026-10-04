@@ -44,10 +44,10 @@ export default function Terms() {
               percentage of the eligible booking subtotal according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
-              <li>Free ($0/month): 4% booking fee, 10 bookings per month</li>
-              <li>Starter ($79/month): 3% booking fee, 100 bookings per month</li>
-              <li>Growth ($149/month): 2% booking fee, unlimited bookings</li>
-              <li>Pro ($299/month): 1.5% booking fee, unlimited bookings</li>
+              <li>Free ($0/month): 5% booking fee, 10 bookings per month</li>
+              <li>Starter ($99/month): 3.5% booking fee, 75 bookings per month</li>
+              <li>Growth ($179/month): 2.5% booking fee, unlimited bookings</li>
+              <li>Pro ($349/month): 2% booking fee, unlimited bookings</li>
               <li>Enterprise: custom pricing, custom volume, and signed agreement terms</li>
             </ul>
             <p>Subscription fees for paid plans are billed monthly unless otherwise agreed in writing.</p>

@@ -8,7 +8,7 @@ import { createMarketingMetadata } from "../lib/metadata";
 export const metadata = createMarketingMetadata({
   title: "Pricing",
   description:
-    "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $299/month.",
+    "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $349/month.",
   path: "/pricing",
 });
 

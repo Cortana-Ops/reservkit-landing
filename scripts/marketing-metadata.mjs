@@ -9,7 +9,7 @@ export const EXPECTED_METADATA_BY_ROUTE = {
   "/pricing": {
     title: "Pricing — ReservKit",
     description:
-      "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $299/month.",
+      "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $349/month.",
     canonical: "https://reservkit.com/pricing",
     socialTitle: "Pricing — ReservKit",
   },

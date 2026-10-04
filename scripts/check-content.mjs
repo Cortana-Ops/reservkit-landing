@@ -22,7 +22,6 @@ const forbidden = [
   "200 bookings/month",
   "1% booking fee",
   "0.5% booking fee",
-  "2.5% booking fee",
   "Starter ($79/month): 2.5%",
   "Starter ($79/mo + 2.5%",
   "$79/mo + 2.5%",
