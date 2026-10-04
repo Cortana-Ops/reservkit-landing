@@ -65,8 +65,7 @@ const solutionLinks = [
   { text: "Switch booking systems", href: "/switch-rental-booking-software" },
 ];
 
-const mobileMenuLinks = [
-  ...industryLinks,
+const mobilePrimaryMenuLinks = [
   { text: "Pricing", href: "/pricing" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
@@ -289,7 +288,7 @@ async function checkDesktopHeaderLinks(page, route, viewport) {
   await page.waitForFunction(() => document.readyState === "complete", { timeout: 30_000 });
   await page.waitForLoadState("networkidle", { timeout: 10_000 }).catch(() => {});
   await page.waitForTimeout(500);
-  const industries = page.getByRole("button", { name: "Industries", exact: true });
+  const industries = page.getByRole("button", { name: "Who it's for", exact: true });
   await industries.click();
   await page.waitForFunction((links) => {
     const visibleHeaderLinks = Array.from(document.querySelectorAll("header a")).filter((anchor) => {
@@ -376,12 +375,40 @@ async function checkMobileHeaderMenu(page, route, viewport) {
     );
   }
 
-  for (const expectedLink of mobileMenuLinks) {
+  const mobileMenuOrder = await page.locator("#mobile-navigation").evaluate((nav) =>
+    Array.from(nav.querySelectorAll(":scope > a, :scope > div > button"))
+      .map((element) => element.textContent?.replace(/\s+/g, " ").trim())
+  );
+  if (mobileMenuOrder.at(0) !== "Features" || mobileMenuOrder.indexOf("Who it's for") < 4) {
+    failures.push(`${viewport.label} ${route} mobile primary links should appear before Who it's for: ${JSON.stringify(mobileMenuOrder)}`);
+  }
+
+  for (const expectedLink of mobilePrimaryMenuLinks) {
     const visibleMenuLinkCount = await countVisibleHeaderLinks(page, expectedLink);
     if (visibleMenuLinkCount !== 1) {
       failures.push(
         `${viewport.label} ${route} mobile menu expected one visible ${expectedLink.text} link to ${expectedLink.href}, found ${visibleMenuLinkCount}`
       );
+    }
+  }
+
+  for (const industryLink of industryLinks) {
+    if (await countVisibleHeaderLinks(page, industryLink) !== 0) {
+      failures.push(`${viewport.label} ${route} industry links should be collapsed initially: ${industryLink.href}`);
+    }
+  }
+
+  const industries = page.getByRole("button", { name: "Who it's for", exact: true });
+  if (await industries.getAttribute("aria-expanded") !== "false") {
+    failures.push(`${viewport.label} ${route} mobile industry menu should be collapsed initially`);
+  }
+  await industries.click();
+  if (await industries.getAttribute("aria-expanded") !== "true") {
+    failures.push(`${viewport.label} ${route} mobile industry menu did not open`);
+  }
+  for (const industryLink of industryLinks) {
+    if (await countVisibleHeaderLinks(page, industryLink) !== 1) {
+      failures.push(`${viewport.label} ${route} missing expanded industry link: ${industryLink.href}`);
     }
   }
 }

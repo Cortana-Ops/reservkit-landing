@@ -18,8 +18,14 @@ const navLinks = [
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const industryMenu = useRef<HTMLDivElement>(null);
   const industryButton = useRef<HTMLButtonElement>(null);
+
+  const closeMobileMenu = () => {
+    setMobileIndustriesOpen(false);
+    setOpen(false);
+  };
 
   useEffect(() => {
     const closeOutside = (event: PointerEvent) => {
@@ -29,6 +35,7 @@ export default function Nav() {
       if (event.key === "Escape") {
         if (industriesOpen) industryButton.current?.focus();
         setIndustriesOpen(false);
+        setMobileIndustriesOpen(false);
         setOpen(false);
       }
     };
@@ -60,18 +67,6 @@ export default function Nav() {
           aria-label="Main navigation"
           className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600"
         >
-          <div ref={industryMenu} className="relative" onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget)) setIndustriesOpen(false);
-          }}>
-            <button ref={industryButton} type="button" aria-expanded={industriesOpen} aria-controls="industries-navigation" onClick={() => setIndustriesOpen(!industriesOpen)} className="flex items-center gap-1.5 py-2 hover:text-navy">
-              Industries <ChevronDown className="h-4 w-4" aria-hidden="true" />
-            </button>
-            {industriesOpen && (
-              <ul id="industries-navigation" className="absolute left-0 top-full w-56 rounded-lg border border-slate-200 bg-white p-2 shadow-lg">
-                {industryLinks.map((link) => <li key={link.href}><Link href={link.href} onClick={() => setIndustriesOpen(false)} className="block rounded px-3 py-2 hover:bg-slate-50 focus-visible:bg-slate-50">{link.label}</Link></li>)}
-              </ul>
-            )}
-          </div>
           {navLinks.map((l) => (
             <Link
               key={l.href}
@@ -81,6 +76,18 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
+          <div ref={industryMenu} className="relative" onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setIndustriesOpen(false);
+          }}>
+            <button ref={industryButton} type="button" aria-expanded={industriesOpen} aria-controls="industries-navigation" onClick={() => setIndustriesOpen(!industriesOpen)} className="flex items-center gap-1.5 py-2 hover:text-navy">
+              Who it&apos;s for <ChevronDown className="h-4 w-4" aria-hidden="true" />
+            </button>
+            {industriesOpen && (
+              <ul id="industries-navigation" className="absolute right-0 top-full w-56 rounded-lg border border-slate-200 bg-white p-2 shadow-lg">
+                {industryLinks.map((link) => <li key={link.href}><Link href={link.href} onClick={() => setIndustriesOpen(false)} className="block rounded px-3 py-2 hover:bg-slate-50 focus-visible:bg-slate-50">{link.label}</Link></li>)}
+              </ul>
+            )}
+          </div>
         </nav>
 
         {/* Desktop CTA */}
@@ -106,7 +113,10 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            if (open) setMobileIndustriesOpen(false);
+            setOpen(!open);
+          }}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
@@ -118,25 +128,54 @@ export default function Nav() {
       {/* Mobile menu */}
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile navigation" className="lg:hidden max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-[var(--color-border)] bg-white px-6 py-4 space-y-1">
-          <p className="pt-2 text-xs font-semibold uppercase text-slate-500">Industries</p>
-          {industryLinks.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="block py-2.5 text-sm font-medium text-slate-700 hover:text-navy">{link.label}</Link>)}
-          <div className="border-t border-slate-200 pt-2" />
           {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
+              onClick={closeMobileMenu}
               className="block py-2.5 text-sm font-medium text-slate-700 hover:text-navy transition-colors"
             >
               {l.label}
             </Link>
           ))}
+          <div className="border-t border-slate-200 pt-2 mt-2">
+            <button
+              type="button"
+              aria-expanded={mobileIndustriesOpen}
+              aria-controls="mobile-industries-navigation"
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              className="flex w-full items-center justify-between py-2.5 text-sm font-medium text-slate-700 transition-colors hover:text-navy"
+            >
+              Who it&apos;s for
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${mobileIndustriesOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+            {mobileIndustriesOpen && (
+              <ul id="mobile-industries-navigation" className="border-l border-slate-200 pl-4">
+                {industryLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => {
+                        closeMobileMenu();
+                      }}
+                      className="block py-2.5 text-sm text-slate-600 transition-colors hover:text-navy"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <div className="pt-3 pb-1 flex flex-col gap-2 border-t border-[var(--color-border)] mt-3">
             <TrackedLink
               href={LOGIN_URL}
               event="login_clicked"
               properties={{ location: 'nav_mobile' }}
-              onClick={() => setOpen(false)}
+              onClick={closeMobileMenu}
               className="block py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
             >
               Log in
@@ -145,7 +184,7 @@ export default function Nav() {
               href={PRIMARY_CTA_URL}
               event={PRIMARY_CTA_EVENT}
               properties={{ location: 'nav_mobile' }}
-              onClick={() => setOpen(false)}
+              onClick={closeMobileMenu}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-navy hover:bg-amber-dark transition-colors"
             >
               {PRIMARY_CTA_LABEL} <ArrowRight className="h-3.5 w-3.5" />
