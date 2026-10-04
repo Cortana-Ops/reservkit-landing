@@ -52,11 +52,13 @@ const desktopHeaderLinks = [
 ];
 
 const industryLinks = [
+  { text: "Equipment rentals", href: "/equipment-rental-booking-software" },
+  { text: "Activities & experiences", href: "/activity-booking-software" },
+  { text: "Tour operators", href: "/tour-operator-software" },
   { text: "Watersports rentals", href: "/watersports-rental-software" },
   { text: "Boat rentals", href: "/boat-rental-software" },
   { text: "Jet ski rentals", href: "/jet-ski-rental-software" },
   { text: "Kayak rentals", href: "/kayak-rental-software" },
-  { text: "Tour operators", href: "/tour-operator-software" },
 ];
 const solutionLinks = [
   { text: "Digital waivers", href: "/rental-booking-software-with-waivers" },
@@ -172,6 +174,8 @@ const routeMainLinkExpectations = {
     { text: "Roadmap", href: "/roadmap", min: 1 },
   ],
   "/boat-rental-software": seoProductMainLinks,
+  "/equipment-rental-booking-software": seoProductMainLinks,
+  "/activity-booking-software": seoProductMainLinks,
   "/kayak-rental-software": seoProductMainLinks,
   "/watersports-rental-software": seoProductMainLinks,
   "/jet-ski-rental-software": seoProductMainLinks,

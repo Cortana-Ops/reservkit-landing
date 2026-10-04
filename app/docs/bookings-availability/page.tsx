@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { PageShell } from "../../components/PageShell";
-import { CalendarDays, Clock, Link2, X, CheckSquare } from "lucide-react";
 import { createMarketingMetadata } from "../../lib/metadata";
+import { GuideSection, OperatorGuide, SupportNote, TaskWalkthrough } from "../components/OperatorGuide";
 
 export const metadata = createMarketingMetadata({
   title: "Bookings & Availability",
@@ -9,197 +7,94 @@ export const metadata = createMarketingMetadata({
   path: "/docs/bookings-availability",
 });
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "ReservKit", item: "https://reservkit.com" },
-    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://reservkit.com/docs" },
-    { "@type": "ListItem", position: 3, name: "Bookings & Availability", item: "https://reservkit.com/docs/bookings-availability" },
-  ],
-};
-
 export default function BookingsAvailability() {
   return (
-    <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+    <OperatorGuide
+      title="Bookings & Availability"
+      description="Create the times customers can book, verify the public result, and use Booking Detail for changes that affect capacity or money."
+      path="/docs/bookings-availability"
+      related={[
+        { href: "/docs/payments", title: "Payments & Fees", description: "Understand Stripe checkout, cancellations, refunds, and money movement." },
+        { href: "/docs/waivers", title: "Waivers", description: "Create required templates and verify guest signing progress." },
+      ]}
+    >
+      <TaskWalkthrough
+        title="Create recurring bookable times"
+        path="Availability -> Add Recurring Hours"
+        intro="A recurring schedule is the weekly pattern. ReservKit uses it to create the dated future times customers actually select."
+        steps={[
+          { title: "Choose the activity and day", body: "Select the activity and the weekday this schedule should repeat." },
+          { title: "Set the time window", body: "Enter the first start, last check-in or window end, and the interval between customer start times." },
+          { title: "Save the recurring hours", body: "Save the row, then use Refresh Future Times to fill missing dated openings through the generation window." },
+          { title: "Inspect the calendar", body: "Move through the next operating dates and confirm that the intended activity and start times appear." },
+          { title: "Inspect the public page", body: "Open the activity-specific booking link and confirm the same future times are available to a customer." },
+        ]}
+        doneWhen={[
+          "The Availability calendar shows the expected dated openings.",
+          "The public activity page shows the intended future start times.",
+          "Every offered duration can finish within its configured availability window.",
+        ]}
       />
-      <main className="mx-auto max-w-3xl px-6 py-16">
-        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8">
-          <Link href="/docs" className="hover:text-navy transition-colors">Documentation</Link>
-          <span>/</span>
-          <span className="text-navy font-medium">Bookings & Availability</span>
-        </nav>
 
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold text-navy mb-3">Bookings & Availability</h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Control when your activities are available, manage your calendar, and handle the full booking lifecycle from
-            confirmation to check-in.
-          </p>
-        </div>
+      <GuideSection title="How the window and interval work">
+        <p>For a fixed two-hour activity with a 9 AM to 5 PM window and a 120-minute interval, the expected starts are 9 AM, 11 AM, 1 PM, and 3 PM. For duration packages, each selected duration must fit inside the configured window.</p>
+        <p>Do not assume that the start-time interval adds a separate setup or cleanup buffer. Include operational buffers in the schedule and duration design, then test the resulting times.</p>
+      </GuideSection>
 
-        <div className="space-y-12">
-          {/* Setting availability */}
-          <section>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
-                <CalendarDays className="h-5 w-5 text-amber" aria-hidden="true" />
-              </div>
-              <h2 className="text-xl font-bold text-navy">Setting availability windows</h2>
-            </div>
-            <div className="space-y-3 text-slate-600 leading-relaxed">
-              <p>
-                Each activity has its own availability schedule. Go to Activities → select an activity → Availability tab.
-                You can set recurring weekly schedules (e.g., Tuesday through Sunday, 8 AM–5 PM) or create one-off availability
-                for special events.
-              </p>
-              <p>
-                The recurring schedule defines an opening window and the interval between start times. For a fixed
-                2-hour activity with starts every 120 minutes in a 9 AM–5 PM window, openings are 9–11 AM,
-                11 AM–1 PM, 1–3 PM, and 3–5 PM. A booking must fit inside the window.
-                For activities with duration choices, the selected duration must fit before closing.
-              </p>
-              <p>
-                Use Recurring schedule for the repeating pattern, Refresh Future Times to update future openings,
-                and Add One-Time Opening for an exception. Check the dated openings and public booking page after changes.
-                Do not assume that the start-time interval adds a separate setup or cleanup buffer.
-              </p>
-            </div>
-          </section>
+      <TaskWalkthrough
+        title="Add a one-time opening"
+        path="Availability -> Add One-Time Opening"
+        steps={[
+          { title: "Choose the activity and date", body: "Select the activity and the specific operating date that needs an exception." },
+          { title: "Set the opening", body: "Enter the start time, duration or end behavior shown in the dialog, and the capacity available for this opening." },
+          { title: "Save and compare", body: "Save the opening, inspect it on the Availability calendar, and confirm it appears on the public activity page." },
+        ]}
+        doneWhen={[
+          "The one-time opening appears only on the intended date.",
+          "The public booking page offers the opening with the expected capacity and price.",
+        ]}
+      />
 
-          {/* Managing time slots */}
-          <section>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
-                <Clock className="h-5 w-5 text-amber" aria-hidden="true" />
-              </div>
-              <h2 className="text-xl font-bold text-navy">Managing time slots</h2>
-            </div>
-            <div className="space-y-3 text-slate-600 leading-relaxed">
-              <p>
-                Time slots are auto-generated from your availability settings, but you can also create manual slots for
-                special cases. The calendar view (Calendar tab in the sidebar) shows all slots across all activities
-                in a single view, color-coded by activity.
-              </p>
-              <p>
-                Each slot has a capacity limit. Set the maximum number of guests allowed per slot on the activity&apos;s Pricing tab.
-                When a slot is fully booked, it stops appearing as bookable online, and checkout still checks capacity
-                before creating a paid booking.
-              </p>
-              <p>
-                Owners, admins, and permissioned team members can create operator-side bookings from the Bookings page.
-                Operator-created bookings are useful for walk-in customers, phone reservations, or groups that need an
-                internal reservation before payment is collected or reconciled.
-              </p>
-            </div>
-          </section>
+      <GuideSection title="Capacity and operator-created bookings">
+        <p>Activity capacity limits the number of guests a slot can hold. Fully booked slots stop appearing as available online, and checkout still checks capacity before creating a paid booking.</p>
+        <p>Owners, admins, and permissioned team members can use Bookings to create operator-side bookings for a walk-in, phone customer, or internal exception. Verify payment state and customer messaging because an operator-created booking is not the same as a completed public Stripe checkout.</p>
+      </GuideSection>
 
-          {/* Sharing booking links */}
-          <section>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
-                <Link2 className="h-5 w-5 text-amber" aria-hidden="true" />
-              </div>
-              <h2 className="text-xl font-bold text-navy">Sharing booking links</h2>
-            </div>
-            <div className="space-y-3 text-slate-600 leading-relaxed">
-              <p>
-                ReservKit supports both all-activity booking links and activity-specific booking links. Use the full
-                booking page when customers should browse everything you offer, or use a single-activity link when a
-                website button like &quot;Check availability&quot; should open one activity&apos;s availability first.
-              </p>
-              <p>
-                Settings can generate public booking links and iframe snippets for your website. Activity-specific
-                links use clean public slugs when available, while older links continue to resolve through the supported
-                compatibility path.
-              </p>
-              <p>
-                Dedicated calendar-only or activity-card-only embeds are future options. Today, the supported embed
-                path is the ReservKit booking flow for all activities or one selected activity.
-              </p>
-            </div>
-          </section>
+      <TaskWalkthrough
+        title="Share a booking link"
+        path="Settings -> Booking Widget"
+        intro="ReservKit provides all-activity booking links and activity-specific booking links, plus supported iframe snippets for the full booking flow. Dedicated calendar-only or activity-card-only embeds are future options."
+        steps={[
+          { title: "Choose the destination", body: "Use the Public Booking URL for the full catalog or an activity-specific link for one activity." },
+          { title: "Open it signed out", body: "Use a private window or another device so the test does not depend on operator access." },
+          { title: "Reach a valid checkout", body: "Select a future time and guest count and confirm the displayed activity, price, requirements, and total." },
+        ]}
+        doneWhen={[
+          "The shared URL opens the correct organization and activity selection.",
+          "A signed-out customer can reach the expected checkout path on mobile.",
+        ]}
+      />
 
-          {/* Handling cancellations */}
-          <section>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
-                <X className="h-5 w-5 text-amber" aria-hidden="true" />
-              </div>
-              <h2 className="text-xl font-bold text-navy">Handling cancellations</h2>
-            </div>
-            <div className="space-y-3 text-slate-600 leading-relaxed">
-              <p>
-                Cancellations are processed from Booking Detail. Open the booking and use the Cancel action so ReservKit can
-                update the booking status, release reserved slot capacity, and send the customer cancellation email.
-              </p>
-              <p>
-                Cancelling a booking does not automatically refund a Stripe charge. Use the Refund action from Booking Detail
-                when money needs to go back to the customer, then choose the refund amount according to your policy. See the{" "}
-                <Link href="/docs/payments" className="text-amber hover:underline">Payments guide</Link> for instructions on
-                issuing partial and full refunds.
-              </p>
-              <p>
-                Keep your cancellation policy clear in customer-facing confirmation copy and your business terms. Dedicated
-                policy customization can be expanded as operator needs become clearer.
-              </p>
-            </div>
-          </section>
+      <TaskWalkthrough
+        title="Cancel a paid booking correctly"
+        path="Bookings -> open booking -> Booking Detail"
+        steps={[
+          { title: "Review the booking first", body: "Confirm the booking reference, customer, activity, date, payment state, cancellation policy, and amount before taking action." },
+          { title: "Cancel the reservation", body: "Use Cancel Booking so ReservKit updates status, releases slot capacity, and sends the supported cancellation message." },
+          { title: "Handle money separately", body: "If money must be returned, use Issue Refund for an eligible Stripe refund. Use Offline Refund only after money was returned outside ReservKit." },
+          { title: "Verify both systems", body: "Confirm the final booking state in ReservKit and the payment or refund result in Stripe." },
+        ]}
+        doneWhen={[
+          "The booking status and released capacity match the cancellation.",
+          "The Stripe refund state matches the amount recorded in Booking Detail.",
+        ]}
+      />
 
-          {/* Check-in */}
-          <section>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl bg-amber/10 flex items-center justify-center">
-                <CheckSquare className="h-5 w-5 text-amber" aria-hidden="true" />
-              </div>
-              <h2 className="text-xl font-bold text-navy">Check-in process</h2>
-            </div>
-            <div className="space-y-3 text-slate-600 leading-relaxed">
-              <p>
-                On the day of an activity, use the Check-In page or Calendar view to pull up the day&apos;s bookings. Each booking
-                card shows the customer name, party size, and waiver status or progress.
-              </p>
-              <p>
-                To check in a guest, click the booking and mark it as &quot;Checked In.&quot; This updates the booking status and
-                gives your team a clear visual of who has arrived vs. who is expected. If a checked-in booking still needs
-                to be cancelled, use the Booking Detail cancellation flow so capacity, status, and customer messages stay aligned.
-              </p>
-              <p>
-                If a customer hasn&apos;t signed their waiver before arriving, staff can send the waiver link directly from the
-                booking detail view. The guest can sign on their phone before the activity begins.
-              </p>
-            </div>
-          </section>
-        </div>
-
-        <div className="mt-16 border-t border-[var(--color-border)] pt-10">
-          <h2 className="text-lg font-bold text-navy mb-5">Next steps</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/docs/payments"
-              className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
-            >
-              <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Payments & Fees →</p>
-              <p className="text-sm text-slate-500">Understand Stripe Connect, pricing, refunds, and booking fees.</p>
-            </Link>
-            <Link
-              href="/docs/waivers"
-              className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
-            >
-              <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Waivers →</p>
-              <p className="text-sm text-slate-500">Create digital waiver templates and manage per-guest signing.</p>
-            </Link>
-          </div>
-          <div className="mt-6">
-            <Link href="/docs" className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-navy transition-colors">
-              ← Back to all documentation
-            </Link>
-          </div>
-        </div>
-      </main>
-    </PageShell>
+      <SupportNote>Cancellation does not automatically refund a Stripe charge. Treat reservation status and money movement as two related checks.</SupportNote>
+      <p className="text-sm leading-relaxed text-slate-600">Review the <a href="/docs/payments" className="font-semibold text-amber-dark hover:underline">Payments guide</a> before issuing a full, partial, or offline refund.</p>
+      <GuideSection title="Check-in exception">
+        <p>If a checked-in booking still needs to be cancelled, open Booking Detail and use the cancellation flow so status, capacity, customer messages, and any equipment hold stay aligned.</p>
+      </GuideSection>
+    </OperatorGuide>
   );
 }

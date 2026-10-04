@@ -141,6 +141,18 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     canonical: "https://reservkit.com/blog",
     socialTitle: "Blog — Rental Operator Guides — ReservKit",
   },
+  "/equipment-rental-booking-software": {
+    title: "Equipment Rental Booking Software - Inventory & Payments — ReservKit",
+    description: "Equipment rental booking software for direct reservations, availability, Stripe payments, waivers, deposits, and operator-managed named units.",
+    canonical: "https://reservkit.com/equipment-rental-booking-software",
+    socialTitle: "Equipment Rental Booking Software - Inventory & Payments — ReservKit",
+  },
+  "/activity-booking-software": {
+    title: "Activity Booking Software - Reservations, Payments & Waivers — ReservKit",
+    description: "Activity booking software for direct reservations, availability, Stripe payments, guest waivers, staff coordination, and day-of check-in.",
+    canonical: "https://reservkit.com/activity-booking-software",
+    socialTitle: "Activity Booking Software - Reservations, Payments & Waivers — ReservKit",
+  },
   "/boat-rental-software": {
     title: "Boat Rental Booking Software - Payments, Deposits & Waivers — ReservKit",
     description:

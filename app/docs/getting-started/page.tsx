@@ -1,8 +1,5 @@
-import Link from "next/link";
-import { PageShell } from "../../components/PageShell";
-import { CheckCircle2 } from "lucide-react";
-import { pricingSummary } from "../../lib/marketing";
 import { createMarketingMetadata } from "../../lib/metadata";
+import { GuideSection, OperatorGuide, SupportNote, TaskWalkthrough } from "../components/OperatorGuide";
 
 export const metadata = createMarketingMetadata({
   title: "Getting Started Guide",
@@ -10,153 +7,122 @@ export const metadata = createMarketingMetadata({
   path: "/docs/getting-started",
 });
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "ReservKit", item: "https://reservkit.com" },
-    { "@type": "ListItem", position: 2, name: "Documentation", item: "https://reservkit.com/docs" },
-    { "@type": "ListItem", position: 3, name: "Getting Started", item: "https://reservkit.com/docs/getting-started" },
-  ],
-};
-
-const steps = [
-  {
-    number: "01",
-    title: "Create your account",
-    content: [
-      "Start from the public signup path and create your ReservKit account.",
-      "New public organizations start on Free so you can build the first booking flow before choosing a paid plan.",
-      pricingSummary,
-    ],
-  },
-  {
-    number: "02",
-    title: "Set up your organization",
-    content: [
-      "The onboarding wizard asks for your business name, business type (rental, tour, experience, etc.), and timezone. This information is used on your public booking page and in customer communications.",
-      "You can update your organization details at any time from Settings → Organization. Add your logo, set your booking rules (minimum lead time, max advance booking days, cancellation policy), and configure your notification preferences.",
-      "If you're running multiple locations or brands, each organization in ReservKit is fully independent — you can create additional organizations from the top-left dropdown after setup.",
-    ],
-  },
-  {
-    number: "03",
-    title: "Add your first activity",
-    content: [
-      "Go to Activities and click \"Add Activity.\" Give it a name, description, and duration. Activities are the bookable products your customers see on your booking page — examples include \"2-Hour Kayak Rental,\" \"Sunset Paddleboard Tour,\" or \"Half-Day Boat Charter.\"",
-      "Under the Availability tab, set the days and time windows when this activity can be booked. You can create recurring weekly schedules and manual slots for special cases.",
-      "Under the Pricing tab, set your base price per guest. You can add a refundable damage deposit, configure group pricing tiers, and create add-ons (e.g., wetsuits, life jackets, photography packages).",
-      "Under the Waivers tab, attach a digital waiver template if required for your activity. Guests sign digitally after payment.",
-    ],
-  },
-  {
-    number: "04",
-    title: "Connect Stripe",
-    content: [
-      "Go to Billing and click \"Connect Stripe.\" You'll be redirected to Stripe to create or link your Stripe account. ReservKit uses Stripe Connect to create the customer checkout flow, collect the plan-based booking fee where applicable, and route the connected-account payment through Stripe.",
-      "Stripe controls payout timing, processing fees, and connected-account money movement from there.",
-      "Once connected, your Stripe account status will show \"Connected.\" Your public booking page can accept paid bookings after your organization slug, published activity, pricing, and availability are also configured.",
-      "ReservKit collects the plan-based booking fee on the booking subtotal where applicable. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.",
-    ],
-  },
-  {
-    number: "05",
-    title: "Run a controlled test booking",
-    content: [
-      "Open the public booking page and complete the same path a customer will use: choose the activity and time, set the guest count, enter customer details, review add-ons and fees, continue to Stripe, and confirm the success page, receipt, Guest Hub, and waiver links.",
-      "A ReservKit test organization uses Stripe test mode. A standard organization connected to live Stripe can create a real charge, so use a low-value controlled booking and refund it according to your policy when live payment proof is required.",
-      "In the operator app, confirm that the booking appears with the expected customer, activity, time, guest count, payment state, total, waiver requirements, equipment demand, and customer message status.",
-      "Fix the setup and repeat the test before sending traffic to the link. Do not repeatedly submit checkout, refund, broadcast, or notification actions when the first result is uncertain.",
-    ],
-  },
-  {
-    number: "06",
-    title: "Share your booking link",
-    content: [
-      "Every organization with a public slug has a booking link at app.reservkit.com/book/[your-slug]. Settings -> Booking Widget can generate the all-activity public booking link, activity-specific booking links, and website iframe snippets when you want to send customers to one activity instead of the full catalog.",
-      "The current iframe snippets embed the ReservKit booking flow for all activities or one selected activity. Dedicated calendar-only or activity-card-only embeds are future options, not launch features.",
-      "The booking page shows all your published activities, available times, and handles the full checkout flow — guests pick a time, add guests, pay, and receive a booking confirmation email when confirmations are enabled.",
-      "Add your booking link to your website, Instagram bio, Google Business profile, or anywhere else you promote your business.",
-    ],
-  },
-];
-
 export default function GettingStarted() {
   return (
-    <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+    <OperatorGuide
+      title="Getting Started with ReservKit"
+      description="Follow this sequence from a new account to one tested customer booking. Finish each completion check before moving to the next task."
+      path="/docs/getting-started"
+      related={[
+        { href: "/docs/bookings-availability", title: "Bookings & Availability", description: "Create openings, verify capacity, and share the right booking link." },
+        { href: "/docs/payments", title: "Payments & Fees", description: "Connect Stripe, understand fees, and reconcile refunds and deposits." },
+      ]}
+    >
+      <TaskWalkthrough
+        title="1. Create the organization"
+        path="app.reservkit.com/login -> Sign up -> Onboarding"
+        intro="New public organizations begin on Free, so you can configure the first booking flow before selecting a paid plan."
+        steps={[
+          { title: "Create the owner account", body: "Use the public signup path, verify the account when prompted, and continue to Onboarding." },
+          { title: "Enter the business basics", body: "Add the business name, choose the closest business type, and select the operating timezone." },
+          { title: "Finish onboarding", body: "Create the organization and wait for the operator dashboard to load before opening another page." },
+        ]}
+        doneWhen={[
+          "The dashboard loads with the correct organization selected.",
+          "Settings -> Organization shows the correct business name and timezone.",
+        ]}
       />
-      <main className="mx-auto max-w-3xl px-6 py-16">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8">
-          <Link href="/docs" className="hover:text-navy transition-colors">Documentation</Link>
-          <span>/</span>
-          <span className="text-navy font-medium">Getting Started</span>
-        </nav>
 
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold text-navy mb-3">Getting Started with ReservKit</h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Move from account creation to a tested first booking flow. This guide walks through the setup sequence
-            operators should review before sharing a booking link.
-          </p>
-          <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
-            <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Free-first public signup</span>
-            <span className="mx-2">·</span>
-            <CheckCircle2 className="h-4 w-4 text-green-500" />
-            <span>Guided setup available when needed</span>
-          </div>
-        </div>
+      <TaskWalkthrough
+        title="2. Complete the public business profile"
+        path="Settings -> Organization"
+        steps={[
+          { title: "Add customer-facing details", body: "Review the business name, email, phone, logo, timezone, and any customer-facing address or instructions your operation uses." },
+          { title: "Set the booking URL slug", body: "Choose a short, stable slug based on the business name. This becomes part of every public booking URL." },
+          { title: "Review booking rules", body: "Set the minimum lead time, maximum advance-booking window, cancellation policy, and other available organization rules." },
+          { title: "Save and verify", body: "Select Save Organization Settings, then open Settings -> Booking Widget and confirm that a Public Booking URL is available." },
+        ]}
+        doneWhen={[
+          "The organization profile saves without an error.",
+          "The Public Booking URL contains the intended business slug.",
+        ]}
+      />
 
-        <div className="space-y-12">
-          {steps.map((step) => (
-            <div key={step.number} className="flex gap-6">
-              <div className="shrink-0">
-                <div className="h-10 w-10 rounded-full bg-amber/10 border-2 border-amber flex items-center justify-center">
-                  <span className="text-xs font-bold text-amber">{step.number}</span>
-                </div>
-              </div>
-              <div className="flex-1 pt-1">
-                <h2 className="text-xl font-bold text-navy mb-4">{step.title}</h2>
-                <div className="space-y-3">
-                  {step.content.map((para, i) => (
-                    <p key={i} className="text-slate-600 leading-relaxed">{para}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <TaskWalkthrough
+        title="3. Create the first activity"
+        path="Activities -> Add Activity"
+        steps={[
+          { title: "Complete Details", body: "Enter the customer-facing activity name and description, choose the activity and slot type, then set duration, capacity, location, and the correct pricing model." },
+          { title: "Add booking fields only when needed", body: "Use Fields for information the operator truly needs from the customer. Avoid collecting sensitive information that is not required to deliver the activity." },
+          { title: "Create availability", body: "Open Availability, select Add Schedule, and define the operating day, opening window, last check-in or end time, interval, and any available capacity controls." },
+          { title: "Attach optional requirements", body: "Use Equipment, Waivers, and Deposit only when this activity needs them. Plan gates shown in the app control which tools are available." },
+          { title: "Save the activity", body: "Select Save. All activity tabs save together, so resolve any validation message before closing the editor." },
+        ]}
+        doneWhen={[
+          "The activity appears on Activities with the expected price and duration.",
+          "At least one future opening appears for the activity.",
+          "The focused public booking link opens the correct activity.",
+        ]}
+      />
 
-        {/* Next steps */}
-        <div className="mt-16 border-t border-[var(--color-border)] pt-10">
-          <h2 className="text-lg font-bold text-navy mb-5">Next steps</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/docs/bookings-availability"
-              className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
-            >
-              <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Bookings & Availability →</p>
-              <p className="text-sm text-slate-500">Learn how to manage your calendar and direct booking flow.</p>
-            </Link>
-            <Link
-              href="/docs/payments"
-              className="group rounded-xl border border-[var(--color-border)] p-5 hover:border-amber/40 hover:shadow-sm transition-all"
-            >
-              <p className="font-semibold text-navy group-hover:text-amber transition-colors mb-1">Payments & Fees →</p>
-              <p className="text-sm text-slate-500">Understand pricing, refundable damage deposits, refunds, and the booking fee structure.</p>
-            </Link>
-          </div>
-          <div className="mt-6">
-            <Link href="/docs" className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-navy transition-colors">
-              ← Back to all documentation
-            </Link>
-          </div>
-        </div>
-      </main>
-    </PageShell>
+      <TaskWalkthrough
+        title="4. Connect customer payments"
+        path="Billing -> Connect Stripe Account"
+        intro="ReservKit collects the plan-based booking fee on the booking subtotal where applicable. Tips, taxes, operator service fees, and refundable damage deposits are not marked up by ReservKit."
+        steps={[
+          { title: "Start Stripe onboarding", body: "Select Connect Stripe Account and complete Stripe's business and payout onboarding in the Stripe window." },
+          { title: "Return to ReservKit", body: "After Stripe sends you back, reopen Billing if needed and wait for the connection status to finish loading." },
+          { title: "Check payment readiness", body: "Confirm Billing shows Connected. Stripe processing fees and payout timing remain controlled by Stripe." },
+        ]}
+        doneWhen={[
+          "Billing shows the Stripe account as Connected.",
+          "The public activity can continue from guest details to Stripe Checkout.",
+        ]}
+      />
+
+      <TaskWalkthrough
+        title="5. Run a controlled test booking"
+        path="Settings -> Booking Widget -> Public Booking URL"
+        intro="Use the same path a customer will use. A standard organization connected to live Stripe can create a real charge."
+        steps={[
+          { title: "Open the public link in a private window", body: "Confirm the correct business and activity appear without relying on the signed-in operator session." },
+          { title: "Choose the complete booking", body: "Select the activity, future time, duration, and guest count. Review add-ons, fees, waiver requirements, and the displayed total." },
+          { title: "Complete checkout once", body: "Enter controlled customer details and continue through Stripe. Do not repeatedly submit if the first result is uncertain." },
+          { title: "Verify the customer result", body: "Confirm the payment-success page, booking reference, receipt, Guest Hub link, any required waiver path, and that guests receive a booking confirmation email when confirmations are enabled." },
+          { title: "Verify the operator result", body: "Open Bookings -> Booking Detail and compare the customer, time, guest count, amount, payment state, waivers, equipment demand, and message status with the checkout." },
+        ]}
+        doneWhen={[
+          "The customer success page and operator Booking Detail refer to the same reservation.",
+          "Payment, waiver, equipment, and notification states match the configured activity.",
+          "Any real controlled charge is reconciled or refunded according to the test plan.",
+        ]}
+      />
+
+      <TaskWalkthrough
+        title="6. Share the booking path"
+        path="Settings -> Booking Widget"
+        intro="Settings -> Booking Widget can generate the all-activity public booking link, activity-specific booking links, and website iframe snippets. Dedicated calendar-only or activity-card-only embeds are future options, not launch features."
+        steps={[
+          { title: "Choose the right link", body: "Use the all-activity URL when customers should browse the catalog. Use an activity-specific URL when a button should open one activity directly." },
+          { title: "Add it to one customer channel", body: "Place the tested URL on the business website, Google Business profile, social profile, or another controlled channel." },
+          { title: "Test from the published location", body: "Use a phone that is not signed into the operator account and confirm the published button reaches the same tested booking flow." },
+        ]}
+        doneWhen={[
+          "The published link opens the intended business and activity on mobile.",
+          "A customer can reach an available time and the expected checkout without operator access.",
+        ]}
+      />
+
+      <GuideSection title="Before sending real traffic">
+        <ul className="list-disc space-y-2 pl-5">
+          <li>Business identity, timezone, booking slug, and customer contact details are correct.</li>
+          <li>Activity price, duration, capacity, cutoff rules, and future availability have been checked.</li>
+          <li>Stripe is connected and the controlled checkout produced the expected booking record.</li>
+          <li>Required waiver, equipment, deposit, add-on, tax, and notification behavior has been verified.</li>
+          <li>At least one staff member knows where to find Bookings, Check-In, and Booking Detail.</li>
+        </ul>
+        <SupportNote>Do not move customer traffic because setup merely saved. Move traffic after the public flow and operator record agree in a controlled booking test.</SupportNote>
+      </GuideSection>
+    </OperatorGuide>
   );
 }

@@ -15,6 +15,8 @@ This inventory separates live routes, navigation visibility, and worthwhile futu
 
 | Route | Type | Main navigation | Footer | Sitemap |
 | --- | --- | --- | --- | --- |
+| `/equipment-rental-booking-software` | Industry parent | Who it's for | Popular industries | Yes |
+| `/activity-booking-software` | Industry parent | Who it's for | Popular industries | Yes |
 | `/boat-rental-software` | Industry | Who it's for | Popular industries | Yes |
 | `/kayak-rental-software` | Industry | Who it's for | Popular industries | Yes |
 | `/watersports-rental-software` | Industry | Who it's for | Popular industries | Yes |
@@ -39,8 +41,6 @@ These fit the product's verified rental/activity workflows and expand beyond the
 
 | Proposed route | Search audience | Why it belongs |
 | --- | --- | --- |
-| `/equipment-rental-booking-software` | General equipment rental operators | Broad parent page for activities, availability, named equipment, payments, and waivers |
-| `/activity-booking-software` | Activity and experience operators | Broad parent page for the current tour/activity capability |
 | `/atv-rental-software` | ATV rental operators | Strong fit for time slots, waivers, deposits, equipment, and check-in |
 | `/utv-rental-software` | UTV and side-by-side rentals | Same verified operational model with group/vehicle readiness needs |
 | `/bike-rental-software` | Bicycle rental shops | Fit for capacity, named equipment, add-ons, waivers, and timed bookings |
@@ -84,7 +84,7 @@ Validate search demand, interview language, and at least one real workflow befor
 
 ## Recommended Sequence
 
-1. Build the two parent pages: equipment rental booking software and activity booking software.
+1. Measure the new equipment-rental and activity-booking parent pages before splitting them into many narrow variants.
 2. Add ATV, UTV, bike, e-bike, snowmobile, paddleboard, canoe, fishing charter, and boat tour pages in small evidence-backed batches.
 3. Create supporting blog articles and internal links for each cluster instead of relying on isolated landing pages.
 4. Use Search Console and PostHog to measure impressions, qualified signup clicks, onboarding starts, and activated organizations by landing page.

@@ -151,6 +151,29 @@ export default function Docs() {
           <p className="mt-3 text-sm text-slate-500">Operator documentation reviewed October 3, 2026.</p>
         </div>
 
+        <section className="mb-10 border-y border-[var(--color-border)] py-7" aria-labelledby="start-here-heading">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase text-amber-dark">Start here</p>
+              <h2 id="start-here-heading" className="mt-2 text-2xl font-bold text-navy">Get one booking flow working before configuring everything else</h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">The walkthrough uses the exact operator menu and button labels, then gives you a completion check for every task.</p>
+            </div>
+            <div>
+              <ol className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+                {["Create the organization", "Complete the public profile", "Create one activity", "Connect Stripe", "Run a customer booking", "Share the tested link"].map((step, index) => (
+                  <li key={step} className="flex items-center gap-2">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-white">{index + 1}</span>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+              <Link href="/docs/getting-started" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-amber-dark">
+                Open the first booking walkthrough <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {sections.map((section) => (
             <Link

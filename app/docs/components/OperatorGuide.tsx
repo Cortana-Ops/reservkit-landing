@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 import { PageShell } from "../../components/PageShell";
 
 type RelatedGuide = {
@@ -96,6 +97,55 @@ export function Steps({ items }: { items: string[] }) {
         </li>
       ))}
     </ol>
+  );
+}
+
+type WalkthroughStep = {
+  title: string;
+  body: string;
+};
+
+export function TaskWalkthrough({
+  title,
+  path,
+  intro,
+  steps,
+  doneWhen,
+}: {
+  title: string;
+  path: string;
+  intro?: string;
+  steps: WalkthroughStep[];
+  doneWhen: string[];
+}) {
+  return (
+    <section>
+      <h2 className="text-xl font-bold text-navy">{title}</h2>
+      <p className="mt-2 text-sm font-semibold text-amber-dark">Open: {path}</p>
+      {intro ? <p className="mt-3 leading-relaxed text-slate-600">{intro}</p> : null}
+      <ol className="mt-5 space-y-5 border-l border-slate-200 pl-6">
+        {steps.map((step, index) => (
+          <li key={step.title} className="relative">
+            <span className="absolute -left-[2.1rem] flex h-5 w-5 items-center justify-center rounded-full bg-navy text-[10px] font-bold text-white">
+              {index + 1}
+            </span>
+            <h3 className="font-bold text-navy">{step.title}</h3>
+            <p className="mt-1 text-sm leading-relaxed text-slate-600">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+      <div className="mt-6 border-l-4 border-emerald-500 bg-emerald-50 px-4 py-3">
+        <p className="text-sm font-bold text-emerald-900">You are done when</p>
+        <ul className="mt-2 space-y-2">
+          {doneWhen.map((item) => (
+            <li key={item} className="flex gap-2 text-sm leading-relaxed text-emerald-900">
+              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 

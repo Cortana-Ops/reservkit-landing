@@ -1,5 +1,5 @@
 import { createMarketingMetadata } from "../../lib/metadata";
-import { GuideSection, OperatorGuide, Steps, SupportNote } from "../components/OperatorGuide";
+import { GuideSection, OperatorGuide, SupportNote, TaskWalkthrough } from "../components/OperatorGuide";
 
 export const metadata = createMarketingMetadata({
   title: "Activities & Pricing",
@@ -18,13 +18,23 @@ export default function ActivitiesGuide() {
         { href: "/docs/equipment", title: "Equipment", description: "Connect required gear and named units to activities." },
       ]}
     >
-      <GuideSection title="Create an activity">
-        <Steps items={[
-          "Open Activities and select Add Activity.",
-          "In Details & Pricing, add the customer-facing name, description, category, location, duration, capacity, and price.",
-          "Add any customer fields you need at checkout, then review availability, equipment, waivers, and deposit settings.",
-          "Save the activity, create future availability, and open its public booking page before promoting it.",
-        ]} />
+      <TaskWalkthrough
+        title="Create and publish an activity"
+        path="Activities -> Add Activity"
+        steps={[
+          { title: "Complete Details", body: "Add the customer-facing name, description, type, location, duration, slot behavior, capacity, and pricing model." },
+          { title: "Review Fields", body: "Add only the customer questions the team needs to deliver the booking." },
+          { title: "Create future times", body: "Open Availability, add the recurring schedule rows or one-time openings, and check the generated future times." },
+          { title: "Attach optional requirements", body: "Review Equipment, Waivers, and Deposit for the activity. Leave optional tools unused when the operation does not need them." },
+          { title: "Save and inspect", body: "Select Save, then open the activity's public booking link and check the complete customer-facing result." },
+        ]}
+        doneWhen={[
+          "The saved activity appears in Activities with the expected price and status.",
+          "The public activity page shows at least one future bookable time.",
+          "The checkout preview reflects the intended guest count, price, and optional requirements.",
+        ]}
+      />
+      <GuideSection title="Publishing requirements">
         <SupportNote>Saving an activity does not make it bookable by itself. It also needs a public status, a valid price, future availability, and a configured organization booking slug.</SupportNote>
       </GuideSection>
 

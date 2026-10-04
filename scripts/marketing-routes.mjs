@@ -20,6 +20,8 @@ export const MARKETING_ROUTES = [
   "/roadmap",
   "/changelog",
   "/blog",
+  "/equipment-rental-booking-software",
+  "/activity-booking-software",
   "/boat-rental-software",
   "/kayak-rental-software",
   "/watersports-rental-software",

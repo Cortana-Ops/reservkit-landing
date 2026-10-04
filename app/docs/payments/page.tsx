@@ -74,7 +74,7 @@ export default function Payments() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Go to Billing and click &quot;Connect Stripe.&quot; You&apos;ll be redirected to Stripe&apos;s onboarding
+                Go to Billing and click &quot;Connect Stripe Account.&quot; You&apos;ll be redirected to Stripe&apos;s onboarding
                 flow where you can create a new Stripe account or connect an existing one.
               </p>
               <p>
@@ -107,8 +107,8 @@ export default function Payments() {
             </div>
             <div className="space-y-3 text-slate-600 leading-relaxed">
               <p>
-                Set a base price per guest on each activity&apos;s Pricing tab. You can also configure a refundable
-                damage deposit that is collected alongside the booking payment as a separate Stripe Checkout line
+                Set the pricing model and price in each activity&apos;s Details tab. Configure an eligible refundable
+                damage deposit in the Deposit tab; it is collected alongside the booking payment as a separate Stripe Checkout line
                 item. Booking Detail lets operators mark deposit outcomes as released or charged for reconciliation;
                 released deposits still need the actual money movement handled in Stripe.
               </p>
