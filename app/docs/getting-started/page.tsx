@@ -72,7 +72,7 @@ export default function GettingStarted() {
         steps={[
           { title: "Start Stripe onboarding", body: "Select Connect Stripe Account and complete Stripe's business and payout onboarding in the Stripe window." },
           { title: "Return to ReservKit", body: "After Stripe sends you back, reopen Billing if needed and wait for the connection status to finish loading." },
-          { title: "Check payment readiness", body: "Confirm Billing shows Connected. Stripe processing fees and payout timing remain controlled by Stripe." },
+          { title: "Check payment readiness", body: "Confirm Billing shows Connected. Stripe controls payout timing, processing fees, and connected-account money movement." },
         ]}
         doneWhen={[
           "Billing shows the Stripe account as Connected.",

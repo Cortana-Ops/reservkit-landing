@@ -38,7 +38,8 @@ const sharedRequiredByRoute = {
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "plan-based booking fee",
-    "Stripe controls payout timing",
+    "Standard Stripe processing is separate",
+    "separate customer checkout surcharge",
     "Use the cancellation flow",
     "customer tips are not marked up",
     "Stripe",

@@ -131,15 +131,15 @@ export const freePlanFootnote =
   "Need to try it at very low volume? The Free plan includes 10 bookings/month at 5% — no subscription required.";
 
 export const pricingFinePrint =
-  "Stripe’s published processing fees apply separately. ReservKit’s booking fee is charged on the booking subtotal. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.";
+  "Standard Stripe processing is charged separately by Stripe to your connected account. ReservKit’s booking fee is charged on the booking subtotal and is not added as a separate customer checkout surcharge. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.";
 
 export const pricingSummary =
   "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom with booking fees typically starting at 1.5%. Paid self-serve plans include a 14-day free trial.";
 
-export const paymentPageFreeBookingVolume = "5–10 bookings/month";
+export const paymentPageFreeBookingVolume = "10 bookings/month";
 
 export const paymentPagePricingSummary =
-  "Public plans are Free ($0/mo + 5%, 5–10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
+  "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
 
 export const verticalFeatureGateNote =
   "Feature availability follows the pricing tiers: Free covers the first low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers, reports, broadcasts, equipment, named unit blocking, dynamic pricing, deposits, coupons, and add-ons.";

@@ -36,9 +36,9 @@ const groups: FaqGroup[] = [
   {
     title: "Payments and pricing",
     items: [
-      ["Where do customer payments go?", "ReservKit creates the connected-account Stripe Checkout flow. Stripe controls processing, connected-account money movement, payout timing, disputes, and processing fees. ReservKit collects the plan-based booking fee where applicable."],
+      ["Where do customer payments go?", "ReservKit creates checkout on your connected Stripe account. Stripe controls processing, payout timing, disputes, and connected-account money movement. ReservKit collects the plan-based booking fee where applicable."],
       ["What is the booking fee based on?", "The ReservKit booking fee uses the eligible booking subtotal after coupon discounts. Tips, taxes, operator service fees, and refundable damage deposits are not marked up."],
-      ["Are Stripe fees included in ReservKit pricing?", "No. Stripe processing fees are separate from the ReservKit subscription and booking fee."],
+      ["Are Stripe fees included in ReservKit pricing?", "No. Standard Stripe processing is charged separately by Stripe to your connected account. ReservKit's booking fee is an operator cost and is not added as a separate customer checkout surcharge."],
       ["What happens after the 14-day paid-plan trial?", "The selected Starter, Growth, or Pro monthly subscription begins billing through Stripe unless it is cancelled before the trial ends."],
       ["Does marking a damage deposit released move money?", "Not by itself. The status records the operator outcome. Confirm any required refund or release action in Stripe and reconcile Booking Detail."],
     ],

@@ -636,6 +636,14 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
     }
 
     if (route === "/pricing") {
+      for (const requiredText of [
+        "Standard Stripe processing is charged separately by Stripe to your connected account",
+        "not added as a separate customer checkout surcharge",
+      ]) {
+        if (!bodyText.includes(requiredText)) {
+          failures.push(`${viewport.label} ${route} missing pricing disclosure: ${requiredText}`);
+        }
+      }
       const pricingCards = await page.evaluate(() =>
         Array.from(document.querySelectorAll("main article")).map((article) => ({
           heading: article.querySelector("h3")?.textContent?.trim() ?? "",

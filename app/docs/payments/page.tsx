@@ -79,9 +79,9 @@ export default function Payments() {
               </p>
               <p>
                 ReservKit uses Stripe Connect Standard. This means each business owner has their own connected Stripe
-                account. ReservKit creates the connected-account checkout flow and collects the plan-based booking fee
-                automatically where applicable, while Stripe controls payout timing, processing fees, and the connected
-                account&apos;s money movement.
+                account. ReservKit creates checkout on that account and collects the plan-based booking fee automatically
+                where applicable. Stripe charges standard processing to the connected account and controls payout timing,
+                disputes, and connected-account money movement.
               </p>
               <p>
                 Once connected, your Stripe dashboard will show a &quot;Connected account&quot; from ReservKit. You can
@@ -91,8 +91,8 @@ export default function Payments() {
               <p>
                 <strong className="text-navy">Important:</strong>{" "}Stripe requires your business to be based in a
                 supported country. Payout timing follows the schedule and risk settings on your connected Stripe
-                account. Stripe&apos;s published processing fees are separate from the ReservKit booking fee and are
-                deducted by Stripe directly.
+                account. Standard Stripe processing is separate from the ReservKit booking fee and is charged by Stripe
+                directly to your connected account.
               </p>
             </div>
           </section>
@@ -128,7 +128,7 @@ export default function Payments() {
             <h2 className="text-xl font-bold text-navy mb-4">Booking fee breakdown</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
               The booking fee is a percentage of the booking subtotal collected at checkout. It&apos;s automatically
-              collected at checkout where applicable, and customer tips are not marked up.
+              collected where applicable, is not added as a separate customer checkout surcharge, and customer tips are not marked up.
             </p>
             <div className="grid gap-3 md:hidden">
               {feeTable.map((row) => (
@@ -167,7 +167,7 @@ export default function Payments() {
               </table>
             </div>
             <p className="text-xs text-slate-400 mt-3">
-              Stripe&apos;s published processing fees apply in addition to the booking fee and are charged by Stripe directly.
+              Standard Stripe processing applies in addition to the booking fee and is charged by Stripe directly to your connected account.
             </p>
           </section>
 

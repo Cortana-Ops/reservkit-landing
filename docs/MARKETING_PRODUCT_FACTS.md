@@ -29,7 +29,8 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
 - Enterprise: custom terms and a booking fee typically starting at `1.5%`.
 - ReservKit booking fees are charged on eligible booking subtotal where applicable.
 - Tips, taxes, operator service fees, and refundable damage deposits are not marked up by ReservKit.
-- Stripe processing fees are separate and charged by Stripe.
+- Standard Stripe processing is charged separately by Stripe to the operator's connected account.
+- ReservKit's booking fee is not added as a separate customer checkout surcharge.
 - Paid ReservKit subscription charges are non-refundable except for billing errors, duplicate charges, fraud, or legally required refunds.
 
 ## Current Feature Gates
@@ -71,7 +72,7 @@ Live production proof on 2026-08-02 verified the Test Lab focused activity path:
 
 - ReservKit uses Stripe Connect Standard for public paid bookings.
 - Operators receive payouts through their own connected Stripe account.
-- ReservKit creates the connected-account checkout flow and collects the plan-based booking fee where applicable; Stripe controls payout timing, processing fees, and connected-account money movement.
+- ReservKit creates checkout on the connected operator account and collects the plan-based booking fee where applicable; Stripe charges standard processing to that account and controls payout timing, disputes, and connected-account money movement.
 - Marketing should not say operators control payout timing; say Stripe controls payout timing and connected-account money movement.
 - Refunds are started from Booking Detail and sent to Stripe.
 - If a booking also needs cancellation, operators should use the cancellation flow so status, capacity, and customer messages stay aligned.

@@ -19,7 +19,7 @@ export default function ActivitiesGuide() {
       ]}
     >
       <TaskWalkthrough
-        title="Create and publish an activity"
+        title="Create an activity and publish it"
         path="Activities -> Add Activity"
         steps={[
           { title: "Complete Details", body: "Add the customer-facing name, description, type, location, duration, slot behavior, capacity, and pricing model." },

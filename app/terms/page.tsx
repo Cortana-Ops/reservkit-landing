@@ -12,7 +12,7 @@ export default function Terms() {
     <PageShell>
       <main className="mx-auto max-w-3xl px-6 py-16">
         <h1 className="text-3xl font-bold text-navy mb-2">Terms of Service</h1>
-        <p className="text-sm text-slate-500 mb-10">Last updated: August 2026</p>
+        <p className="text-sm text-slate-500 mb-10">Last updated: October 2026</p>
 
         <div className="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed">
           <section>
@@ -50,6 +50,10 @@ export default function Terms() {
               <li>Pro ($349/month): 2% booking fee, unlimited bookings, 14-day free trial</li>
               <li>Enterprise: custom pricing, a booking fee typically starting at 1.5%, custom volume, and signed agreement terms</li>
             </ul>
+            <p>
+              Standard Stripe processing is charged separately by Stripe to your connected account.
+              ReservKit&apos;s booking fee is an operator cost and is not added as a separate customer checkout surcharge.
+            </p>
             <p>
               New self-serve paid subscriptions begin with a 14-day free trial. Subscription fees are billed monthly
               after the trial unless canceled before the first charge or otherwise agreed in writing.

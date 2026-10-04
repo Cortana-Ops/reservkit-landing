@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "What does booking fee mean?",
-    a: "ReservKit charges a percentage on each booking subtotal. This is separate from Stripe processing fees. At higher plan tiers, the ReservKit booking fee decreases.",
+    a: "ReservKit charges a percentage on each booking subtotal. Standard Stripe processing is charged separately by Stripe to your connected account. ReservKit's booking fee is not added as a separate customer checkout surcharge, and it decreases at higher plan tiers.",
   },
   {
     q: "Do paid plans include a trial?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Do I need my own Stripe account?",
-    a: "Yes. ReservKit uses Stripe Connect to create the customer checkout flow, collect the plan-based booking fee where applicable, and route the connected-account payment through Stripe. Stripe controls payout timing, processing fees, and connected-account money movement.",
+    a: "Yes. ReservKit uses Stripe Connect to create the customer checkout flow and collect the plan-based booking fee where applicable. Stripe charges standard processing to your connected account and controls payout timing, disputes, and connected-account money movement.",
   },
   {
     q: "Can I cancel?",
