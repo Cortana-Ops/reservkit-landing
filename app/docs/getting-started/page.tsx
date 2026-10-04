@@ -61,6 +61,16 @@ const steps = [
   },
   {
     number: "05",
+    title: "Run a controlled test booking",
+    content: [
+      "Open the public booking page and complete the same path a customer will use: choose the activity and time, set the guest count, enter customer details, review add-ons and fees, continue to Stripe, and confirm the success page, receipt, Guest Hub, and waiver links.",
+      "A ReservKit test organization uses Stripe test mode. A standard organization connected to live Stripe can create a real charge, so use a low-value controlled booking and refund it according to your policy when live payment proof is required.",
+      "In the operator app, confirm that the booking appears with the expected customer, activity, time, guest count, payment state, total, waiver requirements, equipment demand, and customer message status.",
+      "Fix the setup and repeat the test before sending traffic to the link. Do not repeatedly submit checkout, refund, broadcast, or notification actions when the first result is uncertain.",
+    ],
+  },
+  {
+    number: "06",
     title: "Share your booking link",
     content: [
       "Every organization with a public slug has a booking link at app.reservkit.com/book/[your-slug]. Settings -> Booking Widget can generate the all-activity public booking link, activity-specific booking links, and website iframe snippets when you want to send customers to one activity instead of the full catalog.",

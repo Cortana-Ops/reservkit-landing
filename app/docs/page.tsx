@@ -1,11 +1,27 @@
 import Link from "next/link";
 import { PageShell } from "../components/PageShell";
-import { ArrowRight, Bell, BookOpen, CreditCard, FileSignature, Users, BarChart3, CalendarDays, PackageCheck } from "lucide-react";
+import {
+  Activity,
+  ArrowRight,
+  BarChart3,
+  Bell,
+  BookOpen,
+  CalendarCheck2,
+  CalendarDays,
+  CircleHelp,
+  Contact,
+  CreditCard,
+  FileSignature,
+  PackageCheck,
+  Settings,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
   title: "Documentation & Guides",
-  description: "ReservKit guides for direct bookings, Stripe payments, waivers, staff scheduling, and reports.",
+  description: "ReservKit operator guides for setup, activities, daily bookings, customers, Stripe payments, staff, messaging, growth tools, settings, migration, and troubleshooting.",
   path: "/docs",
 });
 
@@ -27,11 +43,39 @@ const sections = [
     topics: ["Create an account", "Set up your organization", "Add your first activity", "Connect Stripe payments", "Share your booking link"],
   },
   {
+    icon: CircleHelp,
+    title: "Operator FAQ",
+    href: "/docs/faq",
+    description: "Get fast answers to common setup, booking, payment, access, and troubleshooting questions.",
+    topics: ["Launch readiness", "Missing pages or activities", "Cancellations and refunds", "Delivery failures", "Contacting support safely"],
+  },
+  {
+    icon: Activity,
+    title: "Activities & Pricing",
+    href: "/docs/activities",
+    description: "Build and publish activities with the right pricing, duration, capacity, location, and requirements.",
+    topics: ["Creating activities", "Pricing models", "Duration packages", "Locations and add-ons", "Publish checklist"],
+  },
+  {
     icon: CalendarDays,
     title: "Bookings & Availability",
     href: "/docs/bookings-availability",
     description: "Manage your availability calendar, direct booking links, website iframe snippets, and cancellation process.",
     topics: ["Setting availability windows", "Managing time slots", "All-activity and single-activity links", "Website iframe snippets", "Check-in process"],
+  },
+  {
+    icon: CalendarCheck2,
+    title: "Daily Operations",
+    href: "/docs/daily-operations",
+    description: "Run arrival, check-in, balances, waivers, staff, equipment, cancellations, and end-of-day review.",
+    topics: ["Start-of-day review", "Booking statuses", "Balance and refund actions", "Waiver and equipment checks", "End-of-day review"],
+  },
+  {
+    icon: Contact,
+    title: "Customers & Guest Hub",
+    href: "/docs/customers-guest-hub",
+    description: "Manage customer records and help guests find, cancel, or reschedule eligible bookings.",
+    topics: ["Customer profiles", "Notes and tags", "Secure booking lookup", "Recovery links", "Guest self-service"],
   },
   {
     icon: PackageCheck,
@@ -75,6 +119,20 @@ const sections = [
     description: "Track revenue, booking volume, and guest counts across your activities.",
     topics: ["Revenue reports", "Booking volume trends", "Guest count tracking", "Filtering by date range", "Exporting data"],
   },
+  {
+    icon: TrendingUp,
+    title: "Growth Tools",
+    href: "/docs/growth-tools",
+    description: "Use promo codes, dynamic pricing, add-ons, broadcasts, and operational tools with controlled testing.",
+    topics: ["Promo codes", "Dynamic pricing", "Add-ons and deposits", "Broadcast SMS", "Measuring results"],
+  },
+  {
+    icon: Settings,
+    title: "Settings & Migration",
+    href: "/docs/settings-migration",
+    description: "Configure business settings, booking links, providers, delivery logs, data exports, and staged imports.",
+    topics: ["Settings map", "Booking slug and widget", "Provider readiness", "Customer imports", "Future booking imports"],
+  },
 ];
 
 export default function Docs() {
@@ -88,8 +146,9 @@ export default function Docs() {
         <div className="mb-12 max-w-2xl">
           <h1 className="text-3xl font-bold text-navy mb-3">ReservKit Documentation</h1>
           <p className="text-lg text-slate-600">
-            These guides cover the full ReservKit setup, from connecting Stripe to running your first live booking. Start with Getting Started if you are new. Jump to a section if you are troubleshooting something specific.
+            These guides cover setup, the customer booking flow, daily operations, and troubleshooting. Start with Getting Started if you are new, use Daily Operations during live service, or open the Operator FAQ when you need a fast answer.
           </p>
+          <p className="mt-3 text-sm text-slate-500">Operator documentation reviewed October 3, 2026.</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

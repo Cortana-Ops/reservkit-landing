@@ -27,6 +27,16 @@ interface Release {
 
 const releases: Release[] = [
   {
+    version: "Operator support center expansion",
+    date: "October 2026",
+    items: [
+      { tag: "Added", text: "Added operator guides for activities, daily operations, customers and Guest Hub, growth tools, settings, and migration." },
+      { tag: "Added", text: "Added a structured operator FAQ covering launch readiness, booking actions, payment safety, delivery failures, and support handoff details." },
+      { tag: "Changed", text: "Expanded Getting Started with a controlled end-to-end booking test before operators share a public link." },
+      { tag: "Changed", text: "Aligned support language with current plan gates, Stripe responsibilities, customer self-service, and equipment behavior." },
+    ],
+  },
+  {
     version: "Public signup and launch truth pass",
     date: "August 2026",
     items: [

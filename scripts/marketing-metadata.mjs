@@ -21,7 +21,7 @@ export const EXPECTED_METADATA_BY_ROUTE = {
   },
   "/docs": {
     title: "Documentation & Guides — ReservKit",
-    description: "ReservKit guides for direct bookings, Stripe payments, waivers, staff scheduling, and reports.",
+    description: "ReservKit operator guides for setup, activities, daily bookings, customers, Stripe payments, staff, messaging, growth tools, settings, migration, and troubleshooting.",
     canonical: "https://reservkit.com/docs",
     socialTitle: "Documentation & Guides — ReservKit",
   },
@@ -31,6 +31,34 @@ export const EXPECTED_METADATA_BY_ROUTE = {
       "Set up ReservKit, create your first activity, connect Stripe, configure waivers, and run a test booking before sharing your booking link.",
     canonical: "https://reservkit.com/docs/getting-started",
     socialTitle: "Getting Started Guide — ReservKit",
+  },
+  "/docs/faq": {
+    title: "Operator FAQ — ReservKit",
+    description:
+      "Answers to common ReservKit operator questions about setup, bookings, availability, Stripe payments, refunds, waivers, customers, staff, equipment, notifications, and troubleshooting.",
+    canonical: "https://reservkit.com/docs/faq",
+    socialTitle: "Operator FAQ — ReservKit",
+  },
+  "/docs/activities": {
+    title: "Activities & Pricing — ReservKit",
+    description:
+      "Create and publish ReservKit activities with pricing, duration packages, availability, waivers, deposits, locations, add-ons, and equipment requirements.",
+    canonical: "https://reservkit.com/docs/activities",
+    socialTitle: "Activities & Pricing — ReservKit",
+  },
+  "/docs/daily-operations": {
+    title: "Daily Operations — ReservKit",
+    description:
+      "Run daily ReservKit operations from booking review and customer contact through staff assignment, check-in, balances, waivers, completion, cancellation, and refunds.",
+    canonical: "https://reservkit.com/docs/daily-operations",
+    socialTitle: "Daily Operations — ReservKit",
+  },
+  "/docs/customers-guest-hub": {
+    title: "Customers & Guest Hub — ReservKit",
+    description:
+      "Manage ReservKit customer records, booking history, notes and tags, and help guests securely find, cancel, or reschedule eligible bookings through Guest Hub.",
+    canonical: "https://reservkit.com/docs/customers-guest-hub",
+    socialTitle: "Customers & Guest Hub — ReservKit",
   },
   "/docs/payments": {
     title: "Payments — ReservKit",
@@ -78,6 +106,20 @@ export const EXPECTED_METADATA_BY_ROUTE = {
       "Configure equipment records, assign equipment to an activity, and use named unit blocking in ReservKit for Growth and higher rental operators.",
     canonical: "https://reservkit.com/docs/equipment",
     socialTitle: "Equipment — ReservKit",
+  },
+  "/docs/growth-tools": {
+    title: "Growth Tools — ReservKit",
+    description:
+      "Use ReservKit promo codes, dynamic pricing, add-ons, broadcasts, reports, deposits, waivers, and equipment tools without surprising customers at checkout.",
+    canonical: "https://reservkit.com/docs/growth-tools",
+    socialTitle: "Growth Tools — ReservKit",
+  },
+  "/docs/settings-migration": {
+    title: "Settings & Migration — ReservKit",
+    description:
+      "Configure ReservKit organization, account, booking widget, payment, notification, integration, and data settings, then safely stage customer or future-booking imports.",
+    canonical: "https://reservkit.com/docs/settings-migration",
+    socialTitle: "Settings & Migration — ReservKit",
   },
   "/roadmap": {
     title: "Product Roadmap — ReservKit",

@@ -90,6 +90,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/docs/faq`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/docs/activities`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/docs/daily-operations`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/docs/customers-guest-hub`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/docs/bookings-availability`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -127,6 +151,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/docs/reports`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/docs/growth-tools`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/docs/settings-migration`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,

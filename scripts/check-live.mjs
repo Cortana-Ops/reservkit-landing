@@ -21,11 +21,20 @@ const sharedRequiredByRoute = {
   "/early-access": ["Request setup help", "reply within one business day"],
   "/docs/getting-started": [
     "Free-first public signup",
+    "Run a controlled test booking",
     "plan-based booking fee",
     "Stripe controls payout timing",
     "Settings -&gt; Booking Widget",
     "Dedicated calendar-only or activity-card-only embeds are future options",
   ],
+  "/docs/faq": [
+    "What must be ready before I share my booking link?",
+    "Does cancelling automatically refund the customer?",
+    "What should I send support?",
+  ],
+  "/docs/activities": ["Create an activity", "Choose the right pricing model", "Publish checklist"],
+  "/docs/daily-operations": ["Start-of-day review", "Booking statuses", "End-of-day review"],
+  "/docs/customers-guest-hub": ["Customer records", "Guest Hub lookup", "When a guest cannot find a booking"],
   "/docs/payments": [
     "booking subtotal collected at checkout",
     "plan-based booking fee",
@@ -56,7 +65,9 @@ const sharedRequiredByRoute = {
     "Dedicated calendar-only or activity-card-only embeds are future options",
     "checkout still checks capacity",
   ],
-  "/changelog": ["Public signup and launch truth pass", "Public Free-first signup", "Product proof and pricing alignment"],
+  "/docs/growth-tools": ["Promo codes", "Dynamic pricing", "Broadcast SMS", "Measure the result"],
+  "/docs/settings-migration": ["Settings map", "Booking slug and widget", "Import customers or future bookings"],
+  "/changelog": ["Operator support center expansion", "Public signup and launch truth pass", "Product proof and pricing alignment"],
   "/blog": ["plan-based booking fee on eligible booking subtotal", "Customer tips are tracked separately from booking income"],
   "/terms": ["Paid ReservKit subscription charges are non-refundable", "eligible booking subtotal"],
   "/privacy": [
