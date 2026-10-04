@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   CreditCard,
   FileSignature,
+  Quote,
   Route,
   Search,
   ShieldCheck,
@@ -90,6 +91,24 @@ const whyReservKit = [
   {
     title: "Collect the messy operational pieces together",
     body: "Waiver evidence, refundable damage deposits, guest counts, notes, staff context, and check-in status live with the booking record.",
+  },
+];
+
+const operatorScenarios = [
+  {
+    quote:
+      "We need customers to book online, but we still need staff to know who paid, who signed, what gear is held, and what needs attention before the trip.",
+    label: "Boat and watersports rental operator",
+  },
+  {
+    quote:
+      "We are not trying to rebuild every back-office process on day one. We need one clean activity, one payment path, and one booking link we can trust.",
+    label: "Operator switching from a legacy booking tool",
+  },
+  {
+    quote:
+      "The booking fee, Stripe setup, waivers, deposits, and check-in flow all have to be understandable before we point real customers at it.",
+    label: "Owner evaluating direct booking software",
   },
 ];
 
@@ -379,6 +398,35 @@ export default function Home() {
                     <p className="mt-2 text-sm leading-relaxed text-slate-300">{step.body}</p>
                   </div>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-3xl">
+              <div className="mb-5 inline-flex rounded-full border border-amber/30 bg-amber-light px-4 py-1.5 text-sm font-semibold text-amber-dark">
+                Operator buying signals
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+                Built around the questions operators ask before they trust a new booking flow.
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                Early operators are usually not looking for more software. They are looking for a booking path they can explain to staff, test end to end, and move traffic to without losing control of payments or day-of work.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {operatorScenarios.map((scenario) => (
+                <figure key={scenario.label} className="flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+                  <Quote className="h-5 w-5 text-amber-dark" aria-hidden="true" />
+                  <blockquote className="mt-4 flex-1 text-base font-semibold leading-relaxed text-navy">
+                    &quot;{scenario.quote}&quot;
+                  </blockquote>
+                  <figcaption className="mt-5 border-t border-[var(--color-border)] pt-4 text-sm font-bold text-slate-600">
+                    {scenario.label}
+                  </figcaption>
+                </figure>
               ))}
             </div>
           </div>
