@@ -1,5 +1,6 @@
 import { SeoProductPage, type SeoProductPageConfig } from "../components/SeoProductPage";
 import { createMarketingMetadata } from "../lib/metadata";
+import { paymentPagePricingSummary } from "../lib/marketing";
 
 export const metadata = createMarketingMetadata({
   title: "Rental Booking Software with Damage Deposits",
@@ -41,6 +42,8 @@ const config: SeoProductPageConfig = {
   ],
   ctaTitle: "Test your rental payment and deposit flow",
   ctaBody: "Configure one activity and verify the complete checkout and operator follow-up before going live.",
+  pricingSummaryText: paymentPagePricingSummary,
+  showUnverifiedCheckoutNote: true,
 };
 
 export default function RentalBookingSoftwareWithDamageDeposits() { return <SeoProductPage config={config} />; }

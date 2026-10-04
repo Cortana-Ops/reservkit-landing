@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CreditCard, RefreshCcw, DollarSign, Tag } from "lucide-react";
-import { enterpriseTier, pricingTiers } from "../../lib/marketing";
+import { UnverifiedCheckoutNote } from "../../components/UnverifiedCheckoutNote";
+import { enterpriseTier, paymentPageFreeBookingVolume, pricingTiers } from "../../lib/marketing";
 import { createMarketingMetadata } from "../../lib/metadata";
 
 export const metadata = createMarketingMetadata({
@@ -26,7 +27,7 @@ const feeTable = [
     plan: tier.name,
     price: `${tier.price}${tier.period}`,
     fee: tier.fee,
-    bookings: tier.volume,
+    bookings: tier.name === "Free" ? paymentPageFreeBookingVolume : tier.volume,
   })),
   {
     plan: enterpriseTier.name,
@@ -57,6 +58,9 @@ export default function Payments() {
             payment through Stripe, and collect the plan-based booking fee on the booking subtotal where
             applicable. No monthly billing is required on the free plan.
           </p>
+          <div className="mt-6">
+            <UnverifiedCheckoutNote />
+          </div>
         </div>
 
         <div className="space-y-12">

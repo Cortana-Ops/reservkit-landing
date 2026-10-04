@@ -75,7 +75,7 @@ export const EXPECTED_METADATA_BY_ROUTE = {
   "/docs/equipment": {
     title: "Equipment — ReservKit",
     description:
-      "Configure optional equipment records and named unit blocking in ReservKit for Growth and higher rental operators.",
+      "Configure equipment records, assign equipment to an activity, and use named unit blocking in ReservKit for Growth and higher rental operators.",
     canonical: "https://reservkit.com/docs/equipment",
     socialTitle: "Equipment — ReservKit",
   },
