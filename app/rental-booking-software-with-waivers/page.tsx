@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/stripe-booking-software-for-rentals", label: "Stripe booking software", description: "Connect checkout and booking records through Stripe." },
   ],
   ctaTitle: "Test a booking and waiver flow together",
-  ctaBody: "Start on Free, then use an eligible plan when your live operation needs the waiver tools.",
+  ctaBody: "Start a 14-day full-access trial, then choose Growth or above when your live operation needs waiver tools.",
 };
 
 export default function RentalBookingSoftwareWithWaivers() { return <SeoProductPage config={config} />; }

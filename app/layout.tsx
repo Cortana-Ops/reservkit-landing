@@ -83,7 +83,7 @@ const softwareApplicationSchema = {
     price: "0",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
-    description: "Free-first public signup for rental, tour, and experience operators.",
+    description: "14-day full-access trial for rental, tour, and experience operators.",
   },
   url: "https://reservkit.com",
 };

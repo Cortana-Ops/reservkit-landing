@@ -20,7 +20,7 @@ const sharedRequiredByRoute = {
   "/": ["Stripe controls payout timing", "Confirmation emails where enabled"],
   "/early-access": ["Request setup help", "reply within one business day"],
   "/docs/getting-started": [
-    "Free-first public signup",
+    "14-day full-access trial",
     "Run a controlled test booking",
     "plan-based booking fee",
     "Stripe controls payout timing",
@@ -128,29 +128,30 @@ function routeUrl(route) {
 }
 
 function inferMarketingMode(text) {
-  return text.includes("Start free") ? "public_signup" : "prelaunch";
+  return text.includes("Start 14-day trial") ? "public_signup" : "prelaunch";
 }
 
 function requiredForRoute(route, mode) {
   const launchRequiredByRoute =
     mode === "public_signup"
       ? {
-          "/": ["Start free", "refundable damage deposits"],
+          "/": ["Start 14-day trial", "refundable damage deposits"],
           "/pricing": [
-            "Start free",
-            "$99",
-            "3.5% booking fee",
-            "$179",
-            "2.5% booking fee",
-            "$349",
-            "2% booking fee",
+            "Start 14-day trial",
+            "$69",
+            "1.5% booking fee",
+            "$199",
+            "1% booking fee",
+            "$399",
+            "0.5% booking fee",
+            "$900/month booking-fee cap",
             "14-day free trial",
-            "Typically 1.5%+ booking fee",
+            "Contracted booking fee",
           ],
         }
       : {
           "/": ["Get early access", "Guided setup is available", "refundable damage deposits"],
-          "/pricing": ["Get early access", "Free", "Starter", "Growth"],
+          "/pricing": ["Get early access", "Starter", "Growth", "Pro"],
         };
 
   return [

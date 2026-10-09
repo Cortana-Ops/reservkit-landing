@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/pricing", label: "Transparent pricing", description: "Compare plans before moving your booking volume." },
   ],
   ctaTitle: "Map the first booking flow you want to move",
-  ctaBody: "Start on Free or request guided setup before changing any customer-facing link.",
+  ctaBody: "Start a 14-day full-access trial or request guided setup before changing any customer-facing link.",
 };
 
 export default function SwitchRentalBookingSoftware() { return <SeoProductPage config={config} />; }

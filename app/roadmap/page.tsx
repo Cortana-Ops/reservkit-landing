@@ -24,7 +24,7 @@ const shipped = [
   { label: "Booking and checkout", items: ["Public booking pages for configured activities", "Stripe Connect checkout flow through Stripe", "Guest details, selected-time review, and booking confirmation flow", "Call-to-book cutoff handling when online booking is not available"] },
   { label: "Waivers and customer records", items: ["Per-guest digital waiver signing", "Optional drawn signature fields when configured", "Signed waiver evidence display", "Customer booking lookup without requiring a customer account"] },
   { label: "Operator workflows", items: ["Activity setup, availability, booking detail, and operator dashboard workflows", "Staff-facing navigation and day-of workflow polish", "Reports views for revenue and booking review", "Growth+ equipment unit blocking for operators who track specific rentable gear", "Migration Center V1 for structured imports"] },
-  { label: "Go-live readiness", items: ["Current public pricing tiers", "Free-first public signup", "Guided setup request path", "All-activity and single-activity booking links plus iframe snippets", "Public content guard for stale pricing and removed signup language"] },
+  { label: "Go-live readiness", items: ["Current public pricing tiers", "14-day full-access trial", "Guided setup request path", "All-activity and single-activity booking links plus iframe snippets", "Public content guard for stale pricing and removed signup language"] },
 ];
 
 const inProgress = [

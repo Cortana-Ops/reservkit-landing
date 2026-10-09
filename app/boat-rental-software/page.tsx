@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/switch-rental-booking-software", label: "Switch booking systems", description: "Move one tested booking flow at a time." },
   ],
   ctaTitle: "Build your first boat rental booking flow",
-  ctaBody: "Start on Free or request guided setup for the activity you want customers to book first.",
+  ctaBody: "Start a 14-day full-access trial or request guided setup for the activity you want customers to book first.",
 };
 
 export default function BoatRentalSoftware() { return <SeoProductPage config={config} />; }

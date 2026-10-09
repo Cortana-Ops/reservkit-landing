@@ -30,7 +30,7 @@ import { createMarketingMetadata } from "./lib/metadata";
 const faqItems = [
   {
     q: "Is ReservKit available now?",
-    a: "Yes. ReservKit is available through public Free-first signup for rental, tour, and experience operators. Operators can start on Free, build the first booking flow, and upgrade from Billing when they need more volume or staff tools.",
+    a: "Yes. Rental, tour, and experience operators can start with a 14-day full-access trial, build and test the first booking flow, and choose Starter, Growth, or Pro from Billing before the trial ends.",
   },
   {
     q: "Can I switch from FareHarbor, Peek, Checkfront, Rezdy, or another booking platform?",
@@ -45,7 +45,7 @@ const faqItems = [
     a: "No. Customers can book, pay, sign required waivers, and receive their confirmation without creating a ReservKit account.",
   },
   {
-    q: "What happens after I start free?",
+    q: "What happens after I start a trial?",
     a: pricingSummary,
   },
 ];
@@ -632,7 +632,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-white">Ready to take direct bookings?</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-300">
-              Start on Free, build one working booking flow, and request guided setup help when you want a second set of eyes before sharing your link.
+              Start a 14-day full-access trial, build one working booking flow, and request guided setup help when you want a second set of eyes before sharing your link.
             </p>
             <TrackedLink
               href={PRIMARY_CTA_URL}

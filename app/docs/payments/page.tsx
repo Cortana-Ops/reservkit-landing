@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PageShell } from "../../components/PageShell";
 import { CreditCard, RefreshCcw, DollarSign, Tag } from "lucide-react";
 import { UnverifiedCheckoutNote } from "../../components/UnverifiedCheckoutNote";
-import { enterpriseTier, paymentPageFreeBookingVolume, pricingTiers } from "../../lib/marketing";
+import { enterpriseTier, pricingTiers } from "../../lib/marketing";
 import { createMarketingMetadata } from "../../lib/metadata";
 
 export const metadata = createMarketingMetadata({
@@ -27,7 +27,7 @@ const feeTable = [
     plan: tier.name,
     price: `${tier.price}${tier.period}`,
     fee: tier.fee,
-    bookings: tier.name === "Free" ? paymentPageFreeBookingVolume : tier.volume,
+    bookings: tier.volume,
   })),
   {
     plan: enterpriseTier.name,
@@ -56,7 +56,7 @@ export default function Payments() {
           <p className="text-lg text-slate-600 leading-relaxed">
             ReservKit uses Stripe Connect to create the customer checkout flow, route the connected-account
             payment through Stripe, and collect the plan-based booking fee on the booking subtotal where
-            applicable. No monthly billing is required on the free plan.
+            applicable. New organizations begin with a 14-day full-access trial before selecting a paid plan.
           </p>
           <div className="mt-6">
             <UnverifiedCheckoutNote />
@@ -191,8 +191,10 @@ export default function Payments() {
                 a payment or deposit. The dashboard limits the amount so it cannot exceed the booking total.
               </p>
               <p>
-                Booking-fee refund handling depends on the Stripe payment path for that charge. Stripe&apos;s own processing
-                fee is generally not returned by Stripe. If a refund succeeds in Stripe but ReservKit cannot update
+                Stripe does not return its original processing fee. ReservKit returns its booking fee on a full refund
+                caused by an operator cancellation, weather or safety, a duplicate payment, or a ReservKit system issue.
+                ReservKit retains its booking fee for customer cancellations, no-shows, and partial refunds. The refund
+                dialog shows the result before you submit. If a refund succeeds in Stripe but ReservKit cannot update
                 the booking record, the dashboard will tell you to reconcile the booking manually.
               </p>
             </div>

@@ -79,7 +79,7 @@ export default function EarlyAccessPage() {
               Want help setting up your first ReservKit booking flow?
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              Start free whenever you are ready. If you want help, we can review your business and guide setup for one activity, Stripe payments, availability, waiver evidence, refundable damage deposits, and a test booking before you send customers to ReservKit.
+              Start a 14-day full-access trial whenever you are ready. If you want help, we can review your business and guide setup for one activity, Stripe payments, availability, waiver evidence, refundable damage deposits, and a test booking before you send customers to ReservKit.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
               Tell us what you operate and how bookings work today. We reply within one business day.

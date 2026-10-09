@@ -41,7 +41,7 @@ const config: SeoProductPageConfig = {
     { href: "/pricing", label: "ReservKit pricing", description: "Compare monthly plans, booking fees, and feature access." },
   ],
   ctaTitle: "Connect and test your first paid booking flow",
-  ctaBody: "Start on Free, configure an activity, and verify Stripe readiness before taking customer payments.",
+  ctaBody: "Start a 14-day full-access trial, configure an activity, and verify Stripe readiness before taking customer payments.",
   pricingSummaryText: paymentPagePricingSummary,
   showUnverifiedCheckoutNote: true,
 };

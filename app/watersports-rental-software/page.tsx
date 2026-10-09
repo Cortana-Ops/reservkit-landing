@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/kayak-rental-software", label: "Kayak rental software", description: "Reservations and launch-site operations for paddle rentals." },
   ],
   ctaTitle: "Create the first bookable activity in your watersports catalog",
-  ctaBody: "Start on Free and prove the complete customer and operator workflow before moving more traffic.",
+  ctaBody: "Start a 14-day full-access trial and prove the complete customer and operator workflow before moving more traffic.",
 };
 
 export default function WatersportsRentalSoftware() { return <SeoProductPage config={config} />; }

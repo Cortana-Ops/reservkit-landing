@@ -8,14 +8,14 @@ import { createMarketingMetadata } from "../lib/metadata";
 export const metadata = createMarketingMetadata({
   title: "Pricing",
   description:
-    "Straightforward pricing for rental and experience operators — monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $0 to $349/month.",
+    "Straightforward pricing for rental and experience operators: monthly subscription plus a per-booking fee that decreases as you grow. No demo required. Plans from $69 to $399/month.",
   path: "/pricing",
 });
 
 const faqs = [
   {
     q: "What is included in every plan?",
-    a: "Free includes the core booking page, Stripe Connect payments, customer records, and booking confirmation emails where enabled at low volume. Starter adds basic team tools. Growth adds unlimited bookings, waivers, broadcasts, reports, coupon codes, refundable damage deposits, priced add-ons, equipment, and dynamic pricing, including named equipment-unit blocking. Pro adds the lowest self-serve booking fee and a deeper support path for higher-volume teams.",
+    a: "Every paid plan includes unlimited bookings. Starter includes the core booking page, Stripe Connect payments, customer records, and basic team tools. Growth adds waivers, broadcasts, reports, coupon codes, refundable damage deposits, priced add-ons, equipment, dynamic pricing, and named equipment-unit blocking. Pro adds API and white-label controls, a 0.5% booking fee, and a $900 monthly booking-fee cap.",
   },
   {
     q: "What does booking fee mean?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Can I get help setting up?",
-    a: "Yes. You can start on Free and request guided setup help if you want ReservKit support mapping your first activity, Stripe setup, availability, waivers, and test booking.",
+    a: "Yes. You can begin a 14-day full-access trial and request guided setup help with your first activity, Stripe setup, availability, waivers, and test booking.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function PricingPage() {
         <section className="mt-16 rounded-3xl bg-navy p-8 text-center">
           <h2 className="text-2xl font-bold text-white">Ready to price your first booking flow?</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
-            Start on Free, build your first booking flow, and upgrade only when your operation needs more volume or staff tools.
+            Use the 14-day full-access trial to build and test your first booking flow, then choose the plan that fits your operation.
           </p>
           <TrackedLink
             href={PRIMARY_CTA_URL}

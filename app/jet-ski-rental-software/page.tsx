@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/watersports-rental-software", label: "Watersports rental software", description: "Manage jet skis alongside other activities." },
   ],
   ctaTitle: "Build and test your first jet ski booking flow",
-  ctaBody: "Start on Free and validate the full reservation path before sending customers to it.",
+  ctaBody: "Start a 14-day full-access trial and validate the full reservation path before sending customers to it.",
 };
 
 export default function JetSkiRentalSoftware() { return <SeoProductPage config={config} />; }

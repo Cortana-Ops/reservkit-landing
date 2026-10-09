@@ -41,7 +41,7 @@ const faqSchema = {
       name: "Is ReservKit available for tour operators?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Tour, activity, and experience operators can start on Free and build their first direct booking flow.",
+        text: "Yes. Tour, activity, and experience operators can start a 14-day full-access trial and build their first direct booking flow.",
       },
     },
     {
@@ -134,7 +134,7 @@ export default function TourOperatorSoftware() {
                 mobile check-in in one operator workspace.
               </p>
               <p>
-                Operators can start on Free and request guided setup help for the first live booking flow.
+                Operators can start a 14-day full-access trial and request guided setup help for the first live booking flow.
                 Public plan pricing is transparent for planning ahead: {pricingSummary}
               </p>
             </div>

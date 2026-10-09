@@ -1,7 +1,7 @@
 # ReservKit Founder Outreach Sprint
 
 **Prepared:** 2026-09-09
-**Last aligned:** 2026-10-02
+**Last aligned:** 2026-10-08
 **Outreach window:** 2026-09-14 through 2026-09-18
 **Announcement decision:** 2026-09-18
 **Recommended announcement:** 2026-09-22, only if the launch gates pass
@@ -40,7 +40,7 @@ before the session ends.
 - Personalize the first sentence using the `relevant_reason` in the tracker.
 - Use the public business contact route in the tracker; do not source personal
   addresses or private contact data.
-- Offer the existing Free plan and guided setup. Do not offer a discount,
+- Offer the 14-day full-access trial and guided setup. Do not offer a discount,
   credit, custom term, migration promise, or unreleased feature.
 - Send one initial note and at most one follow-up. Stop after a decline,
   unsubscribe request, or no response to the follow-up.
@@ -65,9 +65,9 @@ Hi [Business] team,
 
 I am building ReservKit for boat and watersports rental operators, and I am
 looking for a small group of businesses to run a real booking setup with me
-before our public announcement. ReservKit has a Free plan, and I will personally
-help configure one activity, availability, Stripe Connect, waivers, and the
-booking page, then run and refund a controlled test booking.
+before our public announcement. ReservKit includes a 14-day full-access trial,
+and I will personally help configure one activity, availability, Stripe Connect,
+waivers, and the booking page, then run and refund a controlled test booking.
 
 Would a 30-minute setup session be useful? You can also request guided setup at
 https://reservkit.com/early-access.
@@ -90,7 +90,7 @@ Hi [Business] team,
 
 Following up once in case a guided ReservKit setup would be useful. The goal is
 to leave you with one working booking flow, not give you a sales presentation.
-The Free plan does not require a paid subscription.
+The 14-day trial does not charge a monthly subscription until a paid plan begins.
 
 If the timing is not right, no response is needed and I will close the loop.
 
@@ -118,6 +118,8 @@ works on the operator's actual account.
    the account as active before attempting checkout.
 6. **Booking, 5 minutes:** Complete one controlled booking using a real card,
    verify the operator booking record and customer confirmation, then refund it.
+   Explain before charging that Stripe does not return its original processing
+   fee even when the controlled payment is fully refunded.
 7. **Handoff, 4 minutes:** Confirm the operator can repeat the setup order, copy
    the booking link, and identify the support route.
 

@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const root = process.cwd();
-const scanDirs = ["app", "README.md"];
+const scanDirs = ["app", "README.md", "docs/LAUNCH_OUTREACH_SPRINT_2026-09.md"];
 
 const forbidden = [
   "14-day Growth trial",
@@ -19,8 +19,6 @@ const forbidden = [
   "50 bookings/month",
   "50 bookings/mo",
   "200 bookings/month",
-  "1% booking fee",
-  "0.5% booking fee",
   "Starter ($79/month): 2.5%",
   "Starter ($79/mo + 2.5%",
   "$79/mo + 2.5%",
@@ -172,6 +170,8 @@ const forbidden = [
   '"Confirmation emails",',
   '"Customer confirmation emails",',
   "Free includes the core booking page, Stripe Connect payments, customer records, and email confirmations at low volume",
+  "ReservKit has a Free plan",
+  "The Free plan does not require a paid subscription",
   "Enterprise: custom monthly pricing, custom volume, and annual minimum",
   "We share data only with:",
 ];
@@ -239,7 +239,7 @@ const unsupportedLiveClaimPatterns = [
 ];
 
 const required = [
-  { file: "app/lib/marketing.ts", text: "Start free" },
+  { file: "app/lib/marketing.ts", text: "Start 14-day trial" },
   { file: "app/lib/marketing.ts", text: 'process.env.NEXT_PUBLIC_MARKETING_MODE === "prelaunch"' },
   { file: "app/lib/marketing.ts", text: '    : "public_signup"' },
   { file: "app/lib/marketing.ts", text: 'MARKETING_MODE === "public_signup" ? PUBLIC_SIGNUP_URL : EARLY_ACCESS_URL' },
@@ -255,8 +255,8 @@ const required = [
   { file: "docs/MARKETING_TRUTH_AUDIT_2026-07-25.md", text: "Default / production mode is public signup" },
   { file: "docs/MARKETING_TRUTH_AUDIT_2026-07-25.md", text: "Public signup is live through Free-first signup" },
   { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "ReservKit is live direct-booking software, not a beta waitlist." },
-  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Public signup is open through the Free-first app signup path." },
-  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Free does not include staff/team access." },
+  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Public signup is open through a 14-day full-access trial." },
+  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Every paid plan includes unlimited bookings." },
   { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "A real Stripe sandbox Checkout completed for a one-guest `$45.00` Test Lab booking" },
   { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Guest Hub required matching customer email before showing booking details." },
   { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Offline/manual payment handling is an operator-side exception path" },
@@ -300,7 +300,7 @@ const required = [
   { file: "app/page.tsx", text: "collect payments through Stripe Connect" },
   { file: "app/roadmap/page.tsx", text: "Stripe Connect checkout flow through Stripe" },
   { file: "app/blog/page.tsx", text: "routes the connected-account payment through Stripe" },
-  { file: "app/lib/marketing.ts", text: "Standard Stripe processing is charged separately by Stripe to your connected account" },
+  { file: "app/lib/marketing.ts", text: "Stripe charges its standard processing fees directly to the operator’s connected account" },
   { file: "app/lib/marketing.ts", text: "is not added as a separate customer checkout surcharge" },
   { file: "app/docs/payments/page.tsx", text: "refundable damage deposit" },
   { file: "app/docs/payments/page.tsx", text: "released deposits still need the actual money movement handled in Stripe" },
@@ -325,7 +325,7 @@ const required = [
   { file: "app/changelog/page.tsx", text: "Operator support center expansion" },
   { file: "app/terms/page.tsx", text: "percentage of the eligible booking subtotal according to the active plan" },
   { file: "app/terms/page.tsx", text: "Last updated: October 2026" },
-  { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, a booking fee typically starting at 1.5%, custom volume, and signed agreement terms" },
+  { file: "app/terms/page.tsx", text: "Enterprise: custom pricing, contracted booking fee, unlimited bookings, and signed agreement terms" },
   { file: "app/pricing/page.tsx", text: "New Starter, Growth, and Pro subscriptions begin with a 14-day free trial" },
   { file: "app/privacy/page.tsx", text: "Last updated: August 2026" },
   { file: "app/privacy/page.tsx", text: "We do not sell your personal data. We share data with service providers needed to" },
@@ -334,22 +334,22 @@ const required = [
   { file: "app/privacy/page.tsx", text: "<strong>Sentry and PostHog</strong> — for error monitoring, diagnostics, and product analytics" },
   { file: "app/blog/page.tsx", text: "plan-based booking fee on eligible booking subtotal" },
   { file: "app/blog/page.tsx", text: "Customer tips are tracked separately from booking income" },
-  { file: "app/lib/marketing.ts", text: "No staff/team access" },
+  { file: "app/lib/marketing.ts", text: "$900/month booking-fee cap" },
   { file: "app/lib/marketing.ts", text: "Basic team tools" },
   { file: "app/lib/marketing.ts", text: "Equipment and dynamic pricing" },
   { file: "app/lib/marketing.ts", text: "Feature availability follows the pricing tiers" },
-  { file: "app/lib/marketing.ts", text: 'paymentPageFreeBookingVolume = "10 bookings/month"' },
+  { file: "app/lib/marketing.ts", text: "Public plans are Starter ($69/mo + 1.5%), Growth ($199/mo + 1%), Pro ($399/mo + 0.5%" },
   { file: "app/components/SeoProductPage.tsx", text: "verticalFeatureGateNote" },
   { file: "app/tour-operator-software/page.tsx", text: "verticalFeatureGateNote" },
   { file: "app/components/PricingSection.tsx", text: "enterprise_setup_cta_clicked" },
   { file: "app/components/PricingSection.tsx", text: "Request setup help" },
   { file: "app/components/PricingSection.tsx", text: 'href={EARLY_ACCESS_URL}' },
-  { file: "app/pricing/page.tsx", text: "booking confirmation emails where enabled at low volume" },
+  { file: "app/pricing/page.tsx", text: "Every paid plan includes unlimited bookings" },
   { file: "app/docs/getting-started/page.tsx", text: "receive a booking confirmation email when confirmations are enabled" },
-  { file: "app/lib/marketing.ts", text: "Confirmation emails where enabled" },
-  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "booking confirmation emails where enabled at low volume" },
-  { file: "app/pricing/page.tsx", text: "Starter adds basic team tools" },
-  { file: "app/pricing/page.tsx", text: "equipment, and dynamic pricing" },
+  { file: "app/lib/marketing.ts", text: "Booking pages and Stripe payments" },
+  { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Starter includes core bookings" },
+  { file: "app/pricing/page.tsx", text: "Starter includes the core booking page" },
+  { file: "app/pricing/page.tsx", text: "named equipment-unit blocking" },
   { file: "app/docs/staff/page.tsx", text: "Team and staff tools are available on Starter and higher plans" },
   { file: "app/docs/staff/page.tsx", text: "booking status for each" },
   { file: "docs/MARKETING_PRODUCT_FACTS.md", text: "Staff schedule cards show assigned booking context and booking status" },
@@ -393,7 +393,7 @@ const required = [
   { file: "app/docs/bookings-availability/page.tsx", text: "Do not assume that the start-time interval adds a separate setup or cleanup buffer" },
   { file: "app/page.tsx", text: "Owners and admins keep revenue reporting separate." },
   { file: "app/page.tsx", text: "ReservKit is live booking software" },
-  { file: "app/page.tsx", text: "Start on Free, build one working booking flow" },
+  { file: "app/page.tsx", text: "Start a 14-day full-access trial, build one working booking flow" },
 ];
 
 const removedRoutes = [

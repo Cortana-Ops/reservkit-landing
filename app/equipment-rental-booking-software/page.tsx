@@ -54,7 +54,7 @@ const config: SeoProductPageConfig = {
     { href: "/rental-booking-software-with-damage-deposits", label: "Damage deposit booking software", description: "Understand the refundable deposit workflow and operator responsibilities." },
   ],
   ctaTitle: "Build one equipment rental flow and test it",
-  ctaBody: "Start on Free for the core booking path, then use Growth when equipment requirements and named-unit blocking become part of the operation.",
+  ctaBody: "Start a 14-day full-access trial for the core booking path, then choose Growth when equipment requirements and named-unit blocking become part of the operation.",
 };
 
 export default function EquipmentRentalBookingSoftware() {

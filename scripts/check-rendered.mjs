@@ -48,7 +48,7 @@ const desktopHeaderLinks = [
   { text: "Pricing", href: "/pricing" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
-  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+  { text: "Start 14-day trial", href: "https://app.reservkit.com/login?signup=true" },
 ];
 
 const industryLinks = [
@@ -71,11 +71,11 @@ const mobilePrimaryMenuLinks = [
   { text: "Pricing", href: "/pricing" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
-  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+  { text: "Start 14-day trial", href: "https://app.reservkit.com/login?signup=true" },
 ];
 
 const homepageHeroLinks = [
-  { text: "Start free", href: "https://app.reservkit.com/login?signup=true" },
+  { text: "Start 14-day trial", href: "https://app.reservkit.com/login?signup=true" },
   { text: "See how it works", href: "#workflow" },
 ];
 
@@ -99,12 +99,12 @@ const pageShellFooterLinks = [
 const primarySignupHref = "https://app.reservkit.com/login?signup=true";
 
 const legacyVerticalMainLinks = [
-  { text: "Start free", href: primarySignupHref, min: 2 },
+  { text: "Start 14-day trial", href: primarySignupHref, min: 2 },
   { text: "View pricing", href: "/pricing", min: 1 },
 ];
 
 const seoProductMainLinks = [
-  { text: "Start free", href: primarySignupHref, min: 2 },
+  { text: "Start 14-day trial", href: primarySignupHref, min: 2 },
   { text: "See pricing", href: "/pricing", min: 1 },
   { text: "Review the setup guide", href: "/docs/getting-started", min: 1 },
 ];
@@ -157,7 +157,7 @@ const routeMainLinkExpectations = {
     { text: "Back to all documentation", href: "/docs", min: 1 },
   ],
   "/roadmap": [
-    { text: "Start free", href: primarySignupHref, min: 1 },
+    { text: "Start 14-day trial", href: primarySignupHref, min: 1 },
     { text: "View full changelog", href: "/changelog", min: 1 },
     { text: "Explore the docs", href: "/docs", min: 1 },
     { text: "Read the blog", href: "/blog", min: 1 },
@@ -169,7 +169,7 @@ const routeMainLinkExpectations = {
     { text: "Back to ReservKit", href: "/", min: 1 },
   ],
   "/blog": [
-    { text: "Start free", href: primarySignupHref, min: 1 },
+    { text: "Start 14-day trial", href: primarySignupHref, min: 1 },
     { text: "Changelog", href: "/changelog", min: 1 },
     { text: "Roadmap", href: "/roadmap", min: 1 },
   ],
@@ -655,10 +655,9 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
         }))
       );
       const expectedSelfServePlans = [
-        { name: "Free", requiredText: ["$0", "5% booking fee", "10 bookings/month", "No staff/team access"] },
-        { name: "Starter", requiredText: ["$99", "3.5% booking fee", "75 bookings/month", "14-day free trial", "Basic team tools"] },
-        { name: "Growth", requiredText: ["$179", "2.5% booking fee", "Unlimited bookings", "14-day free trial", "Reports and waiver tools"] },
-        { name: "Pro", requiredText: ["$349", "2% booking fee", "Unlimited bookings", "14-day free trial", "Lowest self-serve booking fee"] },
+        { name: "Starter", requiredText: ["$69", "1.5% booking fee", "Unlimited bookings", "14-day free trial", "Basic team tools"] },
+        { name: "Growth", requiredText: ["$199", "1% booking fee", "Unlimited bookings", "14-day free trial", "Reports and waiver tools"] },
+        { name: "Pro", requiredText: ["$399", "0.5% booking fee", "$900/month booking-fee cap", "14-day free trial", "API and white-label controls"] },
       ];
       for (const expectedPlan of expectedSelfServePlans) {
         const card = pricingCards.find((candidate) => candidate.heading === expectedPlan.name);
@@ -667,11 +666,11 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
           continue;
         }
         const signupLinks = card.links.filter(
-          (link) => link.text === "Start free" && link.href === "https://app.reservkit.com/login?signup=true"
+          (link) => link.text === "Start 14-day trial" && link.href === "https://app.reservkit.com/login?signup=true"
         );
         if (signupLinks.length !== 1) {
           failures.push(
-            `${viewport.label} ${route} expected ${expectedPlan.name} card to have one Start free signup link, found ${signupLinks.length}`
+            `${viewport.label} ${route} expected ${expectedPlan.name} card to have one trial signup link, found ${signupLinks.length}`
           );
         }
         for (const requiredText of expectedPlan.requiredText) {
@@ -692,13 +691,13 @@ async function checkRoute(browser, route, viewport, attempt = 1) {
             `${viewport.label} ${route} expected Enterprise card to have one Request setup help link to /early-access, found ${enterpriseLinks.length}`
           );
         }
-        for (const requiredText of ["Custom", "Typically 1.5%+ booking fee", "Custom volume", "Manual/private plan"]) {
+        for (const requiredText of ["Custom", "Contracted booking fee", "Unlimited bookings", "Manual/private plan"]) {
           if (!enterpriseCard.text.includes(requiredText)) {
             failures.push(`${viewport.label} ${route} Enterprise card missing text: ${requiredText}`);
           }
         }
-        if (enterpriseCard.links.some((link) => link.text === "Start free")) {
-          failures.push(`${viewport.label} ${route} Enterprise card must not use the self-serve Start free CTA`);
+        if (enterpriseCard.links.some((link) => link.text === "Start 14-day trial")) {
+          failures.push(`${viewport.label} ${route} Enterprise card must not use the self-serve trial CTA`);
         }
       }
     }

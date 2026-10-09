@@ -31,7 +31,7 @@ const articles = [
     intro:
       "The first setup session focuses on one working booking link. Here is what that looks like: Stripe, one activity, waivers, and a test booking before you share anything publicly.",
     content: [
-      POSITIONING_LINE + " Free-first signup lets operators build the first booking flow before choosing a paid plan.",
+      POSITIONING_LINE + " A 14-day full-access trial lets operators build and test the first booking flow before choosing a paid plan.",
       "The first setup pass usually covers organization details, one or two activities, availability, Stripe Connect, waiver requirements, and the public booking link. ReservKit creates the Stripe Connect checkout flow and routes the connected-account payment through Stripe, while collecting the plan-based booking fee on eligible booking subtotal where applicable.",
       "Public plan pricing is documented plainly: " + pricingSummary,
       "If you want help evaluating ReservKit, request guided setup with your business type, current booking workflow, and monthly booking volume. That gives us enough context to plan the first setup path.",
@@ -51,7 +51,7 @@ const articles = [
       "Monthly subscription, booking fee, Stripe processing, and volume limits all hit differently depending on how many bookings you take. Run the actual math before you commit.",
     content: [
       "The cleanest way to compare booking tools is to write down the monthly subscription, the booking fee, payment processing fees, booking volume limits, and any required add-ons. Some platforms publish this clearly; some require a sales conversation or custom quote.",
-      "ReservKit's public pricing is intentionally direct. Free is $0/mo + 5% with 10 bookings/month. Starter is $99/mo + 3.5% with 75 bookings/month. Growth is $179/mo + 2.5% with unlimited bookings. Pro is $349/mo + 2% with unlimited bookings. Starter, Growth, and Pro begin with a 14-day free trial. Enterprise is custom, with booking fees typically starting at 1.5%.",
+      "ReservKit's public pricing is intentionally direct. Starter is $69/mo + 1.5%. Growth is $199/mo + 1%. Pro is $399/mo + 0.5%, with a $900 monthly booking-fee cap. Every paid plan includes unlimited bookings, and Starter, Growth, and Pro begin with a 14-day free trial. Enterprise uses custom contracted terms.",
       "Stripe processing is separate from ReservKit's booking fee. Customer tips are tracked separately from booking income and are not marked up by ReservKit. Refundable damage deposits are separate checkout line items and are not marked up by ReservKit.",
       "The most important comparison is operational fit: whether the customer booking flow, operator dashboard, waiver workflow, and payment setup match the way your business already works.",
     ],

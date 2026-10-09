@@ -54,7 +54,7 @@ const config: SeoProductPageConfig = {
     { href: "/docs/getting-started", label: "First booking walkthrough", description: "Follow the exact setup path from signup through a controlled booking test." },
   ],
   ctaTitle: "Publish and test your first activity",
-  ctaBody: "Start on Free, build one complete booking path, and move customer traffic only after you have tested it yourself.",
+  ctaBody: "Start a 14-day full-access trial, build one complete booking path, and move customer traffic only after you have tested it yourself.",
 };
 
 export default function ActivityBookingSoftware() {

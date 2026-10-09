@@ -44,15 +44,19 @@ export default function Terms() {
               percentage of the eligible booking subtotal according to the active plan:
             </p>
             <ul className="mt-2 mb-2 pl-4 list-disc space-y-1">
-              <li>Free ($0/month): 5% booking fee, 10 bookings per month</li>
-              <li>Starter ($99/month): 3.5% booking fee, 75 bookings per month, 14-day free trial</li>
-              <li>Growth ($179/month): 2.5% booking fee, unlimited bookings, 14-day free trial</li>
-              <li>Pro ($349/month): 2% booking fee, unlimited bookings, 14-day free trial</li>
-              <li>Enterprise: custom pricing, a booking fee typically starting at 1.5%, custom volume, and signed agreement terms</li>
+              <li>Starter ($69/month): 1.5% booking fee, unlimited bookings, 14-day free trial</li>
+              <li>Growth ($199/month): 1% booking fee, unlimited bookings, 14-day free trial</li>
+              <li>Pro ($399/month): 0.5% booking fee, unlimited bookings, a $900 monthly booking-fee cap, and a 14-day free trial</li>
+              <li>Enterprise: custom pricing, contracted booking fee, unlimited bookings, and signed agreement terms</li>
             </ul>
             <p>
               Standard Stripe processing is charged separately by Stripe to your connected account.
               ReservKit&apos;s booking fee is an operator cost and is not added as a separate customer checkout surcharge.
+            </p>
+            <p>
+              Stripe does not return its original processing fee after a refund. ReservKit returns its booking fee for
+              full refunds caused by operator cancellation, weather or safety, duplicate payment, or a ReservKit system
+              issue. ReservKit retains its booking fee for customer cancellations, no-shows, and partial refunds.
             </p>
             <p>
               New self-serve paid subscriptions begin with a 14-day free trial. Subscription fees are billed monthly

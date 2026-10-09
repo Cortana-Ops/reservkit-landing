@@ -6,7 +6,7 @@ import {
   PRIMARY_CTA_EVENT,
   PRIMARY_CTA_LABEL,
   enterpriseTier,
-  freePlanFootnote,
+  trialFootnote,
   pricingAccessCallout,
   pricingAccessCalloutTitle,
   pricingFinePrint,
@@ -26,11 +26,11 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
             Pricing you can read without booking a demo.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Free covers the core booking flow at low volume. Starter adds team access, and Growth unlocks the deeper operator tools.
+            Every plan includes unlimited bookings. Pay less per booking as your operation grows, with a firm monthly booking-fee cap on Pro.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {pricingTiers.map((tier) => (
             <article
               key={tier.name}
@@ -137,7 +137,7 @@ export function PricingSection({ compact = false }: PricingSectionProps) {
           </div>
         </div>
 
-        <p className="mt-4 text-sm text-slate-600">{freePlanFootnote}</p>
+        <p className="mt-4 text-sm text-slate-600">{trialFootnote}</p>
         <p className="mt-4 max-w-4xl text-xs leading-relaxed text-slate-500">{pricingFinePrint}</p>
       </div>
     </section>

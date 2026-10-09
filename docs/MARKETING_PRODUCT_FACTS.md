@@ -1,13 +1,13 @@
 # ReservKit Marketing Product Facts
 
-**Last updated:** 2026-10-03
+**Last updated:** 2026-10-08
 
 Use this file before changing public marketing copy, docs, pricing cards, screenshots, or launch claims. The app repo may have newer implementation details, but marketing should not claim a feature publicly unless it is listed here or verified again against the live app.
 
 ## Current Public Posture
 
 - ReservKit is live direct-booking software, not a beta waitlist.
-- Public signup is open through the Free-first app signup path.
+- Public signup is open through a 14-day full-access trial.
 - The primary launch wedge is boat and watersports rental operators. Tour,
   activity, and adjacent rental businesses remain supported, but acquisition
   copy should lead with the narrower wedge until activation evidence supports
@@ -16,30 +16,29 @@ Use this file before changing public marketing copy, docs, pricing cards, screen
   real activity, connect Stripe, attach required waivers, run a controlled
   customer booking, and verify the operator record before moving traffic.
 - `/early-access` remains guided setup/help intake for operators who want support setting up the first booking flow.
-- Public self-serve plans are Free, Starter, Growth, and Pro.
+- Public self-serve plans are Starter, Growth, and Pro. Every paid plan includes unlimited bookings.
 - Enterprise is manual/private setup help, not a normal self-serve checkout plan.
 - Launch campaign CTAs carry only whitelisted campaign fields, landing path, and CTA location into the app so acquisition and onboarding can be measured without operator PII.
 
 ## Pricing And Fees
 
-- Free: `$0/mo`, `5% booking fee`, `10 bookings/month`.
-- Starter: `$99/mo`, `3.5% booking fee`, `75 bookings/month`, with a 14-day free trial.
-- Growth: `$179/mo`, `2.5% booking fee`, unlimited bookings, with a 14-day free trial.
-- Pro: `$349/mo`, `2% booking fee`, unlimited bookings, with a 14-day free trial.
-- Enterprise: custom terms and a booking fee typically starting at `1.5%`.
+- Starter: `$69/mo`, `1.5% booking fee`, unlimited bookings, with a 14-day free trial.
+- Growth: `$199/mo`, `1% booking fee`, unlimited bookings, with a 14-day free trial.
+- Pro: `$399/mo`, `0.5% booking fee`, unlimited bookings, a `$900/month` booking-fee cap, and a 14-day free trial.
+- Enterprise: custom pricing and contracted terms.
 - ReservKit booking fees are charged on eligible booking subtotal where applicable.
 - Tips, taxes, operator service fees, and refundable damage deposits are not marked up by ReservKit.
 - Standard Stripe processing is charged separately by Stripe to the operator's connected account.
 - ReservKit's booking fee is not added as a separate customer checkout surcharge.
+- Stripe does not return its original processing fee after a refund.
+- ReservKit returns its booking fee for full operator, weather/safety, duplicate-payment, or system-error refunds and retains it for customer cancellations, no-shows, and partial refunds.
 - Paid ReservKit subscription charges are non-refundable except for billing errors, duplicate charges, fraud, or legally required refunds.
 
 ## Current Feature Gates
 
-- Free includes the core public booking page, Stripe Connect payments, customer records, and booking confirmation emails where enabled at low volume.
-- Free does not include staff/team access.
-- Starter adds basic team tools and staff scheduling access.
-- Growth adds unlimited bookings, reports, waiver tools, broadcasts, coupon codes, refundable damage deposits, priced add-ons, equipment, named equipment-unit blocking, and dynamic pricing.
-- Pro includes Growth features with the lowest self-serve booking fee and a deeper support path for higher-volume operations.
+- Starter includes core bookings, Stripe Connect payments, calendar, customer records, basic team tools, and staff scheduling access.
+- Growth adds reports, waiver tools, broadcasts, coupon codes, refundable damage deposits, priced add-ons, equipment, named equipment-unit blocking, and dynamic pricing.
+- Pro includes Growth features plus API and white-label controls, the lowest self-serve booking fee, a monthly booking-fee cap, and a deeper support path.
 - Admin/support accounts are internal ReservKit operations accounts and should not be described as public plans.
 - Owner/custom/private accounts are private account types and should not be promoted as public plans.
 

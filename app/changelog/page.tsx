@@ -40,7 +40,7 @@ const releases: Release[] = [
     version: "Public signup and launch truth pass",
     date: "August 2026",
     items: [
-      { tag: "Added", text: "Public Free-first signup is now the default path, with Start free CTAs routing operators to the app signup flow." },
+      { tag: "Changed", text: "Public signup now begins with a 14-day full-access trial, with trial CTAs routing operators to the app signup flow." },
       { tag: "Changed", text: "Refreshed notification setup documentation for ReservKit-managed delivery plus optional complete-set Resend and Twilio credentials." },
       { tag: "Changed", text: "Aligned staff visibility copy so standard staff workflows stay operational while owner/admin revenue reporting remains separate." },
       { tag: "Fixed", text: "Expanded public content checks to block stale trial, pre-launch, unsupported template-editor, cart, resource-variant, and fee claims." },

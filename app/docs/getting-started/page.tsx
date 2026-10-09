@@ -21,7 +21,7 @@ export default function GettingStarted() {
       <TaskWalkthrough
         title="1. Create the organization"
         path="app.reservkit.com/login -> Sign up -> Onboarding"
-        intro="New public organizations begin on Free, so you can configure the first booking flow before selecting a paid plan."
+        intro="New public organizations begin with a 14-day full-access trial, so you can configure and test the first booking flow before selecting a paid plan."
         steps={[
           { title: "Create the owner account", body: "Use the public signup path, verify the account when prompted, and continue to Onboarding." },
           { title: "Enter the business basics", body: "Add the business name, choose the closest business type, and select the operating timezone." },

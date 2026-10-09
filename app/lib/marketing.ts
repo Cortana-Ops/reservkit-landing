@@ -9,7 +9,7 @@ export const PUBLIC_SIGNUP_URL = `${LOGIN_URL}?${new URLSearchParams({
   signup: "true",
 }).toString()}`;
 export const PRIMARY_CTA_LABEL =
-  MARKETING_MODE === "public_signup" ? "Start free" : "Get early access";
+  MARKETING_MODE === "public_signup" ? "Start 14-day trial" : "Get early access";
 export const PRIMARY_CTA_URL =
   MARKETING_MODE === "public_signup" ? PUBLIC_SIGNUP_URL : EARLY_ACCESS_URL;
 export const PRIMARY_CTA_EVENT =
@@ -29,43 +29,26 @@ export const METADATA_DESCRIPTION =
 
 export const pricingTiers = [
   {
-    name: "Free",
-    price: "$0",
+    name: "Starter",
+    price: "$69",
     period: "/mo",
-    fee: "5% booking fee",
-    volume: "10 bookings/month",
-    trial: null,
-    description: "For setup, testing, and first live bookings before you commit to a paid plan.",
+    fee: "1.5% booking fee",
+    volume: "Unlimited bookings",
+    trial: "14-day free trial",
+    description: "For small operators who need the core direct-booking workflow.",
     features: [
-      "Core booking page",
-      "Stripe Connect payments",
-      "Customer records",
-      "Confirmation emails where enabled",
-      "No staff/team access",
+      "Booking pages and Stripe payments",
+      "Calendar and customer records",
+      "Basic team tools",
+      "Staff scheduling access",
     ],
     highlight: false,
   },
   {
-    name: "Starter",
-    price: "$99",
-    period: "/mo",
-    fee: "3.5% booking fee",
-    volume: "75 bookings/month",
-    trial: "14-day free trial",
-    description: "For small operators who need the core direct-booking workflow.",
-    features: [
-      "Everything in Free",
-      "Basic team tools",
-      "Staff scheduling access",
-      "First growing-operator tier",
-    ],
-    highlight: true,
-  },
-  {
     name: "Growth",
-    price: "$179",
+    price: "$199",
     period: "/mo",
-    fee: "2.5% booking fee",
+    fee: "1% booking fee",
     volume: "Unlimited bookings",
     trial: "14-day free trial",
     description: "For growing teams that need unlimited bookings, waivers, reports, coupons, refundable damage deposits, add-ons, and named equipment-unit blocking.",
@@ -77,19 +60,20 @@ export const pricingTiers = [
       "Named equipment-unit blocking",
       "Damage deposits and add-ons",
     ],
-    highlight: false,
+    highlight: true,
   },
   {
     name: "Pro",
-    price: "$349",
+    price: "$399",
     period: "/mo",
-    fee: "2% booking fee",
-    volume: "Unlimited bookings",
+    fee: "0.5% booking fee",
+    volume: "$900/month booking-fee cap",
     trial: "14-day free trial",
     description: "For higher-volume teams needing deeper operational support.",
     features: [
       "Everything in Growth",
-      "Lowest self-serve booking fee",
+      "API and white-label controls",
+      "$1,299 maximum monthly software cost",
       "Higher-volume operations",
       "Deeper support path",
     ],
@@ -100,12 +84,12 @@ export const pricingTiers = [
 export const enterpriseTier = {
   name: "Enterprise",
   price: "Custom",
-  fee: "Typically 1.5%+ booking fee",
-  volume: "Custom volume",
-  description: "For operators with larger rollout, migration, or support needs.",
+  fee: "Contracted booking fee",
+  volume: "Unlimited bookings",
+  description: "For multi-location operators with custom rollout, migration, or support needs.",
   features: [
     "Manual/private plan",
-    "Custom terms and volume",
+    "Multi-location operations",
     "Migration or rollout support",
     "Signed agreement terms",
   ],
@@ -115,11 +99,11 @@ export const earlyAccessPricingCallout =
   "Operators who want help can request guided setup for the first live booking flow. We help map the right plan before live traffic moves over.";
 
 export const publicSignupPricingCallout =
-  "Start on Free, connect Stripe when you are ready to take paid bookings, and upgrade only when your operation needs more volume or staff tools.";
+  "Start with 14 days of full access, connect Stripe when you are ready, and choose a paid plan before the trial ends. Every paid plan includes unlimited bookings.";
 
 export const pricingAccessCalloutTitle =
   MARKETING_MODE === "public_signup"
-    ? "Start free when you are ready."
+    ? "Start with full access for 14 days."
     : "Guided setup is available.";
 
 export const pricingAccessCallout =
@@ -127,22 +111,20 @@ export const pricingAccessCallout =
     ? publicSignupPricingCallout
     : earlyAccessPricingCallout;
 
-export const freePlanFootnote =
-  "Need to try it at very low volume? The Free plan includes 10 bookings/month at 5% — no subscription required.";
+export const trialFootnote =
+  "No public Free plan or booking caps. Your 14-day trial includes the full operator workflow so you can configure and test before choosing a paid plan.";
 
 export const pricingFinePrint =
-  "Standard Stripe processing is charged separately by Stripe to your connected account. ReservKit’s booking fee is charged on the booking subtotal and is not added as a separate customer checkout surcharge. Tips, taxes, operator service fees, and refundable damage deposits are not marked up.";
+  "Stripe charges its standard processing fees directly to the operator’s connected account. ReservKit’s booking fee applies only to the eligible booking subtotal and is not added as a separate customer checkout surcharge. Tips, taxes, operator service fees, and refundable damage deposits are not marked up. Stripe does not return its original processing fee after a refund. ReservKit returns its booking fee for full operator, weather/safety, duplicate-payment, or system-error refunds; it retains the fee for customer cancellations, no-shows, and partial refunds.";
 
 export const pricingSummary =
-  "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom with booking fees typically starting at 1.5%. Paid self-serve plans include a 14-day free trial.";
-
-export const paymentPageFreeBookingVolume = "10 bookings/month";
+  "Public plans are Starter ($69/mo + 1.5%), Growth ($199/mo + 1%), Pro ($399/mo + 0.5% with a $900 monthly booking-fee cap), and Enterprise custom. Every plan includes unlimited bookings, and self-serve plans begin with a 14-day free trial.";
 
 export const paymentPagePricingSummary =
-  "Public plans are Free ($0/mo + 5%, 10 bookings/month), Starter ($99/mo + 3.5%, 75 bookings/month), Growth ($179/mo + 2.5%, unlimited), Pro ($349/mo + 2%, unlimited), and Enterprise custom.";
+  "Public plans are Starter ($69/mo + 1.5%), Growth ($199/mo + 1%), Pro ($399/mo + 0.5% with a $900 monthly booking-fee cap), and Enterprise custom. Every plan includes unlimited bookings.";
 
 export const verticalFeatureGateNote =
-  "Feature availability follows the pricing tiers: Free covers the first low-volume booking flow, Starter adds staff/team tools, and Growth adds waivers, reports, broadcasts, equipment, named unit blocking, dynamic pricing, deposits, coupons, and add-ons.";
+  "Feature availability follows the pricing tiers: Starter covers core bookings and basic team tools; Growth adds waivers, reports, broadcasts, equipment, named unit blocking, dynamic pricing, deposits, coupons, and add-ons; Pro adds API and white-label controls.";
 
 export const earlyAccessRequestFields = [
   "name",

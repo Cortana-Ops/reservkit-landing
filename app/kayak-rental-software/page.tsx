@@ -40,7 +40,7 @@ const config: SeoProductPageConfig = {
     { href: "/stripe-booking-software-for-rentals", label: "Stripe booking software", description: "See how connected-account checkout works." },
   ],
   ctaTitle: "Put your first kayak rental online",
-  ctaBody: "Start on Free, configure one activity, and test the customer path before sharing it.",
+  ctaBody: "Start a 14-day full-access trial, configure one activity, and test the customer path before sharing it.",
 };
 
 export default function KayakRentalSoftware() { return <SeoProductPage config={config} />; }

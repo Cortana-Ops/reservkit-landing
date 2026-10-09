@@ -18,7 +18,7 @@ const groups: FaqGroup[] = [
     title: "Setup and access",
     items: [
       ["What must be ready before I share my booking link?", "Configure the organization slug and timezone, publish at least one priced activity, create future availability, connect Stripe for paid bookings, attach required waivers or equipment rules, and complete a controlled customer-flow test."],
-      ["Can I use ReservKit without a paid plan?", "Yes. Free supports setup, testing, and the first 10 bookings per month with a 5% booking fee. Staff tools begin on Starter; deeper operational tools begin on Growth."],
+      ["Can I use ReservKit before selecting a paid plan?", "Yes. New organizations receive a 14-day full-access trial for setup and testing. Choose Starter, Growth, or Pro before the trial ends to continue taking bookings."],
       ["Why is a page missing from my sidebar?", "Plan gates, staff role, granular permissions, organization status, and current organization can all affect navigation. Confirm the active organization first, then ask an owner or admin to review plan and permissions."],
       ["Can I run more than one business?", "Yes. Organizations are separate workspaces. Use the organization switcher and verify the active business before changing activities, settings, staff, or bookings."],
     ],
@@ -39,6 +39,7 @@ const groups: FaqGroup[] = [
       ["Where do customer payments go?", "ReservKit creates checkout on your connected Stripe account. Stripe controls processing, payout timing, disputes, and connected-account money movement. ReservKit collects the plan-based booking fee where applicable."],
       ["What is the booking fee based on?", "The ReservKit booking fee uses the eligible booking subtotal after coupon discounts. Tips, taxes, operator service fees, and refundable damage deposits are not marked up."],
       ["Are Stripe fees included in ReservKit pricing?", "No. Standard Stripe processing is charged separately by Stripe to your connected account. ReservKit's booking fee is an operator cost and is not added as a separate customer checkout surcharge."],
+      ["Which fees are returned after a refund?", "Stripe does not return its original processing fee. ReservKit returns its booking fee for full operator, weather or safety, duplicate-payment, or system-error refunds. ReservKit retains its fee for customer cancellations, no-shows, and partial refunds."],
       ["What happens after the 14-day paid-plan trial?", "The selected Starter, Growth, or Pro monthly subscription begins billing through Stripe unless it is cancelled before the trial ends."],
       ["Does marking a damage deposit released move money?", "Not by itself. The status records the operator outcome. Confirm any required refund or release action in Stripe and reconcile Booking Detail."],
     ],
