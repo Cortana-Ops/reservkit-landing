@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/peek-pro-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/checkfront-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/rezdy-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/bokun-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/bookeo-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${base}/equipment-rental-booking-software`,
       lastModified: now,

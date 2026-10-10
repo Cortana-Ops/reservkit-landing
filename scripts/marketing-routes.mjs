@@ -25,6 +25,8 @@ export const MARKETING_ROUTES = [
   "/peek-pro-alternative",
   "/checkfront-alternative",
   "/rezdy-alternative",
+  "/bokun-alternative",
+  "/bookeo-alternative",
   "/equipment-rental-booking-software",
   "/activity-booking-software",
   "/atv-rental-booking-software",

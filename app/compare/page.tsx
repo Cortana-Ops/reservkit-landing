@@ -5,7 +5,7 @@ import { createMarketingMetadata } from "../lib/metadata";
 
 export const metadata = createMarketingMetadata({
   title: "Compare Booking Software for Tours, Activities & Rentals",
-  description: "Compare ReservKit with FareHarbor, Peek Pro, Checkfront, and Rezdy using published pricing, operational fit, payments, support, and distribution criteria.",
+  description: "Compare ReservKit with FareHarbor, Peek Pro, Checkfront, Rezdy, Bókun, and Bookeo using pricing, operations, payments, support, and distribution criteria.",
   keywords: ["booking software comparison", "tour booking software comparison", "rental booking software alternatives"],
   path: "/compare",
 });
@@ -15,6 +15,8 @@ const comparisons = [
   { href: "/peek-pro-alternative", name: "Peek Pro", body: "Compare Peek's AI, marketing, and mobile ecosystem with ReservKit's focused operator workflow and transparent plans." },
   { href: "/checkfront-alternative", name: "Checkfront", body: "Compare flexible booking types, distribution, pricing structure, payments, waivers, and equipment workflows." },
   { href: "/rezdy-alternative", name: "Rezdy", body: "Compare distribution reach and tour operations with ReservKit's direct-booking, Stripe, waiver, and day-of tools." },
+  { href: "/bokun-alternative", name: "Bókun", body: "Compare Bókun's OTA and reseller reach with ReservKit's direct-booking and booking-linked operating workflow." },
+  { href: "/bookeo-alternative", name: "Bookeo", body: "Compare Bookeo's low fixed monthly cost and scheduling breadth with ReservKit's integrated operational records." },
 ];
 
 export default function ComparePage() {

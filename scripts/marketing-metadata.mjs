@@ -143,7 +143,7 @@ export const EXPECTED_METADATA_BY_ROUTE = {
   },
   "/compare": {
     title: "Compare Booking Software for Tours, Activities & Rentals — ReservKit",
-    description: "Compare ReservKit with FareHarbor, Peek Pro, Checkfront, and Rezdy using published pricing, operational fit, payments, support, and distribution criteria.",
+    description: "Compare ReservKit with FareHarbor, Peek Pro, Checkfront, Rezdy, Bókun, and Bookeo using pricing, operations, payments, support, and distribution criteria.",
     canonical: "https://reservkit.com/compare",
     socialTitle: "Compare Booking Software for Tours, Activities & Rentals — ReservKit",
   },
@@ -170,6 +170,18 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     description: "Compare Rezdy and ReservKit for tour bookings, distribution, pricing, Stripe payments, waivers, resources, reports, and migration.",
     canonical: "https://reservkit.com/rezdy-alternative",
     socialTitle: "Rezdy Alternative - Tour Booking Software Comparison — ReservKit",
+  },
+  "/bokun-alternative": {
+    title: "Bókun Alternative - Booking Software Comparison — ReservKit",
+    description: "Compare Bókun and ReservKit for pricing, direct bookings, Stripe payments, distribution reach, resources, waivers, deposits, and operator workflows.",
+    canonical: "https://reservkit.com/bokun-alternative",
+    socialTitle: "Bókun Alternative - Booking Software Comparison — ReservKit",
+  },
+  "/bookeo-alternative": {
+    title: "Bookeo Alternative - Booking Software Comparison — ReservKit",
+    description: "Compare Bookeo and ReservKit for monthly pricing, booking fees, scheduling, waivers, Stripe payments, equipment, deposits, and operator workflows.",
+    canonical: "https://reservkit.com/bookeo-alternative",
+    socialTitle: "Bookeo Alternative - Booking Software Comparison — ReservKit",
   },
   "/equipment-rental-booking-software": {
     title: "Equipment Rental Booking Software - Inventory & Payments — ReservKit",

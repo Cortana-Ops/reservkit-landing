@@ -77,6 +77,8 @@ const comparisonLinks = [
   { text: "Peek Pro alternative", href: "/peek-pro-alternative" },
   { text: "Checkfront alternative", href: "/checkfront-alternative" },
   { text: "Rezdy alternative", href: "/rezdy-alternative" },
+  { text: "Bókun alternative", href: "/bokun-alternative" },
+  { text: "Bookeo alternative", href: "/bookeo-alternative" },
 ];
 
 const mobilePrimaryMenuLinks = [

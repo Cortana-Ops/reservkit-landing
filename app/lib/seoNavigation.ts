@@ -25,4 +25,6 @@ export const comparisonLinks = [
   { href: "/peek-pro-alternative", label: "Peek Pro alternative" },
   { href: "/checkfront-alternative", label: "Checkfront alternative" },
   { href: "/rezdy-alternative", label: "Rezdy alternative" },
+  { href: "/bokun-alternative", label: "Bókun alternative" },
+  { href: "/bookeo-alternative", label: "Bookeo alternative" },
 ];
