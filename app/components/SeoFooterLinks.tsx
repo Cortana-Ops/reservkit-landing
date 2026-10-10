@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { industryLinks, solutionLinks } from "../lib/seoNavigation";
+import { comparisonLinks, industryLinks, solutionLinks } from "../lib/seoNavigation";
 
 export function SeoFooterLinks() {
   return (
-    <div className="mx-auto grid max-w-6xl gap-8 border-b border-current/15 pb-8 mb-8 sm:grid-cols-2">
-      {[{ title: "Popular industries", links: industryLinks }, { title: "Solutions", links: solutionLinks }].map((group) => (
+    <div className="mx-auto grid max-w-6xl gap-8 border-b border-current/15 pb-8 mb-8 sm:grid-cols-2 lg:grid-cols-3">
+      {[{ title: "Popular industries", links: industryLinks }, { title: "Solutions", links: solutionLinks }, { title: "Compare", links: comparisonLinks }].map((group) => (
         <nav key={group.title} aria-label={group.title + " footer"}>
           <h2 className="mb-3 text-sm font-semibold">{group.title}</h2>
           <ul className="grid gap-2 text-sm sm:grid-cols-2">

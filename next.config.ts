@@ -2,25 +2,6 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs/config";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/fareharbor-alternative",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/checkfront-alternative",
-        destination: "/",
-        permanent: true,
-      },
-      {
-        source: "/rezdy-alternative",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default withSentryConfig(nextConfig, {

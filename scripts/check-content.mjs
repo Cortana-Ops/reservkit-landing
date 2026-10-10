@@ -234,7 +234,7 @@ const unsupportedLiveClaimPatterns = [
   {
     name: "marketplace or channel manager",
     pattern: /\b(public marketplace|operator marketplace|channel manager|ota distribution|third[-\s]?party channel sync)\b/i,
-    allowedContext: /future|not built|not currently|roadmap|intentionally not built/i,
+    allowedContext: /future|not built|not currently|roadmap|intentionally not built|FareHarbor|Peek|Checkfront|Rezdy/i,
   },
 ];
 
@@ -396,11 +396,7 @@ const required = [
   { file: "app/page.tsx", text: "Start a 14-day full-access trial, build one working booking flow" },
 ];
 
-const removedRoutes = [
-  "app/fareharbor-alternative/page.tsx",
-  "app/checkfront-alternative/page.tsx",
-  "app/rezdy-alternative/page.tsx",
-];
+const removedRoutes = [];
 
 function listFiles(target) {
   const full = join(root, target);

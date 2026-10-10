@@ -5,6 +5,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/fareharbor-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/peek-pro-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/checkfront-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/rezdy-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${base}/equipment-rental-booking-software`,
       lastModified: now,
@@ -17,6 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    { url: `${base}/atv-rental-booking-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/bike-rental-booking-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/escape-room-booking-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/fishing-charter-booking-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${base}/kayak-rental-software`,
       lastModified: now,

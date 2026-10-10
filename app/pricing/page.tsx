@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PricingSection } from "../components/PricingSection";
+import { PricingEstimator } from "../components/PricingEstimator";
 import { TrackedLink } from "../components/TrackedLink";
 import { PRIMARY_CTA_URL, PRIMARY_CTA_EVENT, PRIMARY_CTA_LABEL } from "../lib/marketing";
 import { createMarketingMetadata } from "../lib/metadata";
@@ -53,6 +54,8 @@ export default function PricingPage() {
         </div>
 
         <PricingSection compact />
+
+        <PricingEstimator />
 
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-navy">Pricing FAQ</h2>

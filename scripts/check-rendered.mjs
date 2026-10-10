@@ -46,6 +46,7 @@ const routesWithSharedHeader = routes.filter((route) => route !== "/early-access
 const desktopHeaderLinks = [
   { text: "ReservKit", href: "/" },
   { text: "Pricing", href: "/pricing" },
+  { text: "Compare", href: "/compare" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
   { text: "Start 14-day trial", href: "https://app.reservkit.com/login?signup=true" },
@@ -55,6 +56,10 @@ const industryLinks = [
   { text: "Equipment rentals", href: "/equipment-rental-booking-software" },
   { text: "Activities & experiences", href: "/activity-booking-software" },
   { text: "Tour operators", href: "/tour-operator-software" },
+  { text: "ATV & UTV rentals", href: "/atv-rental-booking-software" },
+  { text: "Bike & e-bike rentals", href: "/bike-rental-booking-software" },
+  { text: "Escape rooms", href: "/escape-room-booking-software" },
+  { text: "Fishing charters", href: "/fishing-charter-booking-software" },
   { text: "Watersports rentals", href: "/watersports-rental-software" },
   { text: "Boat rentals", href: "/boat-rental-software" },
   { text: "Jet ski rentals", href: "/jet-ski-rental-software" },
@@ -66,9 +71,17 @@ const solutionLinks = [
   { text: "Stripe payments", href: "/stripe-booking-software-for-rentals" },
   { text: "Switch booking systems", href: "/switch-rental-booking-software" },
 ];
+const comparisonLinks = [
+  { text: "Compare platforms", href: "/compare" },
+  { text: "FareHarbor alternative", href: "/fareharbor-alternative" },
+  { text: "Peek Pro alternative", href: "/peek-pro-alternative" },
+  { text: "Checkfront alternative", href: "/checkfront-alternative" },
+  { text: "Rezdy alternative", href: "/rezdy-alternative" },
+];
 
 const mobilePrimaryMenuLinks = [
   { text: "Pricing", href: "/pricing" },
+  { text: "Compare", href: "/compare" },
   { text: "Docs", href: "/docs" },
   { text: "Log in", href: "https://app.reservkit.com/login" },
   { text: "Start 14-day trial", href: "https://app.reservkit.com/login?signup=true" },
@@ -176,6 +189,10 @@ const routeMainLinkExpectations = {
   "/boat-rental-software": seoProductMainLinks,
   "/equipment-rental-booking-software": seoProductMainLinks,
   "/activity-booking-software": seoProductMainLinks,
+  "/atv-rental-booking-software": seoProductMainLinks,
+  "/bike-rental-booking-software": seoProductMainLinks,
+  "/escape-room-booking-software": seoProductMainLinks,
+  "/fishing-charter-booking-software": seoProductMainLinks,
   "/kayak-rental-software": seoProductMainLinks,
   "/watersports-rental-software": seoProductMainLinks,
   "/jet-ski-rental-software": seoProductMainLinks,
@@ -420,7 +437,7 @@ async function checkMobileHeaderMenu(page, route, viewport) {
 async function checkFooterLinks(page, route, viewport) {
   if (route === "/early-access") return;
 
-  const expectedLinks = [...(route === "/" ? homepageFooterLinks : pageShellFooterLinks), ...industryLinks, ...solutionLinks];
+  const expectedLinks = [...(route === "/" ? homepageFooterLinks : pageShellFooterLinks), ...industryLinks, ...solutionLinks, ...comparisonLinks];
   const renderedFooterLinks = await page.evaluate(() => {
     const footer = Array.from(document.querySelectorAll("footer")).at(-1);
     if (!footer) return [];

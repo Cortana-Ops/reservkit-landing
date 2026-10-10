@@ -141,6 +141,36 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     canonical: "https://reservkit.com/blog",
     socialTitle: "Blog — Rental Operator Guides — ReservKit",
   },
+  "/compare": {
+    title: "Compare Booking Software for Tours, Activities & Rentals — ReservKit",
+    description: "Compare ReservKit with FareHarbor, Peek Pro, Checkfront, and Rezdy using published pricing, operational fit, payments, support, and distribution criteria.",
+    canonical: "https://reservkit.com/compare",
+    socialTitle: "Compare Booking Software for Tours, Activities & Rentals — ReservKit",
+  },
+  "/fareharbor-alternative": {
+    title: "FareHarbor Alternative - Transparent Booking Software — ReservKit",
+    description: "Compare FareHarbor and ReservKit for public pricing, direct bookings, Stripe payments, waivers, equipment, migration, and day-of operations.",
+    canonical: "https://reservkit.com/fareharbor-alternative",
+    socialTitle: "FareHarbor Alternative - Transparent Booking Software — ReservKit",
+  },
+  "/peek-pro-alternative": {
+    title: "Peek Pro Alternative - Booking Software Comparison — ReservKit",
+    description: "Compare Peek Pro and ReservKit for booking, pricing, Stripe payments, automation, mobile operations, waivers, resources, and migration.",
+    canonical: "https://reservkit.com/peek-pro-alternative",
+    socialTitle: "Peek Pro Alternative - Booking Software Comparison — ReservKit",
+  },
+  "/checkfront-alternative": {
+    title: "Checkfront Alternative - Booking Software Comparison — ReservKit",
+    description: "Compare Checkfront and ReservKit for pricing, booking types, Stripe payments, waivers, inventory, distribution, and direct-booking operations.",
+    canonical: "https://reservkit.com/checkfront-alternative",
+    socialTitle: "Checkfront Alternative - Booking Software Comparison — ReservKit",
+  },
+  "/rezdy-alternative": {
+    title: "Rezdy Alternative - Tour Booking Software Comparison — ReservKit",
+    description: "Compare Rezdy and ReservKit for tour bookings, distribution, pricing, Stripe payments, waivers, resources, reports, and migration.",
+    canonical: "https://reservkit.com/rezdy-alternative",
+    socialTitle: "Rezdy Alternative - Tour Booking Software Comparison — ReservKit",
+  },
   "/equipment-rental-booking-software": {
     title: "Equipment Rental Booking Software - Inventory & Payments — ReservKit",
     description: "Equipment rental booking software for direct reservations, availability, Stripe payments, waivers, deposits, and operator-managed named units.",
@@ -152,6 +182,30 @@ export const EXPECTED_METADATA_BY_ROUTE = {
     description: "Activity booking software for direct reservations, availability, Stripe payments, guest waivers, staff coordination, and day-of check-in.",
     canonical: "https://reservkit.com/activity-booking-software",
     socialTitle: "Activity Booking Software - Reservations, Payments & Waivers — ReservKit",
+  },
+  "/atv-rental-booking-software": {
+    title: "ATV Rental Booking Software - Waivers, Deposits & Fleet — ReservKit",
+    description: "ATV rental booking software for timed reservations, Stripe payments, digital waivers, refundable deposits, capacity, and operator-managed units.",
+    canonical: "https://reservkit.com/atv-rental-booking-software",
+    socialTitle: "ATV Rental Booking Software - Waivers, Deposits & Fleet — ReservKit",
+  },
+  "/bike-rental-booking-software": {
+    title: "Bike Rental Booking Software - Reservations & Inventory — ReservKit",
+    description: "Bike and e-bike rental booking software for timed reservations, Stripe payments, waivers, add-ons, deposits, and operator-managed equipment.",
+    canonical: "https://reservkit.com/bike-rental-booking-software",
+    socialTitle: "Bike Rental Booking Software - Reservations & Inventory — ReservKit",
+  },
+  "/escape-room-booking-software": {
+    title: "Escape Room Booking Software - Time Slots & Payments — ReservKit",
+    description: "Escape room booking software for timed sessions, private groups, capacity, Stripe payments, waivers, coupons, add-ons, and staff readiness.",
+    canonical: "https://reservkit.com/escape-room-booking-software",
+    socialTitle: "Escape Room Booking Software - Time Slots & Payments — ReservKit",
+  },
+  "/fishing-charter-booking-software": {
+    title: "Fishing Charter Booking Software - Payments & Waivers — ReservKit",
+    description: "Fishing charter booking software for direct reservations, Stripe payments, deposits, waivers, capacity, staff assignments, and guest check-in.",
+    canonical: "https://reservkit.com/fishing-charter-booking-software",
+    socialTitle: "Fishing Charter Booking Software - Payments & Waivers — ReservKit",
   },
   "/boat-rental-software": {
     title: "Boat Rental Booking Software - Payments, Deposits & Waivers — ReservKit",
