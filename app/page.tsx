@@ -320,12 +320,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-white px-6 py-10" aria-label="ReservKit launch proof">
+        <section className="border-y border-slate-200 bg-white px-6 py-10" aria-label="ReservKit operator benefits">
           <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-3">
             {[
-              { value: "5/5", label: "fresh operator onboarding drills completed" },
-              { value: "765", label: "automated application tests passing" },
-              { value: "43", label: "public routes checked on desktop and mobile" },
+              { value: "24/7", label: "Let customers book from any device, even after hours" },
+              { value: "One flow", label: "Keep availability, payments, waivers, and guest details together" },
+              { value: "Direct", label: "Own your booking link and customer relationship" },
             ].map((item) => (
               <div key={item.label} className="border-l-2 border-amber pl-5">
                 <p className="text-3xl font-extrabold text-navy">{item.value}</p>
@@ -333,7 +333,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-6 max-w-6xl text-xs leading-relaxed text-slate-500">Launch verification uses isolated synthetic operators and fictional demo records. These are product-readiness results, not customer-performance claims.</p>
         </section>
 
         <section className="bg-navy px-6 py-20 text-white">

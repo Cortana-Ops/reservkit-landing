@@ -174,6 +174,10 @@ const forbidden = [
   "The Free plan does not require a paid subscription",
   "Enterprise: custom monthly pricing, custom volume, and annual minimum",
   "We share data only with:",
+  "fresh operator onboarding drills",
+  "automated application tests passing",
+  "public routes checked on desktop and mobile",
+  "Launch verification uses isolated synthetic operators",
 ];
 
 const allowedByFile = {
